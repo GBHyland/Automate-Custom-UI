@@ -1,4 +1,7 @@
 ### Generate a Custom UI & Download / Configure Source Code
+
+**Disclaimer:** Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
+
 **Summary:** This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
 1. Within Automate Studio Modelling, select the **Create Custom UI** option from the UI drop-down header in the left menu.
 ![alt text](images/custom-ui-select.jpeg "Select Create Custom UI")
@@ -16,15 +19,19 @@
     - Install all the necessary dependencies by running the following command: ```npm i```
     - Set up the environment variables by running the following command: ```npm run setenv```
     - Run the application by running the following command: ```npm start workspace-hxp```
-11. Your Custom UI should launch in the web browser. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Being an asynchronous Angular environment, most changes can be made to the files while the UI is running and viewing edited files will automatically update/refresh the UI when an edited file is saved. Good luck!
+      - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
+11. Your Custom UI should launch in the web browser. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
+    - You can stop the local environment from running by pressing CTRL+C in the terminal window.
+    - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running and viewing edited files will automatically update/refresh the UI when an edited file is saved. Good luck!
 
 ### Creating a Plugin and a Page
-**Summary:** A Plugin Page is a page that loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button to navigate to that page.
+**Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
 1. **Creating a Plugin** Open a Terminal window at the root directory of the downloaded source code. Paste and execute the command below to have the page created and added to the proper configuration files:
 ** Replace the bolded portions in the command line with the titles you want to use.**
 ```
 npx nx generate @hyland/extend:plugin --name **page-name** --author "Your Name" --addTranslations true
 ```
+   - The Plugin created will not any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
 ** NOTE: You must use the same plug-in name used in step 1 for the plginName in this command (replace the bolded portion). Replace the pageName with the name you want for your page.**
 ```
