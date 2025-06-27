@@ -29,33 +29,33 @@
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
 1. **Creating a Plugin** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to have the page created and added to the proper configuration files:
-** Replace the bolded portions in the command line with the titles you want to use.** (In my example, I used the plugin and page names "coffee-time". For simplicity, you can use the same names or use your own if you'd prefer.)
+** Replace the text "yourpluginname" in this command line with the title you want to use.** (In my example, I used the plugin and page names "coffee-time". For simplicity, you can use the same names or use your own if you'd prefer.)
 ```
-npx nx generate @hyland/extend:plugin --name **page-name** --author "Your Name" --addTranslations true
+npx nx generate @hyland/extend:plugin --name yourpluginname --author "Your Name" --addTranslations true
 ```
    - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
-** NOTE: You must use the same plug-in name used in step 1 for the plginName in this command (replace the bolded portion). Replace the pageName with the name you want for your page.**
+** NOTE: You must replace the text "pluginname" in this code with the same plug-in name used in step 1 **AND** replace the text "pagename" with the formal name of the page you want to create. (For simplicity you may use the name "coffee-time" that I used in this example.)**
 ```
-npx nx generate @hyland/extend:page --pluginName **your-plugin-name-used-in-step-1** --pageName **your-page-name**
+npx nx generate @hyland/extend:page --pluginName pluginname --pageName pagename
 ```
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```
 npm start workspace-hxp
 ```
 4. If your page is working, navigate back to terminal and stop the instance using CTRL+C.
-5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/**your plugin name**/src/lib/pages/**your page name**```.
-   - You should see a few files here: ```**page name**-menu-item.components.ts```, ```**page name**-compnents.ts```, and ```**page name**-module.ts```.
-6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. Follow these steps in VS:
-   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-menu-item.component.scss```. Leave the contents of this file empty. 
-   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-menu-item.component.html```.
-   - Open the file in that same directory that is titled: ```**your page name**-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
+5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/**your plugin name**/src/lib/pages/yourpagename```.
+   - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
+6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. **NOTE:** Replace all instances of the text "yourpagename" with the actual page name you used in Step 2. Follow these steps in VS:
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty. 
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.html```.
+   - Open the file in that same directory that is titled: ```yourpagename-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
 ![alt text](images/copy-html-code.jpeg "Copy selected code.")
-     - Inside of the ```**your page name**-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
+     - Inside of the ```yourpagename-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
 code:
 ```
-    templateUrl: './**your page name**-menu-item.component.html',
-    styleUrls: ['./**your page name**-menu-item.component.scss'],
+    templateUrl: './yourpagename-menu-item.component.html',
+    styleUrls: ['./yourpagename-menu-item.component.scss'],
 ```
 
 * This is the code you will replace:
@@ -64,13 +64,13 @@ code:
 * This what it should look like afterward (but using your page names in place of "coffee-time" in this image):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
-   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.scss```. Leave the contents of this file blank.
-   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.html```. 
-   - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```**your page name**.component.ts```.
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank.
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.html```. 
+   - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```yourpagename.component.ts```.
      - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. 
 ```
-    templateUrl: './**your page name**-component.html',
-    styleUrls: ['./**your page name**-component.scss'],
+    templateUrl: './yourpagename-component.html',
+    styleUrls: ['./yourpagename-component.scss'],
 ```
      - Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
      - Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code, replacing my page name ("coffee-time") with yours inside of the hard brackets "[]":
@@ -86,13 +86,13 @@ code:
      - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
-7. Open the file you created earlier titled ```**your page name**-component.html``` and add the following code: ```<p>This is working!</p>```.
+7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code: ```<p>This is working!</p>```.
 8. All manual file additions and edits are done for core functionality and you may now test the application.
    - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
 9. Add your custom HTML code to create your new page design:
-   - In the ```**your page name**-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the <a href> URL in the code below with the name of the process in your application. 
+   - In the ```yourpagename-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the <a href> URL in the code below with the name of the process in your application. 
 ```
 <!-- GB HTML -->
 <style>
@@ -102,23 +102,23 @@ code:
       
 </style>
 <div style="width:100%; background-color:azure;">
-    <div id="header" style="height: 85px; background-color:steelblue;">
-        <!--
+    <div id="header" style="height: 85px; background-color:rgb(126, 96, 31);">
+        
         <div style="float: left;">
-            <img style="height: 60px; padding: 10px 0px 0px 40px;" src="https://i.postimg.cc/Prt7Z870/icecream-logo.png">
+            <img style="height: 60px; padding: 10px 20px 0px 40px;" src="https://i.postimg.cc/mgMRM1rf/coffee-logo.png">
         </div>
-         -->
+         
         <div id="header-text" style="padding: 22px 0px 0px 20px;">
-            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
+            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#ffffff;">Coffee Time!</div>
         </div>
         
     </div>
-    <div id="banner" style="height: 800px; text-align: center; background-image: url('https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <div style="height: 420px;">&nbsp;</div>
-        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">CLAIMS PORTAL</div>
-        <div style="height: 10px;">&nbsp;</div>
+    <div id="banner" style="height: 800px; text-align: center; background-image: url('https://i.postimg.cc/CxcwNpgS/coffee-shop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div style="height: 300px;">&nbsp;</div>
+        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">COFFEE TIME</div>
+        <div style="height: 0px;">&nbsp;</div>
         
-        <div style="padding: 20px 14px 20px 14px;">
+        <div style="padding: 22px 14px 20px 14px;">
             <button
             mat-button
             (click)="navigateToPage()"
@@ -140,11 +140,11 @@ code:
                     font-size: 20px;
                     font-weight: bold;
                     color:aliceblue;
-                ">START A CLAIM</span>
+                ">ORDER NOW</span>
             </a>
             </button>
         </div>
-        
+        <div style="height: 500px;">&nbsp;</div>
     </div>
 </div>
 ```
