@@ -92,7 +92,7 @@ code:
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
 9. Add your custom HTML code to create your new page design:
-   - In the ```yourpagename-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the <a href> URL in the code below with the name of the process in your application. 
+   - In the ```yourpagename-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the "a href" URL in the code below with the name of the process in your application. 
 ```
 <!-- GB HTML -->
 <style>
