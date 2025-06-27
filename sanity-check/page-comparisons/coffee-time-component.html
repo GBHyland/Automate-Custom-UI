@@ -1,1 +1,54 @@
-<p>This is working!</p>
+<!-- GB HTML -->
+<style>
+    .chewy-regular {
+        font-family: "Chewy", system-ui;
+    }
+      
+</style>
+<div style="width:100%; background-color:azure;">
+    <div id="header" style="height: 85px; background-color:steelblue;">
+        <!--
+        <div style="float: left;">
+            <img style="height: 60px; padding: 10px 0px 0px 40px;" src="https://i.postimg.cc/Prt7Z870/icecream-logo.png">
+        </div>
+         -->
+        <div id="header-text" style="padding: 22px 0px 0px 20px;">
+            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
+        </div>
+        
+    </div>
+    <div id="banner" style="height: 800px; text-align: center; background-image: url('https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div style="height: 420px;">&nbsp;</div>
+        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">CLAIMS PORTAL</div>
+        <div style="height: 10px;">&nbsp;</div>
+        
+        <div style="padding: 20px 14px 20px 14px;">
+            <button
+            mat-button
+            (click)="navigateToPage()"
+            style="
+                    width: 200px;
+                    height: 60px;
+                    background-color:#555;
+                    border-radius: 10px;
+                    border: thin solid #444;
+                    text-align: center;
+                "
+            >
+            <a href="http://localhost:4200/#/start-process-cloud?process=the-basics" target="_self" style="color:aliceblue;">
+                <span
+                style="
+                    text-align: center;
+                    color: #FFF;
+                    font-family: 'Open sans';
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:aliceblue;
+                ">START A CLAIM</span>
+            </a>
+            </button>
+        </div>
+        
+    </div>
+</div>
+

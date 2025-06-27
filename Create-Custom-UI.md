@@ -66,12 +66,24 @@ code:
 
    - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.scss```. Leave the contents of this file blank.
    - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.html```. 
-   - Open the file in this same directory titled: ```**your page name**.component.ts```.
-     - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
+   - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```**your page name**.component.ts```.
+     - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. 
 ```
     templateUrl: './**your page name**-component.html',
     styleUrls: ['./**your page name**-component.scss'],
 ```
+     - Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
+     - Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code, replacing my page name ("coffee-time") with yours inside of the hard brackets "[]":
+```
+    constructor(
+        private router: Router,
+    ) {}
+
+    navigateToPage(): void {
+        void this.router.navigate(['/coffee-time']);
+    }
+```
+     - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
 7. Open the file you created earlier titled ```**your page name**-component.html``` and add the following code: ```<p>This is working!</p>```.
@@ -79,5 +91,63 @@ code:
    - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
-
+9. Add your custom HTML code to create your new page design:
+   - In the ```**your page name**-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the <a href> URL in the code below with the name of the process in your application. 
+```
+<!-- GB HTML -->
+<style>
+    .chewy-regular {
+        font-family: "Chewy", system-ui;
+    }
+      
+</style>
+<div style="width:100%; background-color:azure;">
+    <div id="header" style="height: 85px; background-color:steelblue;">
+        <!--
+        <div style="float: left;">
+            <img style="height: 60px; padding: 10px 0px 0px 40px;" src="https://i.postimg.cc/Prt7Z870/icecream-logo.png">
+        </div>
+         -->
+        <div id="header-text" style="padding: 22px 0px 0px 20px;">
+            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
+        </div>
+        
+    </div>
+    <div id="banner" style="height: 800px; text-align: center; background-image: url('https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div style="height: 420px;">&nbsp;</div>
+        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">CLAIMS PORTAL</div>
+        <div style="height: 10px;">&nbsp;</div>
+        
+        <div style="padding: 20px 14px 20px 14px;">
+            <button
+            mat-button
+            (click)="navigateToPage()"
+            style="
+                    width: 200px;
+                    height: 60px;
+                    background-color:#555;
+                    border-radius: 10px;
+                    border: thin solid #444;
+                    text-align: center;
+                "
+            >
+            <a href="http://localhost:4200/#/start-process-cloud?process=gb-rest-form" target="_self" style="color:aliceblue;">
+                <span
+                style="
+                    text-align: center;
+                    color: #FFF;
+                    font-family: 'Open sans';
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:aliceblue;
+                ">START A CLAIM</span>
+            </a>
+            </button>
+        </div>
+        
+    </div>
+</div>
+```
+10. Save the file. Return to Terminal and launch the application once again using the command: ```npm start workspace-hxp```.
+    - Selecting your page button should load your html page within the content pane showing a site  
 

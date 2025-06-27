@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -8,4 +9,11 @@ import { TranslateModule } from '@ngx-translate/core';
     standalone: true,
 })
 export class CoffeeTimeComponent {
+    constructor(
+        private router: Router,
+    ) {}
+
+    navigateToPage(): void {
+        void this.router.navigate(['/coffee-time']);
+    }
 }
