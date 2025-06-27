@@ -131,7 +131,7 @@ code:
                     text-align: center;
                 "
             >
-            <a href="http://localhost:4200/#/start-process-cloud?process=gb-rest-form" target="_self" style="color:aliceblue;">
+            <a href="./#/start-process-cloud?process=gb-rest-form" target="_self" style="color:aliceblue;">
                 <span
                 style="
                     text-align: center;
@@ -148,6 +148,20 @@ code:
     </div>
 </div>
 ```
-10. Save the file. Return to Terminal and launch the application once again using the command: ```npm start workspace-hxp```.
+10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workshop-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
+11. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command: ```npm start workspace-hxp```.
     - Selecting your page button should load your html page within the content pane showing a site  
 
+
+### Building and Uploading your Custom UI to Automate
+**Summary:** Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your attended audience to see it.
+1. In Terminal, navigate to the root level of your local custom UI.
+2. Use the following command to build and package your UI: 
+```
+npm run pack-build workspace-hxp
+```
+3. Once this command is complete, files for this UI will be placed within the following directory: ```dist/workspace-hxp/```. Select all of the files within this folder (**Not the Folder itself**) and create a .zip archive. 
+4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
+![alt text](images/upload-ui.jpeg "Upload Custom UI.")
+
+5. Release and Re-deploy the project. Test all is working by launching the custom UI name instead of the Workspace UI when re-deployment is complete.
