@@ -1,6 +1,8 @@
 ### Generate a Custom UI & Download / Configure Source Code
 
-**Disclaimer:** Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
+**Disclaimer:** 
+- Ensure you have instaled nvm and Node.js by following the steps in the [ReadMe](/README.md) page.
+- Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
 
 **Summary:** This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
 1. Within Automate Studio Modelling, select the **Create Custom UI** option from the UI drop-down header in the left menu.
@@ -11,30 +13,71 @@
 ![alt text](images/download-source-code.jpeg "Select Download Source Code button")
 5. Release the application containing the custom UI you just downloaded. 
 6. Within Studio Admin, deploy the process. On the first tab of the deployment wizard, **select the Enable local development checkbox**. This is necessary in order to run the Custom UI from your local machine during development - VERY IMPORTANT!
-7. Once Deployed, from the running Application Instance menu, choose **View Configuration**.
+7. Once Deployed, from the running Application Instance menu, choose **Development Configuration**.
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
-8. Copy all of the JSON code from the configuration window and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
+8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
 9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste over the entire content of this file with the saved JSON configuration from step 8.
 10. Open a Terminal window at the root directory of the downloaded source code.
     - Install all the necessary dependencies by running the following command: ```npm i```
     - Set up the environment variables by running the following command: ```npm run setenv```
     - Run the application by running the following command: ```npm start workspace-hxp```
       - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
-11. Your Custom UI should launch in the web browser. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
+11. Your Custom UI should launch in the web browser and will look like the default UI. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
     - You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running and viewing edited files will automatically update/refresh the UI when an edited file is saved. Good luck!
 
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
-1. **Creating a Plugin** Open a Terminal window at the root directory of the downloaded source code. Paste and execute the command below to have the page created and added to the proper configuration files:
-** Replace the bolded portions in the command line with the titles you want to use.**
+1. **Creating a Plugin** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to have the page created and added to the proper configuration files:
+** Replace the bolded portions in the command line with the titles you want to use.** (In my example, I used the plugin and page names "coffee-time". For simplicity, you can use the same names or use your own if you'd prefer.)
 ```
 npx nx generate @hyland/extend:plugin --name **page-name** --author "Your Name" --addTranslations true
 ```
-   - The Plugin created will not any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
+   - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
 ** NOTE: You must use the same plug-in name used in step 1 for the plginName in this command (replace the bolded portion). Replace the pageName with the name you want for your page.**
 ```
-npx nx generate @hyland/extend:page --pluginName plugins-**your-plugin-name-used-in-step-1** --pageName **your-page-name**
+npx nx generate @hyland/extend:page --pluginName **your-plugin-name-used-in-step-1** --pageName **your-page-name**
 ```
-3. 
+3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
+```
+npm start workspace-hxp
+```
+4. If your page is working, navigate back to terminal and stop the instance using CTRL+C.
+5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/**your plugin name**/src/lib/pages/**your page name**```.
+   - You should see a few files here: ```**page name**-menu-item.components.ts```, ```**page name**-compnents.ts```, and ```**page name**-module.ts```.
+6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. Follow these steps in VS:
+   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-menu-item.component.scss```. Leave the contents of this file empty. 
+   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-menu-item.component.html```.
+   - Open the file in that same directory that is titled: ```**your page name**-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
+![alt text](images/copy-html-code.jpeg "Copy selected code.")
+     - Inside of the ```**your page name**-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
+code:
+```
+    templateUrl: './**your page name**-menu-item.component.html',
+    styleUrls: ['./**your page name**-menu-item.component.scss'],
+```
+
+* This is the code you will replace:
+![alt text](images/replace-template.jpeg "Replace this selected code.")
+
+* This what it should look like afterward (but using your page names in place of "coffee-time" in this image):
+![alt text](images/replace-template-2.jpeg "Your code should look like this.")
+
+   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.scss```. Leave the contents of this file blank.
+   - Create a new file and save it in the directory in **step 5** as: ```**your page name**-component.html```. 
+   - Open the file in this same directory titled: ```**your page name**.component.ts```.
+     - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
+```
+    templateUrl: './**your page name**-component.html',
+    styleUrls: ['./**your page name**-component.scss'],
+```
+![alt text](images/replace-componentts.jpeg "Your code should look like this.")
+
+7. Open the file you created earlier titled ```**your page name**-component.html``` and add the following code: ```<p>This is working!</p>```.
+8. All manual file additions and edits are done for core functionality and you may now test the application.
+   - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
+   - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
+   - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
+
+
