@@ -3,6 +3,7 @@
 **Disclaimer:** 
 - Ensure you have instaled nvm and Node.js by following the steps in the [ReadMe](/README.md) page.
 - Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
+- Before building a custom UI you should have an application in Automate that contains at least one process you want to launch. If not, build one before starting this guide.
 
 **Summary:** This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
 1. Within Automate Studio Modelling, select the **Create Custom UI** option from the UI drop-down header in the left menu.

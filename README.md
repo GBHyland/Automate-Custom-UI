@@ -9,7 +9,7 @@
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
-2. This command will set the HOME gloabl variable:
+2. This command will set the HOME global variable:
 ```
 \. "$HOME/.nvm/nvm.sh"
 ```
