@@ -1,7 +1,7 @@
 ### Generate a Custom UI & Download / Configure Source Code
 
 **Disclaimer:** 
-- Ensure you have instaled nvm and Node.js by following the steps in the [ReadMe](/README.md) page.
+- Ensure you have installed nvm and Node.js by following the steps in the [ReadMe](/README.md) page.
 - Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
 - Before building a custom UI you should have an application in Automate that contains at least one process you want to launch. If not, build one before starting this guide.
 
@@ -29,7 +29,7 @@
 
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
-1. **Creating a Plugin** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to have the page created and added to the proper configuration files:
+1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to have the page created and added to the proper configuration files:
 ** Replace the text "yourpluginname" in this command line with the title you want to use.** (In my example, I used the plugin and page names "coffee-time". For simplicity, you can use the same names or use your own if you'd prefer.)
 ```
 npx nx generate @hyland/extend:plugin --name yourpluginname --author "Your Name" --addTranslations true
