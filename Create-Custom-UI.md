@@ -17,28 +17,28 @@
 7. Once Deployed, from the running Application Instance menu, choose **Development Configuration**.
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
 8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
-9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste over the entire content of this file with the saved JSON configuration from step 8.
+9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Steep 8 over the entire contents of this file.
 10. Open a Terminal window at the root directory of the downloaded source code.
     - Install all the necessary dependencies by running the following command: ```npm i```
     - Set up the environment variables by running the following command: ```npm run setenv```
     - Run the application by running the following command: ```npm start workspace-hxp```
       - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
 11. Your Custom UI should launch in the web browser and will look like the default UI. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
-    - You can stop the local environment from running by pressing CTRL+C in the terminal window.
+    - Your local UI will be running in your localhost. Remember to STOP the local UI whenever you are done testing it (and before proceeding to the next section). You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running and viewing edited files will automatically update/refresh the UI when an edited file is saved. Good luck!
 
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
-1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to have the page created and added to the proper configuration files:
-** Replace the text "yourpluginname" in this command line with the title you want to use.** (In my example, I used the plugin and page names "coffee-time". For simplicity, you can use the same names or use your own if you'd prefer.)
+1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to a plugin for your page:
+**NOTE: I called my plugin"coffee-time". Replace the text "coffee-time" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
 ```
-npx nx generate @hyland/extend:plugin --name yourpluginname --author "Your Name" --addTranslations true
+npx nx generate @hyland/extend:plugin --name coffee-time --author "Greg Bousley" --addTranslations true
 ```
    - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
-** NOTE: You must replace the text "pluginname" in this code with the same plug-in name used in step 1 **AND** replace the text "pagename" with the formal name of the page you want to create. (For simplicity you may use the name "coffee-time" that I used in this example.)**
+** NOTE: You must replace the text "coffee-time" in this code with the same plug-in name used in step 1 (if you used your own plugin name) **AND** replace the text "coffee-time" with the formal name of the page you want to create (if you're using your own page name).**
 ```
-npx nx generate @hyland/extend:page --pluginName pluginname --pageName pagename
+npx nx generate @hyland/extend:page --pluginName coffee-time --pageName coffee-time
 ```
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```

@@ -19,13 +19,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 nvm install 22
 ```
-4. Run this command after installation to ensure Node.js is installed and check version:
+4. Run this command after installation to ensure Node.js is installed and check version: (should display version 22)
 ```
 node -v
 ```
-5. Verify npm version:
+5. Verify npm version: (Should display v10+, but as long as a version displays then you have npm)
 ```
-npm -v
+npm --v
 ```
 **This should be all that is necessary to create a Custom UI. Use the Guides below.**
 
