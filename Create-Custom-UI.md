@@ -21,6 +21,8 @@
 10. Open a Terminal window at the root directory of the downloaded source code.
     - Install all the necessary dependencies by running the following command: ```npm i```
     - Set up the environment variables by running the following command: ```npm run setenv```
+      - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
+![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
     - Run the application by running the following command: ```npm start workspace-hxp```
       - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
 11. Your Custom UI should launch in the web browser and will look like the default UI. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
