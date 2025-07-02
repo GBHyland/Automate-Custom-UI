@@ -29,9 +29,11 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
 ```
    - Refer to this screenshot of what lines to delete (Remember to save the file after deleting these lines!):
 ![alt text](images/delete-vars.jpg "Delete the hilighted lines of code.")
-11. Open a Terminal window at the root directory of the downloaded source code.
-    - Install all the necessary dependencies by running the following command: ```npm i```
-    - Set up the environment variables by running the following command: ```npm run setenv```
+11. Next, you'll need to open a Terminal window at the root directory of the downloaded source code. If this is new to you, here are the ways you can easily do this:
+    - **Using Visual Studio Code:** In VSCode, use the **File** drop down selection at the top of the window and select _Open Folder_. Navigate to and select the folder of the downloaded source code. Once opened, you'll notice that the file heirarchy will be on the left side panel, which will give you access to open and edit files within the UI structure for later. To open a terminal window, select the **Terminal** drop-down at the top of the window and select _New Terminal_. A terminal panel will open at the bottom of VS code placing you in the directory of the folder you opened in this step. You're now ready to proceed to the next step of running the terminal commands.
+    - **MAC OS: Using Terminal outside of VS Code:** Using your file explorer (Finder), navigate to the folder of your downloaded source code. RIGHT-CLICK on the folder and select _services_ from the right-click menu. Select _New Terminal at Folder_ from the menu. A terminal window should open at the file location. You're now ready to proceed to the next step of running the terminal commands.
+    - Install all the necessary dependencies by running the following command in Terminal: ```npm i```
+    - Set up the environment variables by running the following command in Terminal: ```npm run setenv```
       - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
 ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
     - Run the application by running the following command: ```npm start workspace-hxp```
