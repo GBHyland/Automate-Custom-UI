@@ -17,15 +17,26 @@
 7. Once Deployed, from the running Application Instance menu, choose **Development Configuration**.
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
 8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
-9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Steep 8 over the entire contents of this file.
-10. Open a Terminal window at the root directory of the downloaded source code.
+9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Steep 8 over the entire contents of this file. SAVE IT!
+10. **As of this writing, a bug was introduced to Automate that added support for governance but did not propogate to custom UIs**. This step is a workaround hot fix for this bug and will be removed once the product has been permanently solutioned. 
+    - In your local UI files, find and open the file titled ```project.variables.json5``` found at this path: ```apps/workspace-hxp/```.
+    - You need to delete the following two lines of code in this file:
+```
+...
+APP_CONFIG_GOVERNANCE_HOST: '{context.governanceHost}',
+...
+NUCLEUS_API_HOST: '{context.nucleusApiHost}',
+```
+   - Refer to this screenshot of what lines to delete:
+![alt text](images/delete-vars.jpg "Delete the hilighted lines of code.")
+11. Open a Terminal window at the root directory of the downloaded source code.
     - Install all the necessary dependencies by running the following command: ```npm i```
     - Set up the environment variables by running the following command: ```npm run setenv```
       - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
 ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
     - Run the application by running the following command: ```npm start workspace-hxp```
       - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
-11. Your Custom UI should launch in the web browser and will look like the default UI. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
+12. Your Custom UI should launch in the web browser and will look like the default UI. You are now ready to make edits to the Custom UI and view the results from this local dev environment. Some things to note:
     - Your local UI will be running in your localhost. Remember to STOP the local UI whenever you are done testing it (and before proceeding to the next section). You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running and viewing edited files will automatically update/refresh the UI when an edited file is saved. Good luck!
 
