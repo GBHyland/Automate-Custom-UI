@@ -46,15 +46,15 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
 1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to create a plugin for your page:
-**NOTE: I called my plugin"coffee-time". Replace the text "coffee-time" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
+**NOTE: I titled my plugin "coffee". Replace the text "coffee" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
 ```
-npx nx generate @hyland/extend:plugin --name coffee-time --author "Greg Bousley" --addTranslations true
+npx nx generate @hyland/extend:plugin --name coffee --author "Greg Bousley" --addTranslations true
 ```
-   - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2.
+   - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2. 
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
-** NOTE: You must replace the text "coffee-time" in this code with the same plug-in name used in step 1 (if you used your own plugin name) **AND** replace the text "coffee-time" with the formal name of the page you want to create (if you're using your own page name).**
+** NOTE: You must replace the text "coffee" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "coffee-time" with the formal name of the page you want to create (if you're using your own page name). NOTE: Do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
 ```
-npx nx generate @hyland/extend:page --pluginName coffee-time --pageName coffee-time
+npx nx generate @hyland/extend:page --pluginName coffee --pageName coffee-time
 ```
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```
