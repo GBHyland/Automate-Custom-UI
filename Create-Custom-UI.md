@@ -126,7 +126,7 @@ code:
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
 9. Add your custom HTML code to create your new page design:
-   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. 
+   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. (If you want to use your own html code then feel free to use that instead)
 ```
 <!-- GB HTML -->
 <style>
@@ -187,12 +187,12 @@ code:
  ```
  npm start workspace-hxp
  ```  
-- Selecting your page button should load your html page within the content pane showing a site  
+- Once the page loads, selecting your page button should now load your html page within the content pane showing the 9 Second Insurance claims portal site (or whatever HTML code you used)
 
 
 ### Building and Uploading your Custom UI to Automate
 **Summary:** 
-Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your attended audience to see it.
+Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your intended audience to see it.
 1. In Terminal, navigate to the root level of your local custom UI.
 2. Use the following command to build and package your UI: 
 ```
