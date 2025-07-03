@@ -183,8 +183,11 @@ code:
 </div>
 ```
 10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workshop-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
-11. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command: ```npm start workspace-hxp```.
-    - Selecting your page button should load your html page within the content pane showing a site  
+11. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
+ ```
+ npm start workspace-hxp
+ ```  
+- Selecting your page button should load your html page within the content pane showing a site  
 
 
 ### Building and Uploading your Custom UI to Automate
