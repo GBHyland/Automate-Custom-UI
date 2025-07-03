@@ -50,11 +50,12 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
         ```
 **Note:** At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
 ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
+&nbsp;
     - Run the application by running the following command: 
         ```
         npm start workspace-hxp
         ```
-      - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
+    - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
 12. Your Custom UI should launch in the web browser and will look like the default UI. Some things to note:
     - Your local UI will be running in your localhost. Remember to STOP the local UI whenever you are done testing it (and before proceeding to the next section). You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running. Editing and saving a file will automatically update/refresh the UI.
