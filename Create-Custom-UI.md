@@ -137,11 +137,9 @@ code:
 </style>
 <div style="width:100%; background-color:azure;">
     <div id="header" style="height: 85px; background-color:steelblue;">
-        <!--
         <div style="float: left;">
             <img style="height: 60px; padding: 10px 0px 0px 40px;" src="assets/images/9si-logo.png">
         </div>
-         -->
         <div id="header-text" style="padding: 22px 0px 0px 20px;">
             <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
         </div>
