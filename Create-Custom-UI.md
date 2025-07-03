@@ -46,15 +46,15 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
 ### Creating a Plugin and a Page
 **Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
 1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to create a plugin for your page:
-**NOTE: I titled my plugin "coffee". Replace the text "coffee" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
+**NOTE: I titled my plugin "ninesi". Replace the text "ninesi" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
 ```
-npx nx generate @hyland/extend:plugin --name coffee --author "Greg Bousley" --addTranslations true
+npx nx generate @hyland/extend:plugin --name ninesi --author "Greg Bousley" --addTranslations true
 ```
    - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2. 
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
-** NOTE: You must replace the text "coffee" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "coffee-time" with the formal name of the page you want to create (if you're using your own page name). NOTE: Do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
+** NOTE: You must replace the text "ninesi" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "nine-si" with the formal name of the page you want to create (if you're using your own page name). NOTE: Do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
 ```
-npx nx generate @hyland/extend:page --pluginName coffee --pageName coffee-time
+npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 ```
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```
@@ -78,7 +78,7 @@ code:
 * This is the code you will replace:
 ![alt text](images/replace-template.jpeg "Replace this selected code.")
 
-* This what it should look like afterward (but using your page names in place of "coffee-time" in this image):
+* This what it should look like afterward (but using your page names in place of "nine-si" in this image):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank.
@@ -107,7 +107,7 @@ code:
 8. All manual file additions and edits are done for core functionality and you may now test the application.
    - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
-   - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
+   - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
 9. Add your custom HTML code to create your new page design:
    - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the "a href" URL in the code below with the name of the process in your application. 
 ```
@@ -119,23 +119,23 @@ code:
       
 </style>
 <div style="width:100%; background-color:azure;">
-    <div id="header" style="height: 85px; background-color:rgb(126, 96, 31);">
-        
+    <div id="header" style="height: 85px; background-color:steelblue;">
+        <!--
         <div style="float: left;">
-            <img style="height: 60px; padding: 10px 20px 0px 40px;" src="assets/images/coffee-logo.png">
+            <img style="height: 60px; padding: 10px 0px 0px 40px;" src="assets/images/9si-logo.png">
         </div>
-         
+         -->
         <div id="header-text" style="padding: 22px 0px 0px 20px;">
-            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#ffffff;">Coffee Time!</div>
+            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
         </div>
         
     </div>
-    <div id="banner" style="height: 800px; text-align: center; background-image: url('assets/images/coffee-shop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <div style="height: 300px;">&nbsp;</div>
-        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">COFFEE TIME</div>
-        <div style="height: 0px;">&nbsp;</div>
+    <div id="banner" style="height: 800px; text-align: center; background-image: url('assets/images/background.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div style="height: 420px;">&nbsp;</div>
+        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">CLAIMS PORTAL</div>
+        <div style="height: 10px;">&nbsp;</div>
         
-        <div style="padding: 22px 14px 20px 14px;">
+        <div style="padding: 20px 14px 20px 14px;">
             <button
             mat-button
             (click)="navigateToPage()"
@@ -148,7 +148,7 @@ code:
                     text-align: center;
                 "
             >
-            <a href="./#/start-process-cloud?process=gb-rest-form" target="_self" style="color:aliceblue;">
+            <a href="http://localhost:4200/#/start-process-cloud?process=the-basics" target="_self" style="color:aliceblue;">
                 <span
                 style="
                     text-align: center;
@@ -157,11 +157,11 @@ code:
                     font-size: 20px;
                     font-weight: bold;
                     color:aliceblue;
-                ">ORDER NOW</span>
+                ">START A CLAIM</span>
             </a>
             </button>
         </div>
-        <div style="height: 500px;">&nbsp;</div>
+        
     </div>
 </div>
 ```
