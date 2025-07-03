@@ -18,6 +18,7 @@
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
 8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
 9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Steep 8 over the entire contents of this file. SAVE IT! You may close the file once this is done, as you will not edit it any more.
+<!-->
 10. **As of this writing, a bug was introduced to Automate that added support for governance but did not propogate to custom UIs causing an error with the next step**. This step is a workaround hot fix for this bug and will be removed once the product has been permanently solutioned. 
     - In your local UI files, find and open the file titled ```project.variables.json5``` found at this path: ```apps/workspace-hxp/```.
     - You need to delete the following two lines of code in this file. (Once deleted remember to **save the file**. You may also close the file once you've deleted these lines as you won't edit it any more):
@@ -29,17 +30,18 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
 ```
    - Refer to this screenshot of what lines to delete (Remember to save the file after deleting these lines!):
 ![alt text](images/delete-vars.jpg "Delete the hilighted lines of code.")
-11. Next, you'll need to open a Terminal window at the root directory of the downloaded source code. If this is new to you, here are the ways you can easily do this:
+-->
+10. Next, you'll need to open a Terminal window at the root directory of the downloaded source code. If this is new to you, here are the ways you can easily do this:
     - **Using Visual Studio Code:** In VSCode, use the **File** drop down selection at the top of the window and select _Open Folder_. Navigate to and select the folder of the downloaded source code. Once opened, you'll notice that the file heirarchy will be on the left side panel, which will give you access to open and edit files within the UI structure for later. To open a terminal window, select the **Terminal** drop-down at the top of the window and select _New Terminal_. A terminal panel will open at the bottom of VS code placing you in the directory of the folder you opened in this step. You're now ready to proceed to the next step of running the terminal commands.
     - **MAC OS: Using Terminal outside of VS Code:** Using your file explorer (Finder), navigate to the folder of your downloaded source code. RIGHT-CLICK on the folder and select _services_ from the right-click menu. Select _New Terminal at Folder_ from the menu. A terminal window should open at the file location. You're now ready to proceed to the next step of running the terminal commands.
-12. **Running Terminal commands:** You're almost done!
+11. **Running Terminal commands:** You're almost done!
     - Install all the necessary dependencies by running the following command in Terminal: ```npm i```
     - Set up the environment variables by running the following command in Terminal: ```npm run setenv```
       - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
 ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
     - Run the application by running the following command: ```npm start workspace-hxp```
       - Once building the UI is complete it should launch automatically in a browser window, but in case it does not you can view the UI manually by opening your browser and navigating to this address: ```http://localhost:4200/```
-13. Your Custom UI should launch in the web browser and will look like the default UI. Some things to note:
+12. Your Custom UI should launch in the web browser and will look like the default UI. Some things to note:
     - Your local UI will be running in your localhost. Remember to STOP the local UI whenever you are done testing it (and before proceeding to the next section). You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running. Editing and saving a file will automatically update/refresh the UI.
 
