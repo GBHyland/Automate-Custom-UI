@@ -90,14 +90,14 @@ code:
     styleUrls: ['./yourpagename-component.scss'],
 ```
 - Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
-- Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code, replacing my page name ("coffee-time") with yours inside of the hard brackets "[]":
+- Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code inside of the hard brackets "[]", replacing the text "yourpagename" with your page name (do not remove the "/"):
 ```
     constructor(
         private router: Router,
     ) {}
 
     navigateToPage(): void {
-        void this.router.navigate(['/coffee-time']);
+        void this.router.navigate(['/yourpagename']);
     }
 ```
 - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
