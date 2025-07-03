@@ -89,8 +89,8 @@ code:
     templateUrl: './yourpagename-component.html',
     styleUrls: ['./yourpagename-component.scss'],
 ```
-     - Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
-     - Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code, replacing my page name ("coffee-time") with yours inside of the hard brackets "[]":
+- Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
+- Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code, replacing my page name ("coffee-time") with yours inside of the hard brackets "[]":
 ```
     constructor(
         private router: Router,
@@ -100,7 +100,7 @@ code:
         void this.router.navigate(['/coffee-time']);
     }
 ```
-     - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
+- Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
 7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code: ```<p>This is working!</p>```.
