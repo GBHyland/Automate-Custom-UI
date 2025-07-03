@@ -181,4 +181,4 @@ npm run pack-build workspace-hxp
 4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
 ![alt text](images/upload-ui.jpeg "Upload Custom UI.")
 
-5. Release and Upgrade the project. Test all is working by launching the custom UI name instead of the Workspace UI when Upgrade is complete.
+5. Save the process, release, then navigate to **Studio Admin** and Upgrade the project. Test all is working by launching the custom UI name instead of the Workspace UI when Upgrade is complete.
