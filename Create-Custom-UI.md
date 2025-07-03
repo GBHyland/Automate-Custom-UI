@@ -48,9 +48,8 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
         ```
         npm run setenv
         ```
-**Note:** At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
-![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")
-<br>
+    - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
+    ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")  
     - Run the application by running the following command: 
         ```
         npm start workspace-hxp
