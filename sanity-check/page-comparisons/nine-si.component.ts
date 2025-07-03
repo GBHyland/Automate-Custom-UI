@@ -3,17 +3,17 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    templateUrl: './coffee-time-component.html',
-    styleUrls: ['./coffee-time-component.scss'],
+    templateUrl: './nine-si-component.html',
+    styleUrls: ['./nine-si-component.scss'],
     imports: [TranslateModule],
     standalone: true,
 })
-export class CoffeeTimeComponent {
-    constructor(
+export class NineSiComponent {
+        constructor(
         private router: Router,
     ) {}
 
     navigateToPage(): void {
-        void this.router.navigate(['/coffee-time']);
+        void this.router.navigate(['/yourpagename']);
     }
 }
