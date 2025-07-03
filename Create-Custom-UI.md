@@ -1,13 +1,16 @@
-### Generate a Custom UI & Download / Configure Source Code
+## Create a Custom UI Within Automate
 
 **Disclaimer:** 
 - Ensure you have installed nvm and Node.js by following the steps in the [ReadMe](/README.md) page.
 - Using Visual Studio Code is strongly recommended since you'll be editing .html, .ts and .json files. You'll also need to use a Terminal window and VS Code allows you to open a terminal window from within the app to run necessary commands and provides a convenient dev experience.
 - Before building a custom UI you should have an application in Automate that contains at least one process you want to launch. If not, build one before starting this guide.
 
-**Scenario:** I built this custom UI with the idea in mind that the target audience wuld be an internal Insurance Claim team that uses their own UI portal to start claims on behalf of customers. The idea is that the custom UI is relevant in that it can be tweaked to remove assets from the default UI that you would not want the claims team members to have access to, i.e.: you only want them to process claims, not access any other processes or repositories. Please feel free to customize this to your own scenario, or follow the guide as is.
+**Scenario:** 
+I built this custom UI with the idea in mind that the target audience wuld be an internal Insurance Claim team that uses their own UI portal to start claims on behalf of customers. The idea is that the custom UI is relevant in that it can be tweaked to remove assets from the default UI that you would not want the claims team members to have access to, i.e.: you only want them to process claims, not access any other processes or repositories. Please feel free to customize this to your own scenario, or follow the guide as is.
 
-**Summary:** This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
+### Generate a Custom UI & Download / Configure Source Code
+**Summary:** 
+This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
 1. Within Automate Studio Modelling, select the **Create Custom UI** option from the UI drop-down header in the left menu.
 ![alt text](images/custom-ui-select.jpeg "Select Create Custom UI")
 2. In the pop-up box, give it a name and optional description.
@@ -48,7 +51,8 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running. Editing and saving a file will automatically update/refresh the UI.
 
 ### Creating a Plugin and a Page
-**Summary:** A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
+**Summary:** 
+A Plugin is first necessary in order to create a Page, so don't skip step 1. A Page loads into the main content window of the UI. This guide will show you how to create and customize your own page and add a button for navigation.
 1. **Creating a Plugin:** Open a Terminal window at the root directory of the downloaded source code (if not already open from the previous section). Paste and execute the command below to create a plugin for your page:
 **NOTE: I titled my plugin "ninesi". Replace the text "ninesi" in this command line with the title you want to use. This will not be the formal name of your page, just the behind-the-scenes name for your plugin. For simplicity, feel free to use my plugin and page names unless you prefer your own names.** 
 ```
@@ -175,7 +179,8 @@ code:
 
 
 ### Building and Uploading your Custom UI to Automate
-**Summary:** Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your attended audience to see it.
+**Summary:** 
+Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your attended audience to see it.
 1. In Terminal, navigate to the root level of your local custom UI.
 2. Use the following command to build and package your UI: 
 ```
