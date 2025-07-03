@@ -61,7 +61,7 @@ npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 npm start workspace-hxp
 ```
 4. If your page is working, navigate back to terminal and stop the instance using CTRL+C.
-5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/**your plugin name**/src/lib/pages/yourpagename```.
+5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
    - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
 6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. **NOTE:** Replace all instances of the text "yourpagename" with the actual page name you used in Step 2. Follow these steps in VS:
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty. 
@@ -75,10 +75,10 @@ code:
     styleUrls: ['./yourpagename-menu-item.component.scss'],
 ```
 
-* This is the code you will replace:
+* This is the code you will replace:<br>
 ![alt text](images/replace-template.jpeg "Replace this selected code.")
 
-* This what it should look like afterward (but using your page names in place of "nine-si" in this image):
+* This what it should look like afterward (but using your page names in place of "coffee-time" in this image):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank.
@@ -109,7 +109,7 @@ code:
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
 9. Add your custom HTML code to create your new page design:
-   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the "a href" URL in the code below with the name of the process in your application. 
+   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. 
 ```
 <!-- GB HTML -->
 <style>
@@ -148,7 +148,7 @@ code:
                     text-align: center;
                 "
             >
-            <a href="http://localhost:4200/#/start-process-cloud?process=the-basics" target="_self" style="color:aliceblue;">
+            <a href="http://localhost:4200/#/start-process-cloud?process=yourprocessname" target="_self" style="color:aliceblue;">
                 <span
                 style="
                     text-align: center;
