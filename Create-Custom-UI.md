@@ -109,7 +109,7 @@ code:
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "coffee-time").
 9. Add your custom HTML code to create your new page design:
-   - In the ```yourpagename-component.html``` and add the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the "a href" URL in the code below with the name of the process in your application. 
+   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```gb-rest-form``` in the "a href" URL in the code below with the name of the process in your application. 
 ```
 <!-- GB HTML -->
 <style>
@@ -122,7 +122,7 @@ code:
     <div id="header" style="height: 85px; background-color:rgb(126, 96, 31);">
         
         <div style="float: left;">
-            <img style="height: 60px; padding: 10px 20px 0px 40px;" src="https://i.postimg.cc/mgMRM1rf/coffee-logo.png">
+            <img style="height: 60px; padding: 10px 20px 0px 40px;" src="assets/images/coffee-logo.png">
         </div>
          
         <div id="header-text" style="padding: 22px 0px 0px 20px;">
@@ -130,7 +130,7 @@ code:
         </div>
         
     </div>
-    <div id="banner" style="height: 800px; text-align: center; background-image: url('https://i.postimg.cc/CxcwNpgS/coffee-shop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div id="banner" style="height: 800px; text-align: center; background-image: url('assets/images/coffee-shop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div style="height: 300px;">&nbsp;</div>
         <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">COFFEE TIME</div>
         <div style="height: 0px;">&nbsp;</div>
