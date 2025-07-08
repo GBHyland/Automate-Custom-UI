@@ -67,12 +67,14 @@ A Plugin is first necessary in order to create a Page, so don't skip step 1. A P
 ```
 npx nx generate @hyland/extend:plugin --name ninesi --author "Greg Bousley" --addTranslations true
 ```
+   - You should receive a logged response that files were created and updated.
    - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2. 
 2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:  
 **NOTE: You must replace the text "ninesi" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "nine-si" with the formal name of the page you want to create (if you're using your own page name). Also, do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
 ```
 npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 ```
+   - You should receive a logged response that files were created and updated.
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```
 npm start workspace-hxp
@@ -125,7 +127,7 @@ code:
    - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
-9. Add your custom HTML code to create your new page design:
+9. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create your a page design:
    - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. (If you want to use your own html code then feel free to use that instead)
 ```
 <!-- GB HTML -->
