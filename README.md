@@ -35,7 +35,7 @@ npm --v
 ### Windows:
 1. Install Node.js:  
    - Navigate to this url [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-     - On that page,at the top of the code box,ensure the dropdown boxes say (If not, edit the dropdown boxes): Get node.js ```v22.17.0(LTS)``` for ```Windows``` using ```Chocolatey``` with ```npm```.
+     - On that page, at the top of the code box, use the drop-down selectors to set the following configuration: _Get node.js ```v22.17.0(LTS)``` for ```Windows``` using ```Chocolatey``` with ```npm```_.
      - Open the **Powershell** application on your machine **in Adminstratioin Mode**.
      - In Powershell, paste and run the **first** command, which will installnode.js.
      - **IMPORTANT**: Close Powershell and re-open in **Admin Mode** after this installs.
