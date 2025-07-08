@@ -95,7 +95,7 @@ code:
 * This is the code you will replace:<br>
 ![alt text](images/replace-template.jpeg "Replace this selected code.")
 
-* This what it should look like afterward (but using your page names in place of "coffee-time" in this image):
+* This what it should look like afterward (but using your page names in place of "nine-si" in this image if you used custom names):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank.
