@@ -81,7 +81,7 @@ npm start workspace-hxp
 5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
    - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
 6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. **NOTE:** Replace all instances of the text "yourpagename" with the actual page name you used in Step 2. Follow these steps in VS:
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty. 
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty and close it. 
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.html```.
    - Open the file in that same directory that is titled: ```yourpagename-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
 ![alt text](images/copy-html-code.jpeg "Copy selected code.")
@@ -98,7 +98,7 @@ code:
 * This what it should look like afterward (but using your page names in place of "nine-si" in this image if you used custom names):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank.
+   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank and close it.
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.html```. 
    - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```yourpagename.component.ts```.
      - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. 
