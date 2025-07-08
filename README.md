@@ -5,27 +5,19 @@
   - Download VSCode [here](https://code.visualstudio.com/download).
 
 ## Pre-Requisite Installations (NEEDED)
-### Install Node.js (to run mvn commands)
-<!--NOTE: If you are on a windows machine, you can access a Terminal window to run the below commands within Visual Studio Code (recommended application) by using the top menu bar, selecting **View**, then selecting **Terminal**.-->
-1. Install Node.js
-**MAC OS**
+I will break this guide down into 2 sections, MAC OS users and Windows users. Proceed to the section that applies to you.
+
+### MAC OS:
+1. Install Node.js  
    - Open a Terminal Window and enter the following command to install npm:
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
-**Windows**
-   - Navigate to this url(https://nodejs.org/en/download/)[https://nodejs.org/en/download/]
-     - On that page,at the top of the code box,ensure the dropdown boxes say (If not, edit the dropdown boxes): Get node.js ```v22.17.0(LTS)``` for ```Windows``` using ```Chocolatey``` with ```npm```.
-     - Open the **Powershell** application on your machine **in Adminstratioin Mode**.
-     - In Powershell, paste and run the **first** command, which will installnode.js.
-     - **IMPORTANT**: Close Powershell and re-open in **Admin Mode** after this installs.
-     - Paste and run the second command.
-     - You should now be abl;e to run the version commands to ensure bothnode and npm are installed. ```node -v``` and ```npm -v```.
 2. This command will set the HOME global variable:
 ```
-\. "$HOME/.nvm/nvm.sh"
+"$HOME/.nvm/nvm.sh"
 ```
-3. Run this command to install Node.js:
+3. Install NVM: _Run this command in Terminal_
 ```
 nvm install 22
 ```
@@ -37,7 +29,39 @@ node -v
 ```
 npm --v
 ```
-**This should be all that is necessary to create a Custom UI. Use the Guides below.**
+**This should be all that is necessary to create a Custom UI. Continue to the Generate a Custom UI Guide at the bottom of the page.**
 
-## Generate a Custom UI & Download Source Code
+
+### Windows:
+1. Install Node.js:  
+   - Navigate to this url [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+     - On that page,at the top of the code box,ensure the dropdown boxes say (If not, edit the dropdown boxes): Get node.js ```v22.17.0(LTS)``` for ```Windows``` using ```Chocolatey``` with ```npm```.
+     - Open the **Powershell** application on your machine **in Adminstratioin Mode**.
+     - In Powershell, paste and run the **first** command, which will installnode.js.
+     - **IMPORTANT**: Close Powershell and re-open in **Admin Mode** after this installs.
+     - Paste and run the second command.
+     - You should now be able to run the version commands to ensure bothnode and npm are installed. ```node -v``` and ```npm -v```.
+2. While still in Powershell, run this command to set the HOME global variable:
+```
+"$HOME/.nvm/nvm.sh"
+```
+3. Install NVM: _Complete the following process_
+   - Navigate to [this webpage](https://github.com/coreybutler/nvm-windows/releases).
+   - Under the latest version of the nvm installer, find the hyperlink that is titled: **nvm-setup.exe**
+_Use this screenshot as a guide_
+![alt text](images/nvm-windows.jpeg "Select the nvm installer")
+   - Run the downloaded .exe file and follow the install wizard.  
+**NOTE:** You may now open Visual Studio Code and use the embedded Terminal window within VSCode for an easier experience moving forward. **Be sure to launch VS Code in Administration mode, which will provide the Terminal window with authority to install additional packets later on.** Once VSCode is opened, you can open a terminal window from within the application by selecting **Terminal** from the top drop-down options, then selecting **New Terminal**. The following commands can also be run in Powershell (in Admin mode). 
+4. Run this command after installation to ensure Node.js is installed and check version: (should display version 22)
+```
+node -v
+```
+5. Verify npm version: (Should display v10+, but as long as a version displays then you have npm)
+```
+npm --v
+```
+**This should be all that is necessary to create a Custom UI. Continue to the Generate a Custom UI Guide at the bottom of the page.**
+
+
+## Continue on to Generate a Custom UI
 [Create a Custom UI](/Create-Custom-UI.md)
