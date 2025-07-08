@@ -68,8 +68,8 @@ A Plugin is first necessary in order to create a Page, so don't skip step 1. A P
 npx nx generate @hyland/extend:plugin --name ninesi --author "Greg Bousley" --addTranslations true
 ```
    - The Plugin created will not have any noticeable functionality, but will add configuration to the correct files to support the page you'll create in step 2. 
-2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:
-** NOTE: You must replace the text "ninesi" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "nine-si" with the formal name of the page you want to create (if you're using your own page name). NOTE: Do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
+2. **Create a Page** Execute the following command in order to create a page with button added to the left pane to navigate to your page:  
+**NOTE: You must replace the text "ninesi" in this code with the same plugin name you used in step 1 (if you used your own plugin name) **AND** replace the text "nine-si" with the formal name of the page you want to create (if you're using your own page name). Also, do not use any spaces or numbers when creating a page name as it does not work with the generator (The actual formal name that is displayed on buttons / pages can be edited later).**
 ```
 npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 ```
