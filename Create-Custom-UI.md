@@ -85,8 +85,8 @@ npm start workspace-hxp
 5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
    - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
 6. In order to create a custom page you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a these new files and save them in the directory mentioned above. **NOTE:** Over the next few steps, replace all instances of the text "yourpagename" with the actual page name you used in Step 2. To start creating the files, follow these steps in VS Code:
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty and close it. 
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.html```.
+   - Create a new file titled ```yourpagename-menu-item.component.scss``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. Leave the contents of this file empty and close it. 
+   - Create a new file titled ```yourpagename-menu-item.component.html``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
    - Open the file in that same directory that is titled: ```yourpagename-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
 ![alt text](images/copy-html-code.jpeg "Copy selected code.")
      - Inside of the ```yourpagename-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
@@ -102,16 +102,19 @@ code:
 * This what it should look like afterward (but using your page names in place of "nine-si" in this image if you used custom names):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.scss```. Leave the contents of this file blank and close it.
-   - Create a new file and save it in the directory in **step 5** as: ```yourpagename-component.html```. 
+   - Create a new file titled ```yourpagename-component.scss``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. Leave the contents of this file blank and close it.
+   - Create a new file titled ```yourpagename-component.html``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
    - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```yourpagename.component.ts```.
      - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. 
 ```
     templateUrl: './yourpagename-component.html',
     styleUrls: ['./yourpagename-component.scss'],
 ```
-- Next, at the top of the file, add the following import: ```import { Router } from '@angular/router';```.
-- Finally, within the **export class** constructor (inside of the brackets "{}"), add the following code inside of the hard brackets "[]", replacing the text "yourpagename" with your page name (do not remove the "/"):
+   - Next, at the top of the file, add the following import: 
+```
+import { Router } from '@angular/router';
+```
+   - Finally, within the **export class** constructor (inside of the brackets "{}"), replacing the text "yourpagename" with your page name (do not remove the "/"):
 ```
     constructor(
         private router: Router,
@@ -121,7 +124,7 @@ code:
         void this.router.navigate(['/yourpagename']);
     }
 ```
-- Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
+   - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
 7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code: ```<p>This is working!</p>```.
