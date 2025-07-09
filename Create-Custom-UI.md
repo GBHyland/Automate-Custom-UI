@@ -114,7 +114,7 @@ code:
 ```
 import { Router } from '@angular/router';
 ```
-   - Finally, within the **export class** constructor (inside of the brackets "{}"), replacing the text "yourpagename" with your page name (do not remove the "/"):
+   - Finally, within the **export class** constructor (inside of the brackets "{}"), replacing the text "yourpagename" with your page name (do not remove the "./"):
 ```
     constructor(
         private router: Router,
