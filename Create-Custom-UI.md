@@ -197,9 +197,9 @@ npm start workspace-hxp
 11. **Optional:** Change the name of the button that launches your page. 
    - Open the file titled ```yourpagename-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
    - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the <span> tags with the title you want on the button.
-![alt text](images/button-name.jpeg "Button Name to Replace."). 
-Your edited file should look like this (assuming you use the title I used "Claim Portal"):
-![alt text](images/new-button-name.jpeg "New Button Name.").
+![alt text](images/button-name.jpeg "Button Name to Replace.").  <br>
+Your edited file should look like this (assuming you use the title I used "Claim Portal"):  
+![alt text](images/new-button-name.jpeg "New Button Name.").  <br>
 12. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
  ```
  npm start workspace-hxp
