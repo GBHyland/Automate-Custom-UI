@@ -22,7 +22,7 @@ This portion will show you how to create a custom UI within your application, do
 7. Once Deployed, from the running Application Instance menu, choose **Development Configuration**.
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
 8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
-9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Steep 8 over the entire contents of this file. SAVE IT! You may close the file once this is done, as you will not edit it any more.
+9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Step 8 over the entire contents of this file. SAVE IT! You may close the file once this is done, as you will not edit it any more.
 <!--
 10. **As of this writing, a bug was introduced to Automate that added support for governance but did not propogate to custom UIs causing an error with the next step**. This step is a workaround hot fix for this bug and will be removed once the product has been permanently solutioned. 
     - In your local UI files, find and open the file titled ```project.variables.json5``` found at this path: ```apps/workspace-hxp/```.
