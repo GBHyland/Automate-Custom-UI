@@ -196,7 +196,7 @@ npm start workspace-hxp
 10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
 11. **Optional:** Change the name of the button that launches your page. 
    - Open the file titled ```yourpagename-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
-   - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the <span> tags with the title you want on the button.
+   - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the ```<span>``` tags with the title you want on the button.  <br>
 ![alt text](images/button-name.jpeg "Button Name to Replace.").  <br>
 Your edited file should look like this (assuming you use the title I used "Claim Portal"):  
 ![alt text](images/new-button-name.jpeg "New Button Name.").  <br>
