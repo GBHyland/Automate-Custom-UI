@@ -194,7 +194,13 @@ npm start workspace-hxp
 </div>
 ```
 10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
-11. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
+11. **Optional:** Change the name of the button that launches your page. 
+   - Open the file titled ```yourpagename-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
+   - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the <span> tags with the title you want on the button.
+![alt text](images/button-name.png "Button Name to Replace."). 
+Your edited file should look like this (assuming you use the title I used "Claim Portal"):
+![alt text](images/new-button-name.png "New Button Name.").
+12. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
  ```
  npm start workspace-hxp
  ```  
@@ -214,5 +220,4 @@ npm run pack-build workspace-hxp
 3. Once this command is complete, files for this UI will be placed within the following directory: ```dist/workspace-hxp/```. Select all of the files within this folder (**Not the Folder itself**) and create a .zip archive. 
 4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
 ![alt text](images/upload-ui.jpeg "Upload Custom UI.")
-
 5. Save the process, release, then navigate to **Studio Admin** and Upgrade the project. Test all is working by launching the custom UI name instead of the Workspace UI when Upgrade is complete.
