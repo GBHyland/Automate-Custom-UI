@@ -44,11 +44,12 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
         ```
         npm i
         ```
+    - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long a there are no erorrs you should be good to proceed to the next step.
     - Set up the environment variables by running the following command in Terminal: 
         ```
         npm run setenv
         ```
-    - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long as the final message looks like this screenshot, you are good to go!
+    - You should get a response similar to the one in the screenshot below. If so, you are good to go!
     ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")  
     - Run the application by running the following command: 
         ```
