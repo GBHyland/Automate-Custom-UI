@@ -138,7 +138,10 @@ npm start workspace-hxp
 ```
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
-9. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create your a page design:
+
+
+### Customizing Your Page
+1. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create custom page design:
    - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. (If you want to use your own html code then feel free to use that instead)
 ```
 <!-- GB HTML -->
@@ -193,14 +196,14 @@ npm start workspace-hxp
     </div>
 </div>
 ```
-10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
-11. **Optional:** Change the name of the button that launches your page. 
+2. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
+3. **Optional:** Change the name of the button that launches your page. 
    - Open the file titled ```yourpagename-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
    - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the ```<span>``` tags with the title you want on the button.  <br>
 ![alt text](images/button-name.jpeg "Button Name to Replace.").  <br>
 Your edited file should look like this (assuming you use the title I used "Claim Portal"):  
 ![alt text](images/new-button-name.jpeg "New Button Name.").  <br>
-12. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
+4. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
  ```
  npm start workspace-hxp
  ```  
