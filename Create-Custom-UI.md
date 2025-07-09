@@ -127,7 +127,10 @@ import { Router } from '@angular/router';
    - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
-7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code: ```<p>This is working!</p>```.
+7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code:  
+```
+<p>This is working!</p>
+```
 8. All manual file additions and edits are done for core functionality and you may now test the application.
    - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: 
 ```
@@ -190,7 +193,7 @@ npm start workspace-hxp
     </div>
 </div>
 ```
-10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workshop-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
+10. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
 11. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
  ```
  npm start workspace-hxp
@@ -206,6 +209,8 @@ Now that you have a local developed custom UI, you'll need to build it into a pa
 ```
 npm run pack-build workspace-hxp
 ```
+**NOTE:** At the time of this writing, running the build command produces errors in the reply, however as long as you see the green "Successfully ran target build for project workspace-hxp..." (as depicted in the below screenshot) then you may disregard the errors and proceed to thenext step.  
+![alt text](images/build-reply.png "Build Command Reply.")
 3. Once this command is complete, files for this UI will be placed within the following directory: ```dist/workspace-hxp/```. Select all of the files within this folder (**Not the Folder itself**) and create a .zip archive. 
 4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
 ![alt text](images/upload-ui.jpeg "Upload Custom UI.")
