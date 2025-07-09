@@ -129,7 +129,10 @@ import { Router } from '@angular/router';
 
 7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code: ```<p>This is working!</p>```.
 8. All manual file additions and edits are done for core functionality and you may now test the application.
-   - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: ```npm start workspace-hxp```.
+   - Ensuring all edited files are saved, go back to Terminal and launch the UI using the command: 
+```
+npm start workspace-hxp
+```
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
 9. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create your a page design:
