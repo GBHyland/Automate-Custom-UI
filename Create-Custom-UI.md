@@ -80,10 +80,11 @@ npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 ```
 npm start workspace-hxp
 ```
+   - Verify your page in the UI: A button should now appear at the bottom of the left navigation panel indicating your page name. Selecting the button will load the page into the main content window with a message that page is working. 
 4. If your page is working, navigate back to terminal and stop the instance using CTRL+C.
 5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
    - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
-6. Next, you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a new file and save to this folder. **NOTE:** Replace all instances of the text "yourpagename" with the actual page name you used in Step 2. Follow these steps in VS:
+6. In order to create a custom page you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a these new files and save them in the directory mentioned above. **NOTE:** Over the next few steps, replace all instances of the text "yourpagename" with the actual page name you used in Step 2. To start creating the files, follow these steps in VS Code:
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.scss```. Leave the contents of this file empty and close it. 
    - Create a new file and save it in the directory in **step 5** as: ```yourpagename-menu-item.component.html```.
    - Open the file in that same directory that is titled: ```yourpagename-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
