@@ -8,6 +8,22 @@
 **Scenario:** 
 I built this custom UI with the idea in mind that the target audience wuld be an internal Insurance Claim team that uses their own UI portal to start claims on behalf of customers. The idea is that the custom UI is relevant in that it can be tweaked to remove assets from the default UI that you would not want the claims team members to have access to, i.e.: you only want them to process claims, not access any other processes or repositories. Please feel free to customize this to your own scenario, or follow the guide as is.
 
+---
+
+### Import Project
+First, we'll import a project into CIC to use as a starting point.
+1. Download the [sample project here](./required-docs/custom-ui-insurance.zip).
+2. Sign into CIC and navigate to the **Hyland Experience Studio Modelling** application.
+3. Select the **Upload Project** button at the top of the page (right side).
+4. In the file I/O browser, navigate to and select the .zip file you downloaded on step one.
+5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. If this popup does not appear, skip this step.
+```
+custom-ui-training-insurance
+```
+6. You should be navigated to the process model application. Continue to the next sectioin below.
+
+---
+
 ### Generate a Custom UI & Download / Configure Source Code
 **Summary:** 
 This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
@@ -59,6 +75,8 @@ NUCLEUS_API_HOST: '{context.nucleusApiHost}',
 12. Your Custom UI should launch in the web browser and will look like the default UI. Some things to note:
     - Your local UI will be running in your localhost. Remember to STOP the local UI whenever you are done testing it (and before proceeding to the next section). You can stop the local environment from running by pressing CTRL+C in the terminal window.
     - Being an asynchronous Angular environment, most changes can be made to the files while the UI is running. Editing and saving a file will automatically update/refresh the UI.
+
+---
 
 ### Creating a Plugin and a Page
 **Summary:** 
@@ -139,6 +157,7 @@ npm start workspace-hxp
    - When the UI loads, click on the button that appears (your page name) below the navigation on the left-side panel to load your page. You should see the message in the main content pane: ```This is working!```.
    - **If you get any errors** refer to [this page](sanity-check/page-comparisons) in this github and compare your file content to mine to ensure everything is correct, ensuring that you replace all instances of my page name with the page name you used (if other than "nine-si").
 
+---
 
 ### Customizing Your Page
 1. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create custom page design:
@@ -209,6 +228,7 @@ Your edited file should look like this (assuming you use the title I used "Claim
  ```  
 - Once the page loads, selecting your page button should now load your html page within the content pane showing the 9 Second Insurance claims portal site (or whatever HTML code you used)
 
+---
 
 ### Building and Uploading your Custom UI to Automate
 **Summary:** 
