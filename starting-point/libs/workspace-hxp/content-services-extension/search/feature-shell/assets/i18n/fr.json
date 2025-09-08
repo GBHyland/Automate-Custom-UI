@@ -1,0 +1,206 @@
+{
+    "SEARCH": {
+        "FILTERS": {
+            "ACTIONS": {
+                "APPLY": "Appliquer",
+                "CLEAR_ALL": "Effacer tout"
+            },
+            "CREATED_DATE": {
+                "ARIA-LABEL": {
+                    "DEFAULT_OPTIONS_LIST": "Liste des options de date disponibles"
+                },
+                "LABEL": "Date de création",
+                "OPTIONS": {
+                    "CUSTOM_DATE": {
+                        "LABEL": "Date personnalisée",
+                        "VALUES": {
+                            "AFTER": "Après",
+                            "BEFORE": "Avant",
+                            "SINCE_TO_DATE": "Depuis le {{afterDate}} jusqu'au {{beforeDate}}",
+                            "SINCE_TO_TODAY": "Depuis le {{date}} jusqu'à aujourd'hui",
+                            "UNTIL_DATE": "Jusqu'au {{date}}"
+                        }
+                    },
+                    "LAST_7_DAYS": "Au cours des 7 derniers jours",
+                    "LAST_30_DAYS": "Au cours des 30 derniers jours",
+                    "LAST_6_MONTHS": "Au cours des 6 derniers mois",
+                    "LAST_YEAR": "Au cours de l'année dernière"
+                },
+                "BUTTON": {
+                    "CLEAR": {
+                        "ARIA_LABEL": {
+                            "AFTER": "Effacer après la date",
+                            "BEFORE": "Effacer avant la date"
+                        }
+                    }
+                },
+                "ERRORS": {
+                    "BEFORE_DATE_TOO_EARLY": "« Avant la date » ne peut pas être antérieur à « Après la date »",
+                    "AFTER_DATE_TOO_LATE": "« Après la date » ne peut pas être postérieur à « Avant la date »",
+                    "INVALID_DATE_FORMAT": "Veuillez saisir un format de date valide JJ/MM/AAAA"
+                }
+            },
+            "DOCUMENT_CATEGORY": {
+                "ARIA-LABEL": {
+                    "DOCUMENT_CATEGORIES_LIST": "Liste des catégories de documents disponibles",
+                    "CLEAR_INPUT": "Effacer l'entrée",
+                    "REMOVE": "Supprimer",
+                    "SELECTED_FILTERS": "Filtres actuellement sélectionnés"
+                },
+                "LABEL": "Type de contenu",
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Aucun résultat de recherche",
+                    "MESSAGE": "Désolé, il semble qu'aucun résultat n'ait été trouvé pour votre recherche."
+                },
+                "PLACEHOLDER": "Rechercher un type de contenu",
+                "SELECTED": "{{selected}} sélectionné(s)"
+            },
+            "DOCUMENT_LOCATION": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Retourner à « Parcourir »",
+                    "CLEAR_INPUT": "Effacer l'entrée",
+                    "REMOVE": "Supprimer",
+                    "SELECTED_FILTERS": "Filtres actuellement sélectionnés",
+                    "SEARCH_BUTTON": "Bouton de recherche"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Aucun résultat de recherche",
+                    "MESSAGE": "Désolé, il semble qu'aucun résultat n'ait été trouvé pour votre recherche."
+                },
+                "LABEL": "Rechercher dans",
+                "PLACEHOLDER": "Rechercher",
+                "SELECTED": "{{selected}} sélectionné(s)"
+            },
+            "FILE_TYPE": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Retourner à « Parcourir »",
+                    "CLEAR_INPUT": "Effacer l'entrée",
+                    "REMOVE": "Supprimer",
+                    "SELECTED_FILTERS": "Filtres actuellement sélectionnés",
+                    "SEARCH_BUTTON": "Bouton de recherche"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Aucun résultat de recherche",
+                    "MESSAGE": "Désolé, il semble qu'aucun résultat n'ait été trouvé pour votre recherche."
+                },
+                "LABEL": "Type de fichier",
+                "PLACEHOLDER": "Rechercher un type de fichier",
+                "SELECTED": "{{selected}} sélectionné(s)",
+                "CATEGORIES": {
+                    "DOCUMENTS": {
+                        "LABEL": "Documents",
+                        "FORMATS": {
+                            "PORTABLE_DOCUMENT_FORMAT": "Format de document portable",
+                            "PRESENTATION": "Présentation",
+                            "SPREADSHEET": "Tableur",
+                            "TEXT_DOCUMENT": "Document texte",
+                            "TEXT_FILE": "Fichier texte"
+                        }
+                    },
+                    "IMAGES": {
+                        "LABEL": "Images",
+                        "FORMATS": {
+                            "UNCOMPRESSED_IMAGE_FORMATS": "Formats d'image non compressée",
+                            "COMPRESSED_IMAGE_FORMATS": "Formats d'image compressée",
+                            "VECTOR_IMAGE_FORMATS": "Formats d'image vectorielle",
+                            "SOFTWARE_FILES": "Fichiers logiciels"
+                        }
+                    },
+                    "VIDEO": {
+                        "LABEL": "Vidéo",
+                        "FORMATS": {
+                            "UNCOMPRESSED_VIDEO_FORMATS": "Formats vidéo non compressés",
+                            "COMPRESSED_VIDEO_FORMATS": "Formats vidéo compressés",
+                            "SOFTWARE_FILES": "Fichiers logiciels"
+                        }
+                    },
+                    "AUDIO": {
+                        "LABEL": "Audio",
+                        "FORMATS": {
+                            "UNCOMPRESSED_AUDIO_FORMATS": "Formats audio non compressés",
+                            "COMPRESSED_AUDIO_FORMATS": "Formats audio compressés"
+                        }
+                    },
+                    "OTHER": {
+                        "LABEL": "Autres",
+                        "FORMATS": {
+                            "ARCHIVE_FILES": "Archiver les fichiers",
+                            "FONT_FILES": "Fichiers de polices"
+                        }
+                    }
+                }
+            }
+        },
+        "INPUT": {
+            "PLACEHOLDER": "Saisissez votre texte à rechercher",
+            "ARIA_LABEL": "Rechercher",
+            "BASIC": "Basic",
+            "HXQL": "HXQL",
+            "HXQL_VALID": "HXQL correct",
+            "HXQL_INVALID": "HXQL incorrect",
+            "CLEAR_INPUT": "Effacer l'entrée"
+        },
+        "RESULTS": {
+            "HEADER": {
+                "TITLE": "Résultats de recherche",
+                "TOTAL_SINGLE": "{{count}} résultat trouvé",
+                "TOTAL_PLURAL": "{{count}} résultats trouvés"
+            },
+            "DETAILS": {
+                "UPDATED": "Actualisé"
+            },
+            "FILTERS": {
+                "ACTIONS": {
+                    "RESET": "Réinitialiser",
+                    "SEARCH": "Rechercher"
+                }
+            }
+        },
+        "NO_RESULTS": {
+            "TITLE": "Aucun résultat de recherche",
+            "SUBTITLE": "Désolé, il semble qu'aucun résultat n'ait été trouvé pour votre recherche."
+        },
+        "SIDENAV": {
+            "TITLE": "Recherche de référentiel"
+        },
+        "TABS": {
+            "TEXT_SEARCH": "Recherche de texte",
+            "HXQL_SEARCH": "Recherche HxQL"
+        },
+        "MANAGE_COLUMN": {
+            "BUTTON": {
+                "TOOLTIP": "Gérer les colonnes"
+            },
+            "DIALOG": {
+                "TITLE": "Gérer les colonnes du tableau",
+                "CLOSE": "Fermer",
+                "AVAILABLE_COLUMN": "Colonnes disponibles",
+                "AVAILABLE": "{{count}} disponible(s)",
+                "SEARCH_COLUMN": {
+                    "INPUT": {
+                        "PLACEHOLDER": "Rechercher",
+                        "ARIA_LABEL": "Rechercher l'entrée"
+                    },
+                    "CLEAR": {
+                        "ARIA_LABEL": "Effacer la recherche"
+                    },
+                    "BUTTON": {
+                        "ARIA_LABEL": "Bouton de recherche"
+                    }
+                },
+                "ADD_COLUMN": "Ajouter une colonne",
+                "REMOVE_COLUMN": "Supprimer une colonne",
+                "DRAG_COLUMN": "Déplacer la colonne",
+                "SELECTED": "sélectionné",
+                "SELECTED_COLUMN": "{{count}} colonnes sélectionnées",
+                "COLUMN_COUNT": "({{selected}} sur {{total}} sélectionnées)",
+                "OUT_OF": "sur",
+                "BUTTON": {
+                    "RESET": "Réinitialiser les valeurs par défaut",
+                    "CANCEL": "Annuler",
+                    "UPDATE_TABLE": "Mettre à jour le tableau"
+                }
+            }
+        }
+    }
+}

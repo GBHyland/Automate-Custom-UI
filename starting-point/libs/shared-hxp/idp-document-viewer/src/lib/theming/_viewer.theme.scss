@@ -1,0 +1,141 @@
+@use '@angular/material' as mat;
+@use 'satori-like-styles' as satori;
+
+@function get-color($theme, $palette, $key) {
+    $palette-map: map-get(map-get($theme, color), $palette);
+    @return mat.m2-get-color-from-palette($palette-map, $key);
+}
+
+@mixin viewer-theme($viewer-theme, $typography) {
+    $primary: map-get($viewer-theme, primary);
+    $accent: map-get($viewer-theme, accent);
+    $warn: map-get($viewer-theme, warn);
+
+    $primary-contrast: mat.m2-get-color-from-palette($primary, 'contrast');
+    $primary-contrast-600: map-get($primary-contrast, 600);
+
+    // Viewer colors
+    $viewer-image-background-color: satori.$hy-image-background-color;
+    $viewer-highlight-color: get-color($viewer-theme, primary, 600);
+    $viewer-highlight-color-light: get-color($viewer-theme, primary, 100);
+    $viewer-tooltip-background-color: get-color($viewer-theme, primary, 50);
+    $viewer-grid-image-background-color: get-color($viewer-theme, primary, 50);
+
+    $viewer-text-color: get-color($viewer-theme, accent, 900);
+    $viewer-disabled-color: get-color($viewer-theme, accent, 500);
+    $viewer-border-color: get-color($viewer-theme, accent, 300);
+    $viewer-toolbar-background-color: $primary-contrast-600;
+
+    // Text layer color maps
+    $viewer-text-layer-colors: (
+        rubber-band: (
+            color: satori.$hy-rubber-band-color,
+            background: get-color($viewer-theme, accent, 800),
+            opacity: satori.$hy-opacity-40,
+        ),
+        valid: (
+            color: satori.$hy-colors-green-500,
+            background: satori.$hy-colors-green-500,
+            opacity: satori.$hy-opacity-50,
+        ),
+        invalid: (
+            color: get-color($viewer-theme, warn, 600),
+            background: get-color($viewer-theme, warn, 600),
+            opacity: satori.$hy-opacity-50,
+        ),
+        primary: (
+            color: get-color($viewer-theme, primary, 600),
+            background: get-color($viewer-theme, primary, 600),
+            opacity: satori.$hy-opacity-50,
+        ),
+        secondary: (
+            color: satori.$hy-colors-yellow-400,
+            background: satori.$hy-colors-yellow-400,
+            opacity: satori.$hy-opacity-60,
+        ),
+        default: (
+            color: satori.$hy-colors-yellow-400,
+            background: satori.$hy-colors-yellow-400,
+            opacity: satori.$hy-opacity-60,
+        ),
+    );
+
+    hyland-idp-viewer-grid-view,
+    .idp-viewer-container {
+        background-color: $viewer-image-background-color;
+    }
+
+    .idp-grid-view {
+        background-color: $viewer-image-background-color;
+        &__image-container {
+            background-color: $viewer-grid-image-background-color;
+            border-color: $viewer-highlight-color;
+
+            .idp-image-overlay__doc-label {
+                color: $viewer-highlight-color;
+                background-color: $viewer-grid-image-background-color;
+                border: 3px solid $viewer-highlight-color;
+            }
+        }
+    }
+
+    .idp-viewer-toolbar {
+        border: 1px solid $viewer-border-color;
+        background-color: $viewer-toolbar-background-color;
+
+        .idp-zoom-container,
+        .idp-page-nav-container {
+            .idp-zoom-input,
+            .idp-page-nav-input {
+                border-bottom: 2px solid $viewer-border-color;
+
+                &.idp-disabled {
+                    color: $viewer-disabled-color;
+                }
+                input {
+                    color: $viewer-text-color;
+                }
+            }
+        }
+    }
+
+    .idp-selected {
+        background-color: $viewer-highlight-color-light !important;
+    }
+
+    .idp-viewer-text-only-layer__container-div {
+        background-color: $viewer-toolbar-background-color;
+    }
+
+    .idp-viewer-text-only-layer__text .idp-layout-background-text {
+        @each $type, $vals in $viewer-text-layer-colors {
+            &__#{$type} {
+                background-color: map-get($vals, background);
+                opacity: map-get($vals, opacity);
+            }
+        }
+    }
+
+    .idp-viewer-text-layer__container-canvas {
+        @each $type, $vals in $viewer-text-layer-colors {
+            --idp-viewer-text-layer-color-#{$type}: #{map-get($vals, color)};
+            --idp-viewer-text-layer-background-color-#{$type}: #{map-get($vals, background)};
+            --idp-viewer-text-layer-opacity-#{$type}: #{map-get($vals, opacity)};
+        }
+    }
+
+    .idp-viewer-text-layer__text-tooltip {
+        background-color: $viewer-tooltip-background-color;
+        border: 1px solid $viewer-highlight-color;
+    }
+
+    .idp-thumbnail-viewer {
+        border-right: 1px solid $viewer-border-color;
+        border-top: 1px solid $viewer-border-color;
+        background-color: $viewer-toolbar-background-color;
+
+        &__list-item img {
+            border: 1px solid $viewer-border-color;
+        }
+    }
+}

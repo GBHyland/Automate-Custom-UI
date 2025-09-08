@@ -1,0 +1,13 @@
+import { FormService, WidgetComponent } from '@alfresco/adf-core';
+import { Component } from '@angular/core';
+
+@Component({
+    template: `<%= formWidgetSelector %> Works!`,
+    selector: '<%= formWidgetSelector %>',
+    standalone: true,
+})
+export class <%= formWidgetClassName %> extends WidgetComponent {
+    constructor(public override formService: FormService) {
+        super(formService);
+    }
+}

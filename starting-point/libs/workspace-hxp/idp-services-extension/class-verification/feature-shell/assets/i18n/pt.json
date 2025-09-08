@@ -1,0 +1,167 @@
+{
+    "IDP_CLASS_VERIFICATION": {
+        "TASK_HEADER": {
+            "TITLE": "Rever documentos no lote",
+            "REMAINING_ISSUES": "problemas a resolver",
+            "ALL_RESOLVED": "Tudo resolvido",
+            "BACK_LABEL": "Voltar a Tarefas",
+            "TASK_NAME": "Nome da tarefa",
+            "TASK_NAME_VALUE": "Verificação de lote",
+            "DOCUMENT_CLASSES": "Classes de documento",
+            "TOTAL_DOCUMENTS": "Total de documentos",
+            "TOTAL_PAGES": "Total de páginas"
+        },
+        "VIEWER": {
+            "TOOLBAR": {
+                "ASSIGN_DOCUMENT_CLASS": "Atribuir classe do documento",
+                "ISSUE_LABEL": "Problema Potencial: ",
+                "REJECT_LABEL": "Rejeitar",
+                "RESOLVE_LABEL": "Marcar como Resolvido"
+            },
+            "EMPTY_VIEW": {
+                "DONE_TITLE": "PRONTO!",
+                "DONE_DESCRIPTION": "Pode agora enviar a tarefa",
+                "SELECT_DOCUMENT": "Selecione um documento"
+            },
+            "STICKY_ACTION": {
+                "OPEN_SHORTCUT_BROWSER_BUTTON_TOOLTIP": "Abrir navegador de atalhos"
+            }
+        },
+        "CLASS_LIST_HEADER": {
+            "SHOW_ISSUES_LABEL": "Mostrar apenas problemas",
+            "SHOW_ISSUES_TOOLTIP": "Mostrar apenas problemas",
+            "SORT_SELECTOR": {
+                "TITLE": "Classificar por",
+                "ORIGINAL_ORDER_LABEL": "Pedido original",
+                "CLASSES_ORDER_LABEL": "Classes"
+            }
+        },
+        "FLOATING_TOOLBAR": {
+            "EXPAND_BUTTON_TOOLTIP": "Expandir barra de ferramentas",
+            "COLLAPSE_BUTTON_TOOLTIP": "Fechar barra de ferramentas"
+        },
+        "DOCUMENT_TOOLBAR": {
+            "UNDO": "Anular",
+            "REDO": "Refazer",
+            "CHANGE_CLASS": "Alterar Classe",
+            "SPLIT": "Dividir",
+            "MERGE": "Juntar",
+            "DELETE": "Eliminar",
+            "REJECT": "Rejeitar",
+            "MARK_RESOLVED": "Marcar como Resolvido"
+        },
+        "CLASS_CHANGE_DIALOG": {
+            "TITLE": "Alterar Classe",
+            "SEARCH_PLACEHOLDER": "Procurar uma classe...",
+            "CANCEL_BUTTON": "Cancelar",
+            "SAVE_BUTTON": "Alterar Classe"
+        },
+        "DELETE_CONFIRMATION_DIALOG": {
+            "TITLE": "Confirmar alterações",
+            "DESCRIPTION": "Tem a certeza de que pretende eliminar a(s) página(s) selecionada(s)?",
+            "CANCEL_BUTTON": "Cancelar",
+            "DELETE_BUTTON": "Eliminar"
+        },
+        "SHORTCUTS": {
+            "SELECT_ALL_CONTEXT_ONLY": "Selecionar todas as páginas ou documentos",
+            "SELECT_ALL": "Selecionar todas as páginas e documentos na classe selecionada",
+            "SELECT_ALL_UNTIL_START_CONTEXT_ONLY": "Selecionar todos os itens até o primeiro item do tipo de item selecionado",
+            "SELECT_ALL_UNTIL_END_CONTEXT_ONLY": "Selecionar todos os itens até ao último item do tipo de item selecionado",
+            "SELECT_ALL_UNTIL_START": "Selecionar todos os itens até ao primeiro documento",
+            "SELECT_ALL_UNTIL_END": "Selecionar todos os itens até ao último documento",
+            "NAVIGATE_FIRST": "Navegar para o primeiro documento",
+            "NAVIGATE_END": "Navegar para o último documento",
+            "NAVIGATE_FIRST_CONTEXT_ONLY": "Navegar para primeiro item",
+            "NAVIGATE_END_CONTEXT_ONLY": "Navegar para o último item",
+            "NAVIGATE_SELECT_UP": "Continuar Selecionar item anterior",
+            "NAVIGATE_SELECT_DOWN": "Continuar Selecionar item seguinte",
+            "NAVIGATE_UP": "Navegar para cima",
+            "NAVIGATE_DOWN": "Navegar para baixo",
+            "NAVIGATE_TOP_CONTEXT_ONLY": "Navegar para o item mais em cima",
+            "NAVIGATE_BOTTOM_CONTEXT_ONLY": "Navegar para o item mais em baixo",
+            "COLLAPSE": "Recolher para pai",
+            "NAVIGATE_PREV_CLASS": "Classe do Documento Anterior",
+            "NAVIGATE_NEXT_CLASS": "Classe de Documento Seguinte",
+            "TOGGLE_EXPAND_COLLAPSE": "Alternar estado expandir/recolher do item selecionado",
+            "PAGE_SPLIT": "Dividir página",
+            "PAGE_SPLIT_ALL_ABOVE": "Dividir todas as páginas acima",
+            "PAGE_MERGE": "Intercalar página",
+            "PAGE_DELETE": "Eliminar página",
+            "CHANGE_CLASS": "Alterar Classe dos Documentos Selecionados",
+            "ISSUE_ONLY_FILTER": "Alternar filtro apenas de edição",
+            "UNDO": "Anular a última ação",
+            "REDO": "Refazer a última ação",
+            "DOCUMENT_REJECT": "Rejeitar documento"
+        },
+        "USER_FEEDBACK": {
+            "PAGE_DELETE_SUCCESS_SINGULAR": "página {{arg}} foi eliminada",
+            "PAGE_DELETE_SUCCESS_PLURAL": "páginas {{arg}} foram eliminadas",
+            "PAGE_DELETE_ERROR": "Falha ao eliminar página(s)",
+            "CHANGE_CLASS_SUCCESS_SINGULAR": "O documento selecionado foi movido para a classe de documento {{className}}",
+            "CHANGE_CLASS_SUCCESS_PLURAL": "Os documentos selecionados foram movidos para a classe de documento {{className}}",
+            "CHANGE_CLASS_ERROR": "Falha ao mover página(s) para outra classe",
+            "PAGE_SPLIT_SUCCESS_SINGULAR": "{{arg}} foi dividido com êxito",
+            "PAGE_SPLIT_SUCCESS_PLURAL": "páginas {{arg}} foram divididas com êxito",
+            "PAGE_SPLIT_ERROR": "Falha ao dividir páginas",
+            "PAGE_MERGE_SUCCESS": "páginas {{pageCount}} foram intercaladas com êxito em {{documentName}}",
+            "PAGE_MERGE_ERROR": "Falha ao fundir páginas",
+            "MOVE_PAGE_SUCCESS_SINGULAR": "{{arg}} foi movido com êxito",
+            "MOVE_PAGE_SUCCESS_PLURAL": "páginas {{arg}} foram movidas com êxito",
+            "MOVE_PAGE_ERROR": "Falha ao mover as páginas",
+            "RESOLVE_SUCCESS": "As páginas foram marcadas como resolvidas com êxito",
+            "RESOLVE_ERROR": "Falha ao marcar as páginas como resolvidas",
+            "REJECT_SUCCESS": "O documento foi rejeitado",
+            "REJECT_ERROR": "Falha ao rejeitar o documento"
+        },
+        "NOTIFICATIONS": {
+            "SCREEN_INIT_ERROR": "Falha ao inicializar a tela",
+            "SCREEN_INIT_ERROR_NOT_CLAIMABLE": "A tarefa não pode ser solicitada",
+            "SCREEN_INIT_ERROR_ASSIGNEE": "Erro ao obter o destinatário da tarefa",
+            "SCREEN_LOAD_ERROR_DOCUMENT_STRUCTURE": "Estrutura de documento não encontrada nos dados de entrada do estado em lote",
+            "SCREEN_LOAD_ERROR_CONTENT_FILE_REFS": "As referências de ficheiro de conteúdo não foram encontradas nos dados de entrada da tarefa",
+            "TASK_ACTION_ERROR": "Falha ao Guardar ou Submeter a Tarefa",
+            "TASK_SAVE_ERROR": "Falha ao Salvar Tarefa",
+            "TASK_COMPLETE_ERROR": "Falha ao Concluir Tarefa",
+            "TASK_CLAIM_ERROR": "Falha a reclamar tarefa",
+            "TASK_UNCLAIM_ERROR": "Falha a não reclamar tarefa",
+            "COPY_DOCUMENT_DETAILS_TO_CLIPBOARD_SUCCESS": "Detalhes do documento copiados para a área de transferência. ID do documento: {{documentId}}, Nome do Aplicativo: {{appName}}, ID da Instância do Processo Raiz: {{rootProcessInstanceId}}"
+        },
+        "TASK_ACTIONS": {
+            "SAVE": "Guardar",
+            "SUBMIT": "Enviar",
+            "OPEN_NEXT_TASK": "Abrir tarefa seguinte"
+        },
+        "DOCUMENT_UPLOAD": {
+            "LOAD_ERROR": {
+                "GENERIC": "Falha ao carregar a funcionalidade de importação de documentos",
+                "0": "A pasta de destino de importação de documentos não existe"
+            },
+            "UPLOAD_ERROR": {
+                "GENERIC": "Falha ao carregar {{fileName}}",
+                "1051001120": "O tipo de ficheiro {{fileName}} não é permitido",
+                "1051001121": "O ficheiro {{fileName}} excede o tamanho máximo permitido de {{fileMaxSize}}"
+            }
+        },
+        "DOCUMENT_UPLOAD_BUTTON": {
+            "TITLE": "Importar documentos"
+        },
+        "DOCUMENT_UPLOAD_PROGRESS_DIALOG": {
+            "HEADER": "A carregar ficheiros ({{count}})",
+            "CANCEL_ALL_BUTTON": "Cancelar",
+            "CANCEL_ONE_BUTTON": {
+                "ARIA_LABEL": "Cancelar carregamento",
+                "TOOLTIP": "Cancelar carregamento"
+            },
+            "UPLOAD_CANCELLED": "Cancelado",
+            "ERROR": {
+                "GENERIC": "Falha ao carregar documento",
+                "1051001120": "O tipo do ficheiro não é permitido",
+                "1051001121": "O ficheiro excede o tamanho máximo permitido."
+            }
+        },
+        "DOCUMENT_LIST": {
+            "UNCLASSIFIED_DOCUMENT_NAME": "Documento não classificado",
+            "REJECTED_DOCUMENT_NAME": "Documento rejeitado"
+        }
+    }
+}

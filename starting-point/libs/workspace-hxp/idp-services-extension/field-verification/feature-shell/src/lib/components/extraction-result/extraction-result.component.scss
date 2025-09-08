@@ -1,0 +1,24 @@
+@use 'idp-theme' as idp;
+
+.idp-extraction-result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .idp-has-issue {
+        @include idp.use-foreground(warning-text);
+    }
+
+    .idp-no-issue {
+        @include idp.use-foreground(success-text);
+    }
+
+    &-icon {
+        padding-left: 16px;
+        width: var(--metadata-extraction-icon-size);
+        height: var(--metadata-extraction-icon-size);
+        font-size: var(--metadata-extraction-icon-size);
+        margin-right: 5px;
+    }
+}

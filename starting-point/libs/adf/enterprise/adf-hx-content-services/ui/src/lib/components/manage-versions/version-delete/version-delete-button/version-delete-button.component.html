@@ -1,0 +1,10 @@
+@if (isAvailable) {
+    <button
+        mat-icon-button
+        [attr.aria-label]="'MANAGE_VERSIONS.DELETE_BUTTON.ARIA_LABEL' | translate"
+        title="{{ 'MANAGE_VERSIONS.DELETE_BUTTON.TITLE' | translate }}"
+        [matTooltip]="'MANAGE_VERSIONS.DELETE_BUTTON.TITLE' | translate"
+    >
+        <mat-icon>delete</mat-icon>
+    </button>
+}

@@ -1,0 +1,9 @@
+{
+    "extends": "../../tsconfig.adf.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/content-ee-apa",
+        "types": ["jasmine", "node"]
+    },
+    "files": ["./src/main.ts"],
+    "include": ["./src/app", "../../libs/plugins/**/*"]
+}

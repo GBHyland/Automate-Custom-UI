@@ -1,0 +1,91 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-context-btn button {
+    opacity: 0;
+
+    &.hxp-menu-opened {
+        opacity: 1;
+    }
+}
+
+#{ms.$mat-tree-element} {
+    overflow-y: auto;
+    overflow-x: auto;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#{ms.$mat-tree-node-element} {
+    border-left: 6px solid transparent;
+    min-height: satori.$hy-spacing-48;
+    text-wrap: wrap;
+    width: calc(100% - 40px);
+
+    /* To target the root node */
+    &[aria-level='1'] {
+        width: 100%;
+    }
+
+    &.hxp-node-context-opened {
+        background-color: var(--theme-background-selected-button-color, #e0e0e0);
+        opacity: 0.9;
+    }
+}
+
+#{ms.$mat-tree-node-element}:hover {
+    background-color: satori.$satori-like-selected-list-item-background;
+    opacity: 0.9;
+    cursor: pointer;
+
+    .hxp-context-btn button {
+        opacity: 1;
+    }
+
+    .hxp-node-label {
+        max-width: 112px;
+    }
+}
+
+button :not(.hxp-context-btn button) {
+    transform: scale(0.9);
+}
+
+.hxp-selected {
+    background-color: var(--theme-background-hover-color, #f9f9fc);
+    border-left: 6px solid var(--theme-primary-color, satori.$satori-like-primary);
+}
+
+.hxp-node-label {
+    max-width: 135px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    white-space: nowrap;
+}
+
+.hxp-node-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.hxp-menu-trigger {
+    visibility: hidden;
+    position: fixed;
+}
+
+.hxp-fill {
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+
+.hxp-node-selection-checkbox {
+    margin: 0 satori.$hy-spacing-24 0 satori.$hy-spacing-12;
+}

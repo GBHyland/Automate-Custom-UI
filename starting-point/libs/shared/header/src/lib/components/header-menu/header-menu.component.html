@@ -1,0 +1,27 @@
+<button mat-button disableRipple="true" class="hxp-header-menu-button" data-automation-id="hxp-header-menu-button" [matMenuTriggerFor]="profileMenu">
+    <ng-container>
+        <hxp-user-initials />
+        <mat-icon class="hxp-header-menu-show-more-icon">expand_more</mat-icon>
+    </ng-container>
+</button>
+<mat-menu #profileMenu="matMenu" class="hxp-header-menu-dropdown">
+    <hxp-language-menu />
+    @if (flagsOverride) {
+        <button mat-menu-item data-automation-id="features" class="hxp-header-menu-dropdown__features-button" (click)="openFeatureFlags()">
+            <mat-icon>tune</mat-icon>
+            {{ 'APP.HEADER.FEATURES' | translate }}
+            <adf-feature-flags-override-indicator size="small" />
+        </button>
+    }
+    @if (documentationUrl) {
+        <a mat-menu-item data-automation-id="help" target="_blank" [href]="documentationUrl">
+            <mat-icon>help_outlined</mat-icon>
+            {{ 'APP.HEADER.HELP' | translate }}
+        </a>
+    }
+    <mat-divider />
+    <button mat-menu-item data-automation-id="sign-out" adf-logout>
+        <mat-icon class="material-symbols-outlined" fontIcon="logout" />
+        {{ 'APP.HEADER.SIGN_OUT' | translate }}
+    </button>
+</mat-menu>

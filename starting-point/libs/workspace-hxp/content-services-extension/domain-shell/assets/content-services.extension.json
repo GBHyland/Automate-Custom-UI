@@ -1,0 +1,101 @@
+{
+    "$version": "1.0.0",
+    "$id": "content-services.extension",
+    "$name": "hxp content services extension",
+    "$description": "hxp content services extension",
+    "$vendor": "Hyland",
+    "$license": "Apache-2.0",
+    "actions": [],
+    "rules": [],
+    "features": {
+        "navbar": [
+            {
+                "id": "app.navbar.primary",
+                "items": [
+                    {
+                        "id": "app.navbar.content-services-new-search",
+                        "component": "content-services-app.search",
+                        "order": 1,
+                        "rules": {
+                            "visible": "isContentServiceEnabled"
+                        }
+                    },
+                    {
+                        "id": "app.navbar.content-services-app",
+                        "component": "content-services-app.sidenav",
+                        "rules": {
+                            "visible": "isContentServiceEnabled"
+                        }
+                    }
+                ]
+            }
+        ],
+        "search": {
+            "filters": {
+                "id": "app.search.filters",
+                "items": [
+                    {
+                        "id": "app.search.filters.document-location-search-filter",
+                        "component": "workspace-hxp-search-filter.document-location-search-filter"
+                    },
+                    {
+                        "id": "app.search.filters.file-type-search-filter",
+                        "component": "workspace-hxp-search-filter.file-type-search-filter"
+                    },
+                    {
+                        "id": "app.search.filters.created-date-filter",
+                        "component": "workspace-hxp-search-filter.created-date-filter"
+                    },
+                    {
+                        "id": "app.search.filters.document-category-filter",
+                        "component": "workspace-hxp-search-filter.document-category-filter"
+                    }
+                ]
+            }
+        }
+    },
+    "routes": [
+        {
+            "id": "content-services-app.old-main-content",
+            "path": "documents",
+            "redirectTo": "default/documents",
+            "auth": [
+                "content-services-app.auth"
+            ]
+        },
+        {
+            "id": "content-services-app.old-main-content-documents",
+            "path": "documents/:id",
+            "redirectTo": "default/documents/:id",
+            "auth": [
+                "content-services-app.auth"
+            ]
+        },
+        {
+            "id": "content-services-app.main-content",
+            "path": ":repositoryId/documents",
+            "parentRoute": "",
+            "component": "content-services-app.main-content",
+            "children": [
+                {
+                    "id": "content-services-app.main-content",
+                    "path": ":id",
+                    "parentRoute": "",
+                    "component": "content-services-app.main-content"
+                }
+            ],
+            "auth": [
+                "content-services-app.auth"
+            ]
+        },
+        {
+            "id": "content-services-app.search-results",
+            "path": "search",
+            "parentRoute": "",
+            "component": "content-services-app.search-results",
+            "auth": [
+                "content-services-app.auth"
+            ]
+        }
+    ]
+}

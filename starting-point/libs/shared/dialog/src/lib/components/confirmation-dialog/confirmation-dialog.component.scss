@@ -1,0 +1,10 @@
+.studio-confirmation-dialog {
+    &-title {
+        color: var(--studio-confirmation-dialog-title-color);
+    }
+
+    &-content {
+        color: var(--studio-confirmation-dialog-text-color);
+        max-height: 45vh;
+    }
+}

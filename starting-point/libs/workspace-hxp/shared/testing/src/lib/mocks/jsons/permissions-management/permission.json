@@ -1,0 +1,7 @@
+{
+    "entityId": "newId",
+    "entity": "Group",
+    "entityType": "group",
+    "entityLabel": "Admin",
+    "permission": "Everything"
+}

@@ -1,0 +1,42 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp- {
+    &metadata-properties {
+        ::ng-deep {
+            .adf-card-view-selectitem {
+                #{ms.$mat-form-field-infix} {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        #{ms.$mat-expansion-panel-header}#{ms.$mat-expanded}:hover,
+        #{ms.$mat-expansion-panel-header}#{ms.$mat-expanded}:focus {
+            background: var(--theme-background-hover-color, #f9f9fc);
+        }
+
+        mat-expansion-panel-header {
+            height: 64px;
+        }
+
+        #{ms.$mat-expansion-panel}:not([class*='mat-elevation-z']) {
+            box-shadow: none;
+        }
+
+        &-title {
+            margin-bottom: 0;
+        }
+
+        .hxp-property-edit-actions {
+            padding-top: 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: satori.$hy-spacing-8;
+            .hxp-cancel-button {
+                color: var(--theme-primary-color, satori.$satori-like-primary);
+                border: 0;
+            }
+        }
+    }
+}

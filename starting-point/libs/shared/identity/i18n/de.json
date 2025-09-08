@@ -1,0 +1,22 @@
+{
+    "SHARED_IDENTITY": {
+        "GROUPS": {
+            "SEARCH-GROUP": "Gruppen",
+            "MANDATORY": "Pflichtfeld",
+            "ERROR": {
+                "NOT_FOUND": "Keine Gruppe mit dem Namen {{groupName}} gefunden"
+            }
+        },
+        "PEOPLE": {
+            "MANDATORY": "Dieser Benutzer kann nicht gelöscht werden, da er während der Projekterstellung hinzugefügt wurde.",
+            "ERROR": {
+                "INVALID_PATTERN": "Muss dem Muster {{pattern}} entsprechen",
+                "INVALID_MIN_LENGTH": "Muss mindestens {{requiredLength}} Zeichen lang sein",
+                "INVALID_MAX_LENGTH": "Länge überschritten, {{requiredLength}} Zeichen erlaubt",
+                "REQUIRED": "Dies ist ein Pflichtfeld",
+                "NOT_FOUND": "Kein Benutzer mit dem Benutzernamen {{userName}} gefunden",
+                "INVALID_PRESELECTED_USER": "Benutzer mit dem Benutzernamen {{userName}} ist nicht mehr gültig. Bitte fügen Sie einen gültigen Benutzer in der Modellierung App hinzu."
+            }
+        }
+    }
+}

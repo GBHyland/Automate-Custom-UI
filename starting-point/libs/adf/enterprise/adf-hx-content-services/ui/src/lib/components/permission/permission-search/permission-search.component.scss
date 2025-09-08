@@ -1,0 +1,39 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-permission-dialog-search-holder {
+    display: flex;
+    max-width: 400px;
+}
+
+.hxp-permission-dialog-search {
+    padding: 1px satori.$hy-spacing-12;
+    gap: satori.$hy-spacing-12;
+    height: 48px;
+    border: 1px solid var(--adf-edit-process-filter-header-description-color);
+    border-right: 0;
+    margin-top: satori.$hy-spacing-24;
+    font-weight: var(--theme-menu-container-font-weight, 300);
+    font-size: satori.$hy-font-sizes-20;
+    line-height: satori.$hy-line-heights-40;
+    flex-grow: 1;
+    border-top-left-radius: satori.$hy-border-radius-8;
+    border-bottom-left-radius: satori.$hy-border-radius-8;
+    outline: satori.$hy-colors-border-default;
+    font-family: var(--theme-font-family, 'Noto Sans');
+    background-color: var(--theme-card-background-color, white);
+}
+
+.hxp-search-permission-dialog-divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    margin-top: satori.$hy-spacing-24;
+    border: 1px solid var(--adf-edit-process-filter-header-description-color);
+    border-left: 1px solid var(--adf-theme-foreground-text-color-014);
+    border-top-right-radius: satori.$hy-border-radius-8;
+    border-bottom-right-radius: satori.$hy-border-radius-8;
+}

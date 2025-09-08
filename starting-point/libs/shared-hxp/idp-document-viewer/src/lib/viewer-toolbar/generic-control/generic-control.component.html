@@ -1,0 +1,59 @@
+<ng-container *hylandIdpLet="currentViewerState$ | async as viewerState">
+    <div
+        class="idp-generic-control-container"
+        [ngClass]="{
+            'idp-top-bottom': [toolbarPosition.Top, toolbarPosition.Bottom].includes(viewerState?.currentToolbarPosition!),
+            'idp-left-right': [toolbarPosition.Left, toolbarPosition.Right].includes(viewerState?.currentToolbarPosition!)
+        }"
+    >
+        <ng-container *ngIf="toolbarItem?.displayType === 'menu' && ((toolbarItem?.subItems | keyvalue) || []).length > 0; else defaultToolbarItem">
+            <button
+                mat-icon-button
+                class="idp-menu-button"
+                *ngIf="toolbarItem?.enabled"
+                [matMenuTriggerFor]="buttonMenu"
+                [attr.aria-label]="[toolbarItem?.label ?? '' | translate, toolbarItem?.shortcutKey] | idpJoin"
+                [matTooltip]="[toolbarItem?.label ?? '' | translate, toolbarItem?.shortcutKey] | idpJoin"
+            >
+                <mat-icon class="material-icons-outlined">{{ toolbarItem?.icon ?? '' }}</mat-icon>
+            </button>
+            <mat-menu #buttonMenu="matMenu" [hasBackdrop]="true" [overlapTrigger]="true">
+                <ng-container *ngFor="let item of toolbarItem?.subItems | keyvalue: toolbarSubitemOrderFn">
+                    <ng-container *hylandIdpLet="$any(item.value) as menuItem">
+                        <button
+                            mat-menu-item
+                            class="idp-menu-item-button"
+                            [id]="menuItem.id"
+                            [class.idp-selected]="menuItem.selected"
+                            [attr.aria-label]="[menuItem?.label ?? '' | translate, menuItem?.shortcutKey] | idpJoin"
+                            [disabled]="!menuItem.enabled"
+                            [matTooltip]="[menuItem?.label ?? '' | translate, menuItem?.shortcutKey] | idpJoin"
+                            (click)="onMenuItemClick(toolbarItem, menuItem)"
+                        >
+                            <div class="idp-menu-item-container">
+                                <span class="idp-menu-item-container__label">{{ menuItem.label | translate }}</span>
+                                <mat-icon class="idp-menu-item-container__icon material-icons-outlined">{{ menuItem.icon }}</mat-icon>
+                            </div>
+                        </button>
+                    </ng-container>
+                </ng-container>
+            </mat-menu>
+        </ng-container>
+
+        <ng-template #defaultToolbarItem>
+            <div class="idp-toolbar-button" [class.idp-selected]="toolbarItem?.selected">
+                <button
+                    mat-icon-button
+                    *ngIf="toolbarItem?.enabled"
+                    [id]="toolbarItem?.type?.toString()"
+                    [attr.aria-label]="[toolbarItem?.label ?? '' | translate, toolbarItem?.shortcutKey] | idpJoin"
+                    [matTooltip]="[toolbarItem?.label ?? '' | translate, toolbarItem?.shortcutKey] | idpJoin"
+                    [attr.data-automation-id]="toolbarItem?.type?.toString() + 'Button'"
+                    (click)="onToolbarAction(toolbarItem)"
+                >
+                    <mat-icon class="material-icons-outlined">{{ toolbarItem?.icon ?? '' }}</mat-icon>
+                </button>
+            </div>
+        </ng-template>
+    </div>
+</ng-container>

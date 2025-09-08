@@ -1,0 +1,19 @@
+<div class="idp-document-upload">
+    <input
+        type="file"
+        class="idp-document-upload__file-input"
+        multiple="true"
+        [accept]="inputFileAccept"
+        (change)="onUploadDocuments($event)"
+        #documentUploadInput
+    />
+    <button
+        mat-button
+        class="idp-document-upload__button"
+        data-automation-id="idp-document-upload__button"
+        (click)="documentUploadInput.click()"
+        [disabled]="disabled"
+    >
+        <mat-icon>save_alt</mat-icon>{{ 'IDP_CLASS_VERIFICATION.DOCUMENT_UPLOAD_BUTTON.TITLE' | translate }}
+    </button>
+</div>

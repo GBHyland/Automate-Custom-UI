@@ -1,0 +1,141 @@
+{
+    "name": "adf-enterprise-adf-hx-content-services-icons",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/adf/enterprise/adf-hx-content-services/icons/src",
+    "prefix": "hxp",
+    "tags": ["scope:adf-enterprise-adf-hx-content-services-icons", "category:adf-enterprise"],
+    "projectType": "library",
+    "targets": {
+        "compile": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/adf/enterprise/adf-hx-content-services/icons/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/icons/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/icons/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/icons/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "move-dist": {
+            "executor": "tools:move-dist",
+            "options": {
+                "source": "libs/adf/enterprise/adf-hx-content-services/icons/dist",
+                "destination": "{workspaceRoot}/dist/{projectRoot}"
+            }
+        },
+        "build": {
+            "executor": "nx:run-commands",
+            "configurations": {
+                "production": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-icons:compile --configuration=production",
+                        "nx run adf-enterprise-adf-hx-content-services-icons:move-dist"
+                    ],
+                    "parallel": false
+                },
+                "development": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-icons:compile --configuration=development",
+                        "nx run adf-enterprise-adf-hx-content-services-icons:move-dist"
+                    ],
+                    "parallel": false
+                },
+                "adf": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-icons:compile --configuration=adf",
+                        "nx run adf-enterprise-adf-hx-content-services-icons:move-dist"
+                    ],
+                    "parallel": false
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/adf/enterprise/adf-hx-content-services/icons/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": [
+                    "libs/adf/enterprise/adf-hx-content-services/icons/**/*.ts",
+                    "libs/adf/enterprise/adf-hx-content-services/icons/**/*.html",
+                    "libs/adf/enterprise/adf-hx-content-services/icons/package.json"
+                ]
+            }
+        },
+        "storybook": {
+            "executor": "@storybook/angular:start-storybook",
+            "options": {
+                "port": 4400,
+                "configDir": "libs/adf/enterprise/adf-hx-content-services/icons/.storybook",
+                "browserTarget": "adf-enterprise-adf-hx-content-services-icons:build-storybook",
+                "compodoc": true,
+                "compodocArgs": [
+                    "-e",
+                    "json",
+                    "-d",
+                    "libs/adf/enterprise/adf-hx-content-services/icons",
+                    "--minimal",
+                    "--disablePrivate",
+                    "--disableInternal",
+                    "--disableProtected",
+                    "--disableLifeCycleHooks"
+                ]
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@storybook/angular:build-storybook",
+            "outputs": ["{options.outputDir}"],
+            "options": {
+                "outputDir": "dist/storybook/adf-enterprise-adf-hx-content-services-icons",
+                "configDir": "libs/adf/enterprise/adf-hx-content-services/icons/.storybook",
+                "browserTarget": "adf-enterprise-adf-hx-content-services-icons:build-storybook",
+                "compodoc": false
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "static-storybook": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "adf-enterprise-adf-hx-content-services-icons:build-storybook",
+                "staticFilePath": "dist/storybook/adf-enterprise-adf-hx-content-services-icons"
+            },
+            "configurations": {
+                "ci": {
+                    "buildTarget": "adf-enterprise-adf-hx-content-services-icons:build-storybook:ci"
+                }
+            }
+        }
+    }
+}

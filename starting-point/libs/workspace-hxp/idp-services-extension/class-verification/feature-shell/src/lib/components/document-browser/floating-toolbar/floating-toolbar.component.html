@@ -1,0 +1,21 @@
+<div class="idp-footer-toolbar idp-relative mat-elevation-z8" id="footerToolbar" [ngClass]="{
+    'idp-collapsed-width': isCollapsed
+  }">
+    <mat-icon
+        [fontIcon]="isCollapsed ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left'"
+        class="idp-footer-toolbar__collapse-button idp-footer-toolbar__button"
+        (keyup.enter)="onCollapse()" (click)="onCollapse()" tabindex="0"
+        [matTooltip]="('IDP_CLASS_VERIFICATION.FLOATING_TOOLBAR.' + (isCollapsed ? 'EXPAND_BUTTON_TOOLTIP' : 'COLLAPSE_BUTTON_TOOLTIP')) | translate">
+        {{ isCollapsed ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left' }}
+    </mat-icon>
+    <ng-container *ngIf="!isCollapsed">
+        <span class="idp-footer-toolbar__select-text">{{ totalSelectedPages + ' selected' }}</span>
+        <ng-container *ngFor="let item of toolbarActionItems$ | async" class="idp-footer-footer__button-container">
+            <mat-icon [fontIcon]="item.icon"
+                class="idp-footer-toolbar__button material-icons-outlined" tabindex="0"
+                (click)="item.onClick$.next()" (keyup.enter)="item.onClick$.next()"
+                matTooltip="{{item.tooltip}}"
+                [attr.data-automation-id]="'idp-footer-toolbar-' + item.icon" >{{item.icon }}</mat-icon>
+        </ng-container>
+    </ng-container>
+</div>

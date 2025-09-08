@@ -1,0 +1,66 @@
+{
+  "documents": [
+    {
+      "id": "705e47a1-6caf-47b8-989c-f99c6a112de1",
+      "pages": [
+        {
+          "rotation": 0,
+          "sourcePageIndex": 0,
+          "contentFileReferenceIndex": 0
+        },
+        {
+          "rotation": 0,
+          "sourcePageIndex": 1,
+          "contentFileReferenceIndex": 0
+        },
+        {
+          "rotation": 0,
+          "sourcePageIndex": 2,
+          "contentFileReferenceIndex": 0
+        }
+      ],
+      "fields": [
+        {
+          "id": "Name004uwq",
+          "name": "Name",
+          "ocrConfidence": 0,
+          "extractionConfidence": 0,
+          "extractionReviewStatus": "ReviewRequired"
+        },
+        {
+          "id": "Date0yyqbp",
+          "name": "Date",
+          "ocrConfidence": 0,
+          "extractionConfidence": 0,
+          "extractionReviewStatus": "ReviewRequired"
+        },
+        {
+          "id": "IDNumber0bcngf",
+          "name": "ID Number",
+          "ocrConfidence": 0,
+          "extractionConfidence": 0,
+          "extractionReviewStatus": "ReviewRequired"
+        }
+      ],
+      "tables": [],
+      "classId": "EnrollmentForm0jvbmu",
+      "className": "Enrollment Form",
+      "markAsRejected": false,
+      "extractionReviewStatus": "ReviewRequired",
+      "classificationConfidence": 0.88,
+      "classificationReviewStatus": "ReviewNotRequired"
+    }
+  ],
+  "extractionStatus": "ReviewRequired",
+  "separationStatus": "Awaiting",
+  "classificationStatus": "Classified",
+  "hasRejectedDocuments": false,
+  "contentFileReferences": [
+    {
+      "sys_id": "b545c410-7dc6-4109-8ce5-ad7e7bc8b3d6",
+      "sysfile_blob": {
+        "mimeType": "application/pdf"
+      }
+    }
+  ]
+}

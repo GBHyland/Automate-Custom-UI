@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Dokument auswählen",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Layout ändern",
+                "GRID_VIEW": "Raster (bis zu 12 Miniaturansichten)",
+                "VERTICAL_SCROLLING": "Vertikales Scrollen",
+                "HORIZONTAL_SCROLLING": "Horizontales Scrollen"
+            },
+            "THUMBNAIL_VIEWER": "Miniaturbildansicht",
+            "THUMBNAIL_VIEWER_PAGES": "Seiten",
+            "THUMBNAIL_ALT_TEXT": "Thumbnail-Bild",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Seitennavigation",
+                "PREVIOUS": "Vorherige",
+                "NEXT": "Weiter"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Layer-Auswahl",
+                "IMAGE": "Bild",
+                "TEXT": "Text"
+            },
+            "ZOOM": {
+                "TITLE": "Zoom",
+                "ZOOM_IN": "Vergrößern",
+                "ZOOM_OUT": "Verkleinern"
+            },
+            "ROTATE_RIGHT": "Im Uhrzeigersinn drehen",
+            "FULLSCREEN": "Vollbild",
+            "BEST_FIT": "Beste Anpassung"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Layout wechseln",
+                "THUMBNAIL_VIEWER": "Miniaturansicht umschalten",
+                "NAVIGATE_PREVIOUS_PAGE": "Zur vorherigen Seite navigieren",
+                "NAVIGATE_NEXT_PAGE": "Zur nächsten Seite navigieren",
+                "NAVIGATE_FIRST_PAGE": "Zur ersten Seite navigieren",
+                "NAVIGATE_LAST_PAGE": "Zur letzten Seite navigieren",
+                "NAVIGATE_UP": "Nach oben navigieren",
+                "NAVIGATE_DOWN": "Nach unten navigieren",
+                "NAVIGATE_LEFT": "Nach Links navigieren",
+                "NAVIGATE_RIGHT": "Nach Rechts navigieren",
+                "ZOOM_IN": "Vergrößern",
+                "ZOOM_OUT": "Verkleinern",
+                "BEST_FIT": "Beste Passform",
+                "ROTATE_RIGHT": "Im Uhrzeigersinn drehen",
+                "FULL_SCREEN": "Vollbild umschalten",
+                "IMAGE_LAYER": "Bild-Ebene",
+                "TEXT_LAYER": "Text-Ebene",
+                "CLIPBOARD_COPY": "In die Zwischenablage kopieren"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "Das Viewer-Layout wurde für eine bessere Benutzerfreundlichkeit in eine einzelne vertikale Ansicht geändert",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "Das Viewer-Layout wurde zur besseren Übersichtlichkeit in eine Rasteransicht geändert",
+                "CLIPBOARD_COPY_SUCCESS": "In Zwischenablage kopiert"
+            }
+        }
+    }
+}

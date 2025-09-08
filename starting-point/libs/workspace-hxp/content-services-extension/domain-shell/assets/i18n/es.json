@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Permisos",
+                    "ARIA-LABEL": "Administrar permisos de fichero"
+                },
+                "COPY": {
+                    "TITLE": "Copiar",
+                    "ARIA-LABEL": "Copiar fichero"
+                },
+                "MOVE": {
+                    "TITLE": "Mover",
+                    "ARIA-LABEL": "Mover fichero"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Reemplazar archivo (beta)",
+                    "ARIA-LABEL": "Reemplazar archivo (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Guardar en el historial de versiones (beta)",
+                    "ARIA-LABEL": "Guardar en el historial de versiones (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Copiar",
+        "MOVE": "Mover",
+        "REPLACE_FILE": "Reemplazar archivo",
+        "MANAGE_VERSIONS": "Gestionar versiones"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Gestionar versiones",
+            "CLOSE": "Cerrar",
+            "CREATED_BY": "por"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Copiar elemento en",
+            "COPY": "Copiar",
+            "CANCEL": "Cancelar",
+            "CLOSE": "Cerrar",
+            "FILE_NAME_PREFIX": "Copia de",
+            "PERMISSIONS": {
+                "ERROR": "No tiene permisos para copiar el documento aquí."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Buscar"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Inicio",
+            "MOVE_ITEM": "Mover elemento a",
+            "MOVE": "Mover",
+            "CANCEL": "Cancelar",
+            "CLOSE": "Cerrar",
+            "PERMISSIONS": {
+                "ERROR": "No tiene permisos para mover el documento aquí."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Buscar"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "El fichero se ha copiado",
+            "FILE_ERROR": "Error al copiar el fichero",
+            "FOLDER_SUCCESS": "La carpeta se ha copiado",
+            "FOLDER_ERROR": "Error al copiar la carpeta"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "El fichero se ha movido",
+            "FILE_ERROR": "Error al mover el fichero",
+            "FOLDER_SUCCESS": "La carpeta se ha movido",
+            "FOLDER_ERROR": "Error al mover la carpeta"
+        }
+    }
+}

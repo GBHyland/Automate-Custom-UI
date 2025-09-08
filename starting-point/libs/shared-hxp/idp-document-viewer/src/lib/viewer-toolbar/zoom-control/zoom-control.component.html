@@ -1,0 +1,64 @@
+<ng-container *hylandIdpLet="currentViewerState$ | async as viewerState">
+    <div
+        class="idp-zoom-container"
+        [ngClass]="{
+            'idp-top-bottom': !(isLeftRightPosition$ | async),
+            'idp-left-right': isLeftRightPosition$ | async,
+        }"
+    >
+        <ng-container *hylandIdpLet="{ zoomIn: toolbarItem?.subItems?.['zoom_in'], zoomOut: toolbarItem?.subItems?.['zoom_out'] } as zoomItems">
+            <ng-container
+                *ngIf="zoomItems.zoomIn && zoomItems.zoomOut ? zoomItems.zoomIn.order <= zoomItems.zoomOut.order && (isLeftRightPosition$ | async): false; else zoomOutFirst"
+            >
+                <ng-container *ngTemplateOutlet="zoomButtonTemplate; context: { item: zoomItems.zoomIn }" />
+            </ng-container>
+            <ng-template #zoomOutFirst>
+                <ng-container *ngTemplateOutlet="zoomButtonTemplate; context: { item: zoomItems.zoomOut }" />
+            </ng-template>
+
+            <div
+                class="idp-zoom-input"
+                [class.idp-disabled]="!toolbarItem?.enabled"
+            >
+                <input
+                    matInput
+                    #zoomInput
+                    type="number"
+                    [disabled]="!toolbarItem?.enabled"
+                    [attr.data-automation-id]="'idp-zoom-input'"
+                    [value]="inputValue"
+                    [min]="zoomConfig?.min"
+                    [max]="zoomConfig?.max"
+                    [step]="zoomConfig?.step"
+                    (blur)="onBlur(zoomInput)"
+                    (change)="onZoomChange(zoomInput.value, toolbarItem)"
+                    (keyup.enter)="onZoomChange(zoomInput.value, toolbarItem)"
+                />
+                <span>%</span>
+            </div>
+
+            <ng-container *ngIf="zoomItems.zoomIn && zoomItems.zoomOut ? zoomItems.zoomOut.order >= zoomItems.zoomIn.order && (isLeftRightPosition$ | async) : false; else zoomInLast">
+                <ng-container *ngTemplateOutlet="zoomButtonTemplate; context: { item: zoomItems.zoomOut }" />
+            </ng-container>
+            <ng-template #zoomInLast>
+                <ng-container *ngTemplateOutlet="zoomButtonTemplate; context: { item: zoomItems.zoomIn }" />
+            </ng-template>
+
+            <ng-template #zoomButtonTemplate let-item="item">
+                <button
+                    mat-icon-button
+                    *ngIf="item"
+                    [id]="item.id"
+                    [attr.aria-label]="[item.label | translate, item.shortcutKey] | idpJoin"
+                    [disabled]="!toolbarItem?.enabled || !item.enabled"
+                    [attr.order]="item.order"
+                    [matTooltip]="[item.label | translate, item.shortcutKey] | idpJoin"
+                    [attr.data-automation-id]="toolbarItem?.type?.toString() + 'Button' + item.order"
+                    (click)="onToolbarAction(toolbarItem, item)"
+                >
+                    <mat-icon class="material-icons-outlined">{{ item.icon }}</mat-icon>
+                </button>
+            </ng-template>
+        </ng-container>
+    </div>
+</ng-container>

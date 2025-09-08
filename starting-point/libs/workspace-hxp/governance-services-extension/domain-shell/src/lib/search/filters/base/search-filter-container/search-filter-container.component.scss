@@ -1,0 +1,65 @@
+@use 'satori-like-styles' as satori;
+@use '@angular/material' as mat;
+
+.hxp-governance-search-filter {
+    .hxp-governance-search-filter-chip {
+        border: satori.$hy-border-default;
+        background-color: var(--theme-background-color);
+        max-width: 320px;
+
+        &-label-container {
+            display: flex;
+            align-items: center;
+            color: var(--theme-primary-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            max-width: 290px;
+        }
+
+        &-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 255px;
+        }
+
+        &-badge {
+            color: var(--theme-primary-color);
+            background-color: var(--theme-background-color);
+            border-radius: 100px;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        &_active {
+            border: satori.$hy-border-active;
+            background: rgba(var(--theme-background-color), 0.16);
+        }
+
+        &_opened {
+            background: rgba(var(--theme-background-color), 0.16);
+        }
+    }
+}
+
+.hxp-governance-search-filter-overlay {
+    @include mat.elevation(3);
+
+    background-color: var(--theme-background-color);
+    border-radius: satori.$hy-border-radius-8;
+    width: 100%;
+
+    &-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px;
+    }
+}

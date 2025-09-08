@@ -1,0 +1,38 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.dialog-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+}
+
+#{ms.$mat-dialog-title} {
+    margin: 0;
+}
+
+#{ms.$mat-dialog-actions} {
+    justify-content: flex-end;
+}
+
+#{ms.$mat-dialog-actions} button {
+    cursor: pointer;
+}
+
+.hxp-dialog-reject-button {
+    color: var(--theme-primary-color);
+}
+
+.hxp-dialog-confirm-button {
+    color: satori.$hy-colors-origin-white;
+    background-color: var(--theme-primary-color);
+}
+
+#{ms.$mat-button-focus-overlay} {
+    background-color: transparent;
+}
+
+.hxp-cancel-dialog {
+    background-color: var(--theme-background-color);
+}

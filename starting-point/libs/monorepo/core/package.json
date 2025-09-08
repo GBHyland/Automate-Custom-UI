@@ -1,0 +1,13 @@
+{
+  "name": "@alfresco-dbp/monorepo-core",
+  "version": "0.0.11",
+  "main": "src/index.js",
+  "license": "See license in LICENSE file.",
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "@alfresco-dbp/monorepo/utils": "0.0.11"
+  },
+  "peerDependencies": {
+    "json5": "^2.2.3"
+  }
+}

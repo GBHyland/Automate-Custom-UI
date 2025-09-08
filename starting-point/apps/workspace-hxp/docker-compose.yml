@@ -1,0 +1,68 @@
+version: "3.0"
+services:
+  workspace-hxp:
+    image: workspace-hxp
+    build:
+      context: ../..
+      dockerfile: apps/workspace-hxp/Dockerfile
+    ports:
+      - "8081:8080"
+    profiles: ["frontend"]
+    depends_on:
+      hxpr:
+        condition: service_healthy
+
+  idp:
+    image: ghcr.io/hylandsoftware/hxp/iam/api.mock:11.71.4
+    hostname: idp
+    volumes:
+      - ./config/idp/identity-resources.json:/app/seeddata/local/identity-resources.seeddata.json:ro
+    ports:
+      - "5002:8080"
+
+  mongodb:
+    image: mongo:7.0.14
+    hostname: mongo
+    ports:
+      - "27017:27017"
+
+  opensearch:
+    image: opensearchproject/opensearch:2
+    hostname: opensearch
+    environment:
+      - "discovery.type=single-node"
+      - "cluster.routing.allocation.disk.threshold_enabled=false"
+      - "plugins.security.disabled=true"
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  hxpr:
+    image: ghcr.io/hylandsoftware/hxpr-app-jvm:${HXPR_VERSION}
+    depends_on:
+      opensearch:
+        condition: service_healthy
+    healthcheck:
+      test: "wget -nv -t1 --spider 'http://localhost:8080/' || exit 1"
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    environment:
+      QUARKUS_SECURITY_USERS_EMBEDDED_ENABLED: "false"
+      QUARKUS_HTTP_AUTH_BASIC: "false"
+      OPENSEARCH_ADDRESSLIST: "http://opensearch:9200"
+      IDP_URL: "http://idp:8080"
+      NUXEO_MONGODB_SERVER: mongo:27017
+      KAFKA_ENABLED: "false"
+      TRANSFORM_ENABLED: "false"
+      HXPR_IDP_CLIENT: ${APP_CONFIG_OAUTH2_CLIENTID}
+    ports:
+      - "8080:8080"
+      - "5005:5005"

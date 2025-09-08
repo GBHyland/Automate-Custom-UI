@@ -1,0 +1,36 @@
+{
+    "name": "workspace-hxp-process-services-cloud-extension-process-form-feature-shell",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/src/test.ts",
+                "tsConfig": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/tsconfig.spec.json",
+                "karmaConfig": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/core/src/styles",
+                        "libs/shared/satori-like-styles/src"]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib",
+                        "libs/shared/satori-like-styles/src"]
+                    }
+                }
+            }
+        },
+        "lint": {},
+        "stylelint": {}
+    },
+    "tags": ["category:workspace-hxp", "scope:workspace-hxp-process-services-cloud-extension-process-form-feature-shell"]
+}

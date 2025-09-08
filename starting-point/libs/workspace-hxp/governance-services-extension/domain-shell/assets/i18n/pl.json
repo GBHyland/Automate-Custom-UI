@@ -1,0 +1,236 @@
+{
+    "GOVERNANCE": {
+        "SIDENAV": {
+            "TITLE": "Zarządzanie"
+        },
+        "HEADER": {
+            "TITLE": "Zarządzanie"
+        },
+        "TABS": {
+            "RECORDS": "Records Management",
+            "LEGAL_HOLD": "Legal Hold Management"
+        },
+        "LEGAL_HOLD": {
+            "TITLE": "Legal Hold Management",
+            "HEADER": "Legal Hold Cases",
+            "TABLE": {
+                "COLUMNS": {
+                    "CASE_NAME": "Legal Hold Case",
+                    "REASON_FOR_HOLD": "Reason for Hold",
+                    "TOTAL_RECORDS_HELD": "Total Records Held",
+                    "DATE_OF_CREATION": "Date of Creation",
+                    "CREATOR": "Creator"
+                },
+                "NO_RECORDS_FOUND": "You don't have any legal hold cases yet.",
+                "NO_RECORDS_FOUND_FILTERED": "No legal hold case matches your search filter."
+            },
+            "CREATE_BUTTON": "Create Legal Hold Case",
+            "SEARCH_PLACEHOLDER": "Search Legal Hold Case Name",
+            "CLEAR_ALL": "Clear All",
+            "SELECTED": "Selected"
+        },
+        "SEARCH": {
+            "FILTERS": {
+                "ARIA-LABEL": {
+                    "CLEAR_INPUT": "Wyczyść dane wejściowe",
+                    "CLEAR_SEARCH": "Wyczyść wyszukiwanie",
+                    "FILTERS_LIST": "Lista filtrów",
+                    "REMOVE": "Usuń filtr"
+                },
+                "SELECTED": "Zaznaczono {{selected}}",
+                "RESULTS_FOUND_PLURAL": "Znaleziono {{count}} wyniki/wyników",
+                "RESULTS_FOUND_SINGLE": "Znaleziono {{count}} wynik",
+                "CATEGORY": {
+                    "LABEL": "Kategoria"
+                },
+                "CREATOR": {
+                    "LABEL": "Twórca"
+                },
+                "DATA_SOURCE": {
+                    "LABEL": "Źródło danych"
+                },
+                "MODIFIER": {
+                    "LABEL": "Modyfikator"
+                },
+                "STATUS": {
+                    "LABEL": "Status"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "MESSAGE": "Nie znaleziono pasujących wyników"
+                },
+                "PLACEHOLDER": "Szukaj",
+                "CUTOFF": {
+                    "LABEL": "Granica"
+                },
+                "DISPOSITION": {
+                    "LABEL": "Data dyspozycji"
+                },
+                "DATE": {
+                    "ARIA-LABEL": {
+                        "DEFAULT_OPTIONS_LIST": "Lista dostępnych opcji daty"
+                    },
+                    "OPTIONS": {
+                        "TOMORROW": "Jutro",
+                        "NEXT_WEEK": "Następny tydzień",
+                        "NEXT_MONTH": "Następny miesiąc",
+                        "NEXT_YEAR": "Następny rok",
+                        "CUSTOM_DATE": {
+                            "LABEL": "Data niestandardowa",
+                            "VALUES": {
+                                "AFTER": "Po",
+                                "BEFORE": "Przed",
+                                "SINCE_TO_DATE": "Od {{afterDate}} do {{beforeDate}}",
+                                "SINCE_TO_TODAY": "Od {{date}} do dzisiaj",
+                                "UNTIL_DATE": "Do {{date}}"
+                            }
+                        },
+                        "BUTTON": {
+                            "CLEAR": {
+                                "ARIA_LABEL": {
+                                    "AFTER": "Wyczyść datę Po",
+                                    "BEFORE": "Wyczyść datę Przed"
+                                }
+                            }
+                        },
+                        "ERRORS": {
+                            "BEFORE_DATE_TOO_EARLY": "Data Przed nie może być wcześniejsza niż data Po",
+                            "AFTER_DATE_TOO_LATE": "Data Po nie może być późniejsza niż data Przed",
+                            "INVALID_DATE_FORMAT": "Wprowadź datę w prawidłowym formacie MM/DD/RRRR"
+                        }
+                    }
+                }
+            },
+            "TOOLBAR": {
+                "BUTTONS": {
+                    "DELETE": "Delete Selected Records",
+                    "LEGAL_HOLD_CASE": "Add selected records to a legal hold",
+                    "PROPERTY_PANE_OPEN": "View Property",
+                    "PROPERTY_PANE_CLOSE": "Hide Property"
+                }
+            }
+        },
+        "SEARCH_RESULTS": {
+            "BUTTONS": {
+                "RESET": {
+                    "LABEL": "Resetuj"
+                },
+                "SEARCH": {
+                    "LABEL": "Szukaj"
+                },
+                "SELECT_ALL": {
+                    "LABEL": "Wybierz wszystko"
+                },
+                "UNSELECT_ALL": {
+                    "LABEL": "Odznacz wszystko"
+                }
+            },
+            "INITIAL_STATE": {
+                "LABEL": "Wyszukaj rekordy przy użyciu filtrowania zaawansowanego",
+                "ICON": "Wyszukaj rekordy przy użyciu filtrowania zaawansowanego"
+            },
+            "NO_RESULTS": {
+                "ICON": "Nie znaleziono rekordów dla wybranych filtrów. Dostosuj kryteria wyszukiwania i spróbuj ponownie.",
+                "LABEL": "Nie znaleziono rekordów dla wybranych filtrów. Dostosuj kryteria wyszukiwania i spróbuj ponownie."
+            },
+            "RESULTS_LIST": {
+                "COUNT_PLURAL": "Znaleziono {{count}} wyniki/wyników",
+                "COUNT_SINGLE": "Znaleziono {{count}} wynik",
+                "COLUMNS": {
+                    "NAME": "Nazwa rekordu",
+                    "DATA_SOURCE": "Źródło danych",
+                    "CATEGORY": "Kategoria",
+                    "CUTOFF_DATE": "Data graniczna",
+                    "DISPOSITION_DATE": "Disposition Date",
+                    "DISPOSITION": "Dyspozycja",
+                    "STATUS": "Status"
+                },
+                "ITEMS_PER_PAGE": "Elementów na stronie:"
+            },
+            "SELECTED_RESULTS_COUNT": "Zaznaczono {{selected}}"
+        },
+        "SEARCH_FILTERS": {
+            "CONTENT_ID": {
+                "LABEL": "Identyfikator treści",
+                "PLACEHOLDER": "Wprowadź identyfikator treści",
+                "ERROR": "Wprowadź prawidłowy identyfikator treści."
+            },
+            "RECORD_NAME": {
+                "LABEL": "Record Name",
+                "PLACEHOLDER": "Enter Record Name",
+                "ERROR": "Please enter a valid Record Name."
+            }
+        },
+        "SIDEBAR": {
+            "EDIT_TITLE": "Edytuj właściwości rekordu",
+            "TABS": {
+                "PROPERTIES": "Właściwości"
+            },
+            "SECTIONS": {
+                "RECORD_PROPERTIES": "Właściwości rekordu"
+            },
+            "BUTTONS": {
+                "EDIT": "Edytuj",
+                "CANCEL": "Anuluj",
+                "SAVE": "Zapisz",
+                "CLEAR": "Wyczyść",
+                "CLOSE": "Zamknij pasek boczny",
+                "TOGGLE": "Rozwiń/Zwiń"
+            },
+            "FIELDS": {
+                "CUTOFF_DATE": "Data graniczna",
+                "INCOMPLETE": "Nieukończone"
+            },
+            "DATEPICKER": {
+                "CLEAR": "Clear",
+                "CANCEL": "Cancel",
+                "APPLY": "OK"
+            }
+        },
+        "DELETE_DIALOG": {
+            "TITLE": "Potwierdź usunięcie",
+            "CONTENT": "Czy na pewno chcesz usunąć zaznaczone rekordy?",
+            "CANCEL": "Anuluj",
+            "DELETE": "Usuń"
+        },
+        "LEGAL_DIALOG": {
+            "TITLE": "Legal Hold Cases",
+            "CANCEL": "Cancel",
+            "ASSIGN": "Add Records to Selection",
+            "INFO_ADD_RECORDS": "{{count}} file will be added to selected legal hold",
+            "INFO_ADD_RECORDS_plural": "{{count}} files will be added to selected legal hold"
+        },
+        "CREATE_LEGAL_HOLD_CASE_DIALOG": {
+            "TITLE": "Create Legal Hold Case",
+            "NAME": "Name",
+            "REASON": "Reason",
+            "DESCRIPTION": "Description",
+            "CANCEL": "Cancel",
+            "CREATE": "Create Legal Hold Case",
+            "ERRORS": {
+                "MAX_LENGTH_EXCEEDED": "Maximum length of {{max}} characters exceeded."
+            }
+        },
+        "UNSAVED_CHANGES_DIALOG": {
+            "TITLE": "Niezapisane zmiany",
+            "CONTENT": "Masz niezapisane zmiany. Aby je przejrzeć i zapisać, kliknij przycisk „Zachowaj edycję”. Aby odrzucić zmiany, kliknij przycisk „Zamknij bez zapisywania”.",
+            "DISCARD": "Zamknij bez zapisywania",
+            "KEEP": "Zachowaj edycję"
+        },
+        "NOTIFICATIONS": {
+            "RECORD_DELETE_SUCCESS": "Rekordy zostały usunięte.",
+            "RECORD_DELETE_ERROR": "Failed to delete property. Please try again.",
+            "RECORD_DELETE_PARTIAL": "{{successCount}} records deleted, {{failureCount}} failed.",
+            "PROPERTY_UPDATE_SUCCESS": "Właściwość została zaktualizowana!",
+            "PROPERTY_UPDATE_ERROR": "Failed to update property. Please try again.",
+            "LEGAL_HOLD_CASE_CREATE_SUCCESS": "Legal Case Hold created successfully",
+            "LEGAL_HOLD_CASE_CREATE_ERROR": "Failed to create Legal Case Hold. Please try again.",
+            "LEGAL_HOLD_CASE_NAME_EXISTS": "A legal hold case with this name already exists.",
+            "LEGAL_HOLD_ASSIGNMENT_ERROR": "Failed to assign records to legal hold. Please try again.",
+            "LEGAL_HOLD_ASSIGNMENT_SUCCESS": "Records assigned to legal hold successfully."
+        },
+        "SEARCH_INPUT": {
+            "SEARCH": "Search",
+            "CLEAR": "Clear"
+        }
+    }
+}

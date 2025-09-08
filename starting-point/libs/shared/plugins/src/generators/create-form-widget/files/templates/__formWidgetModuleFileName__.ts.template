@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { FormRenderingService } from '@alfresco/adf-core';
+import { <%= formWidgetClassName %> } from './<%= formWidgetFileName %>';
+
+@NgModule({
+    imports: [
+        <%= formWidgetClassName %>,
+    ],
+})
+export class <%= formWidgetModuleClassName %> {
+    constructor(formService: FormRenderingService) {
+        formService.register({
+            '<%= formWidgetName %>': () => <%= formWidgetClassName %>
+        });
+    }
+}

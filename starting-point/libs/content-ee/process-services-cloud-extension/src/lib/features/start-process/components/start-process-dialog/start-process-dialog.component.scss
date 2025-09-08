@@ -1,0 +1,38 @@
+@use 'mat-selectors' as ms;
+
+$mat-dialog-container-padding: 40px;
+
+@mixin side-padding {
+    padding-left: $mat-dialog-container-padding;
+    padding-right: $mat-dialog-container-padding;
+}
+
+.apa-start-process-dialog-container {
+    .apa-loading-processes-error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+    }
+
+    .apa-start-process-dialog-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--theme-border-color);
+        @include side-padding;
+
+        padding-top: 12px;
+        padding-bottom: 11px;
+
+        &-title {
+            font-weight: 900;
+            font-size: var(--theme-title-font-size);
+        }
+    }
+
+    .apa-start-process-dialog-process-list {
+        height: calc(100% - 80px);
+    }
+
+}

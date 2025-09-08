@@ -1,0 +1,165 @@
+<div
+    class="hxp-workspace-upload-properties-editor__empty"
+    *ngIf="!data?.length; else properties"
+>
+    <mat-icon>info</mat-icon>
+    <span>{{ 'FILE_UPLOAD.EDIT.NO_SELECTION' | translate }}</span>
+</div>
+<ng-template #properties>
+    <div class="hxp-workspace-upload-properties-editor__edit">
+        <!-- temporary UI, as we should probably have a custom properties editor -->
+        <mat-accordion class="hxp-nav-accordion">
+            <mat-expansion-panel class="hxp-expansion-panel" expanded="true">
+                <mat-expansion-panel-header class="hxp-expansion-panel-header">
+                    <mat-panel-title>
+                        <div class="hxp-expansion-panel-title">
+                            {{
+                                'FILE_UPLOAD.EDIT.TAB.LOCATION_CATEGORY'
+                                    | translate
+                            }}
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                    <form [formGroup]="createDocumentForm">
+                        <ng-container *ngIf="!mixedLocationsDetected; else mixedLocations">
+                            <hxp-document-location-picker
+                                id="hxp-document-location-picker-selector"
+                                [document]="selectedLocation"
+                                [required]="true"
+                                (selectedLocation)="
+                                    onDocumentLocationSelected($event)
+                                "
+                            />
+                        </ng-container>
+                        <ng-template #mixedLocations>
+                            <div
+                                class="hxp-workspace-upload-properties-editor__edit__mixed_content"
+                            >
+                                <span
+                                    class="hxp-workspace-upload-properties-editor__edit__mixed_content__title"
+                                    >{{
+                                        'DOCUMENT_LOCATION_PICKER.LABEL' | translate
+                                    }}</span
+                                >
+                                <div
+                                    class="hxp-workspace-upload-properties-editor__edit__mixed_content__panel"
+                                >
+                                    <span>{{
+                                        'FILE_UPLOAD.EDIT.MIXED_CONTENT.TITLE'
+                                            | translate
+                                    }}</span>
+                                    <button
+                                        id="hxp-upload-properties-enable-mixed-content"
+                                        mat-button
+                                        color="primary"
+                                        (click)="enabledMixedLocationsEditing()"
+                                    >
+                                        {{
+                                            'FILE_UPLOAD.EDIT.MIXED_CONTENT.LOCATION.BUTTON'
+                                                | translate
+                                        }}
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <ng-container *ngIf="!mixedCategoriesDetected; else mixedCategories">
+                            <hxp-document-category-picker
+                                id="hxp-document-category-picker-selector"
+                                [document]="selectedLocation"
+                                [required]="true"
+                                (selectedCategory)="
+                                    onDocumentCategorySelected($event)
+                                "
+                                [value]="editDocument.sys_primaryType"
+                                [filterFn]="filterFilishDocumentCategories"
+                            />
+                        </ng-container>
+                        <ng-template #mixedCategories>
+                            <div
+                                class="hxp-workspace-upload-properties-editor__edit__mixed_content"
+                            >
+                                <span
+                                    class="hxp-workspace-upload-properties-editor__edit__mixed_content__title"
+                                    >{{
+                                        'DOCUMENT_CATEGORY_PICKER.LABEL' | translate
+                                    }}</span
+                                >
+                                <div
+                                    class="hxp-workspace-upload-properties-editor__edit__mixed_content__panel"
+                                >
+                                    <span>{{
+                                        'FILE_UPLOAD.EDIT.MIXED_CONTENT.TITLE'
+                                            | translate
+                                    }}</span>
+                                    <button
+                                        id="hxp-upload-properties-enable-mixed-content"
+                                        mat-button
+                                        color="primary"
+                                        (click)="enabledMixedCategoriesEditing()"
+                                    >
+                                        {{
+                                            'FILE_UPLOAD.EDIT.MIXED_CONTENT.CATEGORY.BUTTON'
+                                                | translate
+                                        }}
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <button
+                            id="hxp-upload-properties-editor-save"
+                            [disabled]="
+                                !createDocumentForm.dirty ||
+                                createDocumentForm.invalid ||
+                                mixedLocationsDetected ||
+                                mixedCategoriesDetected
+                            "
+                            mat-button
+                            color="primary"
+                            (click)="saveProperties()"
+                        >
+                            {{
+                                'FILE_UPLOAD.BUTTON.PROPERTIES.SAVE' | translate
+                            }}
+                        </button>
+                    </form>
+                </ng-template>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</ng-template>
+<div
+    class="hxp-workspace-upload-properties-editor__toast-container"
+    #notificationOverlay="cdkOverlayOrigin"
+    cdkOverlayOrigin
+></div>
+
+<ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="notificationOverlay"
+    [cdkConnectedOverlayOpen]="showOverlay"
+    [cdkConnectedOverlayPositions]="positions"
+    [cdkConnectedOverlayMinWidth]="100"
+    #overlay
+>
+    <div
+        class="hxp-workspace-upload-properties-editor__toast hxp-snack-bar-container hxp-snack-bar-type-done"
+    >
+        <mat-icon
+            class="hxp-workspace-upload-properties-editor__toast__done-icon"
+            >done</mat-icon
+        >
+        <span class="hxp-workspace-upload-properties-editor__toast__message">
+            {{ toastMessage | translate }}
+        </span>
+        <button
+            class="hxp-workspace-upload-properties-editor__toast__dismiss-action"
+            (click)="dismissToast()"
+        >
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</ng-template>

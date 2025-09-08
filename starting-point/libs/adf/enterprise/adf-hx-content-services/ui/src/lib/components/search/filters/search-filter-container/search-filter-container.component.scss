@@ -1,0 +1,67 @@
+@use 'satori-like-styles' as satori;
+@use '@angular/material' as mat;
+
+.hxp-search-filter {
+    .hxp-search-filter-chip {
+        border: satori.$hy-border-default;
+        max-width: 320px;
+        background-color: var(--theme-background-color, #fafafa);
+
+        &-label-container {
+            display: flex;
+            align-items: center;
+            color: var(--theme-primary-color, satori.$satori-like-primary);
+            font-weight: 700;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            max-width: 290px;
+        }
+
+        &-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 255px;
+        }
+
+        &-badge {
+            color: satori.$hy-colors-background-base;
+            background-color: var(--theme-primary-color, satori.$satori-like-primary);
+            border-radius: 100px;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: satori.$hy-font-sizes-10;
+            margin: 0 5px;
+        }
+
+        &_active {
+            border: satori.$hy-border-active;
+            background: var(--adf-theme-primary-50);
+        }
+
+        &_opened {
+            background: var(--adf-theme-primary-50);
+        }
+    }
+}
+
+.hxp-search-filter-overlay {
+    @include mat.elevation(3);
+
+    background-color: var(--theme-background-color, #fafafa);
+    border-radius: satori.$hy-border-radius-8;
+    width: 100%;
+
+    &-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--mat-dialog-actions-padding, 16px 24px);
+    }
+}

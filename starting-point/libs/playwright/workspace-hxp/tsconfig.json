@@ -1,0 +1,10 @@
+{
+    "extends": "../../../tsconfig.e2e.json",
+    "compilerOptions": {
+        "outDir": "../../../out-tsc/libs/workspace-hxp/playwright"
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.js"
+    ]
+}

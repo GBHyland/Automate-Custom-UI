@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Ingen proces definitioner tilgængelig",
+      "UNCATEGORIZED": "Ikke-kategoriseret",
+      "RECENT_PROCESS_DEFINITIONS": "Brugt for nyligt"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Udvidelser: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Aktivér udvidelse for Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Processtyring",
+      "START_PROCESS_CLOUD": "Start proces",
+      "TASK_LIST_CLOUD": "Opgaveliste",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Vis detaljer",
+        "CLOSE-TOOLTIP": "Luk",
+        "PRINT": "Udskriv formular"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Start proces",
+      "CREATE_PROCESS_NOT_ALLOWED": "Ny proces kan ikke oprettes"
+    },
+    "ERROR": {
+      "NO_FORM": "Procesdefinition har ikke en defineret form",
+      "CAN_NOT_ATTACH": "Ikke i stand til at vedhæfte det valgte indhold"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Proces oprettet'{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Ukendt netværksfejl er opstået. Tilknyttede Process Automation-funktioner er deaktiverede."
+    },
+    "SIDE_NAV_TITLE": "Processtyring",
+    "TASK_LIST": {
+      "TASKS": "Opgaver",
+      "ACTIONS": {
+        "TASK_DETAILS": "Vis detaljer",
+        "PROCESS_HISTORY": "Proceshistorie"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Skift modtager",
+        "CLOSE": "Luk",
+        "ASSIGN": "Tildel",
+        "SUCCESS": "Opgavemodtager ændret",
+        "FAILED": "Der opstod et problem under tildeling af brugeren. Prøv at tildele brugeren igen."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Detaljer"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Processer",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Vis detaljer",
+        "CANCEL_MESSAGE": "Processen er annulleret",
+        "CANCEL_ERROR_MESSAGE": "Annullering af processen mislykkedes. Prøv igen",
+        "CANCEL_TOOLTIP": "Annuller proces"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Startet af"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Filteret er gemt",
+      "FILTER_DELETED": "Filteret er slettet"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Opgaven er gennemført",
+      "FORM_SAVED": "Formularen er gemt",
+      "FORM_ACTION": "Handling '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Filteret er gemt",
+      "FILTER_DELETED": "Filteret er slettet"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Annuller proces",
+        "MESSAGE": "Vil du annullere denne proces?"
+      },
+      "NEW_PROCESS": "Ny proces",
+      "CONFIRM": "Bekræft",
+      "CLOSE": "Luk",
+      "ERROR": "Der kunne ikke indlæses nogen procesdefinitioner. Kontrollér, om du har adgang til dem."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}} opgave er blevet tildelt til {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}} opgaven er gennemført",
+    "TASK_ACTIVATED": "{{taskName}} opgaven er nu aktiv",
+    "TASK_CANCELLED": "{{taskName}} opgaven blev annulleret",
+    "TASK_SUSPENDED": "{{taskName}} opgaven blev suspenderet",
+    "TASK_UPDATED": "{{taskName}} opgavedetaljer blev opdateret"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Søg"
+    }
+  }
+}

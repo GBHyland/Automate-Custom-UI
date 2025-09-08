@@ -1,0 +1,65 @@
+{
+    "name": "workspace-hxp-content-services-extension-content-browser-feature-shell",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/src",
+    "prefix": "hxp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/libs/workspace-hxp/content-services-extension/content-browser/feature-shell"],
+            "options": {
+                "project": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "codeCoverage": true,
+                "main": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/src/test.ts",
+                "tsConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/tsconfig.spec.json",
+                "karmaConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": [
+                        "node_modules",
+                        "libs/shared/core/src/styles",
+                        "node_modules/@alfresco/adf-core/lib",
+                        "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+                        "libs/shared/satori-like-styles/src"
+                    ]
+                },
+                "styles": [
+                    "node_modules/@hyland/icons/index.css",
+                    "apps/workspace-hxp/src/styles.scss"
+                ]
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib",
+                            "libs/shared/satori-like-styles/src"]
+                    }
+                }
+            }
+        },
+        "lint": {},
+        "stylelint": {}
+    },
+    "tags": ["scope:workspace-hxp-content-services-extension-content-browser-feature-shell", "category:workspace-hxp"]
+}

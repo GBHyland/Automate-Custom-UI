@@ -1,0 +1,57 @@
+{
+    "sys_changeToken": "0-0",
+    "sys_contributors": [
+        {
+            "id": "444660e7-0334-4356-8c3d-484fe445b610",
+            "firstName": "test2",
+            "lastName": "user2",
+            "username": "test2user2"
+        }
+    ],
+    "sys_created": "2023-11-16T11:06:17.354Z",
+    "sys_creator": {
+        "id": "444660e7-0334-4356-8c3d-484fe445b610",
+        "firstName": "test2",
+        "lastName": "user2",
+        "username": "test2user2"
+    },
+    "sys_effectivePermissions": [
+        "CreateChild",
+        "CreateVersion",
+        "Delete",
+        "DeleteChild",
+        "ManageLock",
+        "ManageRetention",
+        "ManageSecurity",
+        "Read",
+        "ReadWrite",
+        "Write"
+    ],
+    "sys_hasLegalHold": false,
+    "sys_id": "d108d526-cff0-4d63-b2b1-4281907beac7",
+    "sysver_isCheckedIn": false,
+    "sys_isFolderish": false,
+    "sys_isLatestVersion": false,
+    "sys_isRecord": false,
+    "sys_isTrashed": false,
+    "sysver_isVersion": false,
+    "sys_lastContributor": {
+        "username": "test2user2",
+        "firstName": "test2",
+        "id": "444660e7-0334-4356-8c3d-484fe445b610",
+        "lastName": "user2"
+    },
+    "sys_modified": "2023-11-16T11:06:17.354Z",
+    "sys_name": "mockDocument.doc-pdfPreview",
+    "sys_parentId": "00000000-0000-0000-0000-000000000000",
+    "sys_parentPath": "/mockDocument.doc/SysRenditionsContainer",
+    "sys_path": "/mockDocument.doc/SysRenditionsContainer/mockDocument.doc-pdfPreview",
+    "sys_pathDepth": 4,
+    "sys_primaryType": "SysRendition",
+    "sys_repository": "default",
+    "sys_title": "mockDocument.doc-pdfPreview",
+    "sys_version": 0,
+    "sysrendition_id": "pdfPreview",
+    "sysrendition_sourceDoc": "e43b6a72-f7a7-4f5a-8cd1-a3b84cc6af83",
+    "sysrendition_status": "COMPLETED"
+}

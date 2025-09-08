@@ -1,0 +1,16 @@
+{
+    "APP_CHROME": {
+        "ENV_SWITCHER": {
+            "CONTROL_CENTER": "Kontrollzentrum"
+        },
+        "APP_LIST": {
+            "HOME": "Startseite"
+        },
+        "USER_MENU": {
+            "SIGN_OUT": "Abmelden"
+        },
+        "ERRORS": {
+            "APPS": "Beim Abrufen der Anwendungen ist etwas schief gelaufen"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use 'mat-selectors' as ms;
+
+.hxp-create-document-menu {
+    &-button {
+        padding: 0 5px 0 10px;
+
+        #{ms.$mat-button-label} {
+            display: flex;
+            align-items: center;
+        }
+
+        &-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid white;
+            margin-left: 10px;
+            padding-left: 4px;
+        }
+    }
+}

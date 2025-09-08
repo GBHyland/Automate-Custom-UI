@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Seleziona un documento",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Modifica layout",
+                "GRID_VIEW": "Griglia (fino a 12 miniature)",
+                "VERTICAL_SCROLLING": "Scorrimento verticale",
+                "HORIZONTAL_SCROLLING": "Scorrimento Orizzontale"
+            },
+            "THUMBNAIL_VIEWER": "Visualizzatore miniature",
+            "THUMBNAIL_VIEWER_PAGES": "Pagine",
+            "THUMBNAIL_ALT_TEXT": "Immagine in miniatura",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Navigazione pagina",
+                "PREVIOUS": "Precedente",
+                "NEXT": "Successivo"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Selezione strato",
+                "IMAGE": "Immagine",
+                "TEXT": "Testo"
+            },
+            "ZOOM": {
+                "TITLE": "Zoom",
+                "ZOOM_IN": "Zoom avanti",
+                "ZOOM_OUT": "Zoom indietro"
+            },
+            "ROTATE_RIGHT": "Ruota in senso orario",
+            "FULLSCREEN": "Schermo intero",
+            "BEST_FIT": "Soluzione migliore"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Attiva/disattiva layout",
+                "THUMBNAIL_VIEWER": "Attiva/disattiva visualizzatore miniature",
+                "NAVIGATE_PREVIOUS_PAGE": "Passa alla pagina precedente",
+                "NAVIGATE_NEXT_PAGE": "Passa alla pagina successiva",
+                "NAVIGATE_FIRST_PAGE": "Passa alla prima pagina",
+                "NAVIGATE_LAST_PAGE": "Passa all’ultima pagina",
+                "NAVIGATE_UP": "Naviga verso l'alto",
+                "NAVIGATE_DOWN": "Naviga verso il basso",
+                "NAVIGATE_LEFT": "Passa a sinistra",
+                "NAVIGATE_RIGHT": "Passa a destra",
+                "ZOOM_IN": "Zoom avanti",
+                "ZOOM_OUT": "Zoom indietro",
+                "BEST_FIT": "Soluzione migliore",
+                "ROTATE_RIGHT": "Ruota in senso orario",
+                "FULL_SCREEN": "Attiva/disattiva schermo intero",
+                "IMAGE_LAYER": "Strato immagine",
+                "TEXT_LAYER": "Strato testo",
+                "CLIPBOARD_COPY": "Copia negli Appunti"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "Il layout del visualizzatore viene modificato in Vista verticale singola per una migliore esperienza",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "Il layout del visualizzatore viene modificato in Vista griglia per una migliore esperienza",
+                "CLIPBOARD_COPY_SUCCESS": "Copiato negli Appunti"
+            }
+        }
+    }
+}

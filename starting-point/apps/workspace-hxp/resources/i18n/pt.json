@@ -1,0 +1,16 @@
+{
+  "APP": {
+    "HEADER": {
+      "SIGN_OUT": "Sair",
+      "HELP": "Ajuda",
+      "LANGUAGE": "Idioma"
+    },
+    "TOOLBAR": {
+      "SELECTED": "Selecionado",
+      "CLEAR_ALL": "Eliminar tudo"
+    }
+  },
+  "PAGINATION": {
+    "PAGE_SIZE": "Itens por página"
+  }
+}

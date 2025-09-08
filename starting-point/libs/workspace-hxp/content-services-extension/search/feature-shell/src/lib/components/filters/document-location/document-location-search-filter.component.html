@@ -1,0 +1,144 @@
+<hxp-search-filter-container
+    #searchFilter
+    [name]="'SEARCH.FILTERS.DOCUMENT_LOCATION.LABEL' | translate"
+    [selectedValue]="selectedValue"
+    [filterForm]="filterForm"
+    (filterApplied)="applyFilter()"
+    (filterCleared)="clearFilter()"
+    (overlayClosed)="overlayClosed()"
+>
+    <div class="hxp-document-location-search-filter-container">
+        <hxp-search-filter-input
+            [applyOnEnter]="true"
+            [inputAriaLabel]="'SEARCH.FILTERS.DOCUMENT_LOCATION.LABEL' | translate"
+            [clearAriaLabel]="'SEARCH.FILTERS.DOCUMENT_LOCATION.ARIA-LABEL.CLEAR_INPUT' | translate"
+            [placeholder]="'SEARCH.FILTERS.DOCUMENT_LOCATION.PLACEHOLDER' | translate"
+            [prefixIcon]="activeView === ActiveViewType.SearchResults ? 'search_arrow_left' : ''"
+            [prefixAriaLabel]="'SEARCH.FILTERS.DOCUMENT_LOCATION.ARIA-LABEL.BACK_TO_BROWSE' | translate"
+            (search)="filteredSearch($event)"
+            (prefixClick)="goToBrowseView()"
+        />
+
+        <div class="hxp-document-location-search-filter-summary" *ngIf="!isLoading">
+            <mat-chip-set
+                ariaLabel="
+                    'SEARCH.FILTERS.DOCUMENT_LOCATION.ARIA-LABEL.SELECTED_FILTERS'
+                        | translate
+                "
+                class="hxp-document-location-search-filter-summary-list"
+            >
+                <span class="hxp-document-location-search-filter-summary-list-prefix">
+                    {{
+                        'SEARCH.FILTERS.DOCUMENT_LOCATION.SELECTED'
+                            | translate: { selected: selection.selected.length }
+                    }}
+                </span>
+                <span *ngIf="selection.selected.length > 0" class="hxp-document-location-search-filter-summary-list-colon">:</span>
+                <mat-chip
+                    *ngFor="let selectedDocument of selection.selected"
+                    class="hxp-document-location-search-filter-summary-list-item"
+                    [attr.aria-label]="selectedDocument.sys_title || selectedDocument.sys_name"
+                >
+                    <span class="hxp-document-location-filter-summary-list-item__label">
+                        {{
+                            selectedDocument.sys_title ||
+                                selectedDocument.sys_name ||
+                                ''
+                        }}
+                    </span>
+                    <button
+                        matChipRemove
+                        [attr.aria-label]="
+                            ('SEARCH.FILTERS.DOCUMENT_LOCATION.ARIA-LABEL.REMOVE'
+                                | translate) +
+                                ' ' +
+                                selectedDocument.sys_title ||
+                                selectedDocument.sys_name ||
+                                ''
+                        "
+                        (click)="toggleSelection(selectedDocument)"
+                    >
+                        <mat-icon
+                            class="hxp-document-location-search-filter-summary-list-remove-item-icon"
+                            svgIcon="search_clear"
+                            aria-hidden="true"
+                            >close</mat-icon
+                        >
+                    </button>
+                </mat-chip>
+            </mat-chip-set>
+        </div>
+
+        <hxp-workspace-document-tree
+            #documentTree
+            *ngIf="activeView === ActiveViewType.Browse"
+            class="hxp-document-location-search-filter-tree"
+            [documents]="selection.selected"
+            [multiSelection]="true"
+            (selectedDocument)="onDocumentSelected($event)"
+        />
+
+        <ng-container *ngIf="activeView === ActiveViewType.SearchResults">
+            <div
+                *ngIf="isLoading; else results"
+                class="hxp-document-location-search-filter-spinner-container"
+            >
+                <mat-progress-spinner mode="indeterminate" />
+            </div>
+
+            <ng-template #results>
+                <mat-selection-list
+                    #documentCategories
+                    class="hxp-document-location-search-filter-list"
+                    (selectionChange)="handleSelectionChange($event)"
+                    *ngIf="filteredDocuments.length; else noResults"
+                >
+                    <mat-list-option
+                        *ngFor="let document of filteredDocuments"
+                        [value]="document"
+                        class="hxp-document-location-search-filter-list-option"
+                        checkboxPosition="before"
+                        [selected]="selection.isSelected(document)"
+                        lines="2"
+                    >
+                        <div
+                            matLine
+                            [title]="document.sys_title"
+                            matListItemTitle
+                            class="hxp-document-location-search-filter-list-option-title"
+                        >
+                            <hxp-mime-type-icon
+                                mimeType="folder"
+                                class="hxp-document-location-search-filter-folder-icon"
+                            />
+                            {{ document.sys_title }}
+                        </div>
+                        <div
+                            matLine
+                            class="hxp-document-location-search-filter-list-option-path"
+                        >
+                            {{ document.sys_path }}
+                        </div>
+                    </mat-list-option>
+                </mat-selection-list>
+
+                <ng-template #noResults>
+                    <div class="hxp-document-location-search-filter-no-results">
+                        <h2>
+                            {{
+                                'SEARCH.FILTERS.DOCUMENT_LOCATION.NO_SEARCH_RESULTS.TITLE'
+                                    | translate
+                            }}
+                        </h2>
+                        <p>
+                            {{
+                                'SEARCH.FILTERS.DOCUMENT_LOCATION.NO_SEARCH_RESULTS.MESSAGE'
+                                    | translate
+                            }}
+                        </p>
+                    </div>
+                </ng-template>
+            </ng-template>
+        </ng-container>
+    </div>
+</hxp-search-filter-container>

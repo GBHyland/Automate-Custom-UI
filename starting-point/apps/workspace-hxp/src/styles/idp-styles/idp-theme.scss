@@ -1,0 +1,201 @@
+@use '@angular/material' as mat;
+@use 'satori-like-styles' as satori;
+@use './idp-colors' as idp;
+@use '../colors' as colors;
+@use 'mat-selectors' as ms;
+@use 'hxp-typography' as hxpTypography;
+
+$primary: mat.m2-define-palette(idp.$hy-primary, 700);
+$accent: mat.m2-define-palette(idp.$hy-neutral, 600);
+$warn: mat.m2-define-palette(colors.$hy-warn, 600);
+
+$idp-theme: mat.m2-define-light-theme(
+    (
+        color: (
+            primary: $primary,
+            accent: $accent,
+            warn: $warn,
+        ),
+        typography: hxpTypography.$typography,
+    )
+);
+
+$hy-primary-contrast: mat.m2-get-color-from-palette($primary, 'contrast');
+$foreground: map-get($idp-theme, foreground);
+$background: map-get($idp-theme, background);
+$color: map-get($idp-theme, color);
+
+$foreground-values: (
+    base: mat.m2-get-color-from-palette(idp.$hy-primary, 600),
+    disabled: mat.m2-get-color-from-palette(idp.$hy-neutral, 500),
+    link: mat.m2-get-color-from-palette(idp.$hy-primary, 700),
+    disabled-button: mat.m2-get-color-from-palette(idp.$hy-neutral, 500),
+    secondary-text: mat.m2-get-color-from-palette(idp.$hy-neutral, 600),
+    icon: mat.m2-get-color-from-palette(idp.$hy-neutral, 900),
+    icons: mat.m2-get-color-from-palette(idp.$hy-neutral, 900),
+    text: satori.$hy-colors-text-default,
+    disabled-text: mat.m2-get-color-from-palette(idp.$hy-primary, 50),
+    warning-text: mat.m2-get-color-from-palette(idp.$hy-warn, 600),
+    success-text: satori.$hy-colors-icon-success,
+    hint-text: mat.m2-get-color-from-palette(idp.$hy-neutral, 500),
+    border: mat.m2-get-color-from-palette(idp.$hy-neutral, 300),
+    hover: mat.m2-get-color-from-palette(idp.$hy-neutral, 500),
+    resolve-border: mat.m2-get-color-from-palette(idp.$hy-primary, 500),
+    resolve-text: mat.m2-get-color-from-palette(idp.$hy-primary, 500),
+);
+
+$background-values: (
+    default: #fff,
+    primary: map-get(idp.$hy-primary, 50),
+    base: map-get(idp.$hy-neutral, 400),
+    disabled: map-get(idp.$hy-neutral, 50),
+    idp-class: map-get(idp.$hy-neutral, 100),
+    active: map-get(idp.$hy-primary, 500),
+    hover: map-get(idp.$hy-neutral, 200),
+    button-hover: map-get(idp.$hy-neutral, 200),
+    white: #fff,
+    selected: map-get(idp.$hy-primary, 50),
+    selected-accent: map-get(idp.$hy-primary, 600),
+    document: map-get(idp.$hy-primary, 300),
+    classified: map-get(idp.$hy-primary, 700),
+    warning: map-get(idp.$hy-warn, 50),
+);
+
+$shortcut-browser-values: (
+    border: mat.m2-get-color-from-palette(idp.$hy-shortcut-browser, 100),
+    text: mat.m2-get-color-from-palette(idp.$hy-shortcut-browser, 200),
+);
+
+$custom-foreground-and-background: (
+    foreground: map-merge($foreground, $foreground-values),
+    background: map-merge($background, $background-values),
+);
+
+$custom-color: (
+    color: map-merge($color, $custom-foreground-and-background),
+);
+
+$idp-theme: map-merge($idp-theme, $custom-foreground-and-background);
+$idp-theme: map-merge($idp-theme, $custom-color);
+
+@function get-bg() {
+    $background: map-get($idp-theme, background);
+    @return $background;
+}
+
+@function get-fg() {
+    $foreground: map-get($idp-theme, foreground);
+    @return $foreground;
+}
+
+@function get-bg-color($key) {
+    $background: map-get($idp-theme, background);
+    @return map-get($background, $key);
+}
+
+@mixin component-idp-theme {
+    :host {
+        @include mat.all-component-themes($idp-theme);
+    }
+}
+
+@mixin use-background($key) {
+    background-color: map-get(get-bg(), $key);
+}
+
+@mixin use-foreground($key) {
+    color: map-get(get-fg(), $key);
+}
+
+@mixin use-idp-scrollbar() {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 6px;
+        border-radius: 10px;
+        background-clip: padding-box;
+        @include use-background(base);
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track-piece {
+        width: 15px;
+        border-radius: 10px;
+        border: 6px solid transparent;
+        background-clip: padding-box;
+        background-color: transparent;
+    }
+}
+
+@function get-border-color($key) {
+    @return map-get(get-fg(), $key);
+}
+
+@function get-shortcut-browser-color($key) {
+    @return map-get($shortcut-browser-values, $key);
+}
+
+@mixin idp-screens-dialog-overrides() {
+    $padding-y: 16px;
+    $padding-x: 24px;
+
+    &.idp-screens-dialog {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+
+        .idp-dialog-title {
+            padding: $padding-y $padding-x;
+        }
+
+        .idp-dialog-description {
+            padding: 0 $padding-x;
+            white-space: pre-wrap;
+        }
+
+        #{ms.$mat-dialog-content} {
+            padding: $padding-y $padding-x;
+        }
+
+        #{ms.$mat-dialog-actions} {
+            padding: $padding-y $padding-x;
+            justify-content: flex-end;
+            gap: 0.5em;
+        }
+    }
+}
+
+@mixin idp-screens-overrides() {
+    @include idp-screens-dialog-overrides;
+
+    #{ms.$mat-selected} {
+        --mdc-list-list-item-selected-container-color: #{map-get(get-bg(), selected)};
+
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+        }
+
+        &::after {
+            @include use-background(selected-accent);
+
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+        }
+    }
+}
+
+$mdc-list: '.mdc-list';

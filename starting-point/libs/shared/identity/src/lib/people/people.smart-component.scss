@@ -1,0 +1,63 @@
+.ama-identity {
+    &-people {
+        width: 100%;
+
+        &-container-error {
+            height: auto;
+            min-height: 20px;
+        }
+
+        &-error {
+            height: auto;
+            min-height: 16px;
+        }
+
+        &-option-not-active {
+            background: inherit !important;
+        }
+
+        &-name {
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 300px;
+            white-space: nowrap;
+        }
+    }
+
+    &-people-list {
+        margin: 5px 0;
+        padding: 10px 0;
+    }
+
+    &-people-row {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        .adf-people-label-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &-people-pic {
+        background: var(--theme-primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        color: var(--theme-primary-color-default-contrast);
+        text-transform: uppercase;
+    }
+
+    &-people-tooltip {
+        white-space: pre-line;
+    }
+
+    &-people-input {
+        min-height: 36px;
+    }
+}

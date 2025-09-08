@@ -1,0 +1,33 @@
+<mat-chip-row
+    (click)="chipClick.emit()"
+    (removed)="removeIconClick.emit()"
+    class="hxp-filter-chip"
+    data-automation-id="hxp-filter-chip"
+>
+    <span
+        class="hxp-filter-chip__label hxp-label-large-prominent"
+        data-automation-id="hxp-filter-chip-label"
+    >
+        {{ label }}{{ suffix ? ':' : '' }}
+    </span>
+    <span
+        *ngIf="suffix"
+        class="hxp-filter-chip__label-suffix"
+        data-automation-id="hxp-filter-chip-label-suffix"
+    >
+        <span>{{ suffix | translate }}</span>
+        <span
+            *ngIf="chipCount !== null && chipCount > 1"
+            class="hxp-filter-chip__number-chip"
+        >
+            +{{ chipCount - 1 }}
+        </span>
+    </span>
+    <mat-icon
+        *ngIf="removable"
+        matChipRemove
+        class="hxp-filter-chip__remove-icon"
+    >
+        clear
+    </mat-icon>
+</mat-chip-row>

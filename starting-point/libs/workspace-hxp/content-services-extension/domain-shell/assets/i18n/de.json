@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Berechtigungen",
+                    "ARIA-LABEL": "Dateiberechtigungen verwalten"
+                },
+                "COPY": {
+                    "TITLE": "Kopieren",
+                    "ARIA-LABEL": "Datei kopieren"
+                },
+                "MOVE": {
+                    "TITLE": "Verschieben",
+                    "ARIA-LABEL": "Datei verschieben"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Datei ersetzen (beta)",
+                    "ARIA-LABEL": "Datei ersetzen (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "In Versionsverlauf speichern (beta) ",
+                    "ARIA-LABEL": "In Versionsverlauf speichern (Beta) "
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Kopieren",
+        "MOVE": "Verschieben",
+        "REPLACE_FILE": "Datei ersetzen",
+        "MANAGE_VERSIONS": "Versionen verwalten"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Versionen verwalten",
+            "CLOSE": "Schließen",
+            "CREATED_BY": "von"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Kopieren nach...",
+            "COPY": "Kopieren",
+            "CANCEL": "Abbrechen",
+            "CLOSE": "Schließen",
+            "FILE_NAME_PREFIX": "Kopie von",
+            "PERMISSIONS": {
+                "ERROR": "Sie sind nicht berechtigt, das Dokument hierher zu kopieren."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Suchen"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Startseite",
+            "MOVE_ITEM": "Element verschieben nach",
+            "MOVE": "Verschieben",
+            "CANCEL": "Abbrechen",
+            "CLOSE": "Schließen",
+            "PERMISSIONS": {
+                "ERROR": "Sie sind nicht berechtigt, das Dokument hierhin zu verschieben."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Suchen"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "Die Datei wurde kopiert",
+            "FILE_ERROR": "Kopieren der Datei fehlgeschlagen",
+            "FOLDER_SUCCESS": "Der Ordner wurde kopiert",
+            "FOLDER_ERROR": "Kopieren des Ordners fehlgeschlagen"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "Die Datei wurde verschoben",
+            "FILE_ERROR": "Verschieben der Datei fehlgeschlagen",
+            "FOLDER_SUCCESS": "Der Ordner wurde verschoben",
+            "FOLDER_ERROR": "Verschieben des Ordners fehlgeschlagen"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Wybierz plik",
+    "TABS": {
+      "REPOSITORY": "Repozytorium",
+      "LOCAL_STORAGE": "Pamięć lokalna"
+    },
+    "ACTIONS": {
+      "UPLOAD": "PRZEŚLIJ",
+      "CANCEL": "Anuluj",
+      "ATTACH": "Załącz"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "Folder {{folderName}} nie istnieje. Nie można przesłać pliku.",
+    "FOLDER_DOES_NOT_EXIST": "Folder do przesłania pliku nie istnieje. Nie można przesłać pliku.",
+    "CONTENT_SERVICE_UNAVAILABLE": "Usługa zawartości jest tymczasowo niedostępna. Nie można przesłać pliku.",
+    "FOLDER_ACCESS_DENIED": "Nie masz uprawnień do określonego folderu w repozytorium zawartości."
+  }
+}

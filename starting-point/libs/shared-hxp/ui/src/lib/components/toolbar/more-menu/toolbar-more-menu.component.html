@@ -1,0 +1,11 @@
+<ng-container *ngIf="moreMenu$ | async as moreMenu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>{{moreMenu.icon}}</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+        <ng-container *ngFor="let action of moreMenu.children">
+            <hxp-toolbar-menu-item [item]="action" />
+        </ng-container>
+    </mat-menu>
+</ng-container>
+

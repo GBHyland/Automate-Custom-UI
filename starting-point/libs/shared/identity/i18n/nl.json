@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Groepen",
+      "MANDATORY": "Verplicht",
+      "ERROR": {
+        "NOT_FOUND": "Geen groep met de naam {{groupName}} gevonden"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Moet overeenkomen met het patroon {{pattern}}",
+        "INVALID_MIN_LENGTH": "Moet ten minste {{requiredLength}}tekens lang zijn",
+        "INVALID_MAX_LENGTH": "Lengte overschreden, max. {{requiredLength}} tekens",
+        "REQUIRED": "Er is een verplicht veld",
+        "NOT_FOUND": "Geen gebruiker met de naam {{userName}} gevonden"
+      }
+    }
+  }
+}

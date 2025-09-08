@@ -1,0 +1,77 @@
+@use 'idp-theme' as idp;
+@use '@angular/material' as mat;
+@use 'hxp-typography' as hxpTypography;
+
+#table-issues-container {
+    --table-issues-icon-large: 16px;
+    --table-issues-icon-medium: 14px;
+    --table-issues-icon-small: 12px;
+
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+
+    .idp-issues-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+        vertical-align: middle;
+        cursor: pointer;
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            vertical-align: middle;
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+    }
+
+    .idp-issues-body {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 15px;
+        cursor: pointer;
+        margin-top: 15px;
+        height: 35px;
+    }
+
+    .idp-table-name {
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+
+    .idp-table-not-found {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .idp-has-issue {
+        @include idp.use-foreground(warning-text);
+    }
+
+    .idp-icon-table {
+        width: var(--table-issues-icon-large);
+        height: var(--table-issues-icon-large);
+    }
+
+    .idp-add-table-button {
+        margin-top: -8px;
+        background-color: transparent;
+        @include idp.use-foreground(link);
+        @include mat.m2-typography-level(hxpTypography.$typography-button-variants, bold);
+    }
+}

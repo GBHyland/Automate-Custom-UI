@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "グループ",
+      "MANDATORY": "必須",
+      "ERROR": {
+        "NOT_FOUND": "{{groupName}}という名前のグループは見つかりません"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "パターン{{pattern}}に一致する必要があります",
+        "INVALID_MIN_LENGTH": "少なくとも{{requiredLength}}文字の必要があります",
+        "INVALID_MAX_LENGTH": "文字数を超過、最大{{requiredLength}}文字",
+        "REQUIRED": "これは必須フィールドです",
+        "NOT_FOUND": "{{userName}}というユーザー名のユーザーは見つかりません"
+      }
+    }
+  }
+}

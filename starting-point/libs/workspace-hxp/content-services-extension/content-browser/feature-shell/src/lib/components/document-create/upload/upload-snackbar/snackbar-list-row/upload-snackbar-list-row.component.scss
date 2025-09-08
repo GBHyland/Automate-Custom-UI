@@ -1,0 +1,66 @@
+$file-uploading-row-hover-color: var(--theme-background-hover-color) !default;
+
+hxp-file-uploading-list-row:not(:first-child) {
+    display: block;
+    border-top: 1px solid var(--adf-upload-border-color);
+}
+
+.hxp-upload-snackbar-list-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3em 24px;
+    cursor: default;
+
+    &:hover {
+        background: $file-uploading-row-hover-color;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+
+    &__name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1 1 auto;
+        padding: 0 1em 0 0.5em;
+    }
+
+    &__group,
+    &__block,
+    &__file-version {
+        display: flex !important;
+        justify-content: flex-end;
+        line-height: 40px;
+        height: 40px;
+        align-items: center;
+    }
+
+    &__group--toggle {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    &__progress-bar--hidden {
+        visibility: hidden;
+    }
+
+    &__status--done {
+        color: var(--theme-accent-color);
+    }
+
+    &__status--error {
+        color: var(--theme-warn-color);
+    }
+
+    &__action--cancel {
+        color: var(--theme-warn-color);
+    }
+}

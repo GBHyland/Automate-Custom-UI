@@ -1,0 +1,31 @@
+.idp-single-scrollable-view {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    transform-origin: left top;
+
+    &.idp-vertical {
+        flex-direction: column;
+    }
+
+    &.idp-horizontal {
+        flex-direction: row;
+    }
+
+    &__image-container {
+        display: flex;
+        box-sizing: border-box;
+        flex: 1 0 auto;
+        justify-content: center;
+        align-items: center;
+        transform-origin: center;
+        position: relative;
+
+        &:has(.idp-image-spinner) {
+            border-radius: 0.5em;
+            transition: all 0.5s ease-in-out;
+            width: 100%;
+            height: 800px;
+        }
+    }
+}

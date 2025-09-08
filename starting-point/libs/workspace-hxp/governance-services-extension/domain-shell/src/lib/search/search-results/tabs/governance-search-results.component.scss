@@ -1,0 +1,172 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-governance-search-results-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: var(--theme-background-color);
+
+    .hxp-governance-search-results-header {
+        &-actions {
+            display: flex;
+            padding: 24px 0;
+            width: 100%;
+
+            &_filters {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                width: 100%;
+            }
+
+            &_buttons {
+                display: flex;
+                gap: 12px;
+            }
+        }
+    }
+
+    .hxp-governance-search-results-initial-state {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+
+        &_icon {
+            width: 160px;
+        }
+
+        &_label {
+            padding: 24px 0;
+            text-align: center;
+        }
+    }
+
+    .hxp-record-list {
+        flex: 1;
+        overflow-y: hidden;
+        padding-top: 24px;
+
+        .hxp-record-list-data-source-column {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            ::ng-deep mat-icon[svgIcon='internal_repository'] {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    mat-paginator {
+        justify-items: left;
+        flex-shrink: 0;
+    }
+
+    .hxp-governance-results-list-loading {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.hxp-governance-search-results-spacer {
+    flex: 1 1 auto;
+}
+
+.hxp-governance-search-results-no-results {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &_icon {
+        width: 160px;
+    }
+
+    &_label {
+        padding: 24px 0;
+        text-align: center;
+        max-width: 684px;
+    }
+}
+
+.hxp-governance-search-results-selected-count {
+    font: var(--theme-body-font);
+}
+
+.hxp-governance-record-status {
+    padding: 8px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font: var(--theme-body-font);
+    border: 2px solid;
+}
+
+.hxp-governance-record-status-under-retention {
+    background: #d1f2c9;
+    border-color: #1b5634;
+}
+
+.hxp-governance-record-status-unprocessed {
+    background: #d3d3d3;
+    border-color: #5a5a5a;
+}
+
+.hxp-governance-record-status-incomplete {
+    background: #fde4c3;
+    border-color: #9c4007;
+}
+
+.hxp-governance-record-status-ready {
+    background: #d1e6f8;
+    border-color: #25498f;
+}
+
+.hxp-governance-record-status-reached-disposition {
+    background: #ffedec;
+    border-color: #ea580c;
+}
+
+.hxp-governance-record-status-archived {
+    background: #ffedec;
+    border-color: #ea580c;
+}
+
+.hxp-vertical-divider {
+    height: 24px;
+    margin: 0 16px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgba(0, 0, 0, 0.12);
+}
+
+.hxp-toggle-select-all-button {
+    min-width: 100px;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    color: var(--theme-primary-color);
+    cursor: pointer;
+}
+
+.hxp-governance-results-left-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.hxp-governance-legal-hold-paginator-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    margin-top: 4px;
+}

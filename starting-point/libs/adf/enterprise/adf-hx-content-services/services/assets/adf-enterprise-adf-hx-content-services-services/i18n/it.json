@@ -1,0 +1,26 @@
+{
+    "PERMISSION_LEVEL": {
+        "LABEL": {
+            "EVERYTHING": "Tutto",
+            "READ_WRITE": "Lettura e scrittura",
+            "READ": "Leggi"
+        }
+    },
+    "PERMISSIONS_MANAGEMENT_ACTION_STATUS": {
+        "SNACKBAR": {
+            "SAVE_SUCCESS": "Autorizzazioni aggiornate su questo documento",
+            "SAVE_ERROR": "Errore nell'aggiornamento dei permessi su questo documento",
+            "RESTORE_SUCCESS": "Tutte le autorizzazioni sono state ripristinate nel documento.",
+            "RESTORE_ERROR": "Errore durante il ripristino delle autorizzazioni per il documento.",
+            "RESTORE_USER_SUCCESS": "Le autorizzazioni utente sono state ripristinate.",
+            "RESTORE_GROUP_SUCCESS": "Le autorizzazioni del gruppo sono state ripristinate."
+        }
+    },
+    "DOWNLOAD_STATUS": {
+        "SNACKBAR": {
+            "REQUEST": "Scaricamento file",
+            "SUCCESS": "Il file è stato scaricato con successo!",
+            "ERROR": "Download file non riuscito"
+        }
+    }
+}

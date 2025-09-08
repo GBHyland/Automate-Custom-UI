@@ -1,0 +1,22 @@
+{
+  "name": "@alfresco/adf-hx-content-services/services",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=16.2.0",
+    "@angular/core": ">=16.2.0",
+    "@alfresco/adf-hx-content-services/api":">=0.0.1",
+    "@alfresco/adf-core":">=7.0.0-alpha.7-0",
+    "@alfresco/js-api": ">=8.0.0-alpha.7-0",
+    "@hylandsoftware/hxcs-js-client": "^2.0.1",
+    "rxjs":">=7.8.1",
+    "@ngx-translate/core":">=16.0.0",
+    "@alfresco/adf-extensions":">=7.0.0-alpha.7-0",
+    "@angular/router":">=16.2.0",
+    "@angular/cdk":">=16.2.0",
+    "@angular/material":">=16.2.0",
+    "@angular/forms":">=16.2.0",
+    "@alfresco/adf-hx-content-services/features": ">=0.0.1"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}

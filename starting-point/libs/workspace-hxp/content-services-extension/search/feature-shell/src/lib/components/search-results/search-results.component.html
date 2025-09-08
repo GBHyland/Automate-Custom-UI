@@ -1,0 +1,201 @@
+<mat-tab-group
+    mat-align-tabs="start"
+    mat-stretch-tabs="false"
+    class="hxp-search-tabs"
+    animationDuration="0"
+    (selectedTabChange)="onTabChange($event)"
+    [(selectedIndex)]="selectedTabIndex"
+>
+    <mat-tab label="{{ 'SEARCH.TABS.TEXT_SEARCH' | translate }}">
+        @if(selectedTabIndex === 0) {
+            <ng-container *ngTemplateOutlet="resultsContent" />
+        }
+    </mat-tab>
+
+    <mat-tab label="{{ 'SEARCH.TABS.HXQL_SEARCH' | translate }}">
+        @if(selectedTabIndex === 1) {
+            <ng-container *ngTemplateOutlet="resultsContent" />
+        }
+    </mat-tab>
+</mat-tab-group>
+
+<ng-template #resultsContent>
+    <div class="hxp-search-results-main-container">
+
+        <div class="hxp-search-results-header">
+            <div class="hxp-search-toolbar">
+                <hxp-search-term-filter
+                    #searchTermFilter
+                    (searchTermChanged)="searchTermChanged($event)"
+                    [searchType] = "type"
+                    [searchTerm] = "searchTerm"
+                />
+
+                <div class="hxp-search-filters">
+                    @if(selectedTabIndex === 0) {
+                        <div class="hxp-search-filters-container">
+                            @for(filter of (searchFilters$ | async).items; track filter.id) {
+                                <adf-dynamic-component [id]="filter.component" />
+                            }
+                        </div>
+                    }
+                    <div class="hxp-search-filters-actions">
+                        <button
+                            id="hxp-search-results-reset-button"
+                            mat-button
+                            class="hxp-text-button"
+                            [attr.aria-label]="'SEARCH.RESULTS.FILTERS.ACTIONS.RESET' | translate"
+                            [disabled]="!searchFilterValueService.hasFilters() && !query && !searchTerm"
+                            (click)="resetSearch()"
+                        >{{ 'SEARCH.RESULTS.FILTERS.ACTIONS.RESET' | translate }}</button>
+                        <button
+                            id="hxp-search-results-search-button"
+                            mat-button
+                            class="hxp-primary-button"
+                            [attr.aria-label]="'SEARCH.RESULTS.FILTERS.ACTIONS.SEARCH' | translate"
+                            [disabled]="!isDirty"
+                            (click)="search()"
+                        >{{ 'SEARCH.RESULTS.FILTERS.ACTIONS.SEARCH' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+            @if(!isLoading && pagination.totalItems > 0) {
+                <header>
+                    <p class="sub">
+                        {{ (pagination.totalItems === 1
+                            ? 'SEARCH.RESULTS.HEADER.TOTAL_SINGLE'
+                            : 'SEARCH.RESULTS.HEADER.TOTAL_PLURAL')
+                            | translate: { count: pagination.totalItems } }}
+                    </p>
+                </header>
+            }
+        </div>
+        <div class="hxp-search-results-main-container" [ngClass]="{
+            'hxp-empty-result': pagination.totalItems === 0 || isLoading,
+            'hxp-loading-active': isLoading && pagination.totalItems > 0
+            }">
+            @if(!isLoading && pagination.totalItems === 0) {
+                <hxp-search-no-results />
+            } @else {
+                <hxp-content-repository
+                    class="hxp-new-search-container"
+                    [isLoading]="isLoading"
+                    [documents]="documents"
+                    [isUploadDisabled]="isCreateDisabled"
+                    (selectionChanged)="handleCurrentSelection($event)"
+                    (sortingClicked)="handleSortingClicked($event)"
+                    (rowClicked)="handleRowClicked($event)"
+                    (columnsResized)="onColumnsWidthChange($event)"
+                    [actionContext]="actionContext">
+                        <data-columns>
+                            @for(config of columnConfigs; track $index + '-' + config.key) {
+                                <data-column
+                                    key="{{config.key}}"
+                                    title="{{ config.key !== 'icon' ? config.title: '' }}"
+                                    class="{{ config.key !== 'icon' ? 'app-full-width adf-ellipsis-cell' : '' }}"
+                                    [sortable]="config.sortable"
+                                    [type]="config.key === 'icon' ? 'image' : 'text'">
+                                        <ng-template let-context="$implicit">
+                                            <ng-container
+                                                *ngTemplateOutlet="config.templateRef;
+                                                context: {
+                                                    context: context,
+                                                    key: config.key,
+                                                    type: config.type
+                                                }" />
+                                        </ng-template>
+                                </data-column>
+                            }
+                        </data-columns>
+                </hxp-content-repository>
+            }
+
+        </div>
+        @if(pagination.totalItems > 0) {
+            <mat-paginator
+                showFirstLastButtons
+                class="hxp-search-results-footer"
+                [attr.aria-label]="'PAGINATION.PAGE_SIZE' | translate"
+                [length]="pagination.totalItems"
+                [pageSize]="pagination.pageSize"
+                [pageIndex]="pagination.pageIndex"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="onPaginationChange($event)" />
+        }
+    </div>
+</ng-template>
+
+@if(actionContext?.showPanel === 'property' && !isLoading && selection.length > 0) {
+    <hxp-properties-sidebar
+        class="hxp-properties-sidebar"
+        [document]="selection[0]"
+        [editable]="editablePropertiesSidebar"
+        (closePropertySidebar)="handleCloseSidebarPanel()"
+    />
+}
+
+@if(actionContext?.showPanel === 'version' && !isLoading && selection.length > 0) {
+    <hxp-manage-versions-sidebar
+        id="manage-versions-sidebar"
+        [document]="selection[0]"
+        (closeVersionsSidebar)="handleCloseSidebarPanel()"
+    >
+        <ng-template #contextActionMenu let-contextActions>
+            @for(item of contextActions; track $index) {
+                @if(item.model.visible) {
+                    <button
+                        role="menuitem"
+                        [attr.data-automation-id]="'context-' + ((item.model.title || '') | translate)"
+                        mat-menu-item
+                        (click)="onMenuItemClick(item)"
+                    >
+                        @if(item.model.icon) {
+                            <mat-icon aria-hidden="true">{{ item.model.icon }}</mat-icon>
+                        }
+                        <span>{{ (item.model.title || '') | translate }}</span>
+                    </button>
+                }
+            }
+        </ng-template>
+    </hxp-manage-versions-sidebar>
+}
+
+<ng-template #defaultTemplate let-context="context" let-key="key" let-type="type">
+    @if((getColumnValue(context.row.obj, key) | async); as columnValue) {
+        @switch(key) {
+            @case(defaultColumnKeys.Icon) {
+                <span>
+                    <hxp-document-type-icon [document]="context.row.obj" [attr.aria-label]="columnValue | translate" />
+                </span>
+            }
+            @case(defaultColumnKeys.SysEffectivePermissions) {
+                <span
+                    class="hxp-document-permission-level"
+                    [ngClass]="'hxp-permission-' + ((context.row.obj.sys_effectivePermissions | permissionLevel)?.class || 'none')"
+                    [title]="columnValue">
+                    {{ columnValue }}
+                </span>
+            }
+            @case(defaultColumnKeys.SysParentPath) {
+                <span
+                    [title]="('DOCUMENT_LIST.LOCATION.HOME' | translate) + context.row.obj.sys_parentPath"
+                    [hxpFormatDocumentPath]="columnWidths">
+                    {{ columnValue }}
+                </span>
+            }
+            @default {
+                <span [title]="columnValue">
+                    {{ columnValue }}
+                </span>
+            }
+        }
+    }
+</ng-template>
+
+<ng-template #customTemplate let-context="context" let-key="key" let-type="type">
+    @if(getCustomColumnValue(context.row.obj, key, type) | async; as columnValue) {
+        <span [title]="columnValue">
+            {{ columnValue }}
+          </span>
+    }
+</ng-template>

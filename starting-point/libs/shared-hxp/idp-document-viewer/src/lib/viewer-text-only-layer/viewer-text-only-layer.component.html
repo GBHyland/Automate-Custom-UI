@@ -1,0 +1,10 @@
+<div class="idp-viewer-text-only-layer__container-div" #containerTexOnly (contextmenu)="$event.preventDefault()">
+    <ng-container *ngIf="(textContent$ | async) as textContent; else spinner">
+        <span class="idp-viewer-text-only-layer__text" data-automation-id="idp-viewer-text-only-layer__text-layout"
+            [innerHTML]="textContent.text">
+        </span>
+    </ng-container>
+    <ng-template #spinner>
+        <mat-spinner class="idp-text-only-spinner" diameter="30" />
+    </ng-template>
+</div>

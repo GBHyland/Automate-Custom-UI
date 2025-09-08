@@ -1,0 +1,32 @@
+@if (data) {
+<div class="hxp-sidenav-panel">
+    @if (navbarMenuItemGroups$ | async; as navbarMenuItemGroups) {
+        @for (group of navbarMenuItemGroups; track group.id) {
+            <mat-list class="hxp-sidenav-panel-list">
+                @switch (data?.mode) {
+                    @case ('expanded') {
+                        @for (item of group.items; track item.id) {
+                            <mat-list-item class="hxp-sidenav-panel-item">
+                                @if (item.component) {
+                                    <adf-dynamic-component [data]="{ item: item, state: 'expanded' }" [id]="item.component" />
+                                }
+                            </mat-list-item>
+                        }
+                    }
+
+                    @case ('collapsed') {
+                        @for (item of group.items; track item.id) {
+                            <div class="hxp-sidenav-panel-collapsed">
+                                @if (item.component) {
+                                    <adf-dynamic-component [data]="{ item: item, state: 'collapsed' }" [id]="item.component" />
+                                }
+                            </div>
+                        }
+                    }
+                }
+            </mat-list>
+        }
+    }
+
+</div>
+}

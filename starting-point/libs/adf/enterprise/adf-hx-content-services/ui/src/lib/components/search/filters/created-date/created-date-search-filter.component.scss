@@ -1,0 +1,48 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-created-date-filter-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .hxp-created-date-filter-option {
+        border-inline-start: 6px solid transparent;
+        box-sizing: border-box;
+        &_active {
+            background-color: satori.$hy-colors-background-nav;
+            border-inline-start: 6px solid satori.$hy-colors-background-primary;
+        }
+    }
+
+    mat-divider {
+        margin: 10px;
+    }
+
+    .hxp-custom-created-date {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px 15px;
+
+        &-error {
+            margin: 0 -15px;
+        }
+
+        ::ng-deep #{ms.$mat-form-field-appearance-outline}#{ms.$mat-focused} #{ms.$mat-form-field-outline-thick} {
+            color: satori.$hy-colors-background-primary;
+        }
+
+        ::ng-deep #{ms.$mat-form-field-appearance-outline}:hover #{ms.$mat-form-field-outline-thick} {
+            color: satori.$hy-colors-background-primary;
+        }
+
+        .hxp-created-date-picker-suffix {
+            display: flex;
+        }
+    }
+}
+
+::ng-deep #{ms.$mat-form-field-appearance-outline}.hxp-custom-created-date_active #{ms.$mat-form-field-outline-thick} {
+    color: satori.$hy-colors-background-primary;
+    opacity: 1;
+}

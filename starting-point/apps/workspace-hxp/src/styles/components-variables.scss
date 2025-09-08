@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+@use 'satori-like-styles' as satori;
+
+@mixin components-variables($theme) {
+    $foreground: map-get($theme, foreground);
+
+    $defaults: (
+        --adf-header-icon-button-default-color: satori.$hy-colors-icon-default,
+        --adf-header-icon-button-default-border-radius: satori.$hy-border-radius-100,
+        --adf-header-icon-button-hover-color: satori.$hy-colors-icon-default,
+        --adf-header-icon-button-pressed-color: satori.$hy-colors-icon-default,
+        --adf-header-icon-button-disabled-color: satori.$hy-colors-icon-disabled,
+
+        --adf-filter-chip-background-color: satori.$hy-colors-neutral-100,
+        --adf-filter-chip-text-color: satori.$hy-colors-neutral-700,
+        --adf-filter-menu-box-shadow: '0 2px 4px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2)',
+
+        //Legal Hold
+        --hxp-governance-legal-hold-text-color: satori.$satori-like-primary,
+        --hxp-governance-legal-hold-empty-create-button-border: 1px solid satori.$satori-like-primary,
+        --hxp-governance-legal-hold-create-button-border: 1px solid satori.$hy-colors-neutral-500,
+        --hxp-governance-legal-hold-create-button-background-color: satori.$hy-colors-cool-gray-100,
+        --hxp-governance-legal-hold-container-background-white: satori.$hy-colors-origin-white,
+        --hxp-governance-legal-hold-divider-color: satori.$hy-colors-neutral-300,
+    );
+
+    /* propagates SCSS variables into the CSS variables scope */
+    :root {
+        @each $name, $value in $defaults {
+            #{$name}: #{$value};
+        }
+    }
+}

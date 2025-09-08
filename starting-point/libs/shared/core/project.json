@@ -1,0 +1,44 @@
+{
+    "name": "shared-core",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/core/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/libs/shared-core"],
+            "options": {
+                "project": "libs/shared/core/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared/core/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared/core/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared/core/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "passWithNoTests": false
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:shared-core", "category:shared-core", "category:shared-unit"]
+}

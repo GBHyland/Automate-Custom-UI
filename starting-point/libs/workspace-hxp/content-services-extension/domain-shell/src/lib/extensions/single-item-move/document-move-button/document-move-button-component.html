@@ -1,0 +1,9 @@
+<button
+    mat-menu-item
+    *ngIf="isAvailable"
+    class="hxp-move-button"
+    (click)="onMove()"
+>
+    <mat-icon>open_with</mat-icon>
+    <span>{{ 'DOCUMENT_MORE_ACTION.MOVE' | translate }}</span>
+</button>

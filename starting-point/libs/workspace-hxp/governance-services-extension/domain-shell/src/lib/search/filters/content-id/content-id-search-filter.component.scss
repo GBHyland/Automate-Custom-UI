@@ -1,0 +1,9 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-governance-content-id-search-filter-container {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: satori.$hy-spacing-24;
+    font: var(--theme-body-font);
+}

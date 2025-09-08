@@ -1,0 +1,22 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-governance-table-paginator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    #{ms.$mat-label} {
+        font-size: satori.$hy-font-sizes-20;
+        white-space: nowrap;
+    }
+
+    #{ms.$mat-select} {
+        width: 100px;
+    }
+
+    .hxp-governance-table-paginator-chevrons {
+        display: flex;
+        gap: 0;
+    }
+}

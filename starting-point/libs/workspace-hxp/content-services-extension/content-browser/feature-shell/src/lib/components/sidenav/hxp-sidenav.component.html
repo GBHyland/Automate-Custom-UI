@@ -1,0 +1,31 @@
+<ng-container *ngIf="isExpanded(); else iconMenu">
+    <mat-accordion
+        class="hxp-nav-accordion hxp-sidenav-content-services-container"
+    >
+        <mat-expansion-panel id="contentbrowser" [expanded]="isSideNavExpanded" class="hxp-panel-dropdown">
+            <mat-expansion-panel-header class="hxp-panel-header">
+                <mat-panel-title>
+                    <div class="hxp-panel-title hxp-label-large">
+                        {{
+                            'CONTENT_SERVICES_EXTENSION.SIDE_NAV_TITLE'
+                                | translate
+                        }}
+                    </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+                <hxp-workspace-document-tree
+                    [documents]="[document]"
+                    (selectedDocument)="navigateToDocument($event)"
+                />
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+</ng-container>
+
+<ng-template #iconMenu>
+    <button mat-icon-button (click)="navigateToRoot()">
+        <hxp-folder-icon />
+    </button>
+</ng-template>

@@ -1,0 +1,24 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-restore-permission-dialog {
+    .hxp-permission-reset-options {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #{ms.$mat-dialog-actions} {
+        justify-content: flex-end;
+    }
+}
+
+.hxp-cancel-permission-dialog {
+    #{ms.$mat-mdc-dialog-title} {
+        margin: 0;
+    }
+
+    .hxp-permission-dialog-reject-button {
+        color: var(--theme-primary-color, satori.$satori-like-primary);
+        border: 0;
+    }
+}

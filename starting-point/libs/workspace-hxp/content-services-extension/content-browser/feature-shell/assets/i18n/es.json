@@ -1,0 +1,201 @@
+{
+    "CONTENT_BROWSER": {
+        "DOCUMENT": {
+            "LOAD_ERROR": {
+                "401": "Usuario no autorizado",
+                "403": "No tiene los permisos necesarios para obtener acceso a esta ruta",
+                "DEFAULT": "No se puede cargar el documento"
+            }
+        }
+    },
+    "CONTENT": {
+        "TYPE": {
+            "SYSFILE": "Fichero",
+            "SYSFOLDER": "Carpeta"
+        }
+    },
+    "CREATE": {
+        "DIALOG": {
+            "CANCEL": "Cancelar",
+            "ERROR": "Se ha producido un error. No se pudo crear el contenido.",
+            "FIELDS": {
+                "DESCRIPTION": {
+                    "LABEL": "Descripción"
+                },
+                "TITLE": {
+                    "LABEL": "Título",
+                    "ERROR": "¡El título no puede estar vacío!"
+                }
+            },
+            "PARENT_PATH": "Ruta primaria: ",
+            "SAVE": "Crear",
+            "SUCCESS": "Contenido creado correctamente.",
+            "TITLE": "Añadir contenido"
+        }
+    },
+    "CONTENT_SERVICES_EXTENSION": {
+        "SIDE_NAV_TITLE": "Gestión de contenido"
+    },
+    "CREATE_CONTENT_MENU": {
+        "BUTTON_TITLE": "Carga de fichero nuevo",
+        "UPLOAD_FILE": "Cargar fichero",
+        "CREATE_FOLDER": "Crear carpeta"
+    },
+    "FILE_UPLOAD": {
+        "BUTTON": {
+            "UPLOAD_FILE": "Cargar fichero",
+            "CLOSE": "Cerrar",
+            "DIALOG_SUBMIT": "Enviar",
+            "PROPERTIES": {
+                "SAVE": "Guardar"
+            }
+        },
+        "DIALOG": {
+            "TITLE": {
+                "MULTIPLE_FILES": "Cargando {{numberOfFiles}} ficheros",
+                "SINGLE_FILE": "Cargando 1 fichero"
+            },
+            "ARIA-LABEL": {
+                "PROGRESS": "Cargando fichero"
+            }
+        },
+        "EDIT": {
+            "NO_SELECTION": "Seleccionar ficheros para asignar una ubicación de documento y un tipo de contenido",
+            "MIXED_CONTENT": {
+                "TITLE": "Contenido mixto:",
+                "CATEGORY": {
+                    "BUTTON": "Elegir un tipo de contenido para la selección"
+                },
+                "LOCATION": {
+                    "BUTTON": "Elegir una ubicación de documento para la selección"
+                }
+            },
+            "PROPERTIES": {
+                "ASSIGNED": "Propiedades asignadas",
+                "DOCUMENT_CATEGORY": "Tipo de contenido",
+                "LOCATION": "Ubicación",
+                "LABEL": "Propiedades"
+            },
+            "TAB": {
+                "LOCATION_CATEGORY": "Ubicación y categoría"
+            }
+        },
+        "LIST": {
+            "HEADER": {
+                "UNASSIGNED_DOCUMENT_CATEGORY": "Tipo de contenido sin asignar"
+            }
+        },
+        "SNACKBAR": {
+            "ARIA-LABEL": {
+                "DIALOG": "Cargar lista",
+                "DIALOG_MAXIMIZE": "Maximizar cuadro de diálogo de carga",
+                "DIALOG_MINIMIZE": "Minimizar cuadro de diálogo de carga",
+                "DIALOG_CLOSE": "Cerrar cuadro de diálogo de carga",
+                "CANCEL_ALL": "Detener cargas",
+                "PROGRESS": "Cargando documento",
+                "RETRY_UPLOAD": "Reintentar carga",
+                "UPLOAD_SUCCESSFUL": "Fichero cargado correctamente {{ file }}",
+                "STOP_FILE": "Detener fichero {{ file }}",
+                "STOP_FILE_UPLOAD": "Detener carga de fichero {{ file }}",
+                "UPLOAD_FILE_ERROR": "Error al cargar {{ error }}",
+                "CONFIRMATION": {
+                    "CANCEL": "Confirmar cancelación",
+                    "CONTINUE": "Continuar carga"
+                }
+            },
+            "BUTTON": {
+                "MINIMIZE": "Minimizar",
+                "MAXIMIZE": "Maximizar",
+                "CANCEL_ALL": "Cancelar",
+                "CLOSE": "Cerrar",
+                "RETRY": "Reintentar",
+                "STOP_FILE": "Detener carga",
+                "UPLOAD_SUCCESSFUL": "Carga correcta"
+            },
+            "CONFIRMATION": {
+                "BUTTON": {
+                    "CANCEL": "Sí",
+                    "CONTINUE": "No"
+                },
+                "MESSAGE": {
+                    "TITLE": "Detener carga",
+                    "TEXT": "Detener y cancelar todas las cargas en curso y pendientes."
+                }
+            },
+            "STATUS": {
+                "FILE_CANCELED_STATUS": "Cancelado",
+                "FILE_DONE_STATUS": "Cargado"
+            },
+            "TITLE": "Carga de fichero"
+        }
+    },
+    "CREATE_FOLDER": {
+        "TITLE": "Crear nueva carpeta",
+        "SUBTITLE": "Asigne un nombre a su carpeta y seleccione la categoría de carpeta",
+        "NAME": "Nombre de la carpeta",
+        "CATEGORY": "Categoría de carpeta",
+        "CATEGORY_PLACEHOLDER": "Seleccionar una categoría de carpeta",
+        "CREATE_BUTTON": "Crear carpeta",
+        "PERMISSION_MESSAGE": "Todos los permisos se heredarán de la carpeta primaria",
+        "FOLDER_NAME": "Nueva carpeta",
+        "CANCEL": {
+            "TITLE": "Cancelar la creación de carpeta",
+            "DESCRIPTION": "¿Está seguro de que desea cancelar la creación de una nueva carpeta? Cualquier progreso no guardado se perderá.",
+            "REJECT": "Continuar creando",
+            "CONFIRM": "Cancelar"
+        }
+    },
+    "DOCUMENT_LIST": {
+        "COLUMNS": {
+            "TITLE": "Título",
+            "SIZE": "Tamaño",
+            "CREATED": {
+                "LABEL": "Creado",
+                "BY": "por"
+            },
+            "LAST_MODIFIED": {
+                "LABEL": "Última modificación",
+                "BY": "por"
+            },
+            "PERMISSION": "Permiso",
+            "LOCATION": "Ubicación",
+            "DOCUMENT_CATEGORY": "Tipo de contenido"
+        },
+        "NO_CONTENT": {
+            "TITLE": "Esta carpeta está vacía",
+            "SUBTITLE": "Cree nuevo contenido"
+        },
+        "PERMISSIONS": {
+            "EVERYTHING": "Todo",
+            "READ_WRITE": "Lectura y escritura",
+            "READ": "Lectura"
+        },
+        "LOCATION": {
+            "HOME": "Inicio"
+        }
+    },
+    "DOCUMENT_LOCATION_PICKER": {
+        "LABEL": "Ubicación"
+    },
+    "DOCUMENT_CATEGORY_PICKER": {
+        "LABEL": "Tipo de contenido",
+        "PLACEHOLDER": "Seleccionar un tipo de contenido"
+    },
+    "DOCUMENT_VERSION_SELECTOR": {
+        "PLACEHOLDER": "Seleccionar una versión",
+        "CURRENT_VERSION": "Versión actual"
+    },
+    "REPLACE_FILE": {
+        "SUCCESS": "El archivo se reemplazó correctamente.",
+        "ERROR": "No se pudo reemplazar el archivo."
+    },
+    "DOCUMENT_VERSION": {
+        "LABEL": "Guardar en el historial de versiones",
+        "SNACKBAR": {
+            "CREATE_SUCCESS": "La nueva versión se ha guardado.",
+            "CREATE_ERROR": "Error al guardar la versión. Inténtelo de nuevo.",
+            "RESTORE_SUCCESS": "Se ha restaurado la versión.",
+            "RESTORE_ERROR": "Error al restaurar la versión. Inténtelo de nuevo."
+        }
+    }
+}

@@ -1,0 +1,138 @@
+<div class="hxp-attach-file-widget {{field.className}}" [class.adf-readonly]="field.readOnly">
+    <label class="hxp-attach-file-widget-label adf-label" [attr.for]="field.id"
+        >{{field.name}}
+        <span class="adf-asterisk" *ngIf="isRequired()">*</span>
+    </label>
+
+    <div class="hxp-attach-file-widget-container" (focusout)="markAsTouched()">
+        <div class="hxp-attach-file-widget-container-upload" *ngIf="!this.field.readOnly">
+            <button
+                [disabled]="isAttachButtonDisabled$ | async"
+                (click)="openSelectDialog()"
+                mat-raised-button
+                color="primary"
+                [id]="field.id"
+                [matTooltip]="field.tooltip"
+                matTooltipPosition="above"
+                matTooltipShowDelay="1000"
+            >
+                {{ 'FORM.FIELD.ATTACH' | translate }}
+                <mat-icon> {{'file_upload'}} </mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="field.readOnly && !(hasAttachedFiles$ | async)" id="{{'adf-attach-empty-list-'+field.id}}">
+    {{ 'FORM.FIELD.NO_FILE_ATTACHED' | translate }}
+</div>
+
+<table
+    *ngIf="hasAttachedFiles$ | async"
+    mat-table
+    [dataSource]="attachedFiles$"
+    class="hxp-attach-file-widget-table mat-elevation-z8"
+    [id]="'table-'+field.id"
+>
+    <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let attachedFile">
+            <div>
+                <mat-icon
+                    matListItemIcon
+                    *ngIf="selectedDocument && attachedFile.sys_id === selectedDocument.sys_id"
+                    (click)="onRowClicked(attachedFile)"
+                >
+                    check_circle
+                </mat-icon>
+                <img
+                    matListItemIcon
+                    *ngIf="!selectedDocument || attachedFile.sys_id !== selectedDocument.sys_id"
+                    [id]="'file-'+attachedFile.sys_id+'-icon'"
+                    (click)="onRowClicked(attachedFile)"
+                    [src]="getFileIcon(attachedFile)"
+                    role="button"
+                    tabindex="0"
+                />
+            </div>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>{{ 'FORM.FIELD.TITLE' | translate }}</th>
+        <td mat-cell *matCellDef="let attachedFile">
+            <div (click)="onRowClicked(attachedFile)">
+                <span> {{attachedFile.sysfile_blob?.title || attachedFile.sys_title }} </span>
+            </div>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ 'FORM.FIELD.FILE_NAME' | translate }}</th>
+        <td mat-cell *matCellDef="let attachedFile">
+            <div (click)="onRowClicked(attachedFile)">
+                <span> {{attachedFile.sysfile_blob?.filename || attachedFile.sys_name}} </span>
+            </div>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let attachedFile">
+            <ng-container *ngIf="showActionsMenu()">
+                <button id="{{'file-'+attachedFile.sys_id+'-option-menu'}}" mat-icon-button [matMenuTriggerFor]="fileActionMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #fileActionMenu="matMenu" xPosition="before">
+                    <button
+                        [disabled]="isBlobPresent(attachedFile)"
+                        *ngIf="field.params.menuOptions?.show"
+                        id="{{'file-'+attachedFile.sys_id+'-show-file'}}"
+                        mat-menu-item
+                        (click)="onViewOptionClicked(attachedFile)"
+                    >
+                        <mat-icon>visibility</mat-icon>
+                        <span>{{ 'FORM.FIELD.VIEW_FILE' | translate }}</span>
+                    </button>
+                    <button
+                        [disabled]="isBlobPresent(attachedFile)"
+                        *ngIf="field.params.menuOptions?.download"
+                        id="{{'file-'+attachedFile.sys_id+'-download-file'}}"
+                        mat-menu-item
+                        (click)="onDownloadClicked([attachedFile])"
+                    >
+                        <mat-icon>file_download</mat-icon>
+                        <span>{{ 'FORM.FIELD.DOWNLOAD_FILE' | translate }}</span>
+                    </button>
+                    <button
+                        *ngIf="field.params.menuOptions?.remove && !field.readOnly"
+                        id="{{'file-'+attachedFile.sys_id+'-remove-file'}}"
+                        mat-menu-item
+                        (click)="onRemoveOptionClicked(attachedFile);"
+                    >
+                        <mat-icon class="mat-24">highlight_off</mat-icon>
+                        <span>{{ 'FORM.FIELD.REMOVE_FILE' | translate }}</span>
+                    </button>
+                </mat-menu>
+            </ng-container>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['icon', 'title', 'name', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['icon', 'title', 'name', 'actions'];"></tr>
+</table>
+
+<error-widget [error]="field.validationSummary" />
+
+<error-widget *ngIf="!field.isValid && isTouched() && (hasAttachedFiles$ | async)" required="{{ 'FORM.FIELD.REQUIRED' | translate }}" />
+
+<adf-viewer
+    *ngIf="viewingFile"
+    (showViewerChange)="clearFileData()"
+    [fileName]="viewingFile.name"
+    [title]="viewingFile.title"
+    [blobFile]="viewingFile.blob"
+    [overlayMode]="true"
+    [mimeType]="viewingFile.mimeType"
+    [class.app-chrome-enabled]="featuresService.isOn$(applicationChromeFeatureFlag) | async"
+/>

@@ -1,0 +1,14 @@
+<div class="hxp-more-action-button" *ngIf="actionContext.documents.length === 1">
+    <ng-container *ngIf="menuItems">
+        <button mat-icon-button [matMenuTriggerFor]="menu" [attr.aria-label]="menuItems.title">
+            <mat-icon>{{menuItems.icon}}</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <div data-automation-id="hxp-document-more-menu-panel">
+                <ng-container *ngFor="let action of menuItems.children; trackBy: childTrackBy">
+                    <hxp-document-more-menu-item [actionContext]="actionContext" [item]="action"/>
+                </ng-container>
+            </div>
+        </mat-menu>
+    </ng-container>
+</div>

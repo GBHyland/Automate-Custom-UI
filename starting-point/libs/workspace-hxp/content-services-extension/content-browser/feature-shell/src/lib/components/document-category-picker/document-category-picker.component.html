@@ -1,0 +1,25 @@
+<div class="hxp-document-category-picker">
+    <label
+        for="hxp-document-category-picker-select"
+        [ngClass]="required ? 'hxp-document-category-picker-required' : ''"
+        id="hxp-document-category-picker-label"
+    >
+        {{ title | translate }}
+    </label>
+    <mat-form-field appearance="outline">
+        <mat-select
+            id="hxp-document-category-picker-select"
+            [required]="required"
+            [placeholder]="placeholder | translate"
+            [disabled]="!options.length"
+            (selectionChange)="onSelected($event)"
+            aria-labelledby="hxp-document-category-picker-label"
+            [value]="value"
+            panelClass="hxp-global-mat-select-panel"
+        >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{ option }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

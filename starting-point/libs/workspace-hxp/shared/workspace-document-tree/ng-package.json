@@ -1,0 +1,7 @@
+{
+    "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../../../dist/libs/workspace-hxp/shared/workspace-document-tree",
+    "lib": {
+        "entryFile": "src/index.ts"
+    }
+}

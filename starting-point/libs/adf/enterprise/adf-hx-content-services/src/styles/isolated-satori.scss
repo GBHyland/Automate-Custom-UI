@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+@use '@hylandsoftware/satori-ui/theme' as sat;
+/* stylelint-disable-next-line scss/load-no-partial-leading-underscore */
+@use '_satori-overrides' as sat-overrides;
+
+/* stylelint-disable-next-line selector-class-pattern */
+.isolated-satori {
+    $satori-theme: sat.$sat-light-theme;
+    @include sat-overrides.override-component-themes($satori-theme);
+    @include mat.system-level-colors($satori-theme);
+    @include mat.system-level-typography($satori-theme);
+}

@@ -1,0 +1,9 @@
+@use '@hylandsoftware/design-tokens/scss' as *;
+
+.hxp-governance-record-name-search-filter-container {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: $hy-spacing-24;
+    font: $hy-body-font;
+}

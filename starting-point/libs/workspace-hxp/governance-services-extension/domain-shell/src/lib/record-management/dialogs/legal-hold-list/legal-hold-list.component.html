@@ -1,0 +1,28 @@
+<div mat-dialog-title>{{ 'GOVERNANCE.LEGAL_DIALOG.TITLE' | translate }}</div>
+<mat-dialog-content class="hxp-cic-gov-record-dialog-content">
+    <div class="hxp-legal-hold-info-banner">
+        <mat-icon svgIcon="info_24px" />
+        <span>
+            {{
+                context.records.length === 1
+                ? ('GOVERNANCE.LEGAL_DIALOG.INFO_ADD_RECORDS' | translate:{ count: context.records.length })
+                : ('GOVERNANCE.LEGAL_DIALOG.INFO_ADD_RECORDS_plural' | translate:{ count: context.records.length })
+            }}
+        </span>
+    </div>
+    <hxp-governance-legal-hold [clickedFrom]="clickedFrom" (selectedLegalCase)="onSelectedLegalCaseChange($event)" />
+</mat-dialog-content>
+
+<mat-dialog-actions class="hxp-cic-gov-record-dialog-actions" align="end">
+    <button mat-button (click)="onCancel()">
+        {{ 'GOVERNANCE.LEGAL_DIALOG.CANCEL' | translate }}
+    </button>
+    <button mat-flat-button color="primary" [disabled]="selectedLegalCase.length === 0 || isAssigning" [ngClass]="{ 'hxp-loading': isAssigning }" (click)="addRecordsToLegalCase()">
+        <span class="hxp-assign-record-to-case-btn-label">
+            <mat-progress-spinner *ngIf="isAssigning" mode="indeterminate" diameter="15" strokeWidth="3" />
+            <span class="hxp-assign-record-to-case-btn-title">
+                {{ 'GOVERNANCE.LEGAL_DIALOG.ASSIGN' | translate }}
+            </span>
+        </span>
+    </button>
+</mat-dialog-actions>

@@ -1,0 +1,11 @@
+{
+  "name": "@alfresco/adf-hx-content-services/api",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": ">=18.2.13",
+    "rxjs": ">=7.8.2",
+    "@alfresco/adf-core": ">=7.0.0-alpha.2-0",
+    "@hylandsoftware/hxcs-js-client": "^2.0.1"
+  },
+  "sideEffects": false
+}

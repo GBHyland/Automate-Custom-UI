@@ -1,0 +1,16 @@
+{
+  "APP": {
+    "HEADER": {
+      "SIGN_OUT": "Disconnetti",
+      "HELP": "Guida",
+      "LANGUAGE": "Lingua"
+    },
+    "TOOLBAR": {
+      "SELECTED": "Selezionato",
+      "CLEAR_ALL": "Cancella tutto"
+    }
+  },
+  "PAGINATION": {
+    "PAGE_SIZE": "Elementi per pagina"
+  }
+}

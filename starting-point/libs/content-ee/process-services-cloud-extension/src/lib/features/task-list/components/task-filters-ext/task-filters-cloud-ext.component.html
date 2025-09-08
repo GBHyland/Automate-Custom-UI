@@ -1,0 +1,8 @@
+<adf-cloud-task-filters
+    [appName]="appName$ | async"
+    searchApiMethod="POST"
+    [showIcons]="false"
+    [filterParam]="currentTaskFilter$ | async"
+    (filterClicked)="onTaskFilterClick($event)"
+    (updatedFilter)="onUpdatedFilter($event)"
+/>

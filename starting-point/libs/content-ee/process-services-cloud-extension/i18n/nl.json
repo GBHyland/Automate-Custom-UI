@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Geen procesdefinities beschikbaar",
+      "UNCATEGORIZED": "Niet-gecategoriseerd",
+      "RECENT_PROCESS_DEFINITIONS": "Onlangs gebruikt"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Extensies: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Process Automation-extensies inschakelen"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Procesbeheer",
+      "START_PROCESS_CLOUD": "Proces starten",
+      "TASK_LIST_CLOUD": "Lijst met taken",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Gegevens weergeven",
+        "CLOSE-TOOLTIP": "Sluiten",
+        "PRINT": "Formulier afdrukken"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Proces starten",
+      "CREATE_PROCESS_NOT_ALLOWED": "Nieuw proces kan niet worden gemaakt"
+    },
+    "ERROR": {
+      "NO_FORM": "Voor de procesdefinitie is geen formulier gedefinieerd",
+      "CAN_NOT_ATTACH": "Kan de geselecteerde content niet bijvoegen"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Proces gemaakt '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Er is een onbekende netwerkfout opgetreden. Aan Process Automation gerelateerde functies zijn uitgeschakeld."
+    },
+    "SIDE_NAV_TITLE": "Procesbeheer",
+    "TASK_LIST": {
+      "TASKS": "Taken",
+      "ACTIONS": {
+        "TASK_DETAILS": "Gegevens weergeven",
+        "PROCESS_HISTORY": "Procesgeschiedenis"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Toegewezen persoon wijzigen",
+        "CLOSE": "Sluiten",
+        "ASSIGN": "Toewijzen",
+        "SUCCESS": "Toegewezen persoon voor taak is gewijzigd",
+        "FAILED": "Er is een probleem opgetreden bij het toewijzen van de gebruiker. Probeer de gebruiker opnieuw toe te wijzen."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Gegevens"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Processen",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Gegevens weergeven",
+        "CANCEL_MESSAGE": "Proces is geannuleerd",
+        "CANCEL_ERROR_MESSAGE": "Kan proces niet annuleren. Probeer het opnieuw.",
+        "CANCEL_TOOLTIP": "Proces annuleren"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Gestart door"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Het filter is opgeslagen",
+      "FILTER_DELETED": "Het filter is verwijderd"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "De taak is voltooid",
+      "FORM_SAVED": "Het formulier is opgeslagen",
+      "FORM_ACTION": "Actie '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Het filter is opgeslagen",
+      "FILTER_DELETED": "Het filter is verwijderd"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Proces annuleren",
+        "MESSAGE": "Weet u zeker dat u dit proces wilt annuleren?"
+      },
+      "NEW_PROCESS": "Nieuw proces",
+      "CONFIRM": "Bevestigen",
+      "CLOSE": "Sluiten",
+      "ERROR": "Kan procesdefinities niet laden, controleer of u over toegang beschikt."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}}-taak is toegewezen aan {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}}-taak is voltooid",
+    "TASK_ACTIVATED": "{{taskName}}-taak is nu actief",
+    "TASK_CANCELLED": "{{taskName}}-taak is geannuleerd",
+    "TASK_SUSPENDED": "{{taskName}}-taak is uitgesteld",
+    "TASK_UPDATED": "Taakgegevens van {{taskName}} zijn bijgewerkt"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Zoeken"
+    }
+  }
+}

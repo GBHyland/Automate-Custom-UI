@@ -1,0 +1,127 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+adf-info-drawer-layout {
+    .hxp-version-panel-skeleton-loader {
+        display: inline-block;
+        width: 370px;
+    }
+
+    .adf-info-drawer-layout-content {
+        position: relative;
+    }
+
+    .adf-info-drawer-layout-header {
+        display: none;
+    }
+
+    .hxp-manage-versions-sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: satori.$hy-spacing-24 0;
+
+        h1 {
+            font-size: var(--theme-title-font-size, 24px);
+            margin: 0;
+            padding: 0 satori.$hy-spacing-16;
+            font-weight: satori.$hy-font-weights-regular;
+            display: inline-block;
+            text-overflow: ellipsis;
+            width: 260px;
+            overflow: hidden;
+        }
+    }
+
+    .hxp-manage-versions-sidebar-close-btn {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    .hxp-version-list {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow-y: auto;
+        padding: satori.$hy-spacing-12;
+        height: 100vh;
+
+        .hxp-version-item {
+            padding: 0 satori.$hy-spacing-24;
+            margin-bottom: satori.$hy-spacing-8;
+            text-align: left;
+            cursor: pointer;
+            border: 0;
+            background: #fff;
+
+            &:hover,
+            &.active {
+                background: var(--adf-filter-chip-background-color);
+            }
+
+            &.hxp-current-version {
+                .hxp-version-description {
+                    color: var(--theme-primary-color, satori.$satori-like-primary);
+                    font-size: satori.$hy-font-sizes-20;
+                    font-weight: satori.$hy-font-weights-semi-bold;
+                }
+            }
+
+            // Those two styles to be removed once a feature toggle cic-versioning-new-context-menu is opened
+            &.hxp-current-version.hxp-has-old-context .hxp-version-title {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            &.hxp-has-old-context .hxp-version-header button {
+                margin-right: -24px;
+            }
+
+            .hxp-version-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .hxp-context-btn {
+                    position: relative;
+                    right: -24px;
+                }
+            }
+
+            .hxp-version-header,
+            .hxp-version-description {
+                padding-bottom: satori.$hy-spacing-12;
+            }
+
+            .hxp-version-title {
+                font-weight: satori.$hy-font-weights-bold;
+            }
+
+            .hxp-version-title,
+            .hxp-version-description {
+                max-width: 320px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .hxp-version-meta,
+            .hxp-version-footer {
+                font-size: satori.$hy-font-sizes-10;
+                padding-bottom: satori.$hy-spacing-12;
+                color: satori.$hy-colors-text-secondary;
+            }
+        }
+    }
+
+    .hxp-menu-trigger {
+        visibility: hidden;
+        position: fixed;
+    }
+}
+
+.adf-viewer-sidebars .adf-viewer__sidebar {
+    width: auto;
+}

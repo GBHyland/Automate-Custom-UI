@@ -1,0 +1,14 @@
+@if (mainAction$ | async; as action) {
+    <div class="hxp-main-action">
+        <button
+            mat-button
+            [id]="action.id"
+            (click)="runAction(action.actions.click)"
+            [disabled]="action.disabled"
+            class="hxp-main-action-button hxp-primary-button"
+            data-automation-id="hxp-main-action-button"
+        >
+            {{action.title | translate}}
+        </button>
+    </div>
+}

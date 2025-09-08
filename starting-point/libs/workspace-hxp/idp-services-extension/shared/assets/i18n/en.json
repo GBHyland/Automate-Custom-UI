@@ -1,0 +1,29 @@
+{
+    "IDP": {
+        "REJECT_DIALOG": {
+            "TITLE": "Reject Document",
+            "DESCRIPTION": "This document will not be included in the batch's extraction process if it is rejected. Verify that you really want to do this.\n\nPlease give a justification for rejecting",
+            "REASON_LABEL": "Reason to Reject",
+            "CANCEL_BUTTON": "Cancel",
+            "REJECT_BUTTON": "Reject Document",
+            "SEARCH_PLACEHOLDER": "Search for a reason...",
+            "REJECT_NOTE" : {
+                "LABEL": "Reject note",
+                "PLACEHOLDER": "Enter a reject note...",
+                "ARIA_LABEL": "Enter a reject note",
+                "HINT": "Maximum {{max}} characters"
+            }
+        },
+        "SHORTCUT_DIALOG": {
+            "TITLE": "Keyboard Shortcuts",
+            "SEARCH_PLACEHOLDER": "Search for a shortcut...",
+            "NO_RESULTS": "No results found"
+        },
+        "DISCARD_DIALOG": {
+            "TITLE": "Discard Changes",
+            "DESCRIPTION": "You have unsaved changes. Unsaved changes will be lost if you leave this page.",
+            "CANCEL_BUTTON": "Cancel",
+            "DISCARD_BUTTON": "Discard Changes"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-governance-legal-hold-create-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: var(--adf-header-icon-button-default-border-radius);
+    font-weight: satori.$hy-font-weights-regular;
+    padding-right: 18px;
+    height: 40px;
+    color: var(--hxp-governance-legal-hold-text-color);
+    border: var(--hxp-governance-legal-hold-create-button-border) !important;
+    box-shadow: none !important;
+    background-color: var(--hxp-governance-legal-hold-create-button-background-color);
+}

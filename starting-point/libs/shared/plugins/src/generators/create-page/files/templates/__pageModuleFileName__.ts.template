@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ExtensionService } from '@alfresco/adf-extensions';
+import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
+import { <%= pageClassName %> } from './<%= pageFileName %>';
+import { <%= menuItemClassName %> } from './<%= menuItemFileName %>';
+
+@NgModule({
+    imports: [
+        RouterModule.forChild([]),
+        MatButtonModule,
+        TranslateModule,
+        <%= pageClassName %>,
+        <%= menuItemClassName %>,
+    ],
+})
+export class <%= pageModuleClassName %> {
+    constructor(extensionService: ExtensionService) {
+        extensionService.setComponents({
+            '<%= pageComponentId %>': <%= pageClassName %>,
+            '<%= menuItemId %>': <%= menuItemClassName %>,
+        });
+    }
+}

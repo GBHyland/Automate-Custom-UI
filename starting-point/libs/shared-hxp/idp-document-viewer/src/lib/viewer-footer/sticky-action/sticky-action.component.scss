@@ -1,0 +1,19 @@
+.idp-viewer-sticky-button {
+    display: inline-block;
+    position: absolute;
+    bottom: 3.5em;
+
+    &.idp-left {
+        left: 2.5em;
+    }
+
+    &.idp-center {
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    &.idp-right {
+        right: 2.5em;
+    }
+}

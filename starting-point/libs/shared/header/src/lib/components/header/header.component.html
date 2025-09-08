@@ -1,0 +1,35 @@
+<mat-toolbar class="hxp-header">
+    @if (!!((userApps$ | async)?.length)) {
+      <button
+        [matMenuTriggerFor]="appSwitcherMenu"
+        aria-label="app switcher menu"
+        data-automation-id="hxp-header-app-switcher-icon"
+        class="hyland-icons hxp-header-app-switcher">
+        apps
+      </button>
+    }
+  <div class="hxp-header-app-title">
+    <h1
+      role="link"
+      aria-label="'HEADER.TITLE.DESKTOP' | translate"
+      routerLink="/"
+      >
+      {{ 'HEADER.TITLE.DESKTOP' | translate }}
+    </h1>
+  </div>
+
+  <div class="hxp-header-menu-spacer"></div>
+
+  <sat-logo class="hxp-sat-header-logo">
+      <sat-word-mark-logo />
+  </sat-logo>
+  <hxp-header-menu [documentationUrl]="documentationUrl" />
+
+  <mat-menu #appSwitcherMenu="matMenu" class="hxp-header-menu-container">
+      @for (app of userApps$ | async; track app.appKey) {
+        <a mat-menu-item href="{{app.launchUrl}}" class="hxp-header-menu-item">{{ app.localizedName }}</a>
+      }
+  </mat-menu>
+
+</mat-toolbar>
+<mat-divider />

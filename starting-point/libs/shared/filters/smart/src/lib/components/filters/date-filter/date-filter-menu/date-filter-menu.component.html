@@ -1,0 +1,197 @@
+<div (click)="$event.stopPropagation()" class="hxp-date-filter-menu" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div class="hxp-date-filter-menu__content">
+        <div class="hxp-date-filter-menu__list-container">
+
+            <mat-radio-group
+                color="primary"
+                class="hxp-date-filter-menu__list"
+            >
+                <mat-radio-button
+                    *ngFor="let option of options; trackBy: trackByValue"
+                    class="hxp-date-filter-menu__list-item"
+                    [value]="option.value"
+                    [checked]="form.controls.selectedOption.value?.value === option.value"
+                    (change)="onOptionSelected(option)"
+                    [attr.data-automation-id]="'hxp-date-filter-menu-option-' + option.value"
+                >
+                    {{ option.label| translate}}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <ng-container *ngIf="customRangeOptionPresent">
+                <mat-divider />
+
+                <div class="hxp-date-filter-menu__range">
+                    <button
+                        *ngIf="!customRangeFormVisible"
+                        mat-button
+                        class="hxp-date-filter-menu__range-button"
+                        (click)="onCustomRangeClick()"
+                        data-automation-id="hxp-date-filter-menu-custom-range-button"
+                    >
+                        <mat-icon iconPositionStart>add</mat-icon>
+                        {{ 'FILTERS.DATE_FILTER.RANGE' | translate }}
+                    </button>
+
+                    <div
+                        *ngIf="customRangeFormVisible"
+                        class="hxp-date-filter-menu__range-form"
+                        [formGroup]="form.controls.range"
+                    >
+                        <mat-form-field
+                            *ngIf="!useTime"
+                            class="hxp-date-filter-menu__range-form-field hxp-input"
+                        >
+                            <mat-label>
+                                {{ 'FILTERS.DATE_FILTER.FROM' | translate }}
+                            </mat-label>
+                            <input
+                                matInput
+                                [matDatepicker]="fromPicker"
+                                [formControl]="form.controls.range.controls.from"
+                                [max]="form.controls.range.controls.to.value"
+                                data-automation-id="hxp-filter-menu-from-input"
+                            >
+                            <div
+                                matSuffix
+                                class="hxp-date-filter-menu__range-form-field-suffix"
+                            >
+                                <mat-icon
+                                    *ngIf="form.controls.range.controls.from.value"
+                                    class="hxp-date-filter-menu__range-form-field-suffix-icon"
+                                    (click)="form.controls.range.controls.from.reset()"
+                                >
+                                    clear
+                                </mat-icon>
+                                <mat-datepicker-toggle [for]="fromPicker" />
+                                <mat-datepicker #fromPicker />
+                            </div>
+                        </mat-form-field>
+
+                        <mat-form-field
+                            *ngIf="useTime"
+                            class="hxp-date-filter-menu__range-form-field hxp-input"
+
+                        >
+                            <mat-label>
+                                {{ 'FILTERS.DATE_FILTER.FROM' | translate }}
+                            </mat-label>
+
+                            <input
+                                matInput
+                                [formControl]="form.controls.range.controls.from"
+                                [matDatetimepicker]="fromPicker"
+                                data-automation-id="hxp-filter-menu-from-input"
+                            />
+                            <div
+                                matSuffix
+                                class="hxp-date-filter-menu__range-form-field-suffix"
+                            >
+                                <mat-icon
+                                    *ngIf="form.controls.range.controls.from.value"
+                                    class="hxp-date-filter-menu__range-form-field-suffix-icon"
+                                    (click)="form.controls.range.controls.from.reset()"
+                                >
+                                    clear
+                                </mat-icon>
+
+                                <mat-datetimepicker-toggle [for]="fromPicker" matSuffix/>
+                                <mat-datetimepicker #fromPicker type="datetime"/>
+                            </div>
+                        </mat-form-field>
+
+                        <div class="hxp-date-filter-menu__range-form-divider"></div>
+
+                        <mat-form-field
+                            *ngIf="!useTime"
+                            class="hxp-date-filter-menu__range-form-field hxp-input"
+
+                        >
+                            <mat-label>
+                                {{ 'FILTERS.DATE_FILTER.TO' | translate }}
+                            </mat-label>
+
+                            <input
+                                matInput
+                                [matDatepicker]="toPicker"
+                                [formControl]="form.controls.range.controls.to"
+                                [min]="form.controls.range.controls.from.value"
+                                data-automation-id="hxp-filter-menu-to-input"
+                            >
+                            <div
+                                matSuffix
+                                class="hxp-date-filter-menu__range-form-field-suffix"
+                            >
+                                <mat-icon
+                                    *ngIf="form.controls.range.controls.to.value"
+                                    class="hxp-date-filter-menu__range-form-field-suffix-icon"
+                                    (click)="form.controls.range.controls.to.reset()"
+                                >
+                                    clear
+                                </mat-icon>
+                                <mat-datepicker-toggle [for]="toPicker" />
+                                <mat-datepicker #toPicker />
+                            </div>
+                        </mat-form-field>
+
+                        <mat-form-field
+                            *ngIf="useTime"
+                            class="hxp-date-filter-menu__range-form-field hxp-input"
+
+                        >
+                            <mat-label>
+                                {{ 'FILTERS.DATE_FILTER.TO' | translate }}
+                            </mat-label>
+
+                            <input
+                                matInput
+                                [matDatetimepicker]="toPicker"
+                                [formControl]="form.controls.range.controls.to"
+                                [min]="form.controls.range.controls.from.value"
+                            />
+                            <div
+                                matSuffix
+                                class="hxp-date-filter-menu__range-form-field-suffix"
+                            >
+                                <mat-icon
+                                    *ngIf="form.controls.range.controls.to.value"
+                                    class="hxp-date-filter-menu__range-form-field-suffix-icon"
+                                    (click)="form.controls.range.controls.to.reset()"
+                                >
+                                    clear
+                                </mat-icon>
+
+                                <mat-datetimepicker-toggle [for]="toPicker"/>
+                                <mat-datetimepicker #toPicker type="datetime"/>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <mat-divider class="hxp-date-filter-menu__divider" />
+
+    <div class="hxp-date-filter-menu__actions">
+        <button
+            mat-button
+            color="primary"
+            class="hxp-date-filter-menu__clear-selection-button"
+            [disabled]="clearSelectionButtonDisabled"
+            (click)="onClearSelection()"
+            data-automation-id="hxp-filter-menu-clear-selection-button"
+        >
+            {{ 'FILTERS.MENU.CLEAR_SELECTION' | translate }}
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            [disabled]="updateButtonDisabled"
+            (click)="onUpdate()"
+            data-automation-id="hxp-filter-menu-update-button"
+        >
+            {{ 'FILTERS.MENU.UPDATE' | translate }}
+        </button>
+    </div>
+</div>

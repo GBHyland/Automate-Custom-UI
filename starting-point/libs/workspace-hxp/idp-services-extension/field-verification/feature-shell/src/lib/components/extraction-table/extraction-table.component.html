@@ -1,0 +1,88 @@
+<div id="extraction-table-container" *ngIf="table$ | async as table">
+    <div class="idp-table-container" [ngClass]="{ 'idp-table-container-hidden': !(table.rows && table.rows.length)}">
+        <table mat-table
+            [dataSource]="table.rows && table.rows.length ? table.rows : blankTable"
+            [ngClass]="{ 'idp-blank-table': !(table.rows && table.rows.length), 'idp-table-selected': tableSelected }"
+            [trackBy]="trackRow" scrollable>
+            <ng-container matColumnDef="rowNumber">
+                <th mat-header-cell *matHeaderCellDef
+                    class="idp-table-row-number-header"
+                    #tableMenuTrigger="matMenuTrigger"
+                    [matMenuTriggerFor]="tableMenu"
+                    (contextmenu)="tableMenuTrigger.openMenu(); onTableMenuRightClick($event, tableMenuTrigger); $event.preventDefault()"
+                    [matMenuTriggerRestoreFocus]="false"
+                    (click)="$event.stopPropagation(); tableMenuTrigger.closeMenu(); onTableMenuLeftClick($event)">
+                    <mat-menu #tableMenu="matMenu" yPosition="below" [overlapTrigger]="false">
+                        <button mat-menu-item (click)="onDeleteTable()">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.DELETE_TABLE' | translate }}</button>
+                    </mat-menu>
+                    <img class="idp-icon-table" src="assets/idp-services-extension-field-verification/images/table_type_field.svg" alt="Table icon" />
+                </th>
+                <td mat-cell *matCellDef="let row; let i = index"
+                    class="idp-table-row-number-cell"
+                    #rowMenuTrigger="matMenuTrigger"
+                    [matMenuTriggerFor]="rowMenu"
+                    (contextmenu)="onRowMenuRightClick($event, rowMenuTrigger, i)"
+                    [matMenuTriggerRestoreFocus]="false"
+                    (click)="$event.stopPropagation(); rowMenuTrigger.closeMenu(); onRowMenuLeftClick($event, i)">
+                    <mat-menu #rowMenu="matMenu" yPosition="below" [overlapTrigger]="false">
+                        <button mat-menu-item (click)="onRowAction('insertRowAbove')">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.INSERT_ROW_ABOVE' | translate }}</button>
+                        <button mat-menu-item (click)="onRowAction('insertRowBelow')">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.INSERT_ROW_BELOW' | translate }}</button>
+                        <button mat-menu-item (click)="onRowAction('clearRow')">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.CLEAR_ROW' | translate }}</button>
+                        <button mat-menu-item (click)="onRowAction('deleteRow')">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.DELETE_ROW' | translate }}</button>
+                    </mat-menu>
+                    {{ i + 1 }}
+                </td>
+            </ng-container>
+            <ng-container *ngFor="let column of table.columnHeaderNames; let columnIndex = index; trackBy: trackColumnName" [matColumnDef]="column">
+                <th mat-header-cell
+                    *matHeaderCellDef class="idp-table-row-header hxp-label-large-bold"
+                    #columnMenuTrigger="matMenuTrigger"
+                    [matMenuTriggerFor]="columnMenu"
+                    (contextmenu)="columnMenuTrigger.openMenu(); onColumnMenuRightClick($event, columnMenuTrigger, columnIndex); $event.preventDefault()"
+                    [matMenuTriggerRestoreFocus]="false"
+                    [ngClass]="{ 'idp-column-header-selected': selectedColumnIndex === columnIndex }"
+                    (click)="$event.stopPropagation(); columnMenuTrigger.closeMenu(); onColumnMenuLeftClick($event, columnIndex)">
+                    <mat-menu #columnMenu="matMenu" yPosition="below" [overlapTrigger]="false">
+                        <button mat-menu-item (click)="onClearColumn(columnIndex)">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.CLEAR_COLUMN' | translate }}</button>
+                    </mat-menu>
+                    {{ column }}
+                </th>
+                <td mat-cell class="idp-cell"
+                    [ngClass]="{
+                        'idp-column-cell-selected': selectedColumnIndex === columnIndex && recordIndex !== table.rows.length - 1,
+                        'idp-column-cell-selected-last': selectedColumnIndex === columnIndex && recordIndex === table.rows.length - 1
+                    }"
+                    *matCellDef="let record; let recordIndex = index">
+                    <div class="idp-cell-edit" *ngIf="record.rowCells[columnIndex] as cell">
+                        <input
+                            matInput
+                            #extractionTableInput
+                            cdkFocusInitial
+                            [id]="cell.id"
+                            [attr.aria-label]="cell.name"
+                            class="idp-cell-edit-input"
+                            [ngClass]="{ 'idp-cell-edit-input-is-selected': cell.isSelected }"
+                            [type]="cell.type"
+                            [name]="cell.id"
+                            [value]="cell.value"
+                            (keydown)="onKeydown(cell, $event)"
+                            (input)="onFieldInput(cell, extractionTableInput)"
+                            (focus)="onFieldFocus(cell)"
+                            (focusout)="onFieldFocusOut(cell, extractionTableInput.value)"
+                        />
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="table.columnHeaderNames | withRowNumberColumn; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: table.columnHeaderNames | withRowNumberColumn; let columnIndex = index;"
+                [ngClass]="{ 'idp-row-selected': selectedRowIndex === columnIndex }"></tr>
+        </table>
+        <div *ngIf="!(table.rows && table.rows.length)" class="idp-no-data-overlay">
+            <div class="idp-no-data-overlay-table-name">'{{ table.name }}'</div>
+            <div>
+                <input type="text" style="opacity: 0;" #extractionTableInput cdkFocusInitial (keydown)="onKeydown(undefined, $event)" />
+            </div>
+            <div class="idp-no-data-overlay-table-message">{{ 'EXTRACTION.VERIFICATION.EXTRACTION_TABLE.TABLE_NOT_EXTRACTED' | translate }}</div>
+        </div>
+    </div>
+</div>

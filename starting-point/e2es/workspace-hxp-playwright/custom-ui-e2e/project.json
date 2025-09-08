@@ -1,0 +1,44 @@
+{
+    "name": "workspace-hxp-playwright-custom-ui-e2e",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "e2es/workspace-hxp-playwright/custom-ui-e2e/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "pree2e": {
+            "executor": "@alfresco-dbp/monorepo/builders:app-config-envsub",
+            "options": {
+                "application": "workspace-hxp",
+                "projectName": "sys-workspace",
+                "externalScript": "/custom-script/fetch-dynamic-app-details.js"
+            }
+        },
+        "check-source-code-zip-e2e": {
+            "dependsOn": ["pree2e"],
+            "executor": "@nx/playwright:playwright",
+            "options": {
+                "config": "{projectRoot}/playwright.config.ts",
+                "skipInstall": true
+            },
+            "configurations": {
+                "prod": {
+                    "config": "{projectRoot}/playwright.config.ts",
+                    "grepInvert": "@devtools"
+                }
+            },
+            "inputs": ["default", "^production"],
+            "cache": true
+        },
+        "e2e-ff": { },
+        "e2e-ff-dryrun": { },
+        "lint": {},
+        "codeowner": {}
+    },
+    "tags": [
+        "scope:workspace-hxp-playwright-custom-ui-e2e",
+        "type:e2e",
+        "category:workspace-hxp",
+        "automate"
+    ],
+    "implicitDependencies": ["workspace-hxp"]
+}

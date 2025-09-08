@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const resolve = require('path').resolve;
+const runCommand = require('./shared/es5/run-command');
+const getPathMappingsRelativeToCurrentRoot = require('./shared/es5/get-relative-path-mapping');
+
+const tsConfigDirectoryPath = __dirname;
+const tsConfigPath = resolve(tsConfigDirectoryPath, 'tsconfig.json');
+const paths = getPathMappingsRelativeToCurrentRoot(tsConfigDirectoryPath, tsConfigPath);
+
+require('ts-node').register({
+    project: tsConfigPath,
+    compilerOptions: {
+        baseUrl: tsConfigDirectoryPath,
+        paths
+    }
+});
+require('tsconfig-paths').register({
+    baseUrl: tsConfigDirectoryPath,
+    paths
+});
+
+runCommand(__dirname);

@@ -1,0 +1,123 @@
+@use 'mat-selectors' as ms;
+
+.app-process-cloud-processes-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adf-content-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.adf-content-border {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+    vertical-align: unset;
+    text-align: unset;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+adf-cloud-edit-process-filter {
+    margin-bottom: 5px;
+
+    .adf-edit-process-filter-form {
+
+        adf-cloud-people {
+            max-width: none;
+
+            #{ms.$mdc-text-field--disabled}#{ms.$mdc-text-field--filled} {
+                background-color: transparent;
+                padding-right: 0;
+            }
+
+            #{ms.$mat-mdc-evolution-chip-set--chips} {
+                align-items: center;
+            }
+
+            #{ms.$mat-chip},
+            #{ms.$mat-chip}:focus,
+            #{ms.$mat-chip}:hover,
+            #{ms.$mat-chip}:active {
+                #{ms.$mat-mdc-chip-ripple} {
+                    margin: initial;
+                }
+
+                #{ms.$mat-mdc-chip-focus-overlay} {
+                    display: none;
+                }
+            }
+
+            #{ms.$mdc-text-field--disabled} #{ms.$mat-form-field-underline}:before {
+                border-bottom-color: rgba(0, 0, 0, 0.42);
+            }
+        }
+
+        #{ms.$mat-form-field} {
+            max-width: none;
+            display: block;
+        }
+
+        #{ms.$mat-input-element} {
+            height: 24px;
+        }
+    }
+}
+
+.apa-process-list-cloud-container,
+.apa-process-list-cloud-ext {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.adf-datatable-row {
+    .adf-datatable-cell:nth-child(1), .adf-datatable-cell:nth-child(2) {
+        .adf-datatable-cell-value {
+            white-space: pre-wrap;
+        }
+    }
+}
+
+
+
+.adf-edit-process-filter-content .adf-edit-process-filter-form{
+    adf-cloud-people {
+        .adf-people-cloud .adf-cloud-input {
+            height: 24px;
+            flex-basis: 0;
+        }
+    }
+}
+
+.adf-edit-process-filter-form {
+    adf-cloud-date-range-filter {
+        .adf-cloud-date-range-picker {
+            margin-left: 0;
+        }
+    }
+}
+
+.apa-process-list-cloud-container-ext-main-content {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+}
+
+.apa-task-list-cloud-refresh-button-container {
+    display: flex;
+    flex: 1;
+    flex-flow: row;
+    justify-content: flex-end;
+    margin-right:15px;
+}

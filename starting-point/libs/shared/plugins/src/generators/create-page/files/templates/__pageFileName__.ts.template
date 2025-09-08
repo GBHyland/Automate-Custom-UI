@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+
+@Component({
+    template: `<%= pageSelector %> Works! {{ 'PLUGIN_MESSAGE' | translate }}`,
+    selector: '<%= pageSelector %>',
+    imports: [TranslateModule],
+    standalone: true,
+})
+export class <%= pageClassName %> {
+}

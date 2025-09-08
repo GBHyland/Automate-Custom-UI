@@ -1,0 +1,29 @@
+.hxp-search-field {
+    width: 100%;
+    max-width: 400px;
+    height: 48px;
+
+    .hxp-search-field-close {
+        margin-right: 8px;
+    }
+}
+
+.hxp-icon-like-button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Remove hover background */
+    &:hover,
+    &:focus {
+        background-color: transparent !important;
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "PERMISSION_LEVEL": {
+        "LABEL": {
+            "EVERYTHING": "Tudo",
+            "READ_WRITE": "Ler e escrever",
+            "READ": "Ler"
+        }
+    },
+    "PERMISSIONS_MANAGEMENT_ACTION_STATUS": {
+        "SNACKBAR": {
+            "SAVE_SUCCESS": "Atualização de permissões neste documento",
+            "SAVE_ERROR": "Erro ao atualizar as permissões neste documento",
+            "RESTORE_SUCCESS": "Todas as permissões foram restauradas neste documento.",
+            "RESTORE_ERROR": "Erro ao restaurar permissões neste documento.",
+            "RESTORE_USER_SUCCESS": "As permissões de utilizador foram restauradas com êxito.",
+            "RESTORE_GROUP_SUCCESS": "As permissões do grupo foram restauradas com êxito."
+        }
+    },
+    "DOWNLOAD_STATUS": {
+        "SNACKBAR": {
+            "REQUEST": "Descarregar um ficheiro",
+            "SUCCESS": "O ficheiro foi descarregado com sucesso!",
+            "ERROR": "Falha ao descarregar o ficheiro"
+        }
+    }
+}

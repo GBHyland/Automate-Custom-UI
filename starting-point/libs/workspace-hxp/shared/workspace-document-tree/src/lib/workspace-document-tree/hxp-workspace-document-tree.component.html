@@ -1,0 +1,20 @@
+<hxp-document-tree
+    [documents]="documents"
+    [multiSelection]="multiSelection"
+    (selectedDocument)="onSelectedDocument($event)"
+>
+    <ng-template #contextActionMenu let-contextActions>
+        <ng-container *ngFor="let item of contextActions">
+            <button
+                *ngIf="item.model.visible"
+                role="menuitem"
+                [attr.data-automation-id]="'context-' + ((item.model.title || '') | translate)"
+                mat-menu-item
+                (click)="onMenuItemClick(item)"
+            >
+                <mat-icon *ngIf="item.model.icon" aria-hidden="true">{{ item.model.icon }}</mat-icon>
+                <span>{{ (item.model.title || '') | translate }}</span>
+            </button>
+        </ng-container>
+    </ng-template>
+</hxp-document-tree>

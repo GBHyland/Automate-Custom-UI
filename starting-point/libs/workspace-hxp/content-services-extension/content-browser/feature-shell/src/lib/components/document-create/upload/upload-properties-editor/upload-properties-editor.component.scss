@@ -1,0 +1,109 @@
+@use 'satori-like-styles' as satori;
+@use '@angular/material' as mat;
+
+.hxp-workspace-upload-properties-editor {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding-left: satori.$hy-spacing-24;
+
+    &__empty {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        span {
+            width: 240px;
+            text-align: center;
+        }
+    }
+
+    &__edit {
+        flex: 1 1 auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                align-self: flex-end;
+            }
+        }
+
+        &__mixed_content {
+            display: flex;
+            flex-direction: column;
+
+            &__title::after {
+                content: ' *';
+                color: satori.$hy-colors-red-500;
+            }
+
+            &__panel {
+                margin: 10px 0;
+                padding-left: 10px;
+
+                button {
+                    padding: 0;
+                    white-space: normal;
+                    line-height: normal;
+                    text-align: start;
+                }
+            }
+        }
+
+        mat-accordion {
+            .hxp-expansion-panel-header {
+                border-radius: 0;
+                box-shadow: none;
+                padding-inline-start: 10px;
+            }
+
+            .hxp-expansion-panel {
+                box-shadow: none;
+            }
+
+            .hxp-expansion-panel-title {
+                font-size: satori.$hy-font-sizes-30;
+                line-height: satori.$hy-line-heights-10;
+                font-weight: var(--theme-menu-container-font-weight);
+            }
+        }
+    }
+
+    &__toast-container {
+        display: flex;
+    }
+
+    &__toast {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 58px;
+        box-sizing: border-box;
+        margin: 24px;
+        padding: 14px 16px;
+        min-height: 48px;
+        transform-origin: center;
+
+        &__done-icon {
+            margin: 0 10px;
+            color: var(--snack-bar-success-color);
+        }
+
+        &__message {
+            flex: 1 1 auto;
+        }
+
+        &__dismiss-action {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            padding: 0;
+            height: 23px;
+            width: 23px;
+        }
+    }
+}

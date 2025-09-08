@@ -1,0 +1,206 @@
+{
+    "SEARCH": {
+        "FILTERS": {
+            "ACTIONS": {
+                "APPLY": "Zastosuj",
+                "CLEAR_ALL": "Wyczyść wszystko"
+            },
+            "CREATED_DATE": {
+                "ARIA-LABEL": {
+                    "DEFAULT_OPTIONS_LIST": "Lista dostępnych opcji daty"
+                },
+                "LABEL": "Data utworzenia",
+                "OPTIONS": {
+                    "CUSTOM_DATE": {
+                        "LABEL": "Data niestandardowa",
+                        "VALUES": {
+                            "AFTER": "Po",
+                            "BEFORE": "Przed",
+                            "SINCE_TO_DATE": "Od {{afterDate}} do {{beforeDate}}",
+                            "SINCE_TO_TODAY": "Od {{date}} do dzisiaj",
+                            "UNTIL_DATE": "Do {{date}}"
+                        }
+                    },
+                    "LAST_7_DAYS": "W ciągu ostatnich 7 dni",
+                    "LAST_30_DAYS": "W ciągu ostatnich 30 dni",
+                    "LAST_6_MONTHS": "W ciągu ostatnich 6 miesięcy",
+                    "LAST_YEAR": "W ciągu ostatniego roku"
+                },
+                "BUTTON": {
+                    "CLEAR": {
+                        "ARIA_LABEL": {
+                            "AFTER": "Wyczyść po dacie",
+                            "BEFORE": "Wyczyść przed datą"
+                        }
+                    }
+                },
+                "ERRORS": {
+                    "BEFORE_DATE_TOO_EARLY": "Data Przed nie może być wcześniejsza niż data Po",
+                    "AFTER_DATE_TOO_LATE": "Data Po nie może być późniejsza niż data Przed",
+                    "INVALID_DATE_FORMAT": "Wprowadź datę w prawidłowym formacie MM/DD/RRRR"
+                }
+            },
+            "DOCUMENT_CATEGORY": {
+                "ARIA-LABEL": {
+                    "DOCUMENT_CATEGORIES_LIST": "Lista dostępnych kategorii dokumentów",
+                    "CLEAR_INPUT": "Wyczyść dane wejściowe",
+                    "REMOVE": "Usuń",
+                    "SELECTED_FILTERS": "Aktualnie wybrane filtry"
+                },
+                "LABEL": "Typ zawartości",
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Brak wyników wyszukiwania",
+                    "MESSAGE": "Ups, wygląda na to, że nie znaleziono żadnych wyników wyszukiwania."
+                },
+                "PLACEHOLDER": "Wyszukaj typ zawartości",
+                "SELECTED": "Zaznaczono {{selected}}"
+            },
+            "DOCUMENT_LOCATION": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Powrót do przeglądania",
+                    "CLEAR_INPUT": "Wyczyść dane wejściowe",
+                    "REMOVE": "Usuń",
+                    "SELECTED_FILTERS": "Aktualnie wybrane filtry",
+                    "SEARCH_BUTTON": "Przycisk wyszukiwania"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Brak wyników wyszukiwania",
+                    "MESSAGE": "Ups, wygląda na to, że nie znaleziono żadnych wyników wyszukiwania."
+                },
+                "LABEL": "Wyszukaj w",
+                "PLACEHOLDER": "Szukaj",
+                "SELECTED": "Zaznaczono {{selected}}"
+            },
+            "FILE_TYPE": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Powrót do przeglądania",
+                    "CLEAR_INPUT": "Wyczyść dane wejściowe",
+                    "REMOVE": "Usuń",
+                    "SELECTED_FILTERS": "Aktualnie wybrane filtry",
+                    "SEARCH_BUTTON": "Przycisk wyszukiwania"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "Brak wyników wyszukiwania",
+                    "MESSAGE": "Ups, wygląda na to, że nie znaleziono żadnych wyników wyszukiwania."
+                },
+                "LABEL": "Typ pliku",
+                "PLACEHOLDER": "Wyszukaj typ pliku",
+                "SELECTED": "Zaznaczono {{selected}}",
+                "CATEGORIES": {
+                    "DOCUMENTS": {
+                        "LABEL": "Dokumenty",
+                        "FORMATS": {
+                            "PORTABLE_DOCUMENT_FORMAT": "Format dokumentu przenośnego",
+                            "PRESENTATION": "Prezentacja",
+                            "SPREADSHEET": "Arkusz kalkulacyjny",
+                            "TEXT_DOCUMENT": "Dokument tekstowy",
+                            "TEXT_FILE": "Plik tekstowy"
+                        }
+                    },
+                    "IMAGES": {
+                        "LABEL": "Obrazy",
+                        "FORMATS": {
+                            "UNCOMPRESSED_IMAGE_FORMATS": "Nieskompresowane formaty obrazu",
+                            "COMPRESSED_IMAGE_FORMATS": "Skompresowane formaty obrazu",
+                            "VECTOR_IMAGE_FORMATS": "Formaty obrazów wektorowych",
+                            "SOFTWARE_FILES": "Pliki oprogramowania"
+                        }
+                    },
+                    "VIDEO": {
+                        "LABEL": "Wideo",
+                        "FORMATS": {
+                            "UNCOMPRESSED_VIDEO_FORMATS": "Nieskompresowane formaty wideo",
+                            "COMPRESSED_VIDEO_FORMATS": "Skompresowane formaty wideo",
+                            "SOFTWARE_FILES": "Pliki oprogramowania"
+                        }
+                    },
+                    "AUDIO": {
+                        "LABEL": "Dźwięk",
+                        "FORMATS": {
+                            "UNCOMPRESSED_AUDIO_FORMATS": "Nieskompresowane formaty audio",
+                            "COMPRESSED_AUDIO_FORMATS": "Skompresowane formaty audio"
+                        }
+                    },
+                    "OTHER": {
+                        "LABEL": "Inne",
+                        "FORMATS": {
+                            "ARCHIVE_FILES": "Archiwizuj pliki",
+                            "FONT_FILES": "Pliki czcionek"
+                        }
+                    }
+                }
+            }
+        },
+        "INPUT": {
+            "PLACEHOLDER": "Wpisz tekst do wyszukania",
+            "ARIA_LABEL": "Szukaj",
+            "BASIC": "Podstawowe",
+            "HXQL": "HXQL",
+            "HXQL_VALID": "HXQL poprawny",
+            "HXQL_INVALID": "HXQL niepoprawny",
+            "CLEAR_INPUT": "Wyczyść dane wejściowe"
+        },
+        "RESULTS": {
+            "HEADER": {
+                "TITLE": "Wyniki wyszukiwania",
+                "TOTAL_SINGLE": "Liczba znalezionych wyników: {{count}}",
+                "TOTAL_PLURAL": "Liczba znalezionych wyników: {{count}}"
+            },
+            "DETAILS": {
+                "UPDATED": "Zaktualizowane"
+            },
+            "FILTERS": {
+                "ACTIONS": {
+                    "RESET": "Resetuj",
+                    "SEARCH": "Szukaj"
+                }
+            }
+        },
+        "NO_RESULTS": {
+            "TITLE": "Brak wyników wyszukiwania",
+            "SUBTITLE": "Ups, wygląda na to, że nie znaleziono żadnych wyników wyszukiwania."
+        },
+        "SIDENAV": {
+            "TITLE": "Wyszukiwanie w repozytorium"
+        },
+        "TABS": {
+            "TEXT_SEARCH": "Wyszukiwanie tekstu",
+            "HXQL_SEARCH": "Wyszukiwanie HxQL"
+        },
+        "MANAGE_COLUMN": {
+            "BUTTON": {
+                "TOOLTIP": "Zarządzaj kolumnami"
+            },
+            "DIALOG": {
+                "TITLE": "Zarządzaj kolumnami tabeli",
+                "CLOSE": "Zamknij",
+                "AVAILABLE_COLUMN": "Dostępne kolumny",
+                "AVAILABLE": "Liczba dostępnych: {{count}}",
+                "SEARCH_COLUMN": {
+                    "INPUT": {
+                        "PLACEHOLDER": "Szukaj",
+                        "ARIA_LABEL": "Szukaj danych wejściowych"
+                    },
+                    "CLEAR": {
+                        "ARIA_LABEL": "Wyczyść wyszukiwanie"
+                    },
+                    "BUTTON": {
+                        "ARIA_LABEL": "Przycisk wyszukiwania"
+                    }
+                },
+                "ADD_COLUMN": "Dodaj kolumnę",
+                "REMOVE_COLUMN": "Usuń kolumnę",
+                "DRAG_COLUMN": "Przeciągnij kolumnę",
+                "SELECTED": "zaznaczone",
+                "SELECTED_COLUMN": "Liczba zaznaczonych kolumn: {{count}}",
+                "COLUMN_COUNT": "(Zaznaczono {{selected}} z {{total}})",
+                "OUT_OF": "z",
+                "BUTTON": {
+                    "RESET": "Resetuj do domyślnych",
+                    "CANCEL": "Anuluj",
+                    "UPDATE_TABLE": "Aktualizuj tabelę"
+                }
+            }
+        }
+    }
+}

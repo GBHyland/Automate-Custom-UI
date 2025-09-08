@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Selecionar um ficheiro",
+    "TABS": {
+      "REPOSITORY": "Repositório",
+      "LOCAL_STORAGE": "Armazenamento local"
+    },
+    "ACTIONS": {
+      "UPLOAD": "CARREGAR",
+      "CANCEL": "Cancelar",
+      "ATTACH": "Anexar"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "A pasta {{folderName}} não existe. Não é possível carregar o ficheiro.",
+    "FOLDER_DOES_NOT_EXIST": "A pasta na qual carregar o ficheiro não existe. Não é possível carregar o ficheiro.",
+    "CONTENT_SERVICE_UNAVAILABLE": "O serviço de conteúdo está temporariamente indisponível. Não é possível carregar o ficheiro.",
+    "FOLDER_ACCESS_DENIED": "Não tem permissões para a pasta especificada no repositório de conteúdo."
+  }
+}

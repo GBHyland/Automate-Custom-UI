@@ -1,0 +1,16 @@
+{
+    "extends": "<%= offsetFromRoot %>tsconfig.adf.json",
+    "compilerOptions": {
+        "sourceMap": false,
+        "allowJs": true,
+        "types": [
+            "@playwright/test",
+            "node"
+        ]
+    },
+    "files": [],
+    "include": [
+        "**/*.ts",
+        "**/*.js"
+    ]
+}

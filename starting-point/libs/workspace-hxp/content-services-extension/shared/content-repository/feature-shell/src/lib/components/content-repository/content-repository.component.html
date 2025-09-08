@@ -1,0 +1,21 @@
+<div class="hxp-content-repository-container">
+    <hxp-document-action-toolbar
+        class="hxp-document-toolbar"
+        [selection]="selection"
+        [actionContext]="actionContext" />
+    <hxp-content-upload-drag-area [rootFolderId]="rootFolderId" [disabled]="isUploadDisabled">
+        <hxp-table-skeleton-loader *ngIf="isLoading" [skeletonRows]="5" />
+        <hxp-document-list
+            #documentList
+            [isLoading]="isLoading"
+            [documents]="documents"
+            (selectedDocuments)="onSelectedDocumentsChange($event)"
+            (rowClicked)="onRowClicked($event)"
+            (sortingClicked)="onSortingClicked($event)"
+            (columnsResized)="onColumnsWidthChange($event)"
+            [inputColumnList]="columnList"
+        >
+            <ng-content />
+        </hxp-document-list>
+      </hxp-content-upload-drag-area>
+</div>

@@ -1,0 +1,10 @@
+<button
+    *ngIf="isAvailable"
+    mat-menu-item
+    (click)="openManageVersions()"
+    class="hxp-manage-versions-button"
+>
+    <mat-icon>query_builder</mat-icon>
+    <span class="hxp-manage-version-button-label">{{ 'DOCUMENT_MORE_ACTION.MANAGE_VERSIONS' | translate }}</span>
+    <hxp-beta-chip-tag />
+</button>

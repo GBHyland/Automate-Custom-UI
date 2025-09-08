@@ -1,0 +1,81 @@
+<ng-container *ngIf="currentFilter">
+    <apa-scroll-container>
+        <adf-cloud-process-list
+            searchApiMethod="POST"
+            [appName]="currentFilter?.appName"
+            [names]="currentFilter?.processNames"
+            [ids]="currentFilter?.processInstanceIds"
+            [parentIds]="currentFilter?.parentIds"
+            [processDefinitionNames]="currentFilter?.processDefinitionNames"
+            [initiators]="currentFilter?.initiators"
+            [appVersions]="currentFilter?.appVersions"
+            [statuses]="currentFilter?.statuses"
+            [processVariables]="currentFilter?.processVariableFilters ?? []"
+            [startFrom]="currentFilter.startFrom"
+            [startTo]="currentFilter.startTo"
+            [completedFrom]="currentFilter.completedFrom"
+            [completedTo]="currentFilter.completedTo"
+            [suspendedFrom]="currentFilter.suspendedFrom"
+            [suspendedTo]="currentFilter.suspendedTo"
+            [sorting]="sortArray"
+            [showContextMenu]="true"
+            [stickyHeader]="true"
+            [showMainDatatableActions]="true"
+            [isResizingEnabled]="isResizingEnabled"
+            (showRowContextMenu)="onShowRowContextMenu($event)"
+            (rowClick)="navigateToProcessDetails($event)"
+            #processCloud>
+                <data-columns>
+                    <ng-container *ngFor="let column of columns$ | async">
+                        <ng-container *ngIf="column?.template">
+                            <data-column
+                                [id]="column.id"
+                                [key]="column.key"
+                                [title]="column.title"
+                                [subtitle]="column.subtitle"
+                                [type]="column.type"
+                                [format]="column.format"
+                                [class]="column.class"
+                                [sortable]="column.sortable"
+                                [draggable]="column.draggable"
+                                [isHidden]="column.isHidden"
+                                [customData]="column.customData"
+                                [dateConfig]="column.dateConfig"
+                            >
+                                <ng-template let-context>
+                                    <adf-dynamic-column
+                                        [id]="column.template"
+                                        [context]="context"
+                                    />
+                                </ng-template>
+                            </data-column>
+                        </ng-container>
+
+                        <ng-container *ngIf="!column?.template">
+                            <data-column
+                                [id]="column.id"
+                                [key]="column.key"
+                                [title]="column.title"
+                                [subtitle]="column.subtitle"
+                                [type]="column.type"
+                                [format]="column.format"
+                                [class]="column.class"
+                                [sortable]="column.sortable"
+                                [draggable]="column.draggable"
+                                [isHidden]="column.isHidden"
+                                [customData]="column.customData"
+                                [dateConfig]="column.dateConfig"
+                            />
+                        </ng-container>
+                    </ng-container>
+                </data-columns>
+        </adf-cloud-process-list>
+    </apa-scroll-container>
+
+    <adf-pagination
+        *ngIf="processCloud"
+        [target]="processCloud"
+        [pagination]="defaultPagination"
+        [supportedPageSizes]="supportedPageSizes$ | async"
+        (changePageSize)="onChangePageSize($event)" />
+</ng-container>

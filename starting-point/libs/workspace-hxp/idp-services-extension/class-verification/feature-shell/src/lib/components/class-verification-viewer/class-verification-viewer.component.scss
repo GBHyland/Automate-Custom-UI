@@ -1,0 +1,94 @@
+@use 'idp-theme' as idp;
+
+::ng-deep {
+    .idp-viewer-empty-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+        height: 100%;
+        width: 100%;
+
+        &__text {
+            font-size: 1.75em;
+            font-weight: 600;
+            color: rgb(0, 0, 0, 0.6);
+        }
+
+        &__sub-text {
+            font-size: 1.25em;
+            font-weight: 400;
+            color: rgb(0, 0, 0, 0.6);
+            padding-bottom: 0.5em;
+        }
+
+        &__image {
+            max-height: 25%;
+            object-fit: contain;
+        }
+    }
+
+    .idp-viewer__issue-page {
+        border-style: solid;
+        border-color: rgba(255, 0, 0, 0.5);
+        border-radius: 8px;
+    }
+
+    .idp-viewer-custom-header {
+        /* this is a workaround and should be fixed soon and as such I'm not using the theme here */
+        background-color: #eeeeee;
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+        height: inherit;
+        overflow: hidden;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 0;
+
+        &__toolbar {
+            @include idp.use-background(white);
+
+            display: flex;
+            padding: 0.5em 2em;
+            border: 2px solid idp.get-border-color(resolve-border);
+            border-radius: 0.5em;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+            &__action-buttons {
+                display: flex;
+
+                .idp-resolve-button {
+                    @include idp.use-foreground(resolve-text);
+                }
+            }
+        }
+    }
+
+    .idp-viewer-sticky-action {
+        &__shortcuts_button {
+            @include idp.use-background(white);
+
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9;
+            width: 3.5em;
+            height: 3.5em;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.5);
+
+            &:hover {
+                @include idp.use-background(button-hover);
+
+                cursor: pointer;
+            }
+        }
+    }
+}

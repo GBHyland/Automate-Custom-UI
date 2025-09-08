@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Informacje",
+                    "ARIA-LABEL": "Informacje o pliku"
+                }
+            },
+            "SELECTED": "Zaznaczone",
+            "CLEAR_ALL": "Wyczyść wszystko"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Główne właściwości"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Inne właściwości"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Właściwości zostały zaktualizowane!",
+                "ERROR": "Coś poszło nie tak. Nie można zaktualizować właściwości!",
+                "INFO": "Wartość pola nie może być pusta!"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Zamknij"
+            }
+        }
+    }
+}

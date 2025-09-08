@@ -1,0 +1,55 @@
+<apa-scroll-container>
+    <adf-cloud-task-list
+        class="app-cloud-layout-overflow apa-process-task-list-ext-list-container"
+        [appName]="processInstance?.appName"
+        [processInstanceId]="processInstance?.id"
+        [stickyHeader]="true"
+        [showContextMenu]="true"
+        [showMainDatatableActions]="true"
+        [isResizingEnabled]="isResizingEnabled"
+        (rowClick)="navigateToTaskDetails($event)"
+        (showRowContextMenu)="onShowRowContextMenu($event)"
+        #processTaskList>
+            <data-columns>
+                <ng-container *ngFor="let column of columns$ | async">
+                    <ng-container *ngIf="column?.template">
+                        <data-column
+                            [id]="column.id"
+                            [key]="column.key"
+                            [title]="column.title"
+                            [type]="column.type"
+                            [format]="column.format"
+                            [class]="column.class"
+                            [sortable]="column.sortable"
+                            [customData]="column.customData"
+                            [isHidden]="column.isHidden"
+                            [draggable]="column.draggable">
+                            <ng-template let-context>
+                                <adf-dynamic-column [id]="column.template" [context]="context" />
+                            </ng-template>
+                        </data-column>
+                    </ng-container>
+
+                    <ng-container *ngIf="!column?.template">
+                        <data-column
+                            [id]="column.id"
+                            [key]="column.key"
+                            [title]="column.title"
+                            [type]="column.type"
+                            [format]="column.format"
+                            [class]="column.class"
+                            [sortable]="column.sortable"
+                            [customData]="column.customData"
+                            [isHidden]="column.isHidden"
+                            [draggable]="column.draggable" />
+                    </ng-container>
+                </ng-container>
+            </data-columns>
+    </adf-cloud-task-list>
+</apa-scroll-container>
+
+<adf-pagination
+    *ngIf="processTaskList"
+    [target]="processTaskList"
+    [supportedPageSizes]="supportedPageSizes$ | async"
+    (changePageSize)="onChangePageSize($event)" />

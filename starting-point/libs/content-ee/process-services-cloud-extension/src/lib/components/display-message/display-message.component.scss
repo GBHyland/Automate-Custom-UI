@@ -1,0 +1,18 @@
+.apa-display-message {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    grid-template-columns: 80%;
+
+    &__container {
+        margin: auto;
+        padding: 12px;
+    }
+
+    &__content {
+        padding: 36px;
+        border: 1px solid #D1D5DB;
+        max-width: 100%;
+    }
+}

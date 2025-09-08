@@ -1,0 +1,35 @@
+{
+    "$version": "1.0.0",
+    "$id": "governance-services.extension",
+    "$name": "hxp governance services extension",
+    "$description": "hxp governance services extension",
+    "$vendor": "Hyland",
+    "$license": "Apache-2.0",
+    "actions": [],
+    "rules": [],
+    "features": {
+        "navbar": [
+            {
+                "id": "app.navbar.primary",
+                "items": [
+                    {
+                        "id": "app.navbar.governance-services-sidenav",
+                        "component": "governances-services.sidenav-item",
+                        "order": 2
+                    }
+                ]
+            }
+        ]
+    },
+    "routes": [
+        {
+            "id": "governance-services-app.search-results",
+            "path": "governance",
+            "parentRoute": "",
+            "component": "governance-services-app.search-results",
+            "auth": [
+                "governance-app.auth"
+            ]
+        }
+    ]
+}

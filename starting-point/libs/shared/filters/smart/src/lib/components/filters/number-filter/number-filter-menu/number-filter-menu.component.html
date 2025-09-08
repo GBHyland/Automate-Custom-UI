@@ -1,0 +1,99 @@
+<div (click)="$event.stopPropagation()" class="hxp-number-filter-menu" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <form class="hxp-number-filter-menu__content" [formGroup]="form">
+        <mat-form-field class="hxp-number-filter-menu__form-field hxp-input">
+            <mat-select
+                [formControl]="form.controls.operator"
+                data-automation-id="hxp-number-filter-menu-operator-select"
+            >
+                <mat-option
+                    *ngFor="let operator of operators | keyvalue"
+                    [value]="operator.key"
+                >
+                    {{ operator.value | unescape }} {{ 'FILTERS.NUMBER_FILTER.' + operator.key | translate }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="hxp-number-filter-menu__form-divider"></div>
+
+        <mat-form-field
+            *ngIf="operator !== 'BETWEEN'"
+            class="hxp-number-filter-menu__form-field hxp-input"
+        >
+            <input
+                matInput
+                [allowDecimalValues]="allowDecimalValues"
+                [formControl]="form.controls.value1"
+                type="number"
+                [placeholder]="'FILTERS.NUMBER_FILTER.PLACEHOLDER' | translate"
+                data-automation-id="hxp-number-filter-menu-input-single"
+            />
+        </mat-form-field>
+
+        <ng-container *ngIf="operator === 'BETWEEN'">
+
+            <div class="hxp-number-filter-menu__form-range">
+                <mat-form-field class="hxp-number-filter-menu__form-field hxp-input">
+                    <mat-label>
+                        {{ 'FILTERS.NUMBER_FILTER.RANGE.FROM' | translate }}
+                    </mat-label>
+                    <input
+                        matInput
+                        [allowDecimalValues]="allowDecimalValues"
+                        [formControl]="form.controls.value1"
+                        type="number"
+                        [max]="value2"
+                        data-automation-id="hxp-number-filter-menu-input-from"
+                    />
+                </mat-form-field>
+
+                <div class="hxp-number-filter-menu__form-divider"></div>
+
+                <mat-form-field class="hxp-number-filter-menu__form-field hxp-input">
+                    <mat-label>
+                        {{ 'FILTERS.NUMBER_FILTER.RANGE.TO' | translate }}
+                    </mat-label>
+                    <input
+                        matInput
+                        [allowDecimalValues]="allowDecimalValues"
+                        [formControl]="form.controls.value2"
+                        type="number"
+                        [min]="value1"
+                        data-automation-id="hxp-number-filter-menu-input-to"
+                    />
+                </mat-form-field>
+            </div>
+
+            <ng-container *ngIf="this.form.hasError('invalidRange')">
+                <div class="hxp-number-filter-menu__form-divider"></div>
+                <mat-error>
+                    {{ 'FILTERS.NUMBER_FILTER.ERROR' | translate }}
+                </mat-error>
+            </ng-container>
+        </ng-container>
+    </form>
+
+    <mat-divider class="hxp-number-filter-menu__divider"/>
+
+    <div class="hxp-number-filter-menu__actions">
+        <button
+            mat-button
+            color="primary"
+            class="hxp-number-filter-menu__clear-selection-button"
+            [disabled]="clearSelectionButtonDisabled"
+            (click)="onClearSelection()"
+            data-automation-id="hxp-filter-menu-clear-selection-button"
+        >
+            {{ 'FILTERS.MENU.CLEAR_SELECTION' | translate }}
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="onUpdate()"
+            [disabled]="updateButtonDisabled"
+            data-automation-id="hxp-filter-menu-update-button"
+        >
+            {{ 'FILTERS.MENU.UPDATE' | translate }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "SHARED_IDENTITY": {
+        "GROUPS": {
+            "SEARCH-GROUP": "Grupos",
+            "MANDATORY": "Obligatorio",
+            "ERROR": {
+                "NOT_FOUND": "No se ha encontrado ningún grupo con el nombre {{groupName}}"
+            }
+        },
+        "PEOPLE": {
+            "MANDATORY": "Este usuario no se puede eliminar porque se añadió durante la creación del proyecto.",
+            "ERROR": {
+                "INVALID_PATTERN": "Debe coincidir con el patrón {{pattern}}",
+                "INVALID_MIN_LENGTH": "Debe tener por lo menos {{requiredLength}} caracteres",
+                "INVALID_MAX_LENGTH": "Longitud excedida, máximo {{requiredLength}} caracteres",
+                "REQUIRED": "Este es un campo obligatorio",
+                "NOT_FOUND": "No se ha encontrado a nadie con el nombre de usuario {{userName}}",
+                "INVALID_PRESELECTED_USER": "El usuario con el nombre de usuario {{userName}} ya no es válido. Añada un usuario válido en la aplicación de modelado."
+            }
+        }
+    }
+}

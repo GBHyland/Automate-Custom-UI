@@ -1,0 +1,27 @@
+<div class="hxp-document-list-container">
+    <ng-content />
+    <adf-datatable
+        #documentList
+        [loading]="isLoading"
+        [isResizingEnabled]="true"
+        [rows]="documents"
+        [stickyHeader]="true"
+        [multiselect]="multiselect"
+        selectionMode="multiple"
+        (rowClick)="handleRowClicked($event)"
+        (sorting-changed)="handleSortingChanged($event)"
+        (row-select)="setSelectedRows($event)"
+        (row-unselect)="setSelectedRows($event)"
+        [contextMenu]="contextMenuActions"
+        (showRowContextMenu)="onShowRowContextMenu($event)"
+        (columnsWidthChanged)="onColumnsWidthChange($event)"
+        [columns]="evaluatedSchema">
+        <data-columns/>
+        <no-content-template>
+            <ng-template>
+                <adf-empty-content icon="folder_open" title="DOCUMENT_LIST.NO_CONTENT.TITLE"
+                    subtitle="DOCUMENT_LIST.NO_CONTENT.SUBTITLE" />
+            </ng-template>
+        </no-content-template>
+    </adf-datatable>
+</div>

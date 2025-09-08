@@ -1,0 +1,52 @@
+.idp-viewer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        position: relative;
+    }
+
+    &__viewport {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        hyland-idp-viewer-image-layer {
+            width: 100%;
+        }
+    }
+
+    &.idp-top-bottom {
+        flex-direction: column;
+        .idp-viewer__container {
+            height: calc(100% - 3.75em);
+        }
+    }
+
+    &.idp-left-right {
+        flex-direction: row;
+        .idp-viewer__container {
+            width: calc(100% - 3.75em);
+        }
+    }
+
+    &__fullscreen {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        inset: 0;
+        z-index: 1000;
+        transition: all 0.5s ease-in-out;
+    }
+}

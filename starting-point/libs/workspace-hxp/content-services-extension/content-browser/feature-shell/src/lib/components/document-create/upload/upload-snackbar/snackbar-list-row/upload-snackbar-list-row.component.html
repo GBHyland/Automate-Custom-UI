@@ -1,0 +1,136 @@
+<div class="hxp-upload-snackbar-list-row">
+    <div class="hxp-upload-snackbar-list-row__container">
+        <div tabindex="0" *ngIf="isUploading()">
+            <span class="hxp-upload-snackbar-list-row__status">
+                {{
+                    upload.fileModel.progress.loaded /
+                        upload.fileModel.progress.total | percent
+                }}
+            </span>
+        </div>
+
+        <div tabindex="0" *ngIf="isUploadComplete()">
+            <hxp-mime-type-icon
+                class="hxp-upload-snackbar-list-row__type"
+                *ngIf="mimeType !== 'default'; else defaultIcon"
+                [mimeType]="mimeType"
+            />
+            <ng-template #defaultIcon>
+                <mat-icon
+                    *ngIf="mimeType === 'default'"
+                    matListItemIcon
+                    class="hxp-upload-snackbar-list-row__type"
+                >
+                    insert_drive_file
+                </mat-icon>
+            </ng-template>
+        </div>
+
+        <div
+            tabindex="0"
+            role="status"
+            *ngIf="isUploadError()"
+            class="hxp-upload-snackbar-list-row__block hxp-upload-snackbar-list-row__status--error"
+        >
+            <mat-icon
+                matListItemIcon
+                [attr.aria-label]="
+                    'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.UPLOAD_FILE_ERROR'
+                        | translate
+                            : {
+                                  error:
+                                      upload.fileModel.errorCode
+                                      | hxpFileUploadError
+                              }
+                "
+                [matTooltip]="upload.fileModel.errorCode | hxpFileUploadError"
+            >
+                block
+            </mat-icon>
+        </div>
+
+        <span
+            tabindex="0"
+            class="hxp-upload-snackbar-list-row__name"
+            title="{{ upload?.fileModel.name }}"
+        >
+            {{ upload?.fileModel.name }}
+        </span>
+
+        <button
+            mat-icon-button
+            *ngIf="isUploadComplete()"
+            class="hxp-upload-snackbar-list-row__group"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.UPLOAD_SUCCESSFUL'
+                    | translate: { file: upload.fileModel.name }
+            "
+            title="{{
+                'FILE_UPLOAD.SNACKBAR.BUTTON.UPLOAD_SUCCESSFUL' | translate
+            }}"
+        >
+            <mat-icon
+                class="hxp-upload-snackbar-list-row__status hxp-upload-snackbar-list-row__status--done"
+            >
+                check_circle
+            </mat-icon>
+        </button>
+
+        <button
+            mat-icon-button
+            *ngIf="canCancelUpload()"
+            (click)="onCancel()"
+            data-automation-id="cancel-upload-queue"
+            class="hxp-upload-snackbar-list-row__group"
+            title="{{ 'FILE_UPLOAD.SNACKBAR.BUTTON.STOP_FILE' | translate }}"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.STOP_FILE'
+                    | translate: { file: upload.fileModel.name }
+            "
+        >
+            <mat-icon
+                class="hxp-upload-snackbar-list-row__action hxp-upload-snackbar-list-row__action--remove"
+            >
+                cancel
+            </mat-icon>
+        </button>
+
+        <button
+            mat-icon-button
+            *ngIf="isUploadError()"
+            (click)="onRetry()"
+            data-automation-id="retry-upload"
+            class="hxp-upload-snackbar-list-row__group"
+            title="{{ 'FILE_UPLOAD.SNACKBAR.BUTTON.RETRY' | translate }}"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.RETRY_UPLOAD'
+                    | translate: { file: upload.fileModel.name }
+            "
+        >
+            <mat-icon
+                class="hxp-upload-snackbar-list-row__action hxp-upload-snackbar-list-row__action--retry"
+            >
+                refresh
+            </mat-icon>
+        </button>
+    </div>
+    <div class="hxp-upload-snackbar-list-row__progress-bar-container">
+        <mat-progress-bar
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.PROGRESS' | translate
+            "
+            class="hxp-upload-snackbar-list-row__progress-bar"
+            [ngClass]="{
+                'hxp-upload-snackbar-list-row__progress-bar--hidden':
+                    isUploadComplete()
+            }"
+            [color]="isUploadError() ? 'warn' : 'primary'"
+            mode="determinate"
+            [value]="
+                (upload.fileModel.progress.loaded /
+                    upload.fileModel.progress.total) *
+                100
+            "
+        />
+    </div>
+</div>

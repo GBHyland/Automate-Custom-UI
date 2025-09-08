@@ -1,0 +1,124 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Nessuna definizione di processo disponibile",
+      "UNCATEGORIZED": "Senza categoria",
+      "RECENT_PROCESS_DEFINITIONS": "Utilizzati di recente"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Estensioni: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Abilita estensioni Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Gestione processi",
+      "START_PROCESS_CLOUD": "Avvia processo",
+      "TASK_LIST_CLOUD": "Elenco compiti",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Visualizza dettagli",
+        "CLOSE-TOOLTIP": "Chiudi",
+        "PRINT": "Stampa modulo",
+        "FULL_SCREEN": "Attiva modalità a schermo intero"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Avvia processo",
+      "CREATE_PROCESS_NOT_ALLOWED": "Impossibile creare nuovo processo",
+      "REFRESH": "Aggiorna"
+    },
+    "ERROR": {
+      "NO_FORM": "La definizione del processo non ha un modulo definito",
+      "CAN_NOT_ATTACH": "Impossibile allegare il contenuto selezionato",
+      "START_PROCESS_ERROR": "Impossibile avviare un processo. Controllare la configurazione del processo",
+      "TASK_CANNOT_BE_CLAIMED": "Impossibile richiedere l'attività",
+      "UNEXPECTED_ERROR": "Si è verificato un errore imprevisto"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Creato il processo '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Errore di rete sconosciuto. Le funzioni relative ad Process Automation sono disabilitate.",
+      "NO_NEXT_TASK_AVAILABLE": "Nessuna attività successiva disponibile per continuare"
+    },
+    "SIDE_NAV_TITLE": "Gestione processi",
+    "TASK_LIST": {
+      "TASKS": "Compiti",
+      "ACTIONS": {
+        "TASK_DETAILS": "Visualizza dettagli",
+        "PROCESS_HISTORY": "Cronologia dei processi"
+      },
+      "LIST_REFRESHED": "Pagina aggiornata",
+      "LIST_UPTO_DATE": "La pagina è aggiornata"
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Cambia assegnatario",
+        "CLOSE": "Chiudi",
+        "ASSIGN": "Assegna",
+        "SUCCESS": "L'assegnatario del compito è stato cambiato correttamente",
+        "FAILED": "Si è verificato un problema durante l'assegnazione dell'utente. Riprovare ad assegnare l'utente."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Dettagli",
+      "WAITING_SCREEN": {
+        "MESSAGE": "In attesa dell'attività utente successiva ...",
+        "CLOSE": "Chiudi"
+      }
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Processi",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Visualizza dettagli",
+        "CANCEL_MESSAGE": "Il processo è stato annullato",
+        "CANCEL_ERROR_MESSAGE": "Impossibile annullare il processo. Riprovare.",
+        "CANCEL_TOOLTIP": "Annulla processo"
+      },
+      "TOOLTIP": {
+        "HEADER": "Processi secondari"
+      },
+      "PROPERTIES": {
+        "RELATED_PROCESS": "Processo correlato",
+        "SUBPROCESSES": "sottoprocessi",
+        "SUBPROCESS": "sottoprocesso",
+        "STARTED_BY": "Avviato da"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Il filtro è stato salvato",
+      "FILTER_DELETED": "Il filtro è stato eliminato"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Compito completato",
+      "FORM_SAVED": "Il modulo è stato salvato",
+      "FORM_ACTION": "Azione '{{ outcome }}'",
+      "DUPLICATE_CORRELATION_KEY": "Rilevata chiave di correlazione duplicata. Contattare l'amministratore di sistema",
+      "UNAUTHORIZED": "Il compito è già stato assegnato a o reclamato da un altro utente"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Il filtro è stato salvato",
+      "FILTER_DELETED": "Il filtro è stato eliminato"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Annulla processo",
+        "MESSAGE": "Annullare questo processo?"
+      },
+      "NEW_PROCESS": "Nuovo processo",
+      "CONFIRM": "Conferma",
+      "CLOSE": "Chiudi",
+      "ERROR": "Impossibile caricare le definizioni di processo, verifica di disporre dell'accesso."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "Il compito {{taskName}} è stato assegnato a {{assignee}}",
+    "TASK_COMPLETED": "Il compito {{taskName}} è stato completato",
+    "TASK_ACTIVATED": "Il compito {{taskName}} è ora attivo",
+    "TASK_CANCELLED": "Il compito {{taskName}} è stato annullato",
+    "TASK_SUSPENDED": "Il compito {{taskName}} è stato sospeso",
+    "TASK_UPDATED": "I dettagli del compito {{taskName}} sono stati aggiornati",
+    "TASK_CLAIMED": "L’attività {{taskName}} è stata richiesta"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Cerca"
+    }
+  }
+}

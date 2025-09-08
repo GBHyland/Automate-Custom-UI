@@ -1,0 +1,38 @@
+@use 'idp-theme' as idp;
+
+.idp-filterable-selection-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    &__search {
+        width: 100%;
+        flex: 0 0 auto;
+
+        &-field {
+            width: 100%;
+
+            &-input {
+                padding-bottom: 0;
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    &__items {
+        @include idp.use-idp-scrollbar();
+
+        width: calc(100% - 1px);
+        padding-right: 1px;
+        flex: 1 1 auto;
+        min-height: 0;
+        max-height: 100%;
+        align-self: flex-start;
+        overflow-y: auto;
+    }
+
+    ::ng-deep #{idp.$mdc-list} {
+        padding: 0;
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "shared-hxp-services",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared-hxp/services/src",
+    "prefix": "hxp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/libs/shared-hxp/services"],
+            "options": {
+                "project": "libs/shared-hxp/services/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared-hxp/services/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared-hxp/services/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/services/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "libs/shared-hxp/services/src/test.ts",
+                "tsConfig": "libs/shared-hxp/services/tsconfig.spec.json",
+                "karmaConfig": "libs/shared-hxp/services/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/core/src/styles"]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/services/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/shared-hxp/services/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib"]
+                    }
+                }
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:shared-hxp-services", "category:shared-hxp"]
+}

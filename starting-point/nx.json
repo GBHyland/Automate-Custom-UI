@@ -1,0 +1,215 @@
+{
+  "affected": {
+    "defaultBase": "develop"
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "cache": true
+    },
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "dependsOn": [
+        "pree2e"
+      ],
+      "options": {
+        "config": "{projectRoot}/playwright.config.ts",
+        "skipInstall": true,
+        "cache": false
+      },
+      "configurations": {
+        "hxp": {
+          "config": "{projectRoot}/playwright.hxp.config.ts",
+          "grep": "@hxp"
+        },
+        "prod": {
+          "config": "{projectRoot}/playwright.config.ts",
+          "grepInvert": "@devtools"
+        }
+      },
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "cache": true
+    },
+    "e2e-change-url": {
+      "executor": "@nx/playwright:playwright",
+      "dependsOn": [
+        "pree2e"
+      ],
+      "options": {
+        "config": "{projectRoot}/playwright.config.ts",
+        "skipInstall": true,
+        "grep": "@urlTests"
+      },
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "cache": true
+    },
+    "codeowner": {
+      "executor": "tools:codeowner",
+      "options": {}
+    },
+    "e2e-ff": {
+      "executor": "@nx/playwright:playwright",
+      "dependsOn": [
+        "pree2e"
+      ],
+      "options": {
+        "config": "{projectRoot}/playwright.config.ts",
+        "skipInstall": true,
+        "grep": "@underFeatureFlag"
+      },
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "cache": true
+    },
+    "e2e-ff-dryrun": {
+      "executor": "@nx/playwright:playwright",
+      "options": {
+        "config": "{projectRoot}/playwright.config.ts",
+        "skipInstall": true,
+        "passWithNoTests": true,
+        "grep": "@underFeatureFlag",
+        "reporter": "json",
+        "list": true
+      },
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "cache": true
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/karma.conf.js",
+        "{workspaceRoot}/jest.preset.js"
+      ],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ],
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "{projectRoot}/src/**/*.ts",
+          "{projectRoot}/src/**/*.html"
+        ]
+      },
+      "cache": true
+    },
+    "pack-artefacts": {
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/tools/monorepo/commands/content-src-code-zipper/**/*"
+      ]
+    },
+    "build-storybook": {
+      "inputs": [
+        "default",
+        "^production",
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
+      ],
+      "cache": true
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.stylelintrc"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "{projectRoot}/src/**/*.scss"
+        ]
+      }
+    },
+    "@nx/jest:jest": {
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/karma.conf.js",
+        "{workspaceRoot}/jest.preset.js"
+      ],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    }
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals",
+      "projectSpecificFiles"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/karma.conf.js",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/**/*.spec.[jt]s",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/tsconfig.storybook.json"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/Dockerfile",
+      "{workspaceRoot}/package-lock.json"
+    ],
+    "projectSpecificFiles": []
+  }
+}

@@ -1,0 +1,743 @@
+{
+  "documents": [
+    {
+      "id": "46ed119d-2cbd-43ab-9f9d-dad21dc1716f",
+      "pages": [
+        {
+          "rotation": 0,
+          "sourcePageIndex": 0,
+          "contentFileReferenceIndex": 0
+        }
+      ],
+      "fields": [
+        {
+          "id": "Organization0ttz7e",
+          "name": "Organization",
+          "value": "Cavaliers",
+          "boundingBox": {
+            "top": 99,
+            "left": 180,
+            "width": 53,
+            "height": 11,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0.999,
+          "extractionConfidence": 0.93,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "City0it82l",
+          "name": "City",
+          "value": "Cleveland",
+          "boundingBox": {
+            "top": 129,
+            "left": 127,
+            "width": 57,
+            "height": 11,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 1,
+          "extractionConfidence": 0.93,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "Arena0pa4v1",
+          "name": "Arena",
+          "value": "Rocket Arena",
+          "boundingBox": {
+            "top": 160,
+            "left": 140,
+            "width": 78,
+            "height": 11,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0.999,
+          "extractionConfidence": 0.93,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "Division0hry6e",
+          "name": "Division",
+          "ocrConfidence": 0,
+          "extractionConfidence": 0,
+          "extractionReviewStatus": "ReviewRequired"
+        },
+        {
+          "id": "Conference077e3j",
+          "name": "Conference",
+          "ocrConfidence": 0,
+          "extractionConfidence": 0,
+          "extractionReviewStatus": "ReviewRequired"
+        }
+      ],
+      "tables": [
+        {
+          "id": "MinutesPlayed0ikpdt",
+          "name": "Minutes Played",
+          "records": [
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "1",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 251,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "LeBron James",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 251,
+                    "left": 152,
+                    "width": 83,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "2004-05",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 251,
+                    "left": 249,
+                    "width": 48,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3388",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 251,
+                    "left": 387,
+                    "width": 30,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "2",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 282,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "LeBron James",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 281,
+                    "left": 152,
+                    "width": 81,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "2005-06",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 281,
+                    "left": 248,
+                    "width": 48,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3361",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 281,
+                    "left": 387,
+                    "width": 29,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "3",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 313,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "Wesley Person",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 312,
+                    "left": 151,
+                    "width": 88,
+                    "height": 12,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "1997-98",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 313,
+                    "left": 255,
+                    "width": 47,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3198",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 312,
+                    "left": 387,
+                    "width": 30,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "4",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 344,
+                    "left": 104,
+                    "width": 10,
+                    "height": 9,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "Mike Mitchell",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 343,
+                    "left": 152,
+                    "width": 81,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "1980-81",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 343,
+                    "left": 249,
+                    "width": 46,
+                    "height": 9,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3194",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 343,
+                    "left": 388,
+                    "width": 30,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "6",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 405,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "Chris Mills",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 404,
+                    "left": 152,
+                    "width": 61,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "1996-97",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 404,
+                    "left": 228,
+                    "width": 48,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "",
+                  "recordName": "Minutes Played"
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "7",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 435,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "",
+                  "recordName": "Player"
+                },
+                {
+                  "type": "Text",
+                  "value": "",
+                  "recordName": "Season"
+                },
+                {
+                  "type": "Text",
+                  "value": "",
+                  "recordName": "Minutes Played"
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "8",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 466,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "LeBron James",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 466,
+                    "left": 152,
+                    "width": 81,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "2003-04",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 465,
+                    "left": 248,
+                    "width": 48,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3122",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 466,
+                    "left": 387,
+                    "width": 29,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "9",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 497,
+                    "left": 104,
+                    "width": 10,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "Austin Carr",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 497,
+                    "left": 151,
+                    "width": 66,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "1973-74",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 496,
+                    "left": 233,
+                    "width": 47,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3100",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 497,
+                    "left": 388,
+                    "width": 30,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            },
+            {
+              "records": [
+                {
+                  "type": "Text",
+                  "value": "10",
+                  "recordName": "Rank",
+                  "boundingBox": {
+                    "top": 527,
+                    "left": 105,
+                    "width": 17,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "Austin Carr",
+                  "recordName": "Player",
+                  "boundingBox": {
+                    "top": 527,
+                    "left": 152,
+                    "width": 65,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "1972-73",
+                  "recordName": "Season",
+                  "boundingBox": {
+                    "top": 527,
+                    "left": 232,
+                    "width": 48,
+                    "height": 10,
+                    "pageIndex": 0
+                  }
+                },
+                {
+                  "type": "Text",
+                  "value": "3097",
+                  "recordName": "Minutes Played",
+                  "boundingBox": {
+                    "top": 526,
+                    "left": 387,
+                    "width": 30,
+                    "height": 11,
+                    "pageIndex": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "pageIndexes": [
+            0
+          ],
+          "reviewStatus": "ReviewNotRequired",
+          "ocrConfidence": 0.888,
+          "columnHeaderNames": [
+            "Rank",
+            "Player",
+            "Season",
+            "Minutes Played"
+          ],
+          "tableBoundingBoxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "width": 418,
+              "height": 537,
+              "pageIndex": 0
+            }
+          ],
+          "extractionConfidence": 0.875,
+          "columnHeaderBoundingBoxes": [
+            {
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "height": 0,
+              "pageIndex": 0
+            },
+            {
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "height": 0,
+              "pageIndex": 0
+            },
+            {
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "height": 0,
+              "pageIndex": 0
+            },
+            {
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "height": 0,
+              "pageIndex": 0
+            }
+          ]
+        },
+        {
+          "id": "3PtFieldGoals0crx8m",
+          "name": "3-Pt Field Goals",
+          "records": [],
+          "pageIndexes": [],
+          "reviewStatus": "ReviewRequired",
+          "ocrConfidence": 0,
+          "columnHeaderNames": [
+            "Rank",
+            "Player",
+            "Season",
+            "3-Pt Field Goals"
+          ],
+          "tableBoundingBoxes": [],
+          "extractionConfidence": 0,
+          "columnHeaderBoundingBoxes": []
+        },
+        {
+          "id": "FreeThrows0tkzyc",
+          "name": "Free Throws",
+          "records": [],
+          "pageIndexes": [],
+          "reviewStatus": "ReviewRequired",
+          "ocrConfidence": 0,
+          "columnHeaderNames": [
+            "Rank",
+            "Player",
+            "Season",
+            "Free Throws"
+          ],
+          "tableBoundingBoxes": [],
+          "extractionConfidence": 0,
+          "columnHeaderBoundingBoxes": []
+        },
+        {
+          "id": "Rebounds0w7qjk",
+          "name": "Rebounds",
+          "records": [],
+          "pageIndexes": [],
+          "reviewStatus": "ReviewRequired",
+          "ocrConfidence": 0,
+          "columnHeaderNames": [
+            "Rank",
+            "Player",
+            "Season",
+            "Rebounds"
+          ],
+          "tableBoundingBoxes": [],
+          "extractionConfidence": 0,
+          "columnHeaderBoundingBoxes": []
+        }
+      ],
+      "classId": "BasketballStatistics0y8a3m",
+      "className": "Basketball Statistics",
+      "markAsRejected": false,
+      "extractionReviewStatus": "ReviewRequired",
+      "classificationConfidence": 0.9655,
+      "classificationReviewStatus": "ReviewNotRequired"
+    },
+    {
+      "id": "5c6d3c98-85dc-46aa-9608-d8b40291aa09",
+      "pages": [
+        {
+          "rotation": 0,
+          "sourcePageIndex": 0,
+          "contentFileReferenceIndex": 0
+        }
+      ],
+      "fields": [
+        {
+          "id": "Company0blwmg",
+          "name": "Company",
+          "value": "Ericsson GmbH",
+          "boundingBox": {
+            "top": 1220,
+            "left": 173,
+            "width": 44,
+            "height": 11,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0,
+          "extractionConfidence": 0.935,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "InvoiceNumber02wa3z",
+          "name": "Invoice Number",
+          "value": "324163",
+          "boundingBox": {
+            "top": 319,
+            "left": 258,
+            "width": 68,
+            "height": 12,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0.995,
+          "extractionConfidence": 0.93,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "Date0p23fb",
+          "name": "Date",
+          "value": "15/01/98",
+          "boundingBox": {
+            "top": 320,
+            "left": 606,
+            "width": 92,
+            "height": 12,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0.993,
+          "extractionConfidence": 0.92,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "TotalLineItems0i1m98",
+          "name": "Total Line Items",
+          "value": "24",
+          "boundingBox": {
+            "top": 0,
+            "left": 0,
+            "width": 0,
+            "height": 0,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0,
+          "extractionConfidence": 0.76,
+          "extractionReviewStatus": "ReviewNotRequired"
+        },
+        {
+          "id": "TotalAmount0stpai",
+          "name": "Total Amount",
+          "value": "4005.99",
+          "boundingBox": {
+            "top": 1141,
+            "left": 825,
+            "width": 81,
+            "height": 11,
+            "pageIndex": 0
+          },
+          "ocrConfidence": 0.991,
+          "extractionConfidence": 0.935,
+          "extractionReviewStatus": "ReviewNotRequired"
+        }
+      ],
+      "tables": [],
+      "classId": "Invoice0k1cw4",
+      "className": "Invoice",
+      "markAsRejected": false,
+      "extractionReviewStatus": "ReviewNotRequired",
+      "classificationConfidence": 0.881,
+      "classificationReviewStatus": "ReviewNotRequired"
+    }
+  ],
+  "extractionStatus": "ReviewRequired",
+  "separationStatus": "Awaiting",
+  "classificationStatus": "Classified",
+  "hasRejectedDocuments": false,
+  "contentFileReferences": [
+    {
+      "sys_id": "0cf082bf-f3b1-4e65-90e1-84f06320f21e",
+      "sysfile_blob": {
+        "mimeType": "application/pdf"
+      }
+    },
+    {
+      "sys_id": "f291d7f9-646d-419b-85f2-a37444c497dc",
+      "sysfile_blob": {
+        "mimeType": "application/pdf"
+      }
+    }
+  ]
+}

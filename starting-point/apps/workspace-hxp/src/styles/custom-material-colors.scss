@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+/**
+ * Adding 'snack-bar-success' color, into material design theme 'background' map
+ *
+ * $material-theme - material theme where 'snack-bar-success' going to be added
+ * $palette - from where we need to select the 'snack-bar-success' color
+ * $success-snackbar-color-number - number of the 'snack-bar-success' in $palette
+ *
+ * @return material theme with 'snack-bar-success' color added into background.
+ */
+@function add-custom-success-snackbar-color-to-theme($material-theme, $palette, $success-snackbar-color-number) {
+    $snack-bar-success: mat.m2-get-color-from-palette($palette, $success-snackbar-color-number);
+
+    $material-theme: map.deep-merge(
+        $material-theme,
+        (
+            background: (
+                snack-bar-success: $snack-bar-success,
+            ),
+        )
+    );
+
+    @return $material-theme;
+}

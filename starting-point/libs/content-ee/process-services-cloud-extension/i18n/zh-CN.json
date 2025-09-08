@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "没有可用的进程定义",
+      "UNCATEGORIZED": "未分类",
+      "RECENT_PROCESS_DEFINITIONS": "最近使用的"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "扩展：Process Automation",
+      "PSC_AVAILABILITY_TITLE": "启用 Process Automation 扩展"
+    },
+    "BREADCRUMB": {
+      "ROOT": "进程管理",
+      "START_PROCESS_CLOUD": "启动流程",
+      "TASK_LIST_CLOUD": "任务列表",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "查看详细信息",
+        "CLOSE-TOOLTIP": "关闭",
+        "PRINT": "打印表单"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "启动流程",
+      "CREATE_PROCESS_NOT_ALLOWED": "无法创建新进程"
+    },
+    "ERROR": {
+      "NO_FORM": "进程定义没有定义表单",
+      "CAN_NOT_ATTACH": "无法附加所选内容"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "进程已创建 '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "出现未知网络错误。与 Process Automation 相关的功能已被禁用。"
+    },
+    "SIDE_NAV_TITLE": "进程管理",
+    "TASK_LIST": {
+      "TASKS": "任务",
+      "ACTIONS": {
+        "TASK_DETAILS": "查看详细信息",
+        "PROCESS_HISTORY": "流程历史记录"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "更改被指派者",
+        "CLOSE": "关闭",
+        "ASSIGN": "指派",
+        "SUCCESS": "任务被指派者已成功更改",
+        "FAILED": "指派用户时遇到一个问题，请重新指派用户。"
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "详细信息"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "流程",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "查看详细信息",
+        "CANCEL_MESSAGE": "已取消流程",
+        "CANCEL_ERROR_MESSAGE": "无法取消流程，请重试",
+        "CANCEL_TOOLTIP": "取消流程"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "启动者"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "筛选器已保存",
+      "FILTER_DELETED": "筛选器已被删除"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "任务已完成",
+      "FORM_SAVED": "已保存模型",
+      "FORM_ACTION": "操作 '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "筛选器已保存",
+      "FILTER_DELETED": "筛选器已被删除"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "取消流程",
+        "MESSAGE": "确定要取消此流程吗？"
+      },
+      "NEW_PROCESS": "新流程",
+      "CONFIRM": "确认",
+      "CLOSE": "关闭",
+      "ERROR": "无法加载流程定义，请确定您是否有访问权限。"
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}} 任务已分配给 {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}} 任务已完成",
+    "TASK_ACTIVATED": "{{taskName}} 任务现在处于活动状态",
+    "TASK_CANCELLED": "{{taskName}} 任务已取消",
+    "TASK_SUSPENDED": "{{taskName}} 任务已挂起",
+    "TASK_UPDATED": "{{taskName}} 任务详细信息已更新"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "搜索"
+    }
+  }
+}

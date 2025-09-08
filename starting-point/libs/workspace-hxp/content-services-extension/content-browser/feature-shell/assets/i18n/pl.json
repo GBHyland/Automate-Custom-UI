@@ -1,0 +1,201 @@
+{
+    "CONTENT_BROWSER": {
+        "DOCUMENT": {
+            "LOAD_ERROR": {
+                "401": "Nieautoryzowany użytkownik",
+                "403": "Nie masz wymaganych uprawnień dostępu do tej ścieżki",
+                "DEFAULT": "Nie można załadować dokumentu"
+            }
+        }
+    },
+    "CONTENT": {
+        "TYPE": {
+            "SYSFILE": "Plik",
+            "SYSFOLDER": "Folder"
+        }
+    },
+    "CREATE": {
+        "DIALOG": {
+            "CANCEL": "Anuluj",
+            "ERROR": "Coś poszło nie tak, nie można utworzyć zawartości!",
+            "FIELDS": {
+                "DESCRIPTION": {
+                    "LABEL": "Opis"
+                },
+                "TITLE": {
+                    "LABEL": "Tytuł",
+                    "ERROR": "Pole tytułu nie może być puste!"
+                }
+            },
+            "PARENT_PATH": "Ścieżka nadrzędna: ",
+            "SAVE": "Utwórz",
+            "SUCCESS": "Zawartość została utworzona.",
+            "TITLE": "Dodaj zawartość"
+        }
+    },
+    "CONTENT_SERVICES_EXTENSION": {
+        "SIDE_NAV_TITLE": "Zarządzanie treścią"
+    },
+    "CREATE_CONTENT_MENU": {
+        "BUTTON_TITLE": "Przesyłanie nowego pliku",
+        "UPLOAD_FILE": "Prześlij plik",
+        "CREATE_FOLDER": "Utwórz folder"
+    },
+    "FILE_UPLOAD": {
+        "BUTTON": {
+            "UPLOAD_FILE": "Prześlij plik",
+            "CLOSE": "Zamknij",
+            "DIALOG_SUBMIT": "Prześlij",
+            "PROPERTIES": {
+                "SAVE": "Zapisz"
+            }
+        },
+        "DIALOG": {
+            "TITLE": {
+                "MULTIPLE_FILES": "Liczba przesyłanych plików: {{numberOfFiles}}",
+                "SINGLE_FILE": "Przesyłanie 1 pliku"
+            },
+            "ARIA-LABEL": {
+                "PROGRESS": "Przesyłanie pliku"
+            }
+        },
+        "EDIT": {
+            "NO_SELECTION": "Wybierz pliki, aby przypisać lokalizację dokumentu i typ zawartości",
+            "MIXED_CONTENT": {
+                "TITLE": "Zawartość mieszana:",
+                "CATEGORY": {
+                    "BUTTON": "Wybierz typ zawartości do zaznaczenia"
+                },
+                "LOCATION": {
+                    "BUTTON": "Wybierz lokalizację dokumentu do zaznaczenia"
+                }
+            },
+            "PROPERTIES": {
+                "ASSIGNED": "Przypisano właściwości",
+                "DOCUMENT_CATEGORY": "Typ zawartości",
+                "LOCATION": "Lokalizacja",
+                "LABEL": "Właściwości"
+            },
+            "TAB": {
+                "LOCATION_CATEGORY": "Lokalizacja i kategoria"
+            }
+        },
+        "LIST": {
+            "HEADER": {
+                "UNASSIGNED_DOCUMENT_CATEGORY": "Nieprzypisany typ zawartości"
+            }
+        },
+        "SNACKBAR": {
+            "ARIA-LABEL": {
+                "DIALOG": "Prześlij listę",
+                "DIALOG_MAXIMIZE": "Maksymalizuj okno dialogowe przesyłania",
+                "DIALOG_MINIMIZE": "Minimalizuj okno dialogowe przesyłania",
+                "DIALOG_CLOSE": "Zamknij okno dialogowe przesyłania",
+                "CANCEL_ALL": "Zatrzymaj przesyłanie",
+                "PROGRESS": "Przesyłanie dokumentu",
+                "RETRY_UPLOAD": "Ponów próbę przesyłania",
+                "UPLOAD_SUCCESSFUL": "Przesłano plik {{ file }}",
+                "STOP_FILE": "Zatrzymaj plik {{ file }}",
+                "STOP_FILE_UPLOAD": "Zatrzymaj przesyłanie pliku {{ file }}",
+                "UPLOAD_FILE_ERROR": "Błąd przesyłania {{ error }}",
+                "CONFIRMATION": {
+                    "CANCEL": "Potwierdź anulowanie",
+                    "CONTINUE": "Kontynuuj przesyłanie"
+                }
+            },
+            "BUTTON": {
+                "MINIMIZE": "Minimalizuj",
+                "MAXIMIZE": "Maksymalizuj",
+                "CANCEL_ALL": "Anuluj",
+                "CLOSE": "Zamknij",
+                "RETRY": "Ponów próbę",
+                "STOP_FILE": "Zatrzymaj przesyłanie",
+                "UPLOAD_SUCCESSFUL": "Przesyłanie powiodło się"
+            },
+            "CONFIRMATION": {
+                "BUTTON": {
+                    "CANCEL": "Tak",
+                    "CONTINUE": "Nie"
+                },
+                "MESSAGE": {
+                    "TITLE": "Zatrzymaj przesyłanie",
+                    "TEXT": "Zatrzymaj i anuluj wszystkie trwające i oczekujące operacje przesyłania."
+                }
+            },
+            "STATUS": {
+                "FILE_CANCELED_STATUS": "Anulowano",
+                "FILE_DONE_STATUS": "Przesłano"
+            },
+            "TITLE": "Przesyłanie pliku"
+        }
+    },
+    "CREATE_FOLDER": {
+        "TITLE": "Utwórz nowy folder",
+        "SUBTITLE": "Nadaj nazwę folderowi i wybierz jego kategorię",
+        "NAME": "Nazwa folderu",
+        "CATEGORY": "Kategoria folderu",
+        "CATEGORY_PLACEHOLDER": "Wybierz kategorię folderu",
+        "CREATE_BUTTON": "Utwórz folder",
+        "PERMISSION_MESSAGE": "Wszystkie uprawnienia folderu nadrzędnego zostaną odziedziczone",
+        "FOLDER_NAME": "Nowy folder",
+        "CANCEL": {
+            "TITLE": "Anuluj tworzenie folderu",
+            "DESCRIPTION": "Czy na pewno chcesz anulować tworzenie nowego folderu? Niezapisany postęp zostanie utracony.",
+            "REJECT": "Kontynuuj tworzenie",
+            "CONFIRM": "Anuluj"
+        }
+    },
+    "DOCUMENT_LIST": {
+        "COLUMNS": {
+            "TITLE": "Tytuł",
+            "SIZE": "Wielkość",
+            "CREATED": {
+                "LABEL": "Utworzono",
+                "BY": "przez"
+            },
+            "LAST_MODIFIED": {
+                "LABEL": "Ostatnia modyfikacja",
+                "BY": "przez"
+            },
+            "PERMISSION": "Uprawnienie",
+            "LOCATION": "Lokalizacja",
+            "DOCUMENT_CATEGORY": "Typ zawartości"
+        },
+        "NO_CONTENT": {
+            "TITLE": "Ten folder jest pusty",
+            "SUBTITLE": "Utwórz nową treść"
+        },
+        "PERMISSIONS": {
+            "EVERYTHING": "Wszystko",
+            "READ_WRITE": "Odczytaj i zapisz",
+            "READ": "Odczytaj"
+        },
+        "LOCATION": {
+            "HOME": "Strona startowa"
+        }
+    },
+    "DOCUMENT_LOCATION_PICKER": {
+        "LABEL": "Lokalizacja"
+    },
+    "DOCUMENT_CATEGORY_PICKER": {
+        "LABEL": "Typ zawartości",
+        "PLACEHOLDER": "Wybierz typ zawartości"
+    },
+    "DOCUMENT_VERSION_SELECTOR": {
+        "PLACEHOLDER": "Wybierz wersję",
+        "CURRENT_VERSION": "Bieżąca wersja"
+    },
+    "REPLACE_FILE": {
+        "SUCCESS": "Plik został zamieniony pomyślnie.",
+        "ERROR": "Nie udało się zamienić pliku."
+    },
+    "DOCUMENT_VERSION": {
+        "LABEL": "Zapisz w historii wersji",
+        "SNACKBAR": {
+            "CREATE_SUCCESS": "Nowa wersja została zapisana.",
+            "CREATE_ERROR": "Zapisywanie wersji nie powiodło się. Spróbuj ponownie później.",
+            "RESTORE_SUCCESS": "Wersja została przywrócona.",
+            "RESTORE_ERROR": "Przywracanie wersji nie powiodło się. Spróbuj ponownie później."
+        }
+    }
+}

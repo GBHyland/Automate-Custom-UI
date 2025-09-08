@@ -1,0 +1,15 @@
+[
+    {
+        "index": 0,
+        "entityId": "newId",
+        "entity": "Group",
+        "entityType": "group",
+        "entityLabel": "Admin",
+        "permission": "Everything",
+        "isNew": true,
+        "edited": false,
+        "inherited": false,
+        "overridden": false,
+        "inheritedPermission": "None"
+    }
+]

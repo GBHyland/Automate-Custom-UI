@@ -1,0 +1,168 @@
+<ng-template #defaultTitle let-title>
+    <hxp-permissions-document-title [title]="title || ''">
+        <button mat-icon-button close-button class="hxp-permission-dialog-cross" (click)="closePermission()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </hxp-permissions-document-title>
+</ng-template>
+
+<ng-template
+    *ngTemplateOutlet="titleTemplateRef || defaultTitle; context: { $implicit: (title$ | async) }" />
+
+<hxp-permissions-inheritance-toggle
+    [isInheritanceEnabled]="(isInheritanceEnabled$ | async)"
+    (toggleChange)="onInheritanceStateChange($event)"
+ />
+<form>
+    <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-stretch-tabs="true"
+        (selectedIndexChange)="onTabSelection($event)">
+        <mat-tab class="hxp-permission-tabs"
+            label="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.GROUPS' | translate }}">
+            <hxp-permissions-table *ngIf="activePermissionsManagementRows$ | async as activePermissionsManagementRows"
+                [title]="'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ACCESS_LEVEL.GROUP' | translate"
+                [activePermissionsManagementRows]="activePermissionsManagementRows">
+
+                <hxp-permission-search permission-search id="hxp-permission-search-group"
+                    [activePermissionsManagementRows]="activePermissionsManagementRows"
+                    placeHolder="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.SEARCH_GROUP' | translate }}"
+                    (search)="filterPermissionsManagementRowsByGroup($event)" />
+
+                <ng-template #entityColumnHeader>{{
+                    'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.COLUMN_HEADER.GROUPS' | translate }}</ng-template>
+                <ng-template #inheritedPermissionColumnHeader>{{
+                    'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.COLUMN_HEADER.INHERITED' | translate
+                    }}</ng-template>
+                <ng-template #fileColumnHeader>{{
+                    'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.COLUMN_HEADER.FILE_LEVEL' | translate
+                    }}</ng-template>
+
+                <ng-template #entityCell let-row>
+                    <div class="hxp-entity-details">
+                        <div class="hxp-group-details-label"
+                            [class]="{'hxp-disabled-entity': row.inheritedPermission === 'Everything'}">
+                            <mat-icon [inline]="true">people_outline</mat-icon>
+                            {{ row.entityLabel }}
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template #inheritedPermissionCell let-row>
+                    <hxp-inherited-permission [permission]="row.inheritedPermission"
+                        [inheritanceEnabled]="(isInheritanceEnabled$ | async)" />
+                </ng-template>
+
+                <ng-template #fileCell let-row>
+                    <ng-container *ngIf="(isInheritanceEnabled$ | async) === true && row.inheritedPermission === 'Everything'; else editableField">
+                        <div class="hxp-cannot-be-changed">{{
+                            'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.CANNOT_BE_CHANGED' | translate }}</div>
+                    </ng-container>
+
+                    <ng-template #editableField>
+                        <hxp-permissions [permission]="row.permission" [inheritedPermission]="row.inheritedPermission"
+                            [inheritanceEnabled]="(isInheritanceEnabled$ | async) || false"
+                            (changePermission)="onEditPermissionsManagementRow($event, row)" />
+                    </ng-template>
+                </ng-template>
+
+                <ng-template #emptyTable>
+                    <hxp-permissions-empty-table [message]="'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.NO_PERMISSION.GROUP' |
+                    translate" />
+                </ng-template>
+            </hxp-permissions-table>
+
+            <hxp-add-permission id="hxp-add-user-group" [suggestions]="(suggestedGroups$ | async) || []"
+                [loading]="(loading$ | async) || false"
+                searchPlaceholderText="{{'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.SELECT_GROUP' | translate}}"
+                addButtonLabel="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ADD_GROUP' | translate }}"
+                (search)="searchGroups($event)" (addNewPermission)="onAddNewPermissionsManagementRow($event)">
+                <ng-container title>
+                    {{'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ADD_GROUP' | translate }}
+                </ng-container>
+            </hxp-add-permission>
+        </mat-tab>
+
+        <mat-tab class="hxp-permission-tabs"
+            label="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.USERS' | translate }}">
+            <hxp-permissions-table *ngIf="activePermissionsManagementRows$ | async as activePermissionsManagementRows"
+                [title]="'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ACCESS_LEVEL.USER' | translate"
+                [activePermissionsManagementRows]="activePermissionsManagementRows">
+
+                <hxp-permission-search permission-search id="hxp-permission-search-user"
+                    [activePermissionsManagementRows]="activePermissionsManagementRows"
+                    placeHolder="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.SEARCH_USER' | translate }}"
+                    (search)="filterPermissionsManagementRowsByIndividual($event)" />
+
+                <ng-template #entityColumnHeader>{{
+                    'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.COLUMN_HEADER.USERS' | translate }}</ng-template>
+                <ng-template #fileColumnHeader>{{
+                    'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.COLUMN_HEADER.FILE_ACCESS' | translate
+                    }}</ng-template>
+
+                <ng-template #entityCell let-row>
+                    <div class="hxp-entity-details">
+                        <div>{{ row.entityLabel }}</div>
+                        <div *ngIf="row.inherited" class="hxp-users-icon">
+                            <mat-icon [inline]="true">people_outline</mat-icon>
+                            <ng-container *ngIf="!row.overridden; else overriddenPermission">
+                                {{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.INHERITED_PERMISSION' | translate }}
+                            </ng-container>
+                            <ng-template #overriddenPermission>
+                                {{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.OVERRIDDEN_PERMISSION' | translate
+                                }}
+                            </ng-template>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template #fileCell let-row>
+                    <hxp-permissions [permission]="row.permission" [disabled]="!row.overridden && row.inherited"
+                        [inheritedPermission]="row.inheritedPermission"
+                        (changePermission)="onEditPermissionsManagementRow($event, row)" />
+                </ng-template>
+
+                <ng-template #emptyTable>
+                    <hxp-permissions-empty-table [message]="'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.NO_PERMISSION.USER' |
+                    translate" />
+                </ng-template>
+            </hxp-permissions-table>
+
+            <hxp-add-permission id="hxp-add-user" [suggestions]="(suggestedIndividuals$ | async) || []"
+                [loading]="(loading$ | async) || false"
+                searchPlaceholderText="{{'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.SELECT_USER' | translate}}"
+                addButtonLabel="{{ 'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ADD_USER' | translate }}"
+                (search)="searchIndividuals($event)" (addNewPermission)="onAddNewPermissionsManagementRow($event)">
+                <ng-container title>
+                    {{'PERMISSIONS_MANAGEMENT_ACTION.PERMISSIONS_TABLE.ADD_USER' | translate }}
+                </ng-container>
+            </hxp-add-permission>
+        </mat-tab>
+    </mat-tab-group>
+</form>
+<mat-divider />
+<div class="hxp-permissions-actions">
+    <div class="hxp-left-actions">
+        <button
+            mat-button
+            class="hxp-restore-button"
+            [disabled]="(hasLocalPermission$ | async) === false"
+            (click)="restore()">
+            {{ 'PERMISSIONS_MANAGEMENT_ACTION.DIALOG.RESTORE' | translate }}
+        </button>
+    </div>
+    <div class="hxp-right-actions">
+        <button
+            mat-button
+            class="hxp-cancel-button"
+            (click)="cancel()">
+            {{ 'PERMISSIONS_MANAGEMENT_ACTION.DIALOG.CANCEL' | translate }}
+        </button>
+
+        <button
+            class="hxp-save-permission-button hxp-primary-button"
+            mat-button
+            [disabled]="isUntouched$ | async"
+            (click)="savePermissions()">
+            {{ 'PERMISSIONS_MANAGEMENT_ACTION.DIALOG.SAVE' | translate }}
+        </button>
+    </div>
+</div>

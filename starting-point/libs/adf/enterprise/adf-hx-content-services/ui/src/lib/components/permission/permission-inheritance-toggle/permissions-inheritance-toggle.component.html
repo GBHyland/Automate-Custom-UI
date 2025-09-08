@@ -1,0 +1,12 @@
+<div class="hxp-inheritance-toggle-container">
+    <span class="hxp-toggle-label">{{ 'PERMISSIONS_MANAGEMENT_ACTION.BLOCK_INHERITANCE.TITLE' | translate }}</span>
+    <mat-button-toggle-group
+        [hideSingleSelectionIndicator]="true"
+        [value]="isInheritanceEnabled"
+        (change)="onToggleChange($event.value)"
+        class="hxp-toggle-group"
+    >
+        <mat-button-toggle [value]="false" class="hxp-toggle-button">{{ 'PERMISSIONS_MANAGEMENT_ACTION.BLOCK_INHERITANCE.TOGGLE_OPTION.OFF' | translate }}</mat-button-toggle>
+        <mat-button-toggle [value]="true" class="hxp-toggle-button hxp-on">{{ 'PERMISSIONS_MANAGEMENT_ACTION.BLOCK_INHERITANCE.TOGGLE_OPTION.ON' | translate }}</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>

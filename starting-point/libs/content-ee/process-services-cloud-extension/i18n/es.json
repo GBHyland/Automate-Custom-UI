@@ -1,0 +1,124 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "No hay definiciones de proceso disponibles",
+      "UNCATEGORIZED": "Sin categorizar",
+      "RECENT_PROCESS_DEFINITIONS": "Usados recientemente"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Extensiones: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Activar extensiones de Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Gestión de procesos",
+      "START_PROCESS_CLOUD": "Iniciar proceso",
+      "TASK_LIST_CLOUD": "Lista de tareas",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Ver detalles",
+        "CLOSE-TOOLTIP": "Cerrar",
+        "PRINT": "Imprimir formulario",
+        "FULL_SCREEN": "Activar modo de pantalla completa"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Iniciar proceso",
+      "CREATE_PROCESS_NOT_ALLOWED": "No se puede crear un nuevo proceso",
+      "REFRESH": "Actualizar"
+    },
+    "ERROR": {
+      "NO_FORM": "La definición del proceso no tiene un formulario definido",
+      "CAN_NOT_ATTACH": "No se puede adjuntar el contenido seleccionado",
+      "START_PROCESS_ERROR": "No se puede iniciar un proceso. Compruebe la configuración del proceso",
+      "TASK_CANNOT_BE_CLAIMED": "No se puede reclamar la tarea",
+      "UNEXPECTED_ERROR": "Error inesperado"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Proceso '{{ processName }}' creado",
+      "BACKEND_SERVICE_ERROR": "Error de red desconocido. Se han desactivado las funciones asociadas a Process Automation.",
+      "NO_NEXT_TASK_AVAILABLE": "No hay ninguna tarea disponible para continuar"
+    },
+    "SIDE_NAV_TITLE": "Gestión de procesos",
+    "TASK_LIST": {
+      "TASKS": "Tareas",
+      "ACTIONS": {
+        "TASK_DETAILS": "Ver detalles",
+        "PROCESS_HISTORY": "Historial de procesos"
+      },
+      "LIST_REFRESHED": "La página se ha actualizado",
+      "LIST_UPTO_DATE": "La página está actualizada"
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Cambiar el usuario asignado",
+        "CLOSE": "Cerrar",
+        "ASSIGN": "Asignar",
+        "SUCCESS": "Se ha cambiado el usuario asignado a la tarea correctamente",
+        "FAILED": "Ha surgido un problema al asignar el usuario. Vuelva a intentarlo."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Detalles",
+      "WAITING_SCREEN": {
+        "MESSAGE": "Esperando la siguiente tarea de usuario...",
+        "CLOSE": "Cerrar"
+      }
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Procesos",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Ver detalles",
+        "CANCEL_MESSAGE": "El proceso se ha cancelado",
+        "CANCEL_ERROR_MESSAGE": "Fallo al cancelar el proceso. Vuelva a intentarlo.",
+        "CANCEL_TOOLTIP": "Cancelar proceso"
+      },
+      "TOOLTIP": {
+        "HEADER": "Procesos hijo"
+      },
+      "PROPERTIES": {
+        "RELATED_PROCESS": "Proceso relacionado",
+        "SUBPROCESSES": "subprocesos",
+        "SUBPROCESS": "subproceso",
+        "STARTED_BY": "Iniciado por"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Se ha guardado el filtro",
+      "FILTER_DELETED": "Se ha eliminado el filtro"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "La tarea ha sido completada",
+      "FORM_SAVED": "Se ha guardado el formulario",
+      "FORM_ACTION": "Acción '{{ outcome }}'",
+      "DUPLICATE_CORRELATION_KEY": "Se ha detectado una clave de correlación duplicada, póngase en contacto con el administrador del sistema",
+      "UNAUTHORIZED": "Otro usuario ya ha reclamado la tarea o la tiene asignada"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Se ha guardado el filtro",
+      "FILTER_DELETED": "Se ha eliminado el filtro"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Cancelar proceso",
+        "MESSAGE": "¿Está seguro de que desea cancelar este proceso?"
+      },
+      "NEW_PROCESS": "Nuevo proceso",
+      "CONFIRM": "Confirmar",
+      "CLOSE": "Cerrar",
+      "ERROR": "No se han podido cargar las definiciones de procesos; compruebe que tiene acceso."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "La tarea {{taskName}} ha sido asignada a {{assignee}}",
+    "TASK_COMPLETED": "La tarea {{taskName}} ha sido completada",
+    "TASK_ACTIVATED": "La tarea {{taskName}} está activa",
+    "TASK_CANCELLED": "La tarea {{taskName}} ha sido cancelada.",
+    "TASK_SUSPENDED": "La tarea {{taskName}} ha sido suspendida",
+    "TASK_UPDATED": "Los detalles de la tarea {{taskName}} han sido actualizados",
+    "TASK_CLAIMED": "Se ha reclamado la tarea {{taskName}}"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Buscar"
+    }
+  }
+}

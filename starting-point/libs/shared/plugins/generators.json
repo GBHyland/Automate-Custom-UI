@@ -1,0 +1,19 @@
+{
+    "generators": {
+        "plugin": {
+            "factory": "./src/generators/create-plugin/plugin",
+            "schema": "./src/generators/create-plugin/schema.json",
+            "description": "plugin generator"
+        },
+        "page": {
+            "factory": "./src/generators/create-page/page",
+            "schema": "./src/generators/create-page/schema.json",
+            "description": "page generator"
+        },
+        "form-widget": {
+            "factory": "./src/generators/create-form-widget/form-widget",
+            "schema": "./src/generators/create-form-widget/schema.json",
+            "description": "form-widget generator"
+        }
+    }
+}

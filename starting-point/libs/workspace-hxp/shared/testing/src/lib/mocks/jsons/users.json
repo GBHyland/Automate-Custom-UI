@@ -1,0 +1,20 @@
+[
+  {
+    "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+    "firstName": "test1",
+    "lastName": "user1",
+    "username": "test1user1"
+  },
+  {
+    "id": "444660e7-0334-4356-8c3d-484fe445b610",
+    "firstName": "test2",
+    "lastName": "user2",
+    "username": "test2user2"
+  },
+  {
+    "id": "444660e7-5543-4356-3434-484fe445b610",
+    "firstName": "test3",
+    "lastName": "user3",
+    "username": "test3user3"
+  }
+]

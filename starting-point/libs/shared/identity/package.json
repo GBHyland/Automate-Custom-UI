@@ -1,0 +1,16 @@
+{
+  "name": "@alfresco-dbp/shared/identity",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@alfresco/adf-core": ">=5.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "4.0.3",
+    "@types/node": "14.14.33"
+  }
+}

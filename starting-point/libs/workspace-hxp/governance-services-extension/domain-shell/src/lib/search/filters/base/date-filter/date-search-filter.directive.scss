@@ -1,0 +1,67 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-governance-date-filter-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .hxp-governance-date-filter-option {
+        border-inline-start: 6px solid transparent;
+        box-sizing: border-box;
+        span {
+            font: var(--theme-body-font);
+        }
+        &_active {
+            background-color: satori.$hy-colors-background-nav;
+            border-inline-start: 6px solid satori.$hy-colors-background-primary;
+        }
+    }
+
+    mat-divider {
+        margin: 10px;
+    }
+
+    .hxp-governance-custom-date {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px 15px;
+
+        &-error {
+            font: satori.$hy-caption-font;
+            margin: 0 -15px;
+        }
+
+        label {
+            font: var(--theme-body-font);
+        }
+
+        ::ng-deep #{ms.$mat-form-field-appearance-outline}#{ms.$mat-focused} #{ms.$mat-form-field-outline-thick} {
+            color: satori.$hy-colors-background-primary;
+        }
+
+        ::ng-deep #{ms.$mat-form-field-appearance-outline}:hover #{ms.$mat-form-field-outline-thick} {
+            color: satori.$hy-colors-background-primary;
+        }
+
+        .hxp-governance-date-picker-suffix {
+            display: flex;
+        }
+    }
+
+    .hxp-governance-date-filter-custom-date-button {
+        span {
+            font: var(--theme-body-font);
+        }
+    }
+
+    #hxp-governance-date-before-picker-input,
+    #hxp-governance-date-after-picker-input {
+        font: var(--theme-body-font);
+    }
+}
+
+::ng-deep #{ms.$mat-form-field-appearance-outline}.hxp-governance-date-custom_active #{ms.$mat-form-field-outline-thick} {
+    color: satori.$hy-colors-background-primary;
+    opacity: 1;
+}

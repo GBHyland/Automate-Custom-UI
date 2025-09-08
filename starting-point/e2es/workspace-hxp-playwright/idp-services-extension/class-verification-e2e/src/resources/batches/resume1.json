@@ -1,0 +1,36 @@
+{
+  "documents": [
+    {
+      "id": "d99fad39-7413-416d-858a-b7ce9845f27d",
+      "pages": [
+        {
+          "rotation": 0,
+          "sourcePageIndex": 0,
+          "contentFileReferenceIndex": 0
+        },
+        {
+          "rotation": 0,
+          "sourcePageIndex": 1,
+          "contentFileReferenceIndex": 0
+        }
+      ],
+      "fields": [],
+      "tables": [],
+      "markAsRejected": false,
+      "classificationConfidence": 0,
+      "classificationReviewStatus": "ReviewRequired"
+    }
+  ],
+  "extractionStatus": "Awaiting",
+  "separationStatus": "Awaiting",
+  "classificationStatus": "ReviewRequired",
+  "hasRejectedDocuments": false,
+  "contentFileReferences": [
+    {
+      "sys_id": "752c54d5-349f-4a42-806b-98ef78074f2d",
+      "sysfile_blob": {
+        "mimeType": "application/pdf"
+      }
+    }
+  ]
+}

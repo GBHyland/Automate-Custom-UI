@@ -1,0 +1,236 @@
+{
+    "GOVERNANCE": {
+        "SIDENAV": {
+            "TITLE": "Governance"
+        },
+        "HEADER": {
+            "TITLE": "Governance"
+        },
+        "TABS": {
+            "RECORDS": "Datensatz-Management",
+            "LEGAL_HOLD": "Verwaltung rechtlicher Aufbewahrungsverfügung"
+        },
+        "LEGAL_HOLD": {
+            "TITLE": "Verwaltung rechtlicher Aufbewahrung",
+            "HEADER": "Fälle für rechtliche Aufbewahrung",
+            "TABLE": {
+                "COLUMNS": {
+                    "CASE_NAME": "Fall für rechtliche Aufbewahrung",
+                    "REASON_FOR_HOLD": "Grund für Aufbewahrung",
+                    "TOTAL_RECORDS_HELD": "Gesamte Datensätze gehalten",
+                    "DATE_OF_CREATION": "Erstellungsdatum",
+                    "CREATOR": "Ersteller"
+                },
+                "NO_RECORDS_FOUND": "Sie haben noch keinen Fall von rechtlicher Aufbewahrung.",
+                "NO_RECORDS_FOUND_FILTERED": "Kein Fall von rechtlicher Aufbewahrung entspricht Ihrem Suchfilter."
+            },
+            "CREATE_BUTTON": "Fall für rechtliche Aufbewahrung erstellen",
+            "SEARCH_PLACEHOLDER": "Fallname für rechtliche Aufbewahrung suchen",
+            "CLEAR_ALL": "Alle löschen",
+            "SELECTED": "Ausgewählt"
+        },
+        "SEARCH": {
+            "FILTERS": {
+                "ARIA-LABEL": {
+                    "CLEAR_INPUT": "Eingabe löschen",
+                    "CLEAR_SEARCH": "Suche löschen",
+                    "FILTERS_LIST": "Filtert Liste",
+                    "REMOVE": "Filter entfernen"
+                },
+                "SELECTED": "{{selected}} ausgewählt",
+                "RESULTS_FOUND_PLURAL": "{{count}} Ergebnisse gefunden",
+                "RESULTS_FOUND_SINGLE": "{{count}} Ergebnis gefunden",
+                "CATEGORY": {
+                    "LABEL": "Kategorie"
+                },
+                "CREATOR": {
+                    "LABEL": "Ersteller"
+                },
+                "DATA_SOURCE": {
+                    "LABEL": "Datenquelle"
+                },
+                "MODIFIER": {
+                    "LABEL": "Bearbeitender"
+                },
+                "STATUS": {
+                    "LABEL": "Status"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "MESSAGE": "Keine passenden Ergebnisse gefunden"
+                },
+                "PLACEHOLDER": "Suche",
+                "CUTOFF": {
+                    "LABEL": "Abschneiden"
+                },
+                "DISPOSITION": {
+                    "LABEL": "Dispositionsdatum"
+                },
+                "DATE": {
+                    "ARIA-LABEL": {
+                        "DEFAULT_OPTIONS_LIST": "Liste der verfügbaren Datumsoptionen"
+                    },
+                    "OPTIONS": {
+                        "TOMORROW": "Morgen",
+                        "NEXT_WEEK": "Nächste Woche",
+                        "NEXT_MONTH": "Nächsten Monat",
+                        "NEXT_YEAR": "Nächstes Jahr",
+                        "CUSTOM_DATE": {
+                            "LABEL": "Benutzerdefiniertes Datum",
+                            "VALUES": {
+                                "AFTER": "Nach",
+                                "BEFORE": "Vor",
+                                "SINCE_TO_DATE": "Seit {{afterDate}} bis {{beforeDate}}",
+                                "SINCE_TO_TODAY": "Seit {{date}} bis heute",
+                                "UNTIL_DATE": "Bis {{date}}"
+                            }
+                        },
+                        "BUTTON": {
+                            "CLEAR": {
+                                "ARIA_LABEL": {
+                                    "AFTER": "'Nach'-Datum löschen",
+                                    "BEFORE": "'Vor'-Datum löschen"
+                                }
+                            }
+                        },
+                        "ERRORS": {
+                            "BEFORE_DATE_TOO_EARLY": "Das 'Vor'-Datum darf nicht vor dem 'Nach'-Datum liegen",
+                            "AFTER_DATE_TOO_LATE": "Das 'Nach'-Datum darf nicht nach dem 'Vor'-Datum liegen",
+                            "INVALID_DATE_FORMAT": "Bitte geben Sie ein gültiges Datumsformat ein: MM/TT/JJJJ"
+                        }
+                    }
+                }
+            },
+            "TOOLBAR": {
+                "BUTTONS": {
+                    "DELETE": "Ausgewählte Datensätze löschen",
+                    "LEGAL_HOLD_CASE": "Zur rechtlichen Aufbewahrung hinzufügen",
+                    "PROPERTY_PANE_OPEN": "Eigenschaft anzeigen",
+                    "PROPERTY_PANE_CLOSE": "Eigenschaft ausblenden"
+                }
+            }
+        },
+        "SEARCH_RESULTS": {
+            "BUTTONS": {
+                "RESET": {
+                    "LABEL": "Zurücksetzen"
+                },
+                "SEARCH": {
+                    "LABEL": "Suche"
+                },
+                "SELECT_ALL": {
+                    "LABEL": "Alles auswählen"
+                },
+                "UNSELECT_ALL": {
+                    "LABEL": "Gesamte Auswahl aufheben"
+                }
+            },
+            "INITIAL_STATE": {
+                "LABEL": "Suche nach Datensätzen mit erweiterter Filterung",
+                "ICON": "Suche nach Datensätzen mit erweiterter Filterung"
+            },
+            "NO_RESULTS": {
+                "ICON": "Keine Datensätze für die gewählten Filter gefunden. Passen Sie Ihre Suchkriterien an und versuchen Sie es erneut.",
+                "LABEL": "Keine Datensätze für die gewählten Filter gefunden. Passen Sie Ihre Suchkriterien an und versuchen Sie es erneut."
+            },
+            "RESULTS_LIST": {
+                "COUNT_PLURAL": "{{count}} Ergebnisse gefunden",
+                "COUNT_SINGLE": "{{count}} Ergebnis gefunden",
+                "COLUMNS": {
+                    "NAME": "Datensatzname",
+                    "DATA_SOURCE": "Datenquelle",
+                    "CATEGORY": "Kategorie",
+                    "CUTOFF_DATE": "Stichtag",
+                    "DISPOSITION_DATE": "Dispositionsdatum",
+                    "DISPOSITION": "Disposition",
+                    "STATUS": "Status"
+                },
+                "ITEMS_PER_PAGE": "Elemente pro Seite:"
+            },
+            "SELECTED_RESULTS_COUNT": "{{selected}} ausgewählt"
+        },
+        "SEARCH_FILTERS": {
+            "CONTENT_ID": {
+                "LABEL": "Inhalts-ID",
+                "PLACEHOLDER": "Inhalt-ID eingeben",
+                "ERROR": "Bitte geben Sie eine gültige Inhalts-ID ein."
+            },
+            "RECORD_NAME": {
+                "LABEL": "Datensatzname",
+                "PLACEHOLDER": "Datensatzname eingeben",
+                "ERROR": "Bitte geben Sie einen gültigen Datensatznamen an."
+            }
+        },
+        "SIDEBAR": {
+            "EDIT_TITLE": "Datensatz-Eigenschaften bearbeiten",
+            "TABS": {
+                "PROPERTIES": "Eigenschaften"
+            },
+            "SECTIONS": {
+                "RECORD_PROPERTIES": "Datensatz-Eigenschaften"
+            },
+            "BUTTONS": {
+                "EDIT": "Bearbeiten",
+                "CANCEL": "Abbrechen",
+                "SAVE": "Speichern",
+                "CLEAR": "Löschen",
+                "CLOSE": "Seitenleiste schließen",
+                "TOGGLE": "Erweitern/Zuklappen"
+            },
+            "FIELDS": {
+                "CUTOFF_DATE": "Stichtag",
+                "INCOMPLETE": "Unvollständig"
+            },
+            "DATEPICKER": {
+                "CLEAR": "Löschen",
+                "CANCEL": "Abbrechen",
+                "APPLY": "OK"
+            }
+        },
+        "DELETE_DIALOG": {
+            "TITLE": "Löschung bestätigen",
+            "CONTENT": "Sind Sie sicher, dass Sie die ausgewählten Datensätze löschen möchten?",
+            "CANCEL": "Abbrechen",
+            "DELETE": "Löschen"
+        },
+        "LEGAL_DIALOG": {
+            "TITLE": "Fall für rechtliche Aufbewahrung",
+            "CANCEL": "Abbrechen",
+            "ASSIGN": "Datensätze zur Auswahl hinzufügen",
+            "INFO_ADD_RECORDS": "{{count}} Datei wird zur ausgewählten rechtlichen Aufbewahrung hinzugefügt",
+            "INFO_ADD_RECORDS_plural": "{{count}} Dateien wird zur ausgewählten rechtlichen Aufbewahrung hinzugefügt"
+        },
+        "CREATE_LEGAL_HOLD_CASE_DIALOG": {
+            "TITLE": "Fall für rechtliche Aufbewahrung erstellen",
+            "NAME": "Name",
+            "REASON": "Grund",
+            "DESCRIPTION": "Beschreibung",
+            "CANCEL": "Abbrechen",
+            "CREATE": "Fall für rechtliche Aufbewahrung erstellen",
+            "ERRORS": {
+                "MAX_LENGTH_EXCEEDED": "Maximale Länge von {{max}} Zeichen überschritten."
+            }
+        },
+        "UNSAVED_CHANGES_DIALOG": {
+            "TITLE": "Ungespeicherte Änderungen",
+            "CONTENT": "Sie haben ungespeicherte Änderungen. Um sie zu überprüfen und zu speichern, klicken Sie auf 'Weiter Bearbeiten'. Um Änderungen zu verwerfen, klicken Sie auf 'Schließen ohne Speichern.",
+            "DISCARD": "Schließen ohne Speichern",
+            "KEEP": "Weiter Bearbeiten"
+        },
+        "NOTIFICATIONS": {
+            "RECORD_DELETE_SUCCESS": "Datensatze(n) erfolgreich gelöscht!",
+            "RECORD_DELETE_ERROR": "Fehler beim Löschen der Eigenschaft. Bitte versuchen Sie es erneut.",
+            "RECORD_DELETE_PARTIAL": "{{successCount}} Datensätze gelöscht, {{failureCount}} fehlgeschlagen.",
+            "PROPERTY_UPDATE_SUCCESS": "Eigenschaft erfolgreich aktualisiert!",
+            "PROPERTY_UPDATE_ERROR": "Fehler beim Aktualisieren der Eigenschaft. Bitte versuchen Sie es erneut.",
+            "LEGAL_HOLD_CASE_CREATE_SUCCESS": "Fall für rechtliche Aufbewahrung erfolgreich erstellt",
+            "LEGAL_HOLD_CASE_CREATE_ERROR": "Fall für rechtliche Aufbewahrung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+            "LEGAL_HOLD_CASE_NAME_EXISTS": "Ein Fall für rechtliche Aufbewahrung mit diesem Namen existiert bereits.",
+            "LEGAL_HOLD_ASSIGNMENT_ERROR": "Fehler beim Zuweisen der Datensätze zur rechtlichen Aufbewahrung. Bitte erneut versuchen.",
+            "LEGAL_HOLD_ASSIGNMENT_SUCCESS": "Datensätze erfolgreich zur rechtlichen Aufbewahrung zugewiesen."
+        },
+        "SEARCH_INPUT": {
+            "SEARCH": "Suche",
+            "CLEAR": "Löschen"
+        }
+    }
+}

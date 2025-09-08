@@ -1,0 +1,229 @@
+<ng-container class="hxp-workspace-upload-list">
+    <adf-toolbar class="hxp-workspace-upload-list__toolbar">
+        <ng-container *ngIf="selectedItems?.length > 0">
+            <div class="hxp-workspace-upload-list__toolbar__selection">
+                <div class="hxp-workspace-upload-list__toolbar__selection_count">
+                    <span>{{ selectedItems?.length }}</span>
+                    {{ 'APP.TOOLBAR.SELECTED' | translate }}
+                </div>
+                <div
+                    class="hxp-workspace-upload-list__toolbar__selection__separator"
+                ></div>
+                <div class="hxp-workspace-upload-list__toolbar__selection_reset">
+                    <button
+                        class="hxp-workspace-upload-list__toolbar__selection_reset_button"
+                        (click)="clearSelection()"
+                    >
+                        {{ 'APP.TOOLBAR.CLEAR_ALL' | translate }}
+                    </button>
+                </div>
+            </div>
+            <button
+                *ngIf="hasFailedUploads()"
+                [attr.aria-label]="'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.RETRY_UPLOAD' | translate"
+                mat-icon-button
+                [matTooltip]="'FILE_UPLOAD.SNACKBAR.BUTTON.RETRY' | translate"
+                (click)="retryUpload()"
+                class="hxp-workspace-upload-list__toolbar__retry_button mat-icon-button mat-button-base"
+            >
+                <span class="mat-button-wrapper">
+                    <mat-icon>refresh</mat-icon>
+                </span>
+            </button>
+            <button
+                [attr.aria-label]="'APP.TOOLBAR.BUTTONS.DELETE.ARIA-LABEL' | translate"
+                mat-icon-button
+                title="{{ 'DOCUMENT_DELETE.APP.TOOLBAR.BUTTONS.DELETE.TITLE' | translate }}"
+                [matTooltip]="'DOCUMENT_DELETE.APP.TOOLBAR.BUTTONS.DELETE.TITLE' | translate"
+                (click)="deleteUpload()"
+                class="hxp-workspace-upload-list__toolbar__delete_button mat-icon-button mat-button-base"
+            >
+                <span class="mat-button-wrapper">
+                    <mat-icon>delete</mat-icon>
+                </span>
+            </button>
+        </ng-container>
+    </adf-toolbar>
+
+    <div class="hxp-workspace-upload-list__container__tables">
+    <div
+        class="hxp-workspace-upload-list__container__table"
+        *ngFor="let item of contentModelByDocumentCategory | keyvalue"
+    >
+        <mat-accordion class="hxp-nav-accordion">
+            <mat-expansion-panel class="hxp-expansion-panel" expanded="true">
+                <mat-expansion-panel-header class="hxp-expansion-panel-header">
+                    <mat-panel-title>
+                        <h5
+                            class="hxp-workspace-upload-list__container__table__header"
+                            *ngIf="
+                                item.key;
+                                else unassignedDocumentCategoryHeader
+                            "
+                        >
+                            {{ item.key | translate }}
+                        </h5>
+
+                        <ng-template #unassignedDocumentCategoryHeader>
+                            <h5 class="hxp-workspace-upload-list__container__table__header">
+                                {{
+                                    'FILE_UPLOAD.LIST.HEADER.UNASSIGNED_DOCUMENT_CATEGORY'
+                                        | translate
+                                }}
+                            </h5>
+                        </ng-template>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                    <adf-datatable
+                        id="table-{{ item.key }}"
+                        [rows]="item.value"
+                        [stickyHeader]="true"
+                        [multiselect]="true"
+                        selectionMode="multiple"
+                        (row-select)="onItemSelect($event, item.key)"
+                        (row-unselect)="onItemUnselect($event, item.key)"
+                    >
+                        <data-columns>
+                            <data-column
+                                key="loading"
+                                class="hxp-workspace-upload-list__container__table__loading-column adf-no-grow-cell"
+                            >
+                                <ng-template let-context let-status="$implicit.row.obj.fileModel.status">
+                                    <mat-icon
+                                        class="hxp-workspace-upload-list__container__table__error"
+                                        *ngIf="
+                                            status === FileUploadStatus.Error;
+                                            else loadingProgress
+                                        "
+                                        >block</mat-icon
+                                    >
+
+                                    <ng-template #loadingProgress>
+                                        <div
+                                            *ngIf="
+                                                status === FileUploadStatus.Complete ||
+                                                    status === FileUploadStatus.Pending;
+                                                else loadingProgressIndicator
+                                            "
+                                        >
+                                            <hxp-mime-type-icon
+                                                [mimeType]="
+                                                    context.row.obj.fileModel
+                                                        ?.file?.type
+                                                "
+                                            />
+                                        </div>
+
+                                        <ng-template #loadingProgressIndicator>
+                                            <span
+                                                role="progressbar"
+                                                class="hxp-workspace-upload-list__container__table__loading-column__progress"
+                                                [attr.aria-valuenow]="context.row.obj.fileModel.progress.loaded"
+                                                [attr.aria-label]="'FILE_UPLOAD.DIALOG.ARIA_LABEL.PROGRESS' | translate"
+                                            >
+                                                {{
+                                                    context.row.obj.fileModel
+                                                        .progress.loaded /
+                                                        context.row.obj
+                                                            .fileModel.progress
+                                                            .total | percent
+                                                }}
+                                            </span>
+                                        </ng-template>
+                                    </ng-template>
+                                </ng-template>
+                            </data-column>
+                            <data-column
+                                [sortable]="true"
+                                key="documentModel.document.sys_title"
+                                title="DOCUMENT_LIST.COLUMNS.TITLE"
+                            >
+                                <ng-template
+                                    let-context
+                                    let-status="$implicit.row.obj.fileModel.status"
+                                >
+                                    <div
+                                        class="hxp-workspace-upload-list__container__table__title-column"
+                                    >
+                                        <span
+                                            class="hxp-workspace-upload-list__container__table__title-column__title"
+                                            [ngClass]="{
+                                                'hxp-workspace-upload-list__container__table__error':
+                                                    status === FileUploadStatus.Error
+                                            }"
+                                            >{{
+                                                context.row.obj.documentModel
+                                                    .document.sys_title
+                                            }}</span
+                                        >
+                                        <mat-progress-bar
+                                            data-automation-id="upload-progress-bar"
+                                            [ngClass]="{
+                                                'hxp-workspace-upload-list__container__table__title-column__progress-bar--hidden':
+                                                    status === FileUploadStatus.Complete
+                                            }"
+                                            [color]="status === FileUploadStatus.Error ? 'warn' : 'primary'"
+                                            [mode]="
+                                                status === FileUploadStatus.Pending
+                                                    ? 'indeterminate'
+                                                    : 'determinate'
+                                            "
+                                            [value]="
+                                                (context.row.obj.fileModel
+                                                    .progress.loaded /
+                                                    context.row.obj.fileModel
+                                                        .progress.total) *
+                                                100
+                                            "
+                                        />
+                                    </div>
+                                </ng-template>
+                            </data-column>
+                            <data-column
+                                key="documentModel.document.sys_parentPath"
+                                title="FILE_UPLOAD.EDIT.PROPERTIES.LOCATION"
+                            >
+                                <ng-template let-context>
+                                    <span
+                                        [ngClass]="{
+                                            'hxp-workspace-upload-list__container__table__error':
+                                                context.row.obj.fileModel
+                                                    .status ===
+                                                FileUploadStatus.Error
+                                        }"
+                                    >
+                                        {{
+                                            context.row.obj.documentModel
+                                                .document.sys_parentPath
+                                        }}
+                                    </span>
+                                </ng-template>
+                            </data-column>
+                            <data-column
+                                [sortable]="true"
+                                key="other_properties"
+                                title="FILE_UPLOAD.EDIT.PROPERTIES.LABEL"
+                            >
+                                <ng-template let-context>
+                                    <span
+                                        [ngClass]="{
+                                            'hxp-workspace-upload-list__container__table__error':
+                                                context.row.obj.fileModel
+                                                    .status ===
+                                                FileUploadStatus.Error
+                                        }"
+                                    >
+                                        N/A
+                                    </span>
+                                </ng-template>
+                            </data-column>
+                        </data-columns>
+                    </adf-datatable>
+                </ng-template>
+            </mat-expansion-panel>
+        </mat-accordion>
+        </div>
+    </div>
+</ng-container>

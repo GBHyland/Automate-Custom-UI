@@ -1,0 +1,73 @@
+<mat-accordion>
+    <mat-expansion-panel
+        [expanded]="loading === false"
+        [disabled]="loading === true"
+        (closed)="isPanelExpanded = false"
+        (opened)="isPanelExpanded = true"
+        data-automation-id="hxp-filters-container-expansion-panel"
+    >
+
+        <mat-expansion-panel-header>
+            <mat-panel-title class="hxp-filters-container__title hxp-title-large">
+                {{ 'FILTERS.TITLE' | translate }}
+            </mat-panel-title>
+
+            <mat-panel-description
+                *ngIf="isPanelExpanded"
+                class="hxp-filters-container__description"
+            >
+                <hxp-filters-container-actions
+                    [isDefaultFilter]="isDefaultFilter"
+                    [visibleActions]="visibleActions"
+                    (saveClick)="onFiltersSave()"
+                    (saveAsClick)="saveFilterAs.emit($event)"
+                    (deleteClick)="deleteFilter.emit()"
+                />
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-chip-set>
+            <div
+                *ngFor="let filter of visibleFilters; trackBy: trackByFilterName"
+                [matTooltip]="filter.description ?? ''"
+            >
+                <ng-template
+                    [hxpFilterFactory]="filter"
+                    [type]="filter.type"
+                    (filterChange)="onFilterValueChange($event)"
+                    (filterRemove)="onFilterRemove(filter)"
+                    matTooltip="Info about the action"
+                />
+            </div>
+
+            <mat-chip-row
+                cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+                class="hxp-filters-container__more-button"
+                (click)="isMenuOpen = !isMenuOpen"
+            >
+                {{ 'FILTERS.MORE_FILTERS' | translate }}
+                <mat-icon
+                    matChipTrailingIcon
+                    class="hxp-filters-container__menu-icon"
+                >
+                    add
+                </mat-icon>
+            </mat-chip-row>
+
+            <ng-template
+                cdkConnectedOverlay
+                [cdkConnectedOverlayOrigin]="trigger"
+                [cdkConnectedOverlayOpen]="isMenuOpen"
+                [cdkConnectedOverlayHasBackdrop]="true"
+                [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+                (backdropClick)="isMenuOpen = false"
+                (detach)="isMenuOpen = false"
+            >
+                <hxp-more-filters-menu
+                    (filtersVisibilityUpdate)="isMenuOpen = false"
+                />
+            </ng-template>
+        </mat-chip-set>
+
+    </mat-expansion-panel>
+</mat-accordion>

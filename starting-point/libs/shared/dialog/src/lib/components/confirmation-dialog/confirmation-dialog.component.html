@@ -1,0 +1,46 @@
+<h2 class="studio-confirmation-dialog-title" mat-dialog-title>{{ title | translate }}</h2>
+
+<mat-dialog-content class="studio-confirmation-dialog-content">
+    <p *ngIf="subtitle">{{ subtitle | translate }}</p>
+
+    <span *ngIf="message">
+        {{ message | translate }}
+    </span>
+
+    <span *ngIf="htmlContent" [innerHTML]="htmlContent" data-automation-id="confirm-dialog-html-content"></span>
+
+    <ul *ngIf="messages.length && !isValidationErrors">
+        <li *ngFor="let message of messages">{{ message | translate }}</li>
+    </ul>
+
+    <ul *ngIf="isValidationErrors" [attr.data-automation-id]="'confirm-dialog-message-list'">
+        <li *ngFor="let message of messageGroups; index as index" [attr.data-automation-id]="'confirm-dialog-message-list-item-' + index">
+            {{ message.key ? (message.key | translate : message.params) : message.description }}
+        </li>
+    </ul>
+</mat-dialog-content>
+
+<mat-dialog-actions class="studio-confirmation-dialog-actions" align="end">
+    <span class="adf-fill-remaining-space"></span>
+
+    <button
+        class="hxp-text-button"
+        mat-button
+        mat-dialog-close
+        [color]="cancelButton.theme"
+        [attr.data-automation-id]="'dialog-close'"
+        (click)="choose(false)"
+    >
+        {{ cancelButton.label | translate }}
+    </button>
+
+    <button
+        [ngClass]="isWarning(data?.actionType) ? 'hxp-primary-warn-button' : 'hxp-primary-button'"
+        mat-button
+        [attr.data-automation-id]="'dialog-confirm'"
+        [color]="confirmButton.theme"
+        (click)="choose(true)"
+    >
+        {{ printLabel() }}
+    </button>
+</mat-dialog-actions>

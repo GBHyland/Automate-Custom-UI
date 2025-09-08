@@ -1,0 +1,38 @@
+<ng-container *hylandIdpLet="{ pages: (pages$ | async) || [], selectedPages: selectedPages$ | async, placeholder: dragPlaceholderMetadata$ | async } as datasource">
+    <mat-card class="idp-page-list-container">
+        <mat-card-content class="idp-page-list-content">
+            <mat-list class="idp-page-list" tabindex="0"
+                data-automation-id="idp-page-list"
+                (keydown)="onContainerKeyDown(datasource.pages, $event)">
+                <ng-container *ngFor="let item of datasource.pages; trackBy: pageUniquenessFn; index as pageIndex">
+                    <div *ngIf="datasource.placeholder && shouldInsertTopPlaceholder(datasource.placeholder, pageIndex)"
+                        class="idp-drag-page-placeholder"></div>
+                    <hyland-idp-list-item class="idp-list-item idp-list-item-page"
+                        [ngClass]="{
+                            'idp-page-drop-disabled': datasource.placeholder && datasource.placeholder.isDocumentDragging,
+                            'idp-page-highlight-disabled': datasource.placeholder && datasource.placeholder.isPageDragging
+                        }"
+                        (mouseenter)="onMouseEnter(item)"
+                        [attr.data-automation-id]="'idp-list-item-page__' + pageIndex"
+                        cdkDrag [cdkDragData]="{ pages: draggingPages }"
+                        (cdkDragStarted)="onDragStarted()" (cdkDragReleased)="onDragStopped()"
+                        [isSelected]="item.isSelected || false" [id]="item.id" [index]="pageIndex"
+                        (mousedown)="onItemMouseDown(item, $event)" (mouseup)="onItemMouseUp(item, $event)"
+                        (keydown)="onItemKeyDown(item, $event)"
+                        (dblclick)="onDoubleClick()">
+                        <div class="idp-list-item-content" [ngClass]="{ 'idp-item-selected': item.isSelected, 'invalid': item.hasIssue }">
+                            <div *cdkDragPreview matBadge="{{ draggingPages.length }}"
+                                class="idp-cdk-drag-preview-ext" [ngStyle]="{ 'width': 'auto'}">
+                                <mat-icon class="material-icons-outlined">{{ draggingPages.length > 1 ? 'description' : 'article' }}</mat-icon>
+                            </div>
+                            <mat-icon [ngClass]="{'idp-issue': isIssue || item.hasIssue}" class="material-icons-outlined">article</mat-icon>
+                            <span class="idp-display-name" data-automation-id="idp-page-name">{{ pageIndex + 1 }}</span>
+                        </div>
+                    </hyland-idp-list-item>
+                    <div *ngIf="datasource.placeholder && shouldInsertBottomPlaceholder(datasource.placeholder, pageIndex)"
+                        class="idp-drag-page-placeholder"></div>
+                </ng-container>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

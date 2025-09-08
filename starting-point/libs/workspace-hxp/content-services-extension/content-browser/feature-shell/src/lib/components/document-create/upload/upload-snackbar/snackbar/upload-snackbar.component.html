@@ -1,0 +1,173 @@
+<div
+    *ngIf="canShowDialog()"
+    role="dialog"
+    [attr.aria-label]="'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.DIALOG' | translate"
+    tabindex="0"
+    class="hxp-upload-snackbar"
+    id="upload-dialog"
+    [class.hxp-upload-snackbar--minimized]="isDialogMinimized"
+>
+    <mat-progress-bar
+        *ngIf="isDialogMinimized"
+        class="hxp-upload-snackbar__progress-bar"
+        [color]="totalErrors > 0 ? 'warn' : 'primary'"
+        mode="determinate"
+        [value]="(totalCompleted / uploadDataList.length) * 100"
+    />
+
+    <header class="hxp-upload-snackbar__header">
+        <span tabindex="0" class="hxp-upload-snackbar__title">
+            {{ 'FILE_UPLOAD.SNACKBAR.TITLE' | translate }}
+        </span>
+
+        <button
+            id="hxp-upload-snackbar-cancel-all"
+            *ngIf="isDialogMinimized && canShowCancelAll()"
+            [attr.aria-label]="'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.CONFIRMATION.CANCEL_ALL' | translate"
+            mat-button
+            color="primary"
+            (click)="cancelAllUploads()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.BUTTON.CANCEL_ALL' | translate }}
+        </button>
+
+        <button
+            id="hxp-upload-snackbar-close"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.DIALOG_CLOSE' | translate
+            "
+            *ngIf="canCloseDialog() && isDialogMinimized"
+            mat-button
+            color="primary"
+            (click)="close()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.BUTTON.CLOSE' | translate }}
+        </button>
+
+        <button
+            mat-icon-button
+            id="hxp-upload-snackbar-minimize"
+            [attr.aria-label]="
+                (isDialogMinimized
+                    ? 'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.DIALOG_MAXIMIZE'
+                    : 'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.DIALOG_MINIMIZE'
+                ) | translate
+            "
+            [disabled]="isConfirmation"
+            [attr.aria-expanded]="!isDialogMinimized"
+            (click)="toggleMinimized()"
+        >
+            <mat-icon
+                aria-hidden="true"
+                title="{{
+                    (isDialogMinimized
+                        ? 'FILE_UPLOAD.SNACKBAR.BUTTON.MAXIMIZE'
+                        : 'FILE_UPLOAD.SNACKBAR.BUTTON.MINIMIZE'
+                    ) | translate
+                }}"
+            >
+                {{
+                    isDialogMinimized
+                        ? 'keyboard_arrow_up'
+                        : 'keyboard_arrow_down'
+                }}
+            </mat-icon>
+        </button>
+    </header>
+
+    <section
+        class="hxp-upload-snackbar__content"
+        [class.hxp-upload-snackbar--padding]="isConfirmation"
+    >
+        <hxp-upload-snackbar-list
+            [class.hxp-upload-snackbar--hide]="isConfirmation"
+            #uploadList
+            [uploadList]="uploadDataList"
+        >
+            <ng-template let-file="$implicit" let-i="index">
+                <hxp-upload-snackbar-list-row
+                    [upload]="file"
+                    [attr.id]="'upload-row-' + i"
+                />
+            </ng-template>
+        </hxp-upload-snackbar-list>
+
+        <div
+            aria-live="polite"
+            aria-labelledby="confirmationTitle"
+            aria-describedby="confirmationDescription"
+            class="hxp-upload-snackbar__confirmation"
+            [class.hxp-upload-snackbar--hide]="!isConfirmation"
+        >
+            <p
+                role="heading"
+                id="confirmationTitle"
+                class="hxp-upload-snackbar__confirmation--title"
+            >
+                {{ 'FILE_UPLOAD.SNACKBAR.CONFIRMATION.MESSAGE.TITLE' | translate }}
+            </p>
+            <p
+                id="confirmationDescription"
+                class="hxp-upload-snackbar__confirmation--text"
+            >
+                {{ 'FILE_UPLOAD.SNACKBAR.CONFIRMATION.MESSAGE.TEXT' | translate }}
+            </p>
+        </div>
+    </section>
+
+    <footer class="hxp-upload-snackbar__actions" *ngIf="!isConfirmation">
+        <button
+            id="hxp-upload-snackbar-cancel-all"
+            [attr.aria-label]="'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.CANCEL_ALL' | translate"
+            color="primary"
+            mat-button
+            *ngIf="canShowCancelAll()"
+            (click)="toggleConfirmation()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.BUTTON.CANCEL_ALL' | translate }}
+        </button>
+
+        <button
+            id="hxp-upload-snackbar-close"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.DIALOG_CLOSE' | translate
+            "
+            *ngIf="canCloseDialog() && !isDialogMinimized"
+            mat-button
+            color="primary"
+            (click)="close()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.BUTTON.CLOSE' | translate }}
+        </button>
+    </footer>
+
+    <footer
+        class="hxp-upload-snackbar__actions"
+        *ngIf="isConfirmation"
+        cdkTrapFocus
+        cdkTrapFocusAutoCapture
+    >
+        <button
+            id="hxp-upload-snackbar-confirm-cancel"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.CONFIRMATION.CANCEL' | translate
+            "
+            mat-button
+            (click)="cancelAllUploads()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.CONFIRMATION.BUTTON.CANCEL' | translate }}
+        </button>
+
+        <button
+            id="hxp-upload-snackbar-close-confirmation"
+            [attr.aria-label]="
+                'FILE_UPLOAD.SNACKBAR.ARIA-LABEL.CONFIRMATION.CONTINUE' | translate
+            "
+            mat-button
+            color="primary"
+            (click)="toggleConfirmation()"
+        >
+            {{ 'FILE_UPLOAD.SNACKBAR.CONFIRMATION.BUTTON.CONTINUE' | translate }}
+        </button>
+    </footer>
+</div>

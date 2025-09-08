@@ -1,0 +1,7 @@
+{
+    "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../../../dist/libs/workspace-hxp/public-access-extension/public-forms",
+    "lib": {
+        "entryFile": "src/index.ts"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "extends": "../../../../tsconfig.adf.json",
+    "compilerOptions": {
+        "outDir": "../../../../dist/out-tsc"
+    },
+    "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

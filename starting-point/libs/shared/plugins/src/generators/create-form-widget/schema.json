@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "CreateFormWidget",
+    "title": "",
+    "type": "object",
+    "properties": {
+      "pluginName": {
+        "type": "string",
+        "description": "Plugin in which the page is going to be created.",
+        "$default": {
+          "$source": "argv",
+          "index": 0
+        },
+        "x-prompt": "Select the plugin in which the new form widget will be created (plugin names start with the 'plugins' prefix)",
+        "x-dropdown": "projects"
+      },
+      "formWidgetName": {
+        "type": "string",
+        "description": "The name of the new form widget.",
+        "$default": {
+          "$source": "argv",
+          "index": 1
+        },
+        "x-prompt": "Provide the name for the new form widget (use the same one as in Studio Modeler app)"
+      }
+    },
+    "required": [
+      "pluginName",
+      "formWidgetName"
+    ]
+  }

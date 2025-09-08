@@ -1,0 +1,17 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-dialog-fixed-size-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    #{ms.$mat-dialog-content}.hxp-fixed-dialog-content-height {
+        height: 100%;
+        color: satori.$hy-colors-origin-black;
+    }
+
+    #{ms.$mat-dialog-actions} {
+        padding: var(--mat-dialog-actions-padding, 16px 24px);
+    }
+}

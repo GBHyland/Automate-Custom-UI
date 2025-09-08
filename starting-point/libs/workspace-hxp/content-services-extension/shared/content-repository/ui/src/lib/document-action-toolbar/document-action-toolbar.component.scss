@@ -1,0 +1,9 @@
+@use 'mat-selectors' as ms;
+
+.hxp-document-toolbar {
+    .adf-toolbar {
+        #{ms.$mat-toolbar} {
+            background: var(--theme-card-background-color);
+        }
+    }
+}

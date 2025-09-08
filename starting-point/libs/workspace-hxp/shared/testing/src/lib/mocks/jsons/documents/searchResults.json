@@ -1,0 +1,811 @@
+{
+    "count": 19,
+    "documents": [
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "9d4a5b29-8b63-4695-a0aa-ed88859cec64",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "Folder 222",
+            "sys_parentId": "616d2b00-ff49-465d-9fa7-a23a8f639901",
+            "sys_path": "/My Folder/Folder 222",
+            "sys_pathDepth": 3,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "Folder 222",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:16:57.826+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "Lorem ipsum dolor sit",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:16:57.826+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "e39e81e5-63e4-4398-af21-4d9ad0b749ce",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "Nested folder 1",
+            "sys_parentId": "e468b7d3-d74c-418b-a592-e9ad28ca3028",
+            "sys_path": "/My Folder 1/Nested folder 1",
+            "sys_pathDepth": 3,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "Nested folder 1",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:15:43.342+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:15:43.342+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "0e896673-d587-428f-aa5d-3c5f8642ea13",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": false,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_mixinTypes": [
+                "SysFilish",
+                "SysVersionable"
+            ],
+            "sys_name": "File 1",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/File 1",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFile",
+            "sys_repository": "default",
+            "sys_title": "File 1",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:22:20.033+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "Lorem ipsum dolor sit",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:22:20.033+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "616d2b00-ff49-465d-9fa7-a23a8f639901",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:39:25.875+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:39:25.875+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "52ab3d2a-25d7-4f2c-964b-5ff25f066fff",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "asd",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/asd",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "asd",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:55:42.388+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:55:42.388+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "374594d7-9eeb-4502-aca0-0ac2000dae16",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "111",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/111",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "111",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:55:59.003+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:55:59.003+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "e238cb8a-23e0-4e99-bed1-671e7345fcf3",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "333",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/333",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "333",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:56:05.802+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:56:05.802+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "3b74e3d2-f2b8-4789-9ece-4b041b152180",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "222",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/222",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "222",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:56:02.249+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:56:02.249+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "c9c9eef3-5783-43c8-8fcf-e284abbabe7e",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "qwe",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/qwe",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "qwe",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:55:52.226+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:55:52.226+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "0dafbede-3b5b-48a0-a442-039b90467738",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "zxc",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/zxc",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "zxc",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:55:47.783+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:55:47.783+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "e468b7d3-d74c-418b-a592-e9ad28ca3028",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder 1",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder 1",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder 1",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:42:52.414+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:42:52.414+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "fc093505-7cc1-4f0b-ac40-aeaf4f38b990",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder 2",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder 2",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder 2",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:43:01.599+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:43:01.599+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "507c56e4-74a0-4a24-8044-e97437ff9186",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder 3",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder 3",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder 3",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:43:05.780+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:43:05.780+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "734d812e-06ed-46ee-8028-eccdc7082494",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder 4",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder 4",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder 4",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:43:10.371+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:43:10.371+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "8a66dc4e-3355-4f30-afbf-8b37e4fe4c66",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "My Folder 5",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/My Folder 5",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "My Folder 5",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-01T11:43:14.070+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "My desc",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-01T11:43:14.070+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "69d45c49-2aaf-4aa4-b9a8-dcd34751ac33",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "444",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/444",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "444",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:56:09.663+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:56:09.663+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "7db64396-2fe9-46e8-adcf-9f57f85edee5",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "555",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/555",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "555",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:56:13.465+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:56:13.465+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "4bcf8664-1f41-475b-9578-203d351f6215",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "666",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/666",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "666",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:56:18.923+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:56:18.923+00:00"
+        },
+        {
+            "sys_changeToken": "0-0",
+            "sys_hasLegalHold": false,
+            "sys_id": "b1a7c506-0c93-4ad3-aeb7-b5496d6c2687",
+            "sysver_isCheckedIn": false,
+            "sys_isFolderish": true,
+            "sys_isLatestVersion": false,
+            "sys_isRecord": false,
+            "sys_isTrashed": false,
+            "sysver_isVersion": false,
+            "sys_name": "777",
+            "sys_parentId": "00000000-0000-0000-0000-000000000000",
+            "sys_path": "/777",
+            "sys_pathDepth": 2,
+            "sys_primaryType": "SysFolder",
+            "sys_repository": "default",
+            "sys_title": "777",
+            "sys_version": 0,
+            "sys_contributors": [
+                {
+                    "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                    "firstName": "test1",
+                    "lastName": "user1",
+                    "username": "test1user1"
+                }
+            ],
+            "sys_created": "2023-03-24T11:57:25.823+00:00",
+            "sys_creator": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_description": "",
+            "sys_lastContributor": {
+                "id": "e3b03a9e-f5e3-40a1-b3e4-bce0cda9a593",
+                "firstName": "test1",
+                "lastName": "user1",
+                "username": "test1user1"
+            },
+            "sys_modified": "2023-03-24T11:57:25.823+00:00"
+        }
+    ],
+    "limit": 25,
+    "offset": 0,
+    "query": "SELECT * FROM SysContent",
+    "totalCount": 19
+}

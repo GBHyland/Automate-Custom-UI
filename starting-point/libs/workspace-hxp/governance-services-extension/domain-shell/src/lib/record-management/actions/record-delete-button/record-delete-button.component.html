@@ -1,0 +1,10 @@
+@if (isAvailable) {
+<button
+    mat-icon-button
+    [attr.aria-label]="'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.DELETE' | translate"
+    [matTooltip]="'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.DELETE' | translate"
+    (click)="onDelete()"
+>
+    <mat-icon>delete</mat-icon>
+</button>
+}

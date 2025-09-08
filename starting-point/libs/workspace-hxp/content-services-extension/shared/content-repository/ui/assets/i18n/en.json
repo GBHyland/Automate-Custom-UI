@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Info",
+                    "ARIA-LABEL": "File information"
+                }
+            },
+            "SELECTED": "Selected",
+            "CLEAR_ALL": "Clear All"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Main Properties"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Other Properties"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Properties updated successfully!",
+                "ERROR": "Something went wrong, failed to update property!",
+                "INFO": "Field value can not be blank!"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Close"
+            }
+        }
+    }
+}

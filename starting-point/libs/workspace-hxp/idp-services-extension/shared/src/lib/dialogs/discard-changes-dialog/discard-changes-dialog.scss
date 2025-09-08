@@ -1,0 +1,39 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.idp-discard-changes-dialog {
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        h1 {
+            flex: 1;
+            padding-left: 0;
+        }
+    }
+
+    &__close-button {
+        background: var(--theme-card-background-color);
+        border: 0;
+    }
+
+    &__discard-button {
+        padding: 10px 20px;
+        border: 0;
+        border-radius: satori.$hy-border-radius-4;
+        margin-left: 12px;
+        display: flex;
+
+        &-label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__close-button-wrapper {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+    }
+}

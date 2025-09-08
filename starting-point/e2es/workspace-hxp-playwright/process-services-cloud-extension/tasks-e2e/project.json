@@ -1,0 +1,31 @@
+{
+    "name": "workspace-hxp-playwright-process-services-cloud-extension-tasks-e2e",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "e2es/workspace-hxp-playwright/process-services-cloud-extension/tasks-e2e/src",
+    "prefix": "hxp",
+    "targets": {
+        "pree2e": {
+            "executor": "@alfresco-dbp/monorepo/builders:app-config-envsub",
+            "options": {
+                "application": "workspace-hxp",
+                "projectName": "sys-workspace",
+                "externalScript": "/custom-script/fetch-dynamic-app-details.js"
+            }
+        },
+        "e2e": {},
+        "e2e-ff": {},
+        "e2e-ff-dryrun": {},
+        "lint": {},
+        "codeowner": {}
+    },
+    "tags": [
+        "scope:workspace-hxp-playwright-process-services-cloud-extension-tasks-e2e",
+        "type:e2e",
+        "category:workspace-hxp",
+        "automate"
+    ],
+    "implicitDependencies": [
+        "workspace-hxp-process-services-cloud-extension-process-form-feature-shell"
+    ]
+}

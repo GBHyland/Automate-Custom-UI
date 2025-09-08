@@ -1,0 +1,36 @@
+@use 'mat-selectors' as ms;
+@use '@angular/material' as mat;
+
+@mixin typography($typography-config) {
+    $display-margin-bottom: 16px;
+
+    #{ms.$mat-headline-1},
+    #{ms.$mat-typography} #{ms.$mat-display-4} {
+        margin-bottom: $display-margin-bottom;
+    }
+
+    #{ms.$mat-headline-2},
+    #{ms.$mat-typography} #{ms.$mat-display-3} {
+        margin-bottom: $display-margin-bottom;
+    }
+
+    #{ms.$mat-headline-3},
+    #{ms.$mat-typography} #{ms.$mat-display-2} {
+        margin-bottom: $display-margin-bottom;
+    }
+
+    #{ms.$mat-headline-4},
+    #{ms.$mat-typography} #{ms.$mat-display-1} {
+        margin-bottom: $display-margin-bottom;
+    }
+
+    a:not(#{ms.$mat-mdc-button-base}):not(#{ms.$mat-list-item}):not(#{ms.$mat-mdc-menu-item}) {
+        text-decoration: none;
+
+        @include mat.m2-typography-level($typography-config, button);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

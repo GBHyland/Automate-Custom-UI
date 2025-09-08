@@ -1,0 +1,22 @@
+{
+    "extends": "../../../../../tsconfig.base.json",
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ],
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": ["ES2022", "DOM"]
+    },
+    "angularCompilerOptions": {
+        "skipTemplateCodegen": true,
+        "strictMetadataEmit": true,
+        "enableResourceInlining": true
+    }
+}

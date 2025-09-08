@@ -1,0 +1,16 @@
+<ng-container *ngIf="mainAction$ | async as action">
+    <div class="app-main-action">
+        <button
+            mat-flat-button
+            color="primary"
+            [id]="action.id"
+            (click)="runAction(action.actions.click)"
+            [disabled]="action.disabled"
+            class="app-main-action-button"
+            data-automation-id="app-main-action-button"
+        >
+            {{ action.title | translate }}
+        </button>
+    </div>
+</ng-container>
+

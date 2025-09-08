@@ -1,0 +1,79 @@
+@use '@angular/material' as mat;
+@use 'hxp-typography' as hxpTypography;
+@import './colors';
+@import './custom-material-colors';
+
+@function configure-dark-theme($primary-palette, $neutral-palette, $warn-palette) {
+    $dark-primary: mat.m2-define-palette($primary-palette);
+    $dark-accent: mat.m2-define-palette($neutral-palette);
+    $dark-warn: mat.m2-define-palette($warn-palette);
+
+    $dark-theme: mat.m2-define-dark-theme(
+        (
+            color: (
+                primary: $dark-primary,
+                accent: $dark-accent,
+                warn: $dark-warn,
+            ),
+            typography: hxpTypography.$typography,
+        )
+    );
+
+    @return $dark-theme;
+}
+
+@function configure-light-theme($primary-palette, $neutral-palette, $warn-palette) {
+    $primary: mat.m2-define-palette($primary-palette, 700);
+    $accent: mat.m2-define-palette($neutral-palette, 600);
+    $warn: mat.m2-define-palette($warn-palette, 600);
+
+    $theme: mat.m2-define-light-theme(
+        (
+            color: (
+                primary: $primary,
+                accent: $accent,
+                warn: $warn,
+            ),
+            typography: hxpTypography.$typography,
+        )
+    );
+
+    $hy-primary-contrast: mat.m2-get-color-from-palette($primary, 'contrast');
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $color: map-get($theme, color);
+
+    $foreground-values: (
+        base: mat.m2-get-color-from-palette($primary-palette, 600),
+        disabled: mat.m2-get-color-from-palette($neutral-palette, 500),
+        disabled-button: mat.m2-get-color-from-palette($neutral-palette, 500),
+        disabled-text: mat.m2-get-color-from-palette($neutral-palette, 500),
+        secondary-text: mat.m2-get-color-from-palette($neutral-palette, 600),
+        icon: mat.m2-get-color-from-palette($neutral-palette, 900),
+        icons: mat.m2-get-color-from-palette($neutral-palette, 900),
+        text: mat.m2-get-color-from-palette($hy-primary-contrast, 500),
+        hint-text: mat.m2-get-color-from-palette($neutral-palette, 500),
+        border: mat.m2-get-color-from-palette($neutral-palette, 200),
+        hover: mat.m2-get-color-from-palette($neutral-palette, 300),
+    );
+
+    $background-values: (
+        base: map-get($neutral-palette, 200),
+        active: map-get($primary-palette, 500),
+        hover: map-get($neutral-palette, 100),
+    );
+
+    $custom-foreground-and-background: (
+        foreground: map-merge($foreground, $foreground-values),
+        background: map-merge($background, $background-values),
+    );
+
+    $custom-color: (
+        color: map-merge($color, $custom-foreground-and-background),
+    );
+
+    $theme: map-merge($theme, $custom-foreground-and-background);
+    $theme: map-merge($theme, $custom-color);
+
+    @return $theme;
+}

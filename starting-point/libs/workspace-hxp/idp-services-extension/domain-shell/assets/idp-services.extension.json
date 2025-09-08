@@ -1,0 +1,13 @@
+{
+    "$version": "1.0.0",
+    "$id": "idp-services.extension",
+    "$name": "hxp idp services extension",
+    "$description": "hxp idp services extension",
+    "$vendor": "Hyland",
+    "$license": "Apache-2.0",
+    "actions": [],
+    "rules": [],
+    "features": {
+    },
+    "routes": []
+}

@@ -1,0 +1,46 @@
+<app-page-layout>
+    <app-page-layout-header>
+        <adf-toolbar>
+            <adf-toolbar-title>
+                <div class="adf-breadcrumb-item adf-active" title="{{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}">
+                    <div aria-current="location" class="adf-breadcrumb-item-current">
+                        <div class="adf-breadcrumb-item adf-active" role="listitem">
+                            <div class="adf-breadcrumb-item-current">{{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}</div>
+                            <mat-icon class="adf-breadcrumb-item-chevron">chevron_right</mat-icon>
+                            <div class="adf-breadcrumb-item-current">{{ 'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROCESSES' | translate }}</div>
+                            <ng-container *ngIf="(currentFilter$ | async ) as currentFilter">
+                                <mat-icon class="adf-breadcrumb-item-chevron">chevron_right</mat-icon>
+                                <div class="adf-breadcrumb-item-current">{{ currentFilter?.name | translate }}</div>
+                            </ng-container>
+                            <ng-container>
+                                <mat-icon class="adf-breadcrumb-item-chevron">chevron_right</mat-icon>
+                                <div class="adf-breadcrumb-item-current adf-process-name" title="{{ processInstance?.name }}">{{ processInstance?.name }}</div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </adf-toolbar-title>
+            <div class="adf-toolbar--spacer"></div>
+            <adf-toolbar-divider />
+            <button mat-icon-button class="apa-cancel-process-button" *ngIf="processInstance"
+                [attr.data-automation-id]="'apa-cancel-process-button'"
+                [disabled]="!canCancelProcess()"
+                matTooltip="{{'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.ACTIONS.CANCEL_TOOLTIP' | translate}}"
+                (click)="onCancelProcess()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </adf-toolbar>
+    </app-page-layout-header>
+    <app-page-layout-content>
+        <div class="app-main-content apa-process-details-cloud-main-content" *ngIf="processInstance">
+            <div class="apa-content-area">
+                <div class="apa-content-border">
+                    <div class="apa-details-area">
+                        <apa-process-task-list-ext [processInstance]="processInstance" />
+                    </div>
+                    <adf-cloud-process-header [appName]="appName" [processInstanceId]="processInstanceId" />
+                </div>
+            </div>
+        </div>
+    </app-page-layout-content>
+</app-page-layout>

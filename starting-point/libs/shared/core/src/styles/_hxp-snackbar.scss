@@ -1,0 +1,9 @@
+@use 'satori-like-styles' as satori;
+
+.studio-hxp {
+    .adf-warning-snackbar {
+        .adf-snackbar-message-content {
+            color: satori.$hy-colors-text-default;
+        }
+    }
+}

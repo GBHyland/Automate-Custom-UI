@@ -1,0 +1,45 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-search-filter-input {
+    width: 100%;
+
+    &-prefix,
+    &-suffix {
+        display: flex;
+        align-items: center;
+    }
+
+    &-divider {
+        background: satori.$hy-colors-neutral-300;
+        height: 54px;
+    }
+
+    &-clear {
+        display: flex;
+        text-align: center;
+        &-icon {
+            color: satori.$hy-colors-neutral-900;
+        }
+    }
+
+    &-search {
+        min-width: 48px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-icon {
+            --mdc-icon-button-icon-size: 16px;
+
+            width: 16px;
+            color: satori.$hy-colors-neutral-900;
+        }
+    }
+}

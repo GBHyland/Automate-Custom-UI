@@ -1,0 +1,68 @@
+<mat-card class="idp-document-list-container" style="overflow-y: hidden;">
+  <mat-card-content class="idp-document-list-content">
+    <mat-list
+      class="idp-document-list"
+      data-automation-id="idp-document-list"
+      [id]="dropListId"
+      tabindex="0"
+      (keydown)="onContainerKeyDown(documents, $event)">
+
+      <ng-container *ngFor="let item of documents; trackBy: documentUniquenessFn; index as docIndex">
+        <hyland-idp-list-item
+          class="idp-list-item idp-list-item-document"
+          [ngClass]="{'idp-document-hover-disabled': placeholder?.isDocumentDragging}"
+          cdkDrag
+          [cdkDragData]="{ document: item }"
+          (cdkDragStarted)="onDragStarted()"
+          (cdkDragReleased)="onDragStopped()"
+          [attr.data-automation-id]="'idp-list-item-document__' + docIndex"
+          [isSelected]="(item.isSelected || false) && item.allPagesSelected"
+          [id]="item.id"
+          [index]="docIndex"
+          (keydown)="onItemKeyDown(item, $event)"
+          (mouseenter)="onMouseEnter(item)"
+          (mousedown)="onItemMouseDown(item, $event, 'select')"
+          (mouseup)="onItemMouseUp(item, $event)"
+          (dblclick)="onDoubleClick(item)">
+
+          <div class="idp-list-item-content" [ngClass]="{ 'idp-item-selected': item.isSelected, 'invalid': item.hasIssue }">
+            <div *cdkDragPreview matBadge="{{ draggingDocuments.length }}" class="idp-cdk-drag-preview-ext" [ngStyle]="{ 'width': 'auto'}">
+              <mat-icon class="material-icons-outlined">{{ draggingDocuments.length > 1 ? 'file_copy' : 'description' }}</mat-icon>
+            </div>
+
+            <mat-icon [ngClass]="{'idp-issue': item.hasIssue}" class="material-icons-outlined">{{ item.pages.length > 1 ? 'file_copy' : 'description' }}</mat-icon>
+
+            <span #documentDisplayName class="idp-display-name" data-automation-id="idp-document-name"
+              [matTooltip]="item.name"
+              [matTooltipDisabled]="isElementContained(documentDisplayName)">
+              {{ formatDocumentName(item) }}
+            </span>
+
+            <span class="idp-right-align">{{ item.pages.length }} {{ item.pages.length === 1 ? 'page': 'pages'}}</span>
+
+            <ng-container *ngIf="item.pages.length > 0">
+              <button mat-icon-button class="idp-list-item-toggle-button"
+                data-automation-id="idp-list-item-document-toggle-button"
+                (mousedown)="onItemMouseDown(item, $event, 'toggle'); $event.stopImmediatePropagation();">
+                <mat-icon *ngIf="!item.isExpanded">expand_more</mat-icon>
+                <mat-icon *ngIf="item.isExpanded">expand_less</mat-icon>
+              </button>
+            </ng-container>
+          </div>
+        </hyland-idp-list-item>
+
+        <hyland-idp-page-list
+          *ngIf="(item.isExpanded || item.isPreviewed) && !item.isDragging"
+          class="idp-list-item"
+          [documentId]="item.id"
+          [isIssue]="item.hasIssue || false"
+          data-automation-id="idp-page-list__component"
+          (collapseContainer)="onPageCollapseRequest(item)" />
+      </ng-container>
+    </mat-list>
+
+    <ng-container *ngIf="showFloatingToolbar && documents.length > 0 && selectedDocumentsCount > 0">
+      <hyland-idp-floating-toolbar hylandIdpStickyBottom />
+    </ng-container>
+  </mat-card-content>
+</mat-card>

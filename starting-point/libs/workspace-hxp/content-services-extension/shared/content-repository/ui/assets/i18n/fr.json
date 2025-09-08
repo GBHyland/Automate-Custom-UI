@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Informations",
+                    "ARIA-LABEL": "Informations relatives au fichier"
+                }
+            },
+            "SELECTED": "Sélectionné",
+            "CLEAR_ALL": "Effacer tout"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Propriétés principales"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Autres propriétés"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Les propriétés ont bien été mises à jour !",
+                "ERROR": "Une erreur s'est produite, échec de la mise à jour de la propriété !",
+                "INFO": "La valeur du champ ne peut pas être vide !"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Fermer"
+            }
+        }
+    }
+}

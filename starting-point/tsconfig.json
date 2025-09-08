@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
+    "extends": "./tsconfig.base.json",
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs",
+            "target": "es6"
+        }
+    }
+}

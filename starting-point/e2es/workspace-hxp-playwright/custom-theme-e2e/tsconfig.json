@@ -1,0 +1,12 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+      "sourceMap": false,
+      "inlineSources": false,
+      "allowJs": true,
+      "types": ["@playwright/test", "node"],
+      "baseUrl": "../../../"
+    },
+    "files": [],
+    "include": ["**/*.ts", "**/*.js"]
+  }

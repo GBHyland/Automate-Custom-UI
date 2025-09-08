@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ 'PROCESS_CLOUD_EXTENSION.TASK_DETAILS.ASSIGNEE.TITLE' | translate }}</h2>
+<identity-people
+    [title]="'ADF_CLOUD_TASK_LIST.START_TASK.FORM.LABEL.ASSIGNEE'"
+    [preSelectUsers]="preselectedAssignee"
+    [searchUserCtrl]="searchUserControl"
+    (selectUser)="onSelect($event)"
+    (removeUser)="onRemove()"/>
+<mat-dialog-actions align="end">
+  <button mat-button id="closeButton" matDialogClose>{{ 'PROCESS_CLOUD_EXTENSION.TASK_DETAILS.ASSIGNEE.CLOSE' | translate }}</button>
+  <button mat-button
+          id="assignButton"
+          color="primary"
+          [disabled]="isAssignButtonDisabled()"
+          [mat-dialog-close]="selectedAssignee">
+    {{ 'PROCESS_CLOUD_EXTENSION.TASK_DETAILS.ASSIGNEE.ASSIGN' | translate }}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Ingen tilgjengelige prosessdefinisjoner",
+      "UNCATEGORIZED": "Ukategorisert",
+      "RECENT_PROCESS_DEFINITIONS": "Brukt nylig"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Utvidelser: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Aktiver Process Automation-utvidelser"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Prosessadministrasjon",
+      "START_PROCESS_CLOUD": "Start prosess",
+      "TASK_LIST_CLOUD": "Oppgaveliste",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Vis detaljer",
+        "CLOSE-TOOLTIP": "Lukk",
+        "PRINT": "Skriv ut skjema"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Start prosess",
+      "CREATE_PROCESS_NOT_ALLOWED": "Nye prosesser kan ikke opprettes"
+    },
+    "ERROR": {
+      "NO_FORM": "Prosessdefinisjonen har ikke et definert skjema",
+      "CAN_NOT_ATTACH": "Kan ikke legge ved det valgte innholdet"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Prosess opprettet '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Det oppstod en ukjent nettverksfeil. Funksjoner knyttet til Process Automation er deaktivert."
+    },
+    "SIDE_NAV_TITLE": "Prosessadministrasjon",
+    "TASK_LIST": {
+      "TASKS": "Oppgaver",
+      "ACTIONS": {
+        "TASK_DETAILS": "Vis detaljer",
+        "PROCESS_HISTORY": "Prosesshistorikk"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Endre tilordnet",
+        "CLOSE": "Lukk",
+        "ASSIGN": "Tilordne",
+        "SUCCESS": "Vellykket endring av oppgavetilordnet",
+        "FAILED": "Vi støtte på et problem med tilordning av brukeren. Prøv å tilordne brukeren på nytt."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Detaljer"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Prosesser",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Vis detaljer",
+        "CANCEL_MESSAGE": "Prosessen er avbrutt",
+        "CANCEL_ERROR_MESSAGE": "Kunne ikke avbryte prosess. Prøv på nytt",
+        "CANCEL_TOOLTIP": "Avbryt prosess"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Startet av"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Filteret er lagret",
+      "FILTER_DELETED": "Filteret er slettet"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Oppgaven er fullført",
+      "FORM_SAVED": "Skjemaet er lagret",
+      "FORM_ACTION": "Handling '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Filteret er lagret",
+      "FILTER_DELETED": "Filteret er slettet"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Avbryt prosess",
+        "MESSAGE": "Er du sikker på at du vil avbryte denne prosessen?"
+      },
+      "NEW_PROCESS": "Ny prosess",
+      "CONFIRM": "Bekreft",
+      "CLOSE": "Lukk",
+      "ERROR": "Kan ikke laste prosessdefinisjoner, kontroller om du har tilgang."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}}-oppgaven er tilordnet til {{assignee}}",
+    "TASK_COMPLETED": "Oppgaven {{taskName}} er fullført",
+    "TASK_ACTIVATED": "Oppgaven {{taskName}} er nå aktiv",
+    "TASK_CANCELLED": "Oppgaven {{taskName}} har blitt avlyst",
+    "TASK_SUSPENDED": "Oppgaven {{taskName}} har blitt avbrutt",
+    "TASK_UPDATED": "Oppgavedetaljene {{taskName}} har blitt oppdatert"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Søk"
+    }
+  }
+}

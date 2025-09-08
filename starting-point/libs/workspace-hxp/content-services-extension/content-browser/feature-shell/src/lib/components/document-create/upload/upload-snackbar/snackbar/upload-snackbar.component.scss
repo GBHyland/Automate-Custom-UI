@@ -1,0 +1,89 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-upload-snackbar {
+    background-color: var(--theme-background-color);
+    color: var(--theme-text-color);
+    position: fixed;
+    bottom: 20px;
+    width: 450px;
+    box-shadow: 1px 5px 15px #888;
+    z-index: 999;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    &--padding {
+        padding: 1em;
+    }
+
+    &--hide {
+        display: none !important;
+    }
+
+    &--minimized {
+        width: 280px;
+
+        .hxp-upload-snackbar__content {
+            display: none;
+        }
+
+        .hxp-upload-snackbar__actions {
+            display: none;
+        }
+    }
+
+    &__progress-bar {
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    &__header {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+
+        button:not(#hxp-upload-snackbar-minimize) {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__title {
+        flex: 1 1 auto;
+    }
+
+    &__info {
+        padding: 0 1em 1em;
+    }
+
+    &__content {
+        overflow: auto;
+        max-height: 194px;
+        border-top: 1px solid var(--adf-upload-border-color);
+        border-bottom: 1px solid var(--adf-upload-border-color);
+    }
+
+    &__confirmation {
+        padding: 0 0.5em;
+    }
+
+    &__confirmation--title {
+        color: var(--theme-text-bold-color);
+    }
+
+    &__confirmation--text {
+        margin-bottom: 0;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: var(--mat-dialog-actions-padding, 16px 24px);
+    }
+}
+
+/* just adding a workaround here for now to display the snackbar in the right place */
+[adfUploadDialogLeft='true'] .hxp-upload-snackbar {
+    left: 25px;
+}
+[adfUploadDialogRight='true'] .hxp-upload-snackbar {
+    right: 25px;
+}

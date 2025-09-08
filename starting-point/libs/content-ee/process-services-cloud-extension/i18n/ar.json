@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "لا توجد تعريفات عملية متاحة",
+      "UNCATEGORIZED": "غير مصنف",
+      "RECENT_PROCESS_DEFINITIONS": "مستخدم حديثاً"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "الامتدادات: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "تمكين امتدادات Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "إدارة العملية",
+      "START_PROCESS_CLOUD": "بدء العملية",
+      "TASK_LIST_CLOUD": "قائمة المهام",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "عرض التفاصيل",
+        "CLOSE-TOOLTIP": "إغلاق",
+        "PRINT": "طبع النموذج"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "بدء العملية",
+      "CREATE_PROCESS_NOT_ALLOWED": "لا يمكن إنشاء عملية جديدة"
+    },
+    "ERROR": {
+      "NO_FORM": "تعريف العملية لا يملك نموذجًا مُعرفًا",
+      "CAN_NOT_ATTACH": "يتعذر إرفاق المحتوى المحدد"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "تم إنشاء العملية '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "حدث خطأ شبكة غير معروف. تم تعطيل الميزات المرتبطة بتطبيق Process Automation."
+    },
+    "SIDE_NAV_TITLE": "إدارة العملية",
+    "TASK_LIST": {
+      "TASKS": "المهام",
+      "ACTIONS": {
+        "TASK_DETAILS": "عرض التفاصيل",
+        "PROCESS_HISTORY": "تاريخ العملية"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "تغيير المعين له",
+        "CLOSE": "إغلاق",
+        "ASSIGN": "تعيين",
+        "SUCCESS": "تم تغيير المعين للمهمة بنجاح",
+        "FAILED": "نواجه مشكلة في تعيين المستخدم. حاول تعيين المستخدم مرة أخرى."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "التفاصيل"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "عمليات",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "عرض التفاصيل",
+        "CANCEL_MESSAGE": "تم إلغاء العملية",
+        "CANCEL_ERROR_MESSAGE": "فشل إلغاء العملية. الرجاء إعادة المحاولة",
+        "CANCEL_TOOLTIP": "إلغاء العملية"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "بدأ بواسطة"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "تم حفظ عامل التصفية بنجاح",
+      "FILTER_DELETED": "تم حذف عامل التصفية بنجاح"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "اكتملت المهمة",
+      "FORM_SAVED": "تم حفظ النموذج بنجاح",
+      "FORM_ACTION": "الإجراء '{{نتائج}}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "تم حفظ عامل التصفية بنجاح",
+      "FILTER_DELETED": "تم حذف عامل التصفية بنجاح"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "إلغاء العملية",
+        "MESSAGE": "هل تريد بالتأكيد إلغاء هذه العملية؟"
+      },
+      "NEW_PROCESS": "عملية جديدة",
+      "CONFIRM": "تأكيد",
+      "CLOSE": "إغلاق",
+      "ERROR": "تعذر تحميل تعريفات العملية، تأكد أن لديك حق الوصول."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "تم تعيين المهمة {{taskName}} إلى {{assignee}}",
+    "TASK_COMPLETED": "تم إكمال المهمة {{taskName}}",
+    "TASK_ACTIVATED": "المهمة {{taskName}} نشطة الآن",
+    "TASK_CANCELLED": "تم إلغاء المهمة {{taskName}}",
+    "TASK_SUSPENDED": "تم تعليق المهمة {{taskName}}",
+    "TASK_UPDATED": "تم تحديث تفاصيل مهمة {{taskName}}"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "بحث"
+    }
+  }
+}

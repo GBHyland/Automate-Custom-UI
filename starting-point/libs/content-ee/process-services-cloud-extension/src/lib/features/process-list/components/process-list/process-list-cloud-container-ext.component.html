@@ -1,0 +1,86 @@
+<app-page-layout>
+    <app-page-layout-header
+        class="app-process-cloud-processes-list"
+    >
+        <nav>
+            <div
+                class="adf-breadcrumb-item adf-active"
+                title="{{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}"
+            >
+                <div
+                    aria-current="location"
+                    class="adf-breadcrumb-item-current"
+                >
+                    <div class="adf-breadcrumb-item adf-active" role="listitem">
+                        <div class="adf-breadcrumb-item-current">
+                            {{
+                                'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate
+                            }}
+                        </div>
+                        <mat-icon class="adf-breadcrumb-item-chevron">
+                            chevron_right
+                        </mat-icon>
+                        <div class="adf-breadcrumb-item-current">
+                            {{ 'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROCESSES' | translate }}
+                        </div>
+                        <ng-container *ngIf="processFilter">
+                            <mat-icon
+                                class="adf-breadcrumb-item-chevron"
+                            >
+                                chevron_right
+                            </mat-icon>
+                            <div
+                                class="adf-breadcrumb-item-current"
+                            >
+                                {{ processFilter.name | translate }}
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div
+            class="apa-task-list-cloud-refresh-button-container"
+            *ngIf="showRefreshButton"
+            >
+            <div class="app-refresh-action">
+                <button
+                    mat-button
+                    class="app-refresh-action-button hxp-secondary-button"
+                    data-automation-id="app-refresh-action-button-processes"
+                    (click)="onRefreshButtonClicked()"
+                    >
+                    {{ 'PROCESS_CLOUD_EXTENSION.MENU.REFRESH' | translate }}
+                </button>
+            </div>
+        </div>
+
+        <adf-dynamic-component id="processes-list-header-action" />
+    </app-page-layout-header>
+
+    <app-page-layout-content *ngIf="processFilter">
+        <div class="app-main-content apa-process-list-cloud-container-ext-main-content">
+            <div class="adf-content-area">
+                <div class="adf-content-border">
+                    <hxp-filters-container
+                        [filters]="filters"
+                        [loading]="filtersLoading$ | async"
+                        [isDefaultFilter]="isDefaultFilter"
+                        (filtersChange)="onFiltersChange($event)"
+                        (saveFilter)="onFilterSave()"
+                        (saveFilterAs)="onFilterSaveAs($event)"
+                        (deleteFilter)="onFilterDelete()"
+                    />
+
+                    <div class="apa-process-list-cloud-container">
+                        <apa-process-list-cloud-ext
+                            [currentFilter]="processFilter"
+                            #apaProcessListCloudExt
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </app-page-layout-content>
+</app-page-layout>

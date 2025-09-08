@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Permissões",
+                    "ARIA-LABEL": "Gerir permissões de ficheiros"
+                },
+                "COPY": {
+                    "TITLE": "Copiar",
+                    "ARIA-LABEL": "Copiar ficheiro"
+                },
+                "MOVE": {
+                    "TITLE": "Mover",
+                    "ARIA-LABEL": "Mover ficheiro"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Substituir ficheiro (beta)",
+                    "ARIA-LABEL": "Substituir ficheiro (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Guardar no Histórico de Versões (beta)",
+                    "ARIA-LABEL": "Guardar no Histórico de Versões (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Copiar",
+        "MOVE": "Mover",
+        "REPLACE_FILE": "Substituir ficheiro",
+        "MANAGE_VERSIONS": "Gerir versões"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Gerir versões",
+            "CLOSE": "Fechar",
+            "CREATED_BY": "por"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Copiar item para",
+            "COPY": "Copiar",
+            "CANCEL": "Cancelar",
+            "CLOSE": "Fechar",
+            "FILE_NAME_PREFIX": "Cópia de",
+            "PERMISSIONS": {
+                "ERROR": "Não tem permissões para copiar o documento aqui."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Pesquisar"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Home",
+            "MOVE_ITEM": "Mover item para",
+            "MOVE": "Mover",
+            "CANCEL": "Cancelar",
+            "CLOSE": "Fechar",
+            "PERMISSIONS": {
+                "ERROR": "Não tem permissões para mover o documento para aqui."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Pesquisar"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "O ficheiro foi copiado",
+            "FILE_ERROR": "Cópia do ficheiro falhou",
+            "FOLDER_SUCCESS": "Pasta foi copiada",
+            "FOLDER_ERROR": "Falha na cópia da pasta"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "O ficheiro foi movido",
+            "FILE_ERROR": "Falha ao mover o ficheiro",
+            "FOLDER_SUCCESS": "A pasta foi movida",
+            "FOLDER_ERROR": "Falha ao mover a pasta"
+        }
+    }
+}

@@ -1,0 +1,583 @@
+{
+    "$version": "1.0.0",
+    "$id": "process-services-cloud.plugin",
+    "$name": "adf process services cloud extension",
+    "$description": "adf process services cloud plugin",
+    "$vendor": "Alfresco",
+    "$license": "Apache-2.0",
+    "actions": [
+        {
+            "id": "start-process-cloud.actions.new.execute",
+            "type": "[ProcessServicesCloud] StartProcess",
+            "payload": []
+        },
+        {
+            "id": "start-process-cloud.actions.execute",
+            "type": "[ProcessServicesCloud] StartProcess",
+            "payload": "$(context.selection.nodes)"
+        }
+    ],
+    "settings": [
+        {
+            "id": "extensions.ps-cloud.settings",
+            "name": "PROCESS_CLOUD_EXTENSION.SETTINGS.PSC_AVAILABILITY_HEADER",
+            "parameters": [
+                {
+                    "name": "PROCESS_CLOUD_EXTENSION.SETTINGS.PSC_AVAILABILITY_TITLE",
+                    "key": "processAutomation",
+                    "type": "boolean",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "rules": [
+        {
+            "id": "app.process-cloud.isProcessServiceCloudRunningAndPluginEnabled",
+            "type": "core.every",
+            "parameters": [
+                {
+                    "type": "rule",
+                    "value": "process-services-cloud.isEnabled"
+                },
+                {
+                    "type": "rule",
+                    "value": "process-services-cloud.isRunning"
+                }
+            ]
+        },
+        {
+            "id": "app.process-cloud.canShowStartProcessFromContentEnabled",
+            "type": "core.every",
+            "parameters": [
+                {
+                    "type": "rule",
+                    "value": "process-services-cloud.isEnabled"
+                },
+                {
+                    "type": "rule",
+                    "value": "process-services-cloud.isRunning"
+                },
+                {
+                    "type": "rule",
+                    "value": "process-services-cloud.start-process.canShow"
+                }
+            ]
+        }
+    ],
+    "features": {
+        "processList": {
+            "presets": {
+                "default": [
+                    {
+                        "id": "app.process.name",
+                        "key": "name",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.NAME",
+                        "type": "text",
+                        "sortable": true,
+                        "class": "adf-ellipsis-cell adf-expand-cell-2",
+                        "draggable": true
+                    },
+                    {
+                        "id": "app.process.processDefinitionName",
+                        "key": "processDefinitionName",
+                        "type": "text",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.PROCESS_DEFINITION_NAME",
+                        "class": "adf-ellipsis-cell adf-expand-cell-2",
+                        "sortable": true,
+                        "draggable": true
+                    },
+                    {
+                        "id": "app.process.relatedProcess",
+                        "key": "relatedProcess",
+                        "type": "text",
+                        "title": "PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROPERTIES.RELATED_PROCESS",
+                        "template": "processes-list-related-process",
+                        "class": "adf-ellipsis-cell",
+                        "sortable": true,
+                        "draggable": true
+                    },
+                    {
+                        "id": "app.process.status",
+                        "key": "status",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.STATUS",
+                        "type": "text",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "app.process.startDate",
+                        "key": "startDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.START_DATE",
+                        "sortable": true,
+                        "draggable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "app.process.completedDate",
+                        "key": "completedDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.COMPLETED_DATE",
+                        "sortable": true,
+                        "draggable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "app.process.initiator",
+                        "key": "initiator",
+                        "type": "text",
+                        "title": "PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROPERTIES.STARTED_BY",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "app.process.appVersion",
+                        "key": "appVersion",
+                        "type": "text",
+                        "title": "ADF_CLOUD_PROCESS_LIST.PROPERTIES.APP_VERSION",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    }
+                ],
+                "column-resizing": [
+                    {
+                        "id": "column-resizing",
+                        "enabled": true
+                    }
+                ]
+            }
+        },
+        "taskList": {
+            "presets": {
+                "default": [
+                    {
+                        "id": "apa.task.name",
+                        "key": "name",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.NAME",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-ellipsis-cell adf-expand-cell-2"
+                    },
+                    {
+                        "id": "apa.task.status",
+                        "key": "status",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.STATUS",
+                        "class": "adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.assignee",
+                        "key": "assignee",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.ASSIGNEE",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "apa.task.completedBy",
+                        "key": "completedBy",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.COMPLETED_BY",
+                        "sortable": true,
+                        "draggable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "apa.task.createdDate",
+                        "key": "createdDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.CREATED_DATE",
+                        "sortable": true,
+                        "draggable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "apa.task.lastModified",
+                        "key": "lastModified",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.LAST_MODIFIED",
+                        "sortable": true,
+                        "draggable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "apa.task.dueDate",
+                        "key": "dueDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.DUE_DATE",
+                        "sortable": true,
+                        "draggable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell"
+                    },
+                    {
+                        "id": "apa.task.priority",
+                        "key": "priority",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY",
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "description",
+                        "key": "description",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.DESCRIPTION",
+                        "sortable": false,
+                        "draggable": false,
+                        "isHidden": true
+                    }
+                ],
+                "process-instance-task-list": [
+                    {
+                        "id": "apa.task.name",
+                        "key": "name",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.NAME",
+                        "sortable": true,
+                        "class": "adf-ellipsis-cell adf-expand-cell-2",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.status",
+                        "key": "status",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.STATUS",
+                        "class": "adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.assignee",
+                        "key": "assignee",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.ASSIGNEE",
+                        "sortable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.completedBy",
+                        "key": "completedBy",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.COMPLETED_BY",
+                        "sortable": true,
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.createdDate",
+                        "key": "createdDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.CREATED_DATE",
+                        "sortable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.lastModified",
+                        "key": "lastModified",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.LAST_MODIFIED",
+                        "sortable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.dueDate",
+                        "key": "dueDate",
+                        "type": "date",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.DUE_DATE",
+                        "sortable": true,
+                        "format": "mediumDate",
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    },
+                    {
+                        "id": "apa.task.priority",
+                        "key": "priority",
+                        "type": "text",
+                        "title": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY",
+                        "class": "adf-desktop-only adf-ellipsis-cell",
+                        "draggable": true
+                    }
+                ],
+                "column-resizing": [
+                    {
+                        "id": "column-resizing",
+                        "enabled": true
+                    }
+                ],
+                "process-instance-task-list-column-resizing": [
+                    {
+                        "id": "column-resizing",
+                        "enabled": true
+                    }
+                ]
+            }
+        },
+        "mainAction": {
+            "id": "app.main-action.start.process-cloud",
+            "title": "PROCESS_CLOUD_EXTENSION.MENU.CREATE_NEW_PROCESS",
+            "description": "PROCESS_CLOUD_EXTENSION.MENU.CREATE_NEW_PROCESS",
+            "description-disabled": "PROCESS_CLOUD_EXTENSION.MENU.CREATE_PROCESS_NOT_ALLOWED",
+            "icon": "filter_drama",
+            "type": "button",
+            "actions": {
+                "click": "start-process-cloud.actions.new.execute"
+            },
+            "rules": {
+                "visible": "app.process-cloud.isProcessServiceCloudRunningAndPluginEnabled"
+            }
+        },
+        "contextMenu": [
+            {
+                "id": "alfresco.app.context-menu.start.process",
+                "description": "Override governance extension",
+                "rules": {
+                    "visible": "hide-element"
+                }
+            },
+            {
+                "id": "app.context-menu.process-cloud.start-process-cloud",
+                "order": 410,
+                "icon": "cloud_queue",
+                "title": "ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.TITLE",
+                "actions": {
+                    "click": "start-process-cloud.actions.execute"
+                },
+                "rules": {
+                    "visible": "app.process-cloud.canShowStartProcessFromContentEnabled"
+                }
+            }
+        ],
+        "toolbar": [
+            {
+                "id": "app.main-action.start.process-cloud",
+                "title": "ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.TITLE",
+                "order": 5,
+                "type": "button",
+                "data": {
+                    "buttonType": "flat-button",
+                    "color": "primary"
+                },
+                "actions": {
+                    "click": "start-process-cloud.actions.new.execute"
+                },
+                "rules": {
+                    "visible": "app.process-cloud.isProcessServiceCloudRunningAndPluginEnabled"
+                }
+            },
+            {
+                "id": "app.toolbar.create",
+                "data": {
+                    "_description": "Overriding ACA app.toolbar.create",
+                    "menuType": "stroked-button",
+                    "color": "none"
+                }
+              },
+            {
+                "id": "app.toolbar.more",
+                "children": [
+                    {
+                        "id": "alfresco.app.toolbar.start.process",
+                        "description": "Override governance extension",
+                        "rules": {
+                            "visible": ["hide-element"]
+                        }
+                    },
+                    {
+                        "id": "app.toolbar.start.process-cloud",
+                        "icon": "cloud_queue",
+                        "title": "ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.TITLE",
+                        "rules": {
+                            "visible": "app.process-cloud.canShowStartProcessFromContentEnabled"
+                        },
+                        "actions": {
+                            "click": "start-process-cloud.actions.execute"
+                        }
+                    }
+                ]
+            }
+        ],
+        "viewer": {
+            "toolbarActions": [
+                {
+                    "id": "app.viewer.toolbar.more",
+                    "children": [
+                        {
+                            "id": "app.viewer.start.process-cloud",
+                            "order": 50,
+                            "icon": "cloud_queue",
+                            "title": "ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.TITLE",
+                            "rules": {
+                                "visible": "app.process-cloud.canShowStartProcessFromContentEnabled"
+                            },
+                            "actions": {
+                                "click": "start-process-cloud.actions.execute"
+                            }
+                        },
+                        {
+                            "id": "alfresco.app.viewer.start.process",
+                            "rules": {
+                                "visible": "hide-element"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "navbar": [
+            {
+                "id": "app.navbar.primary",
+                "items": [
+                    {
+                        "id": "app.navbar.process-cloud-management",
+                        "component": "process-services-cloud.process-services-cloud.sidenav",
+                        "rules": {
+                            "visible": "app.process-cloud.isProcessServiceCloudRunningAndPluginEnabled"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "routes": [
+        {
+            "id": "start-process-cloud",
+            "path": "start-process-cloud",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.start-process.start",
+            "children": [
+                {
+                    "id": "start-process-cloud-preview",
+                    "path": "preview/:nodeId",
+                    "component": "app.components.preview",
+                    "data": {
+                        "navigateBackAsClose": true,
+                        "simplestMode": true
+                    },
+                    "outlet": "viewer"
+                }
+            ],
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "task-list-cloud",
+            "path": "task-list-cloud",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.task-list",
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "process-list-cloud",
+            "path": "process-list-cloud",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.process-list",
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "process-details-cloud",
+            "path": "process-details-cloud",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.process-details",
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "task-filters-proxy",
+            "path": "tasks",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.task-filters-proxy",
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "process-filters-proxy",
+            "path": "processes",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.process-filters-proxy",
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "task-details-cloud",
+            "path": "task-details-cloud/:taskId",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.task-details",
+            "children": [
+                {
+                    "id": "task-details-cloud-preview",
+                    "path": "preview/:nodeId",
+                    "component": "app.components.preview",
+                    "data": {
+                        "navigateBackAsClose": true,
+                        "simplestMode": true
+                    },
+                    "outlet": "viewer"
+                }
+            ],
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        },
+        {
+            "id": "process-task-details-cloud",
+            "path": "task-details-cloud/:taskId/:processName",
+            "parentRoute": "",
+            "layout": "app.layout.main",
+            "component": "process-services-cloud.task-details",
+            "children": [
+                {
+                    "id": "process-task-details-cloud-preview",
+                    "path": "preview/:nodeId",
+                    "component": "app.components.preview",
+                    "data": {
+                        "navigateBackAsClose": true,
+                        "simplestMode": true
+                    },
+                    "outlet": "viewer"
+                }
+            ],
+            "auth": [
+                "process-services-cloud.auth",
+                "app.extensions.dataLoaderGuard"
+            ]
+        }
+    ]
+}

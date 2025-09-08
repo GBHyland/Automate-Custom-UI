@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Select a file",
+    "TABS": {
+      "REPOSITORY": "Repository",
+      "LOCAL_STORAGE": "Local storage"
+    },
+    "ACTIONS": {
+      "UPLOAD": "UPLOAD",
+      "CANCEL": "Cancel",
+      "ATTACH": "Attach"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "Folder {{folderName}} does not exist. The file cannot be uploaded.",
+    "FOLDER_DOES_NOT_EXIST": "The folder to upload the file to does not exist. The file cannot be uploaded.",
+    "CONTENT_SERVICE_UNAVAILABLE": "The content service is temporarily unavailable. The file cannot be uploaded.",
+    "FOLDER_ACCESS_DENIED": "You don't have permissions to the specified folder in content repository."
+  }
+}

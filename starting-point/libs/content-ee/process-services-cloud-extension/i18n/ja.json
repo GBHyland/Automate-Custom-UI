@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "使用可能なプロセス定義がありません",
+      "UNCATEGORIZED": "未分類",
+      "RECENT_PROCESS_DEFINITIONS": "最近の使用"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "拡張機能: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Process Automation 拡張機能を有効にする"
+    },
+    "BREADCRUMB": {
+      "ROOT": "プロセスの管理",
+      "START_PROCESS_CLOUD": "プロセスの開始",
+      "TASK_LIST_CLOUD": "タスクリスト",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "詳細の表示",
+        "CLOSE-TOOLTIP": "閉じる",
+        "PRINT": "フォームの印刷"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "プロセスの開始",
+      "CREATE_PROCESS_NOT_ALLOWED": "新しいプロセスは作成できません"
+    },
+    "ERROR": {
+      "NO_FORM": "プロセス定義にフォームが定義されていません",
+      "CAN_NOT_ATTACH": "選択したコンテンツは添付できません"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "作成されたプロセス '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "不明なネットワークエラーが発生しました。Process Automation 関連の機能は無効化されています。"
+    },
+    "SIDE_NAV_TITLE": "プロセスの管理",
+    "TASK_LIST": {
+      "TASKS": "タスク",
+      "ACTIONS": {
+        "TASK_DETAILS": "詳細の表示",
+        "PROCESS_HISTORY": "プロセス履歴"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "担当者の変更",
+        "CLOSE": "閉じる",
+        "ASSIGN": "割り当て",
+        "SUCCESS": "タスクの担当者が変更されました",
+        "FAILED": "ユーザーの割り当て中に問題が発生しました。ユーザーの割り当てをやり直してください。"
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "詳細"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "プロセス",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "詳細の表示",
+        "CANCEL_MESSAGE": "プロセスがキャンセルされました",
+        "CANCEL_ERROR_MESSAGE": "プロセスをキャンセルできませんでした。操作をやり直してください。",
+        "CANCEL_TOOLTIP": "プロセスのキャンセル"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "開始者"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "フィルタが保存されました",
+      "FILTER_DELETED": "フィルタが削除されました"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "このタスクは完了しています",
+      "FORM_SAVED": "フォームが保存されました",
+      "FORM_ACTION": "処理 '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "フィルタが保存されました",
+      "FILTER_DELETED": "フィルタが削除されました"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "プロセスのキャンセル",
+        "MESSAGE": "このプロセスをキャンセルしますか?"
+      },
+      "NEW_PROCESS": "新しいプロセス",
+      "CONFIRM": "確認",
+      "CLOSE": "閉じる",
+      "ERROR": "プロセス定義を読み込めませんでした。アクセス権があることを確認してください。"
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}}タスクが{{assignee}}に割り当てられました",
+    "TASK_COMPLETED": "{{taskName}}タスクが完了しました",
+    "TASK_ACTIVATED": "{{taskName}}タスクがアクティブになりました",
+    "TASK_CANCELLED": "{{taskName}}タスクがキャンセルされました",
+    "TASK_SUSPENDED": "{{taskName}}タスクが保留にされました",
+    "TASK_UPDATED": "{{taskName}}タスクの詳細が更新されました"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "検索"
+    }
+  }
+}

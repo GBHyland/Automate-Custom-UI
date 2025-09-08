@@ -1,0 +1,7 @@
+<ng-container *ngIf="isAvailable">
+    <button mat-menu-item (click)="triggerFileSelection()" class="hxp-replace-file-button">
+        <mat-icon>file_upload</mat-icon>
+        <span id="replace-file-input-label">{{ 'DOCUMENT_MORE_ACTION.REPLACE_FILE' | translate }} </span>
+        <hxp-beta-chip-tag />
+    </button>
+</ng-container>

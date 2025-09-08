@@ -1,0 +1,326 @@
+{
+    "DOCUMENT_TREE": {
+        "ROOT": "Inicio",
+        "CONTEXT_MENU": {
+            "TRIGGER_ARIA_LABEL": "menú adjunto"
+        },
+        "TOGGLE_ARIA-LABEL": "Alternar"
+    },
+    "DOCUMENT_LIST": {
+        "COLUMNS": {
+            "TITLE": "Título",
+            "SIZE": "Tamaño",
+            "CREATED": {
+                "LABEL": "Creado",
+                "BY": "por"
+            },
+            "LAST_MODIFIED": {
+                "LABEL": "Última modificación",
+                "BY": "por"
+            },
+            "PERMISSION": "Permiso",
+            "LOCATION": "Ubicación",
+            "DOCUMENT_CATEGORY": "Tipo de contenido"
+        },
+        "NO_CONTENT": {
+            "TITLE": "Esta carpeta está vacía",
+            "SUBTITLE": "Cree nuevo contenido"
+        },
+        "PERMISSIONS": {
+            "EVERYTHING": "Todo",
+            "READ_WRITE": "Lectura y escritura",
+            "READ": "Lectura"
+        },
+        "LOCATION": {
+            "HOME": "Inicio"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Propiedades principales"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Otras propiedades"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Propiedades actualizadas correctamente.",
+                "ERROR": "Se ha producido un error. No se pudo actualizar la propiedad.",
+                "INFO": "¡El valor de campo no puede estar en blanco!"
+            },
+            "SYS": {
+                "CONTRIBUTORS": "Colaboradores",
+                "DESCRIPTION": "Descripción",
+                "CREATED": "Creado",
+                "CREATOR": "Creador",
+                "FILENAME": "Nombre",
+                "LAST_CONTRIBUTOR": "Último colaborador",
+                "MODIFIED": "Última modificación",
+                "TITLE": "Título",
+                "PATH": "Ruta",
+                "PRIMARY_TYPE": "Categoría"
+            },
+            "SYSFILE": {
+                "BLOB": {
+                    "FILENAME": "Nombre de fichero",
+                    "MIME_TYPE": "Tipo Mime",
+                    "LENGTH": "Tamaño"
+                }
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Cerrar"
+            }
+        },
+        "PROPERTIES_EDIT": {
+            "EDIT": "Editar",
+            "CANCEL": "Cancelar",
+            "SAVE": "Guardar"
+        }
+    },
+    "DOCUMENT_BREADCRUMB": {
+        "ROOT": "Inicio"
+    },
+    "DOCUMENT_DELETE": {
+        "APP": {
+            "DIALOGS": {
+                "DELETE": {
+                    "ITEM": {
+                        "TITLE": "Eliminar documento",
+                        "DESCRIPTION": "No se puede recuperar un documento después de eliminarlo. ¿Desea eliminarla de todos modos?"
+                    },
+                    "MULTIPLE_ITEMS": {
+                        "TITLE": "Eliminar documentos",
+                        "DESCRIPTION": "Los documentos no se pueden recuperar después de eliminarlos. ¿Desea eliminarlos de todos modos?"
+                    },
+                    "BUTTONS": {
+                        "CANCEL": "Cancelar"
+                    }
+                }
+            },
+            "TOOLBAR": {
+                "BUTTONS": {
+                    "DELETE": {
+                        "TITLE": "Eliminar"
+                    }
+                }
+            }
+        },
+        "SNACKBAR": {
+            "DELETE": {
+                "ITEM": {
+                    "REQUEST": "Eliminando un documento",
+                    "SUCCESS": "{count} documento eliminado.",
+                    "ERROR": "Error al eliminar {count} documento."
+                },
+                "MULTIPLE_ITEMS": {
+                    "REQUEST": "Eliminando documentos",
+                    "SUCCESS": "{count} documentos eliminados.",
+                    "ERROR": "Error al eliminar {count} documentos."
+                },
+                "ERROR": "Error al eliminar el documento"
+            }
+        }
+    },
+    "SINGLE_FILE_DOWNLOAD": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "DOWNLOAD": {
+                    "TITLE": "Descargar",
+                    "ARIA-LABEL": "Descargar fichero"
+                }
+            }
+        }
+    },
+    "DOCUMENT_SHARE": {
+        "DIALOGS": {
+            "SHARE": {
+                "SHARED_ITEM": "Elemento compartido",
+                "LINK": "Enlace"
+            }
+        },
+        "TOOLBAR": {
+            "BUTTONS": {
+                "SHARE": {
+                    "TITLE": "Compartir",
+                    "ARIA-LABEL": "Compartir fichero"
+                }
+            }
+        },
+        "SNACKBAR": {
+            "SHARE": {
+                "SUCCESS": "Enlace copiado al portapapeles"
+            }
+        }
+    },
+    "PERMISSIONS_MANAGEMENT_ACTION": {
+        "BUTTON": {
+            "LABEL": "Permisos"
+        },
+        "DIALOG": {
+            "SAVE": "Guardar",
+            "CANCEL": "Cancelar",
+            "MANAGE_PERMISSION": "Administrar permisos de acceso",
+            "RESTORE": "Restaurar permisos"
+        },
+        "DROPDOWN": {
+            "PLACEHOLDER": "Seleccionar acceso",
+            "LABEL": {
+                "CLEAR": "Borrar",
+                "NO_ACCESS": "Sin acceso",
+                "READ": "Lectura",
+                "READ_WRITE": "Lectura y escritura",
+                "EVERYTHING": "Todo",
+                "INHERITED": "Heredado",
+                "BLOCKED": "Bloqueado"
+            }
+        },
+        "ASK_TO_CANCEL_DIALOG": {
+            "TITLE": "¿Desea cancelar?",
+            "DESCRIPTION": "Perderá todos los ajustes que haya cambiado",
+            "REJECT": "Continuar administrando",
+            "CONFIRM": "Cancelar"
+        },
+        "ASK_TO_SAVE_DIALOG": {
+            "TITLE": "Guardar los cambios",
+            "DESCRIPTION": "Los cambios no serán efectivos a menos que se guarden",
+            "REJECT": "Cerrar sin guardar",
+            "CONFIRM": "Guardar"
+        },
+        "ASK_TO_RESTORE_DIALOG": {
+            "TITLE": "Restaurar permisos",
+            "DESCRIPTION": "Está a punto de restaurar toda la configuración de permisos de este documento a su estado heredado. ¿Qué configuración desea restaurar?",
+            "REJECT": "Cancelar",
+            "CONFIRM": "Restaurar",
+            "RESTORE_OPTION": {
+                "ALL": "TODOS",
+                "GROUP": "Grupo de usuarios",
+                "USER": "Usuario individual"
+            }
+        },
+        "PERMISSIONS_TABLE": {
+            "GROUPS": "Grupos de usuarios",
+            "USERS": "Usuarios individuales",
+            "ADD_USER": "Añadir usuario",
+            "ADD_GROUP": "Agregar grupo de usuarios",
+            "SET_PERMISSION": "Establecer un permiso",
+            "SELECT_PERMISSION": "Seleccionar permiso",
+            "SELECT_USER": "Seleccionar usuario",
+            "SELECT_GROUP": "Seleccionar grupo de usuarios",
+            "ACCESS_LEVEL": {
+                "USER": "Niveles de acceso de usuarios",
+                "GROUP": "Niveles de acceso de grupos de usuarios"
+            },
+            "SEARCH_USER": "Buscar usuarios",
+            "SEARCH_GROUP": "Buscar grupos de usuarios",
+            "NO_PERMISSION": {
+                "DEFAULT": "No se encontró ningún permiso",
+                "USER": "Agregar usuarios individuales",
+                "GROUP": "Agregar grupos de usuarios"
+            },
+            "INHERITED_PERMISSION": "Heredado",
+            "OVERRIDDEN_PERMISSION": "Anulado",
+            "CANNOT_BE_CHANGED": "No se puede cambiar",
+            "COLUMN_HEADER": {
+                "USERS": "Usuarios",
+                "GROUPS": "Grupos",
+                "INHERITED": "Heredado",
+                "FILE_LEVEL": "Nivel de fichero",
+                "FILE_ACCESS": "Acceso al fichero"
+            },
+            "INHERITED": {
+                "LABEL": {
+                    "NO_ACCESS": "Sin acceso",
+                    "READ": "Leer",
+                    "READ_WRITE": "R&W",
+                    "EVERYTHING": "Todo",
+                    "BLOCKED": "Bloqueado"
+                }
+            }
+        },
+        "BLOCK_INHERITANCE": {
+            "TITLE": "Herencia",
+            "TOGGLE_OPTION": {
+                "OFF": "Apagado",
+                "ON": "Encendido"
+            }
+        }
+    },
+    "ADF_VIEWER": {
+        "ACTIONS": {
+            "INFO": "Información",
+            "CLOSE": "Cerrar",
+            "FULLSCREEN": "Activar modo de pantalla completa"
+        }
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Gestionar versiones",
+            "CLOSE": "Cerrar",
+            "CREATOR": "Creado por",
+            "CURRENT_VERSION": "Versión actual",
+            "EXPIRES": "Expira:",
+            "NEVER_EXPIRES": "No expira nunca",
+            "MORE_MENU": {
+                "EDIT": "Editar la información de la versión",
+                "DELETE": "Quitar versión"
+            }
+        },
+        "TOOLBAR": {
+            "BUTTONS": {
+                "VERSIONS": {
+                    "TITLE": "Gestionar versiones (beta)"
+                }
+            }
+        },
+        "EDIT_BUTTON": {
+            "TITLE": "Editar la información de la versión",
+            "ARIA_LABEL": "Editar la información de la versión"
+        },
+        "EDIT_DIALOG": {
+            "TITLE": "Editar la información de la versión",
+            "FIELD_TITLE": "Título de la versión",
+            "DESCRIPTION": "Descripción de la versión",
+            "PLACEHOLDER_DESCRIPTION": "Describa la versión",
+            "BUTTONS": {
+                "SAVE": "Guardar",
+                "CANCEL": "Cancelar"
+            },
+            "NOTIFICATION": {
+                "SUCCESS": "Se ha actualizado la información de la versión",
+                "ERROR": "Error al actualizar la información de la versión"
+            }
+        },
+        "DELETE_BUTTON": {
+            "TITLE": "Quitar versión",
+            "ARIA_LABEL": "Quitar versión"
+        },
+        "DELETE_DIALOG": {
+            "TITLE": "Eliminar versión",
+            "DESCRIPTION": "No se puede recuperar la versión de un documento después de eliminarla. ¿Desea eliminarla de todos modos?",
+            "CLOSE_ARIA_LABEL": "Cerrar diálogo",
+            "BUTTONS": {
+                "DELETE": "Eliminar versión",
+                "CANCEL": "Cancelar"
+            },
+            "NOTIFICATION": {
+                "SUCCESS": "Se ha eliminado la versión",
+                "ERROR": "Error al ELIMINAR la información de la versión"
+            }
+        }
+    },
+    "RESTORE_VERSION": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "RESTORE": {
+                    "TITLE": "Restaurar"
+                }
+            }
+        }
+    }
+}

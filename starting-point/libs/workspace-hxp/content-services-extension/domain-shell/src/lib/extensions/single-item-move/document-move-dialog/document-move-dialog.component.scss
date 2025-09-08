@@ -1,0 +1,72 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-move-dialog-field-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hxp-move-dialog-search-hide {
+    /* TODO: will enabled when BE is ready */
+    display: none;
+}
+
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    h1 {
+        flex: 1;
+        padding-left: 0;
+    }
+}
+
+.hxp-single-file-move-button {
+    border: 0;
+    display: flex;
+
+    #{ms.$mat-progress-spinner} {
+        margin-right: 10px;
+
+        circle {
+            stroke: var(--theme-accent-color-default-contrast);
+        }
+    }
+
+    .hxp-single-file-move-button-label {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.hxp-move-dialog-close-button {
+    color: var(--theme-primary-color);
+    border: 0;
+}
+
+.hxp-move-dialog-no-permissions-error {
+    color: satori.$hy-colors-red-600;
+    min-height: 20px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.hxp-move-dialog-close-btn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 9px;
+}
+
+.hxp-fixed-dialog-content-height {
+    overflow: hidden;
+    form {
+        height: 100%;
+    }
+    .hxp-breadcrumb-scroll-container {
+        height: 100%;
+        overflow: auto;
+    }
+}

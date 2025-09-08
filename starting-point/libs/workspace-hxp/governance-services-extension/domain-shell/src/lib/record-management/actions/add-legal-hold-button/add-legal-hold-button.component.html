@@ -1,0 +1,10 @@
+@if (isAvailable$ | async) {
+<button
+    mat-icon-button
+    [attr.aria-label]="'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.LEGAL_HOLD_CASE' | translate"
+    [matTooltip]="'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.LEGAL_HOLD_CASE' | translate"
+    (click)="openLegalHoldDialog()"
+>
+    <mat-icon>gavel</mat-icon>
+</button>
+}

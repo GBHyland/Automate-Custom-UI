@@ -1,0 +1,21 @@
+.idp-viewer-skeleton-loader {
+    background: rgb(224 224 224);
+    animation: pulse 1.5s infinite;
+    border-radius: 4px;
+}
+
+.idp-viewer-skeleton-circle {
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

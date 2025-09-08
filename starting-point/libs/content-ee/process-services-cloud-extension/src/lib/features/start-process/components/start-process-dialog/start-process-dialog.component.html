@@ -1,0 +1,29 @@
+<div class="apa-start-process-dialog-header">
+    <span class="apa-start-process-dialog-header-title">
+      {{ 'PROCESS_CLOUD_EXTENSION.DIALOG.NEW_PROCESS' | translate }}
+    </span>
+
+    <button
+      mat-icon-button
+      mat-dialog-close
+      aria-label="close dialog"
+      data-automation-id="apa-start-process-dialog-close-button"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div
+  *ngIf="loadingProcessesError$ | async; else processesList "
+  class="apa-loading-processes-error"
+>
+  {{'PROCESS_CLOUD_EXTENSION.DIALOG.ERROR' | translate}}
+</div>
+
+<ng-template #processesList>
+  <process-list-by-category
+    class="apa-start-process-dialog-process-list"
+    [processes]="allProcesses$ | async"
+    [recentDefinitionKeys]="recentDefinitionKeys$ | async"
+    (selectProcess)="onSelectProcess($event)" />
+</ng-template>

@@ -1,0 +1,29 @@
+{
+    "IDP": {
+        "REJECT_DIALOG": {
+            "TITLE": "Rifiuta documento",
+            "DESCRIPTION": "Questo documento non verrà incluso nel processo di estrazione del batch se viene rifiutato. Verificare di volerlo fare.\n\nMotivare il rifiuto",
+            "REASON_LABEL": "Motivo del rifiuto",
+            "CANCEL_BUTTON": "Annulla",
+            "REJECT_BUTTON": "Rifiuta documento",
+            "SEARCH_PLACEHOLDER": "Cerca un motivo...",
+            "REJECT_NOTE": {
+                "LABEL": "Nota di rifiuto",
+                "PLACEHOLDER": "Inserisci una nota di rifiuto...",
+                "ARIA_LABEL": "Inserisci una nota di rifiuto",
+                "HINT": "Massimo {{max}} caratteri"
+            }
+        },
+        "SHORTCUT_DIALOG": {
+            "TITLE": "Tasti di scelta rapida",
+            "SEARCH_PLACEHOLDER": "Cerca collegamento...",
+            "NO_RESULTS": "Nessun risultato trovato"
+        },
+        "DISCARD_DIALOG": {
+            "TITLE": "Discard Changes",
+            "DESCRIPTION": "You have unsaved changes. Unsaved changes will be lost if you leave this page.",
+            "CANCEL_BUTTON": "Cancel",
+            "DISCARD_BUTTON": "Discard Changes"
+        }
+    }
+}

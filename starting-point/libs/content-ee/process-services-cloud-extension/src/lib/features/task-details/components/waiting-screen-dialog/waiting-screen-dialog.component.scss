@@ -1,0 +1,26 @@
+@use 'mat-selectors' as ms;
+
+.dialog-waiting-screen {
+    #{ms.$mat-dialog-actions} {
+        padding-top: 20px;
+    }
+    #{ms.$mat-dialog-content} {
+        letter-spacing: -0.2px;
+        display: grid;
+        place-items: center;
+    }
+    #{ms.$mat-button} {
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    #{ms.$mat-progress-spinner} {
+        margin: 10px auto;
+    }
+    &-title {
+        font-size: 16px;
+        opacity: 0.87;
+        line-height: 1.5;
+        letter-spacing: -0.4px;
+        font-weight: bold;
+    }
+}

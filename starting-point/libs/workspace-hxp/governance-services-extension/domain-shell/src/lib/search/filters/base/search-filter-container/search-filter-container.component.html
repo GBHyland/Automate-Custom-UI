@@ -1,0 +1,59 @@
+<div class="hxp-governance-search-filter">
+    <mat-chip-set>
+        <mat-chip
+            #chip
+            (click)="openFilterOverlay()"
+            class="hxp-governance-search-filter-chip"
+            [ngClass]="{
+                'hxp-governance-search-filter-chip_active': data,
+                'hxp-governance-search-filter-chip_opened': isFilterOverlayOpened
+            }"
+            [matTooltip]="selectionLabel | translate"
+        >
+            <div class="hxp-governance-search-filter-chip-label-container">
+                <div class="hxp-governance-search-filter-chip-label hxp-label-extra-bold" #chipLabel>
+                    <span>{{ name + (selectionLabel ? ': ' + (selectionLabel | translate) : '') }}</span>
+                </div>
+                <div *ngIf="hiddenValuesCount > 0"
+                    aria-hidden="true"
+                    class="hxp-governance-search-filter-chip-badge">+{{ hiddenValuesCount }}
+                </div>
+                <mat-icon class="hxp-governance-search-filter-chip-icon">{{
+                    isFilterOverlayOpened ? 'expand_less' : 'expand_more'
+                }}</mat-icon>
+            </div>
+        </mat-chip>
+    </mat-chip-set>
+    <ng-template #template>
+        <div class="hxp-governance-search-filter-overlay">
+            <form [formGroup]="filterForm"
+                (ngSubmit)="applyFilter($event)"
+                (reset)="clearFilter($event)"
+                (keydown.enter)="$event.preventDefault()">
+                <ng-content />
+
+                <div class="hxp-governance-search-filter-overlay-actions">
+                    <button
+                        class="hxp-governance-search-filter-overlay-actions-clear hxp-text-button"
+                        mat-button
+                        type="reset"
+                        [disabled]="(!data || data.values?.length === 0) && filterForm.pristine"
+                    >
+                        {{ 'SEARCH.FILTERS.ACTIONS.CLEAR_ALL' | translate }}
+                    </button>
+                    <button
+                        class="hxp-governance-search-filter-overlay-actions-apply hxp-primary-button"
+                        mat-button
+                        type="submit"
+                        [disabled]="
+                            filterForm.pristine ||
+                            filterForm.invalid
+                        "
+                    >
+                        {{ 'SEARCH.FILTERS.ACTIONS.APPLY' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </ng-template>
+</div>

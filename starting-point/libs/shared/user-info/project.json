@@ -1,0 +1,53 @@
+{
+    "name": "shared-user-info",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/user-info/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/libs/shared/user-info"],
+            "options": {
+                "project": "libs/shared/user-info/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared/user-info/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared/user-info/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared/user-info/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "codeCoverage": true,
+                "main": "libs/shared/user-info/src/test.ts",
+                "tsConfig": "libs/shared/user-info/tsconfig.spec.json",
+                "karmaConfig": "libs/shared/user-info/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/core/src/styles"]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/shared/user-info/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/shared/user-info/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib"]
+                    }
+                }
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:shared-user-info", "category:shared-user-info"]
+}

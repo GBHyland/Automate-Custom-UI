@@ -1,0 +1,10 @@
+<button
+    *ngIf="isAvailable"
+    [attr.aria-label]="'SEARCH.MANAGE_COLUMN.BUTTON.TOOLTIP' | translate"
+    mat-icon-button
+    [matTooltip]="'SEARCH.MANAGE_COLUMN.BUTTON.TOOLTIP' | translate"
+    (click)="onCopy()"
+    class="hxp-manage-column-button mat-button-base"
+>
+    <mat-icon aria-hidden="true">tune</mat-icon>
+</button>

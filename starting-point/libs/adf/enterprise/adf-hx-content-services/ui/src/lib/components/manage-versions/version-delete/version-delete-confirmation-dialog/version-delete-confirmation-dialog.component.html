@@ -1,0 +1,26 @@
+<div class="hxp-dialog-fixed-size-wrapper">
+    <div mat-dialog-title class="dialog-title">
+        <h1 mat-dialog-title>{{ 'MANAGE_VERSIONS.DELETE_DIALOG.TITLE' | translate }}</h1>
+        <button mat-dialog-close class="hxp-dialog-fixed-size-wrapper-close-btn" aria-label="{{ 'MANAGE_VERSIONS.DELETE_DIALOG.CLOSE_ARIA_LABEL' | translate }}">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div mat-dialog-content class="hxp-fixed-dialog-content-height">
+        <p>{{ 'MANAGE_VERSIONS.DELETE_DIALOG.DESCRIPTION' | translate }}</p>
+    </div>
+    <mat-dialog-actions [align]="'end'">
+        <button mat-button mat-dialog-close class="hxp-delete-dialog-close-button">
+            {{ 'MANAGE_VERSIONS.DELETE_DIALOG.BUTTONS.CANCEL' | translate }}
+        </button>
+        <button mat-flat-button color="warn" class="hxp-primary-warn-button" [ngClass]="{'hxp-disable-btn': isDeleting}" (click)="onDelete()">
+            <span class="hxp-primary-warn-button-label">
+                @if(isDeleting) {
+                    <mat-progress-spinner
+                        mode="indeterminate"
+                        diameter="15" />
+                }
+                    {{ 'MANAGE_VERSIONS.DELETE_DIALOG.BUTTONS.DELETE' | translate }}
+            </span>
+        </button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,10 @@
+<div mat-dialog-title>{{ 'GOVERNANCE.UNSAVED_CHANGES_DIALOG.TITLE' | translate }}</div>
+
+<mat-dialog-content class="hxp-cic-gov-record-dialog-content">
+    <p>{{ 'GOVERNANCE.UNSAVED_CHANGES_DIALOG.CONTENT' | translate }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="hxp-cic-gov-record-dialog-actions" align="end">
+    <button mat-button color="primary" (click)="close(true)">{{ 'GOVERNANCE.UNSAVED_CHANGES_DIALOG.DISCARD' | translate }}</button>
+    <button mat-button color="primary" (click)="close(false)">{{ 'GOVERNANCE.UNSAVED_CHANGES_DIALOG.KEEP' | translate }}</button>
+</mat-dialog-actions>

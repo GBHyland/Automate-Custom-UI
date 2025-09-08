@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Uprawnienia",
+                    "ARIA-LABEL": "Zarządzaj uprawnieniami do plików"
+                },
+                "COPY": {
+                    "TITLE": "Kopiuj",
+                    "ARIA-LABEL": "Kopiuj plik"
+                },
+                "MOVE": {
+                    "TITLE": "Przenieś",
+                    "ARIA-LABEL": "Przenieś plik"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Zamień plik (beta)",
+                    "ARIA-LABEL": "Zamień plik (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Zapisz w historii wersji (beta)",
+                    "ARIA-LABEL": "Zapisz w historii wersji (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Kopiuj",
+        "MOVE": "Przenieś",
+        "REPLACE_FILE": "Zamień plik",
+        "MANAGE_VERSIONS": "Zarządzaj wersjami"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Zarządzaj wersjami",
+            "CLOSE": "Zamknij",
+            "CREATED_BY": "przez"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Kopiuj element do",
+            "COPY": "Kopiuj",
+            "CANCEL": "Anuluj",
+            "CLOSE": "Zamknij",
+            "FILE_NAME_PREFIX": "Kopia",
+            "PERMISSIONS": {
+                "ERROR": "Nie masz uprawnień do kopiowania dokumentu w tym miejscu."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Szukaj"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Strona startowa",
+            "MOVE_ITEM": "Przenieś element do",
+            "MOVE": "Przenieś",
+            "CANCEL": "Anuluj",
+            "CLOSE": "Zamknij",
+            "PERMISSIONS": {
+                "ERROR": "Nie masz uprawnień do przeniesienia dokumentu tutaj."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Szukaj"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "Plik został skopiowany",
+            "FILE_ERROR": "Kopiowanie pliku nie powiodło się",
+            "FOLDER_SUCCESS": "Folder został skopiowany",
+            "FOLDER_ERROR": "Kopiowanie folderu nie powiodło się"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "Plik został przeniesiony",
+            "FILE_ERROR": "Przeniesienie pliku nie powiodło się",
+            "FOLDER_SUCCESS": "Folder został przeniesiony",
+            "FOLDER_ERROR": "Przeniesienie folderu nie powiodło się"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/workspace-hxp",
+        "types": ["jasmine", "node"]
+    },
+    "files": ["src/main.ts"],
+    "include": ["src/**/*.d.ts", "src/**/*.ts", "../../libs/plugins/**/*"],
+    "exclude": ["**/*.test.ts", "**/*.spec.ts"]
+}

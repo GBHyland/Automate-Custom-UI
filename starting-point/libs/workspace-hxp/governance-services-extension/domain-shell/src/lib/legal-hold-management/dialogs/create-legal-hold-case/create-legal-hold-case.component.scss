@@ -1,0 +1,39 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-cic-gov-create-legal-hold-case-dialog {
+    display: flex;
+    flex-direction: column;
+
+    .hxp-cic-gov-create-legal-form-holder {
+        padding-top: 20px;
+    }
+
+    #{ms.$mat-text-field-input} {
+        color: satori.$hy-colors-text-default;
+    }
+
+    #{ms.$mat-form-field} {
+        display: flex;
+        margin-top: 10px;
+    }
+}
+
+#{ms.$mat-dialog-actions} {
+    padding: var(--mat-dialog-actions-padding, 16px 24px);
+}
+
+.hxp-cic-gov-create-legal--hold-case-dialog-actions {
+    padding-top: 16px;
+
+    button {
+        justify-content: center;
+        border: 0;
+    }
+
+    .hxp-create-legal--hold-case-btn-label {
+        display: flex;
+        column-gap: 2px;
+        align-items: center;
+    }
+}

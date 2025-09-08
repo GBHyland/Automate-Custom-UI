@@ -1,0 +1,41 @@
+{
+    "name": "monorepo-core",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/monorepo/core/src",
+    "targets": {
+        "lint": {},
+        "test": {
+            "executor": "@nx/jest:jest",
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "passWithNoTests": false
+            },
+            "dependsOn": [
+                {
+                    "target": "test",
+                    "dependencies": true
+                }
+            ]
+        },
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "node_modules/@alfresco-dbp/monorepo/core",
+                "tsConfig": "libs/monorepo/core/tsconfig.lib.json",
+                "packageJson": "libs/monorepo/core/package.json",
+                "main": "libs/monorepo/core/src/index.ts",
+                "assets": ["libs/monorepo/core/*.md"]
+            },
+            "dependsOn": [
+                {
+                    "target": "build",
+                    "dependencies": true
+                }
+            ]
+        }
+    },
+    "tags": ["scope:monorepo-core", "category:tooling"],
+    "implicitDependencies": ["monorepo-utils"]
+}

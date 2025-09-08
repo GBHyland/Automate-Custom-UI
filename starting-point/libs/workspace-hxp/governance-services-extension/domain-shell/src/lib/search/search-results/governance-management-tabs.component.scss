@@ -1,0 +1,59 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-governance-management-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hxp-governance-main-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.hxp-governance-management-header-title {
+    padding: 20px;
+    font-size: satori.$hy-font-sizes-30;
+    flex-shrink: 0;
+}
+
+.hxp-governance-management-tab-group {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    height: 100%;
+
+    // Override MDC tab body wrapper height to fill parent
+    ::ng-deep #{ms.$mat-tab-body-wrapper},
+    ::ng-deep #{ms.$mat-tab-body} {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 0;
+    }
+}
+
+.hxp-governance-results-sidebar {
+    // todo: use css variables as styles will be changed with https://hyland.atlassian.net/browse/CICGOV-164
+    width: 300px;
+    background: #f9f9f9;
+    border-left: 1px solid #e0e0e0;
+    overflow-y: auto;
+    padding: 16px;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.hxp-governance-management-tab-label {
+    font-weight: 500;
+    font-size: satori.$hy-font-sizes-20;
+    letter-spacing: 0.1px;
+}

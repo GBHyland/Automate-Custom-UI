@@ -1,0 +1,29 @@
+{
+    "IDP": {
+        "REJECT_DIALOG": {
+            "TITLE": "Dokument ablehnen",
+            "DESCRIPTION": "Dieses Dokument wird nicht in den Stapelextrahierungsprozess einbezogen, wenn es abgelehnt wird. Vergewissern Sie sich, dass Sie dies wirklich tun möchten.\n\nBitte geben Sie eine Begründung für die Ablehnung",
+            "REASON_LABEL": "Grund für die Ablehnung",
+            "CANCEL_BUTTON": "Abbrechen",
+            "REJECT_BUTTON": "Dokument ablehnen",
+            "SEARCH_PLACEHOLDER": "Nach einem Grund suchen...",
+            "REJECT_NOTE": {
+                "LABEL": "Notiz ablehnen",
+                "PLACEHOLDER": "Eine Ablehnungsnotiz eingeben...",
+                "ARIA_LABEL": "Eine Ablehnungsnotiz eingeben",
+                "HINT": "Maximale {{max}} Zeichen"
+            }
+        },
+        "SHORTCUT_DIALOG": {
+            "TITLE": "Tastaturkurzbefehle",
+            "SEARCH_PLACEHOLDER": "Suche nach einer Abkürzung...",
+            "NO_RESULTS": "Keine Ergebnisse gefunden"
+        },
+        "DISCARD_DIALOG": {
+            "TITLE": "Änderungen verwerfen",
+            "DESCRIPTION": "Sie haben ungespeicherte Änderungen. Nicht gespeicherte Änderungen gehen verloren, wenn Sie diese Seite verlassen.",
+            "CANCEL_BUTTON": "Abbrechen",
+            "DISCARD_BUTTON": "Änderungen verwerfen"
+        }
+    }
+}

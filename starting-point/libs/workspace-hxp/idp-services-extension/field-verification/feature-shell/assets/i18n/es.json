@@ -1,0 +1,74 @@
+{
+    "EXTRACTION": {
+        "VERIFICATION": {
+            "TASK_HEADER": {
+                "TITLE": "Revisar valores de campo extraídos del documento",
+                "REMAINING_ISSUES": "problemas que resolver",
+                "ALL_RESOLVED": "Todos resueltos",
+                "BACK_LABEL": "Volver a tareas",
+                "TASK_NAME": "Nombre de la tarea",
+                "TASK_NAME_VALUE": "Verificación de documento",
+                "DOCUMENT_CLASSES": "Clases de documentos",
+                "TOTAL_DOCUMENTS": "Total de documentos",
+                "TOTAL_PAGES": "Total de páginas",
+                "CONTENT_TYPE": "Tipo de contenido"
+            },
+            "SUBMIT_BUTTON": "Enviar",
+            "SUBMIT_WITH_ISSUE_BUTTON": "Enviar con problema",
+            "METADATA_PANEL": {
+                "TITLE": "Metadatos",
+                "REJECT_DOCUMENT_LINK": "Rechazar documento",
+                "CLEAR_ISSUE_LINK": "Borrar problema"
+            },
+            "METADATA_TABLE": {
+                "ADD_TABLE": "Add Table",
+                "TABLE_NOT_FOUND": "Table Not Found"
+            },
+            "TABLE_ISSUES": {
+                "SHOW_ENTIRE_TABLE": "Mostrar toda la tabla"
+            },
+            "METADATA_FIELD_VALIDATOR": {
+                "REQUIRED": "Campo obligatorio",
+                "INVALID_INTEGER": "El campo debe ser un número"
+            },
+            "EXTRACTION_RESULT": {
+                "EXTRACTION_ISSUE": "Problema de extracción",
+                "EXTRACTED_SUCCESSFULLY": "Extraído correctamente",
+                "VERIFIED": "Verificado",
+                "NOT_VERIFIED": "No verificado"
+            },
+            "EXTRACTION_TABLE": {
+                "TABLE_NOT_EXTRACTED": "No se pueden extraer correctamente los datos de la tabla.",
+                "INSERT_ROW_ABOVE": "Insert row above",
+                "INSERT_ROW_BELOW": "Insert row below",
+                "CLEAR_ROW": "Clear this row",
+                "DELETE_ROW": "Delete this row",
+                "CLEAR_COLUMN": "Clear this column",
+                "DELETE_TABLE": "Delete table"
+            },
+            "NOTIFICATIONS": {
+                "SCREEN_INIT_ERROR": "No se pudo inicializar la pantalla",
+                "SCREEN_INIT_ERROR_NOT_CLAIMABLE": "No se puede reclamar la tarea",
+                "SCREEN_INIT_ERROR_ASSIGNEE": "Error al obtener el asignado de la tarea",
+                "SCREEN_LOAD_ERROR": "No se pudieron cargar los datos de la pantalla",
+                "TASK_ACTION_ERROR": "No se pudo guardar o enviar la tarea",
+                "TASK_SAVE_ERROR": "Error al guardar la tarea",
+                "TASK_COMPLETE_ERROR": "No se pudo completar la tarea",
+                "TASK_CLAIM_ERROR": "Error al reclamar la tarea",
+                "TASK_UNCLAIM_ERROR": "Error al anular la reclamación de la tarea"
+            },
+            "TASK_ACTIONS": {
+                "SAVE": "Guardar",
+                "SUBMIT": "Enviar",
+                "OPEN_NEXT_TASK": "Open next task automatically"
+            },
+            "SHORTCUTS": {
+                "NAVIGATE_NEXT_FIELD": "Ir al siguiente campo",
+                "NAVIGATE_PREVIOUS_TABLE_ROW": "Ir a la fila anterior de la tabla",
+                "NAVIGATE_NEXT_TABLE_ROW": "Ir a la fila siguiente de la tabla",
+                "NAVIGATE_PREVIOUS_TABLE_COLUMN": "Ir a la columna anterior de la tabla",
+                "NAVIGATE_NEXT_TABLE_COLUMN": "Ir a la columna siguiente de la tabla"
+            }
+        }
+    }
+}

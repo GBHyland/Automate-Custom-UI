@@ -1,0 +1,79 @@
+{
+    "name": "adf-enterprise-adf-hx-content-services-services",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/adf/enterprise/adf-hx-content-services/services/src",
+    "prefix": "hxp",
+    "tags": ["scope:adf-enterprise-adf-hx-content-services-services", "category:adf-enterprise"],
+    "projectType": "library",
+    "targets": {
+        "compile": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/adf/enterprise/adf-hx-content-services/services/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/services/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/services/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/adf/enterprise/adf-hx-content-services/services/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "move-dist": {
+            "executor": "tools:move-dist",
+            "options": {
+                "source": "libs/adf/enterprise/adf-hx-content-services/services/dist",
+                "destination": "{workspaceRoot}/dist/{projectRoot}"
+            }
+        },
+        "build": {
+            "executor": "nx:run-commands",
+            "configurations": {
+                "production": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-services:compile --configuration=production",
+                        "nx run adf-enterprise-adf-hx-content-services-services:move-dist"
+                    ],
+                    "parallel": false
+                },
+                "development": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-services:compile --configuration=development",
+                        "nx run adf-enterprise-adf-hx-content-services-services:move-dist"
+                    ],
+                    "parallel": false
+                },
+                "adf": {
+                    "commands": [
+                        "nx run adf-enterprise-adf-hx-content-services-services:compile --configuration=adf",
+                        "nx run adf-enterprise-adf-hx-content-services-services:move-dist"
+                    ],
+                    "parallel": false
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/adf/enterprise/adf-hx-content-services/services/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        },
+        "lint": {}
+    }
+}

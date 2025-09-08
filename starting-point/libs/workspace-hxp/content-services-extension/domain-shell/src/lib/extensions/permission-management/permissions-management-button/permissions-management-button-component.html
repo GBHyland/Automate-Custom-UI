@@ -1,0 +1,9 @@
+<button
+    *ngIf="isAvailable"
+    class="hxp-permissions-management-button"
+    mat-menu-item
+    (click)="openPermissionsManagement()"
+    aria-labelledby="label">
+    <mat-icon>group</mat-icon>
+    <span id="label">{{ 'PERMISSIONS_MANAGEMENT_ACTION.BUTTON.LABEL' | translate }}</span>
+</button>

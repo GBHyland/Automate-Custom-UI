@@ -1,0 +1,45 @@
+{
+    "name": "monorepo-builders",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/monorepo/builders/src",
+    "targets": {
+        "lint": {},
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "node_modules/@alfresco-dbp/monorepo/builders",
+                "tsConfig": "libs/monorepo/builders/tsconfig.lib.json",
+                "packageJson": "{projectRoot}/package.json",
+                "main": "{projectRoot}/src/index.ts",
+                "assets": [
+                    "libs/monorepo/builders/*.md",
+                    {
+                        "input": "./libs/monorepo/builders/src",
+                        "glob": "**/*.!(ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./libs/monorepo/builders",
+                        "glob": "generators.json",
+                        "output": "."
+                    },
+                    {
+                        "input": "./libs/monorepo/builders",
+                        "glob": "builders.json",
+                        "output": "."
+                    }
+                ]
+            },
+            "dependsOn": [
+                {
+                    "target": "build",
+                    "dependencies": true
+                }
+            ]
+        }
+    },
+    "tags": ["scope:monorepo-builders", "category:tooling"],
+    "implicitDependencies": ["monorepo-core"]
+}

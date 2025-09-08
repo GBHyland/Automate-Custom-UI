@@ -1,0 +1,25 @@
+/*
+ * Copyright © 2005 - 2021 Alfresco Software, Ltd. All rights reserved.
+ *
+ * License rights for this program may be obtained from Alfresco Software, Ltd.
+ * pursuant to a written agreement and any use of this program without such an
+ * agreement is prohibited.
+ */
+
+import { BasePage, DataTable } from '@alfresco-dbp/playwright/shared';
+import { Page } from '@playwright/test';
+import { ExampleCreateUserModalComponent,
+    ExampleActionNavbarComponent } from '../';
+
+export class ExamplePage extends BasePage {
+    private static pageUrl = 'example'
+    exampleTitle = 'Fake title page';
+
+    constructor(page: Page) {
+        super(page, ExamplePage.pageUrl);
+    }
+
+    dataTable = new DataTable(this.page);
+    createUserModal = new ExampleCreateUserModalComponent(this.page);
+    actionNavbar = new ExampleActionNavbarComponent(this.page);
+}

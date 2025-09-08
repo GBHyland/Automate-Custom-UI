@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Sélectionner un fichier",
+    "TABS": {
+      "REPOSITORY": "Référentiel",
+      "LOCAL_STORAGE": "Stockage local"
+    },
+    "ACTIONS": {
+      "UPLOAD": "CHARGER",
+      "CANCEL": "Annuler",
+      "ATTACH": "Joindre"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "Le dossier {{folderName}} n'existe pas. Impossible de télécharger le fichier.",
+    "FOLDER_DOES_NOT_EXIST": "Le dossier dans lequel télécharger le fichier n'existe pas. Impossible de télécharger le fichier.",
+    "CONTENT_SERVICE_UNAVAILABLE": "Le service de contenu est temporairement indisponible. Impossible de télécharger le fichier.",
+    "FOLDER_ACCESS_DENIED": "Vous ne disposez pas des autorisations pour le dossier spécifié dans le référentiel de contenus."
+  }
+}

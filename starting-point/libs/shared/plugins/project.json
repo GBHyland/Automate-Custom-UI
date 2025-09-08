@@ -1,0 +1,60 @@
+{
+    "name": "shared-plugins",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/plugins/src",
+    "projectType": "library",
+    "tags": ["scope:shared-plugins"],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/shared/plugins",
+                "main": "libs/shared/plugins/src/index.ts",
+                "tsConfig": "libs/shared/plugins/tsconfig.lib.json",
+                "assets": [
+                    "libs/shared/plugins/*.md",
+                    {
+                        "input": "./libs/shared/plugins/src",
+                        "glob": "**/!(*.ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./libs/shared/plugins/src",
+                        "glob": "**/*.d.ts",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./libs/shared/plugins",
+                        "glob": "generators.json",
+                        "output": "."
+                    },
+                    {
+                        "input": "./libs/shared/plugins",
+                        "glob": "executors.json",
+                        "output": "."
+                    }
+                ]
+            },
+            "configurations": {
+                "adf": {
+                    "outputPath": "dist/libs/shared/plugins/adf",
+                    "tsConfig": "libs/shared/plugins/tsconfig.lib.adf.json"
+                }
+            }
+        },
+        "lint": {},
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/shared/plugins/jest.config.ts"
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "libs/shared/plugins/jest.config.adf.ts"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "name": "shared-hxp-ui",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared-hxp/ui/src",
+    "prefix": "hxp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/libs/shared-hxp/ui"],
+            "options": {
+                "project": "libs/shared-hxp/ui/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared-hxp/ui/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared-hxp/ui/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/ui/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "libs/shared-hxp/ui/src/test.ts",
+                "tsConfig": "libs/shared-hxp/ui/tsconfig.spec.json",
+                "karmaConfig": "libs/shared-hxp/ui/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": [
+                        "libs/shared/core/src/styles",
+                        "libs/shared/satori-like-styles/src"
+                    ]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/ui/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/shared-hxp/ui/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": [
+                            "libs/shared/core/src/styles",
+                            "libs/shared/satori-like-styles/src",
+                            "../alfresco-ng2-components/lib/core/src/lib"
+                        ]
+                    }
+                }
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:shared-hxp-ui", "category:shared-hxp"]
+}

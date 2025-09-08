@@ -1,0 +1,17 @@
+<hxp-governance-search-filter-container #searchFilter [name]="'GOVERNANCE.SEARCH_FILTERS.CONTENT_ID.LABEL' | translate"
+    [selectedValue]="selectedValue" [filterForm]="filterForm" (filterApplied)="applyFilter()"
+    (filterCleared)="clearFilter()" (overlayClosed)="overlayClosed()" class="hxp-governance-content-id-search-filter"
+    id="contentId">
+    <div class="hxp-governance-content-id-search-filter-container">
+        <mat-form-field appearance="outline" class="hxp-governance-content-id-search-filter-input">
+            <mat-label>{{ 'GOVERNANCE.SEARCH_FILTERS.CONTENT_ID.LABEL' | translate }}</mat-label>
+            <input type="text" [placeholder]="'GOVERNANCE.SEARCH_FILTERS.CONTENT_ID.PLACEHOLDER' | translate" matInput
+                [value]="inputValue" (input)="onInputChange($event)" (keyup.esc)="clearFilter()" />
+        </mat-form-field>
+        @if (!isValid && inputValue.length > 0) {
+        <mat-error class="hxp-governance-content-id-search-filter-error">
+            {{ 'GOVERNANCE.SEARCH_FILTERS.CONTENT_ID.ERROR' | translate }}
+        </mat-error>
+        }
+    </div>
+</hxp-governance-search-filter-container>

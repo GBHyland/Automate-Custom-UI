@@ -1,0 +1,52 @@
+<div class="idp-extraction-view" tabindex="0">
+    <hyland-idp-task-header class="idp-header" />
+    <div class="idp-metadata-viewer-container">
+        <hyland-idp-extraction-metadata-panel class="idp-metadata-panel"
+            [ocrWords]="(currentPageOcrWords$ | async) || []"
+            (fieldValuePending)="fieldValuePending.next($event)"
+            (showTable)="onShowTable()" />
+        <div class="idp-viewer-container">
+            <div id="split-top" [style.height]="showTable ? '70%' : '100%'" data-automation-id="idp-viewer-splitter-pane-document">
+                <hyland-idp-viewer
+                    class="idp-viewer"
+                    [class.idp-viewer-collapsed]="showTable"
+                    [datasource]="(viewerDatasource$ | async) || undefined"
+                    [configuration]="viewerConfiguration"
+                    [activeHighlights]="viewerHighlights"
+                    (viewerEvent)="viewerEvent$.next($event)">
+                    @if (showTextLayer) {
+                        <ng-template hylandIdpViewerContentLayer="TextSuperImposed" let-host="host">
+                            <hyland-idp-viewer-text-layer
+                                [host]="host"
+                                [autoNavigationToHighlight]="true"
+                                [handleClipboard]="false"
+                                data-automation-id="idp-viewer-text-layer"
+                                (textSelected)="viewerTextSelected.emit($event)"
+                            />
+                        </ng-template>
+                    }
+
+                    <ng-container ngProjectAs="hyland-idp-viewer-sticky-action">
+                        <hyland-idp-viewer-sticky-action class="idp-viewer-sticky-action" [align]="'right'">
+                        <button class="idp-viewer-sticky-action__shortcuts_button"
+                                data-automation-id="idp-shortcut-sticky-button"
+                                [attr.aria-label]="'IDP_CLASS_VERIFICATION.VIEWER.STICKY_ACTION.OPEN_SHORTCUT_BROWSER_BUTTON_TOOLTIP' | translate"
+                                [matTooltip]="'IDP_CLASS_VERIFICATION.VIEWER.STICKY_ACTION.OPEN_SHORTCUT_BROWSER_BUTTON_TOOLTIP' | translate"
+                                (click)="onShortcutBrowserClick()" (keydown.enter)="onShortcutBrowserClick()">
+                            <mat-icon class="material-icons-outlined">keyboard_alt</mat-icon>
+                        </button>
+                        </hyland-idp-viewer-sticky-action>
+                    </ng-container>
+                </hyland-idp-viewer>
+            </div>
+            <div id="split-bottom" *ngIf="showTable" data-automation-id="idp-viewer-splitter-pane-table">
+                <hyland-idp-extraction-table
+                    #activeTable
+                    class="idp-extraction-table"
+                    [ocrWords]="(currentPageOcrWords$ | async) || []"
+                    (fieldValuePending)="fieldValuePending.next($event)"
+                    (closeTable)="showTable = false"/>
+            </div>
+        </div>
+    </div>
+</div>

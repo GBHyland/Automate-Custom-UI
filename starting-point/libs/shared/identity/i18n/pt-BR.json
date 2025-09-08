@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Grupos",
+      "MANDATORY": "Obrigatório",
+      "ERROR": {
+        "NOT_FOUND": "Nenhum grupo encontrado com o nome {{groupName}}"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Deve corresponder ao padrão {{pattern}}",
+        "INVALID_MIN_LENGTH": "Deve ter pelo menos {{requiredLength}} caracteres",
+        "INVALID_MAX_LENGTH": "Comprimento excedido, {{requiredLength}} máximo de caracteres",
+        "REQUIRED": "Este é um campo necessário",
+        "NOT_FOUND": "Nenhum usuário encontrado com o nome de usuário {{userName}}"
+      }
+    }
+  }
+}

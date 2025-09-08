@@ -1,0 +1,467 @@
+{
+  "name": "workspace-hxp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/workspace-hxp/src",
+  "prefix": "app",
+  "targets": {
+    "prebuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "node apps/workspace-hxp/remove-me-setup.mjs"
+        ]
+      }
+    },
+    "build-esbuild": {
+      "executor": "@angular-devkit/build-angular:browser-esbuild"
+    },
+    "build": {
+      "dependsOn": [
+        "prebuild"
+      ],
+      "executor": "@alfresco-dbp/tools:build-apps",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "baseHref": ".",
+        "outputPath": "dist/workspace-hxp",
+        "index": "apps/workspace-hxp/src/index.html",
+        "main": "apps/workspace-hxp/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/workspace-hxp/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/workspace-hxp/src/assets",
+          {
+            "input": "apps/workspace-hxp/.tmp",
+            "output": "/",
+            "glob": "app.config.json"
+          },
+          {
+            "input": "apps/workspace-hxp/resources",
+            "output": "/resources",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/domain-shell/assets",
+            "output": "/assets/plugins/",
+            "glob": "content-services.extension.json"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-content-browser/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/content-browser/feature-shell/assets/icons",
+            "output": "assets/icons",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/content-browser/document-breadcrumb/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-content-browser-document-breadcrumb/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/shared/document-list/feature-shell/assets/i18n",
+            "output": "assets/shared-document-list/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/domain-shell/assets/i18n",
+            "output": "assets/content-services-extension-domain-shell/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared-hxp/document-properties-viewer/feature-shell/assets/i18n",
+            "output": "assets/shared-document-properties-viewer/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/icons/assets/i18n",
+            "output": "assets/adf-enterprise-adf-hx-content-services-icons/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/search/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-search/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-core/bundles/assets",
+            "output": "/assets",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/content-ee/process-services-cloud-extension/assets",
+            "output": "assets/plugins",
+            "glob": "process-services-cloud.extension.json"
+          },
+          {
+            "input": "libs/content-ee/process-services-cloud-extension/i18n",
+            "output": "/assets/adf-process-services-cloud-extension/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/shared/upload-files/feature-shell/assets/i18n",
+            "output": "/assets/upload-files/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared/identity/i18n",
+            "output": "/assets/shared-identity/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/ui/assets/adf-enterprise-adf-hx-content-services-ui/i18n",
+            "output": "assets/adf-enterprise-adf-hx-content-services-ui/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared/filters/smart/i18n",
+            "output": "/resources/shared/filters/smart/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/services/assets/adf-enterprise-adf-hx-content-services-services/i18n",
+            "output": "assets/adf-enterprise-adf-hx-content-services-services/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-process-services-cloud/bundles/assets",
+            "output": "/assets",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@hylandsoftware/satori-fonts",
+            "output": "/assets",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/pdfjs-dist/build",
+            "output": "/",
+            "glob": "pdf.worker.min.mjs"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/icons/assets/images",
+            "glob": "**/*",
+            "output": "assets/images"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/ui/assets/adf-enterprise-adf-hx-content-services-ui/images",
+            "glob": "**/*",
+            "output": "assets/adf-enterprise-adf-hx-content-services-ui/images"
+          },
+          {
+            "input": "node_modules/@alfresco/adf-hx-content-services/icons/assets/search-icons",
+            "output": "assets/search-icons",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/process-services-cloud-extension/process-form/feature-shell/assets/i18n",
+            "output": "assets/process-services-cloud-extension-process-form/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/shared/document-category-picker/feature-shell/assets/i18n",
+            "output": "assets/shared-document-category-picker/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/shared/document-location-picker/feature-shell/assets/i18n",
+            "output": "assets/shared-document-location-picker/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/class-verification/feature-shell/assets/i18n",
+            "output": "assets/idp-services-extension-class-verification/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/shared/document-location-picker/feature-shell/assets/icons",
+            "output": "assets/icons",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/assets/i18n",
+            "output": "assets/content-services-extension-shared-content-repository/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/shared/single-file-download/feature-shell/assets/i18n",
+            "output": "assets/shared-single-item-download/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/single-item-download/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-single-item-download/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/content-delete/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-content-delete/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/content-services-extension/content-share/feature-shell/assets/i18n",
+            "output": "assets/content-services-extension-content-share/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/domain-shell/assets",
+            "output": "/assets/plugins/",
+            "glob": "idp-services.extension.json"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/domain-shell/assets/i18n",
+            "output": "assets/idp-services-extension-domain-shell/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/field-verification/feature-shell/assets/i18n",
+            "output": "assets/idp-services-extension-field-verification/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared-hxp/idp-document-viewer/src/assets/i18n",
+            "output": "/assets/idp-viewer/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/class-verification/feature-shell/assets/images",
+            "output": "assets/idp-services-extension-class-verification/images",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/field-verification/feature-shell/assets/images",
+            "output": "assets/idp-services-extension-field-verification/images",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/idp-services-extension/shared/assets/i18n",
+            "output": "assets/idp-services-extension-shared/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/public-access-extension/domain-shell/assets",
+            "output": "/assets/plugins/",
+            "glob": "public-access.extension.json"
+          },
+          {
+            "input": "libs/workspace-hxp/public-access-extension/public-forms/assets/i18n",
+            "output": "assets/public-access-extension/public-forms/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/governance-services-extension/domain-shell/assets",
+            "output": "/assets/plugins/",
+            "glob": "governance-services.extension.json"
+          },
+          {
+            "input": "libs/workspace-hxp/governance-services-extension/domain-shell/assets/i18n",
+            "output": "assets/governance-services-extension-domain-shell/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/workspace-hxp/governance-services-extension/domain-shell/assets/icons",
+            "output": "assets/icons",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared-hxp/navigation/application-chrome/i18n",
+            "output": "assets/navigation/application-chrome/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "node_modules/@hylandsoftware/satori-ui/lib/i18n",
+            "output": "assets/satori-ui/i18n",
+            "glob": "**/*"
+          },
+          {
+            "input": "libs/shared-hxp/navigation/header/i18n",
+            "output": "assets/navigation/header/i18n",
+            "glob": "**/*"
+          }
+        ],
+        "styles": [
+          "node_modules/cropperjs/dist/cropper.min.css",
+          "node_modules/pdfjs-dist/web/pdf_viewer.css",
+          "node_modules/@hyland/icons/index.css",
+          "node_modules/@hylandsoftware/satori-fonts/index.css",
+          "apps/workspace-hxp/src/styles.scss",
+          "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons.css",
+          "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons-outlined.css"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "apps/workspace-hxp/src/styles/idp-styles",
+            "libs/shared/core/src/styles",
+            "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+            "node_modules/@alfresco/adf-core/lib",
+            "libs/shared/satori-like-styles/src"
+          ]
+        },
+        "allowedCommonJsDependencies": [
+          "cropperjs"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        },
+        "production-devtools": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "6mb",
+              "maximumError": "10mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/workspace-hxp/src/environments/environment.ts",
+              "with": "apps/workspace-hxp/src/environments/environment.prod-dev.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "adf": {
+          "tsConfig": "apps/workspace-hxp/tsconfig.app.adf.json",
+          "extractLicenses": false,
+          "buildOptimizer": false,
+          "sourceMap": true,
+          "optimization": false,
+          "namedChunks": true,
+          "stylePreprocessorOptions": {
+            "includePaths": [
+              "node_modules",
+              "libs/shared/core/src/styles",
+              "node_modules/@alfresco/adf-core/lib",
+              "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+              "apps/workspace-hxp/src/styles/idp-styles",
+              "libs/shared/satori-like-styles/src"
+            ]
+          }
+        },
+        "adfprod": {
+          "tsConfig": "apps/workspace-hxp/tsconfig.app.adf.json",
+          "outputHashing": "all",
+          "fileReplacements": [
+            {
+              "replace": "apps/workspace-hxp/src/environments/environment.ts",
+              "with": "apps/workspace-hxp/src/environments/environment.prod-dev.ts"
+            }
+          ],
+          "stylePreprocessorOptions": {
+            "includePaths": [
+              "libs/shared/core/src/styles",
+              "apps/workspace-hxp/src/styles/idp-styles",
+              "node_modules/@alfresco/adf-core/lib",
+              "libs/shared/satori-like-styles/src"
+            ]
+          }
+        },
+        "production": {
+          "budgets": [
+            {
+              "type": "bundle",
+              "name": "main",
+              "maximumWarning": "6mb",
+              "maximumError": "10mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb"
+            }
+          ],
+          "outputHashing": "all",
+          "fileReplacements": [
+            {
+              "replace": "apps/workspace-hxp/src/environments/environment.ts",
+              "with": "apps/workspace-hxp/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "pack-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx run workspace-hxp:build:production && tools/scripts/zip.mjs --source dist/workspace-hxp --target dist/workspace-hxp.zip"
+      }
+    },
+    "preserve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/workspace-hxp",
+        "commands": [
+          "node remove-me-setup.mjs",
+          "npx envsub --env-file ../../.env --env APP_CONFIG_BPM_HOST=http://localhost:4200 --env APP_CONFIG_ECM_HOST=http://localhost:4200 --env NUCLEUS_API_HOST=http://localhost:4200 --env HXP_INTELLIGENT_DOCUMENT_PROCESSING_URL=http://localhost:4200 --all .tmp/app.config.json.tpl .tmp/app.config.json",
+          "node ../../scripts/utils/validate-app-config.js ../../node_modules/@alfresco/adf-core/app.config.schema.json .tmp/app.config.json"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/apps/workspace-hxp/.tmp/app.config.json"
+      ]
+    },
+    "serve": {
+      "dependsOn": [
+        "preserve"
+      ],
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4200,
+        "host": "0.0.0.0",
+        "open": true,
+        "proxyConfig": "apps/workspace-hxp/proxy.conf.js",
+        "forceEsbuild": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "workspace-hxp:build:development"
+        },
+        "production-devtools": {
+          "buildTarget": "workspace-hxp:build:production-devtools"
+        },
+        "production": {
+          "buildTarget": "workspace-hxp:build:production"
+        },
+        "adf": {
+          "forceEsbuild": false,
+          "buildTarget": "workspace-hxp:build:adf"
+        },
+        "adfprod": {
+          "buildTarget": "workspace-hxp:build:adfprod"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {},
+    "stylelint": {}
+  },
+  "implicitDependencies": [],
+  "tags": [
+    "scope:workspace-hxp",
+    "type:app",
+    "category:workspace-hxp"
+  ],
+  "namedInputs": {
+    "projectSpecificFiles": [
+      "{workspaceRoot}/e2es/workspace-hxp-playwright/**/*"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Select a document",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Change layout",
+                "GRID_VIEW": "Grid (upto 12 thumbnails)",
+                "VERTICAL_SCROLLING": "Vertical scrolling",
+                "HORIZONTAL_SCROLLING": "Horizontal scrolling"
+            },
+            "THUMBNAIL_VIEWER": "Thumbnail viewer",
+            "THUMBNAIL_VIEWER_PAGES": "Pages",
+            "THUMBNAIL_ALT_TEXT": "Thumbnail image",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Page navigation",
+                "PREVIOUS": "Previous",
+                "NEXT": "Next"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Layer selection",
+                "IMAGE": "Image",
+                "TEXT": "Text"
+            },
+            "ZOOM": {
+                "TITLE": "Zoom",
+                "ZOOM_IN": "Zoom in",
+                "ZOOM_OUT": "Zoom out"
+            },
+            "ROTATE_RIGHT": "Rotate clockwise",
+            "FULLSCREEN": "Fullscreen",
+            "BEST_FIT": "Best Fit"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Toggle layout",
+                "THUMBNAIL_VIEWER": "Toggle thumbnail viewer",
+                "NAVIGATE_PREVIOUS_PAGE": "Navigate to previous page",
+                "NAVIGATE_NEXT_PAGE": "Navigate to next page",
+                "NAVIGATE_FIRST_PAGE": "Navigate to first page",
+                "NAVIGATE_LAST_PAGE": "Navigate to last page",
+                "NAVIGATE_UP": "Navigate up",
+                "NAVIGATE_DOWN": "Navigate down",
+                "NAVIGATE_LEFT": "Navigate left",
+                "NAVIGATE_RIGHT": "Navigate right",
+                "ZOOM_IN": "Zoom in",
+                "ZOOM_OUT": "Zoom out",
+                "BEST_FIT": "Best fit",
+                "ROTATE_RIGHT": "Rotate clockwise",
+                "FULL_SCREEN": "Toggle fullscreen",
+                "IMAGE_LAYER": "Image layer",
+                "TEXT_LAYER": "Text layer",
+                "CLIPBOARD_COPY": "Copy to clipboard"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "Viewer Layout is changed to Single Vertical View for better experience",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "Viewer Layout is changed to Grid View for better experience",
+                "CLIPBOARD_COPY_SUCCESS": "Copied to clipboard"
+            }
+        }
+    }
+}

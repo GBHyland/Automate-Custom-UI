@@ -1,0 +1,11 @@
+{
+    "extends": "../../../tsconfig.adf.json",
+    "files": [],
+    "include": [],
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "exclude": ["jest.config.ts"]
+}

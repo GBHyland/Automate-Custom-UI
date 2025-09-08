@@ -1,0 +1,72 @@
+{
+    "name": "workspace-hxp-shared-workspace-document-tree",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/workspace-hxp/shared/workspace-document-tree/src",
+    "prefix": "hxp",
+    "tags": ["scope:workspace-hxp-shared-workspace-document-tree", "category:workspace-hxp"],
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/workspace-hxp/shared/workspace-document-tree/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/workspace-hxp/shared/workspace-document-tree/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/workspace-hxp/shared/workspace-document-tree/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/shared/workspace-document-tree/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "passWithNoTests": false,
+                "stylePreprocessorOptions": {
+                    "includePaths": [
+                        "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+                        "libs/shared/core/src/styles",
+                        "libs/workspace-hxp/shared/workspace-document-tree/src/lib/document-location-picker",
+                        "apps/workspace-hxp/src",
+                        "node_modules/@alfresco/adf-core/lib",
+                        "libs/shared/satori-like-styles/src"
+                    ]
+                },
+                "styles": [
+                    "node_modules/@hyland/icons/index.css",
+                    "apps/workspace-hxp/src/styles.scss",
+                    "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons.css",
+                    "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons-outlined.css"
+                ]
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true,
+                    "stylePreprocessorOptions": {
+                        "includePaths": [
+                            "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+                            "libs/shared/core/src/styles",
+                            "libs/workspace-hxp/shared/workspace-document-tree/src/lib/workspace-document-tree",
+                            "apps/workspace-hxp/src",
+                            "../alfresco-ng2-components/lib/core/src/lib",
+                            "libs/shared/satori-like-styles/src"
+                        ]
+                    }
+                }
+            }
+        },
+        "lint": {},
+        "stylelint": {}
+    }
+}

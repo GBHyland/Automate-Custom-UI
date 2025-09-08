@@ -1,0 +1,28 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-permission-dialog-title {
+    font-size: satori.$hy-font-sizes-40;
+    line-height: satori.$hy-line-heights-20;
+    font-weight: var(--theme-menu-container-font-weight, 300);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hxp-permissions-title {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hxp-permission-document-title {
+    word-break: break-all;
+}
+
+.hxp-permission-dialog-sub-title {
+    font-weight: var(--theme-menu-container-font-weight, 300);
+    font-size: satori.$hy-font-sizes-20;
+    line-height: satori.$hy-line-heights-40;
+}

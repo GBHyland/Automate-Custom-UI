@@ -1,0 +1,11 @@
+{
+    "name": "shared-playwright",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/playwright/shared/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {}
+    },
+    "tags": ["scope:shared-playwright"]
+}

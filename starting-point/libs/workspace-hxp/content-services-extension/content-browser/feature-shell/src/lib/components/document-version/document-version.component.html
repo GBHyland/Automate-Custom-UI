@@ -1,0 +1,5 @@
+<button *ngIf="isAvailable" class="hxp-create-version-button" mat-menu-item (click)="createVersion()" aria-labelledby="label">
+    <mat-icon>save</mat-icon>
+    <span id="label" class="hxp-create-version-button-label">{{ 'DOCUMENT_VERSION.LABEL' | translate }}</span>
+    <hxp-beta-chip-tag />
+</button>

@@ -1,0 +1,108 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-permissions-management-panel-container,
+.hxp-permissions-management-dialog-container {
+    .hxp-add-permission {
+        display: flex;
+        flex-direction: column;
+
+        .hxp-permission-dialog-input {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: satori.$hy-spacing-12;
+        }
+
+        .hxp-permission-dialog-input-title {
+            font-style: normal;
+            font-weight: var(--theme-menu-container-font-weight, 300);
+            font-size: satori.$hy-font-sizes-20;
+            line-height: satori.$hy-line-heights-40;
+            color: var(--adf-about-panel-header-title-color);
+        }
+
+        .hxp-input-area {
+            display: flex;
+            flex-direction: column;
+            height: 48px;
+            border: 1px solid var(--adf-edit-process-filter-header-description-color);
+            border-radius: satori.$hy-border-radius-8;
+            max-width: 400px;
+            padding-inline: satori.$hy-spacing-12;
+            background-color: var(--adf-info-drawer-tab-default-background);
+
+            #{ms.$mat-select-placeholder} {
+                font-size: satori.$hy-font-sizes-20;
+            }
+
+            #{ms.$mat-form-field-wrapper} {
+                background-color: var(--adf-info-drawer-tab-default-background);
+            }
+        }
+
+        .hxp-permission-dialog-align-arrow-right {
+            padding: satori.$hy-spacing-12;
+        }
+
+        .hxp-permission-dialog-input-area {
+            margin-top: 24px;
+            position: relative;
+            font-size: satori.$hy-font-sizes-20;
+        }
+
+        .hxp-permission-dialog-button {
+            align-self: flex-end;
+            margin-top: 15px;
+        }
+
+        #{ms.$mat-select-arrow} {
+            opacity: 0;
+        }
+
+        #{ms.$mat-form-field} {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #{ms.$mat-form-field-flex} {
+            align-items: center;
+        }
+
+        #{ms.$mat-form-field-infix}:not(.mdc-text-field--outlined):not(:disabled) {
+            font-size: satori.$hy-font-sizes-20;
+            min-height: auto;
+            padding: 0;
+        }
+
+        .hxp-permission-select #{ms.$mat-icon} {
+            padding: satori.$hy-spacing-2;
+        }
+
+        #{ms.$mat-form-field}#{ms.$mat-form-field-invalid} #{ms.$mat-form-field-label} {
+            color: inherit;
+        }
+    }
+
+    .hxp-permission-panel {
+        #{ms.$mat-mdc-option}#{ms.$mat-select}:not(#{ms.$mat-mdc-option-multiple}) {
+            background-color: var(--adf-theme-primary-50);
+            border-inline-start: 4px solid var(--theme-primary-color, satori.$satori-like-primary);
+            color: var(--adf-theme-foreground-text-color);
+        }
+    }
+
+    .hxp-user-panel {
+        .hxp-selected-suggestion#{ms.$mat-mdc-option}#{ms.$mat-selected}:not(#{ms.$mat-option-disabled}) {
+            background-color: var(--adf-theme-primary-50);
+            border-inline-start: 4px solid var(--theme-primary-color, satori.$satori-like-primary);
+            color: var(--adf-theme-foreground-text-color);
+        }
+
+        .hxp-selected-suggestion {
+            background-color: var(--adf-theme-primary-50);
+        }
+    }
+}

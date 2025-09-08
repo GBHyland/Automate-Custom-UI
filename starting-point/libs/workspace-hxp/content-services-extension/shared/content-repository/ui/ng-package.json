@@ -1,0 +1,8 @@
+{
+    "$schema": "../../../../../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../../../../../dist/libs/workspace-hxp/content-services-extension/shared/content-repository/ui",
+    "lib": {
+        "entryFile": "src/index.ts",
+        "styleIncludePaths": ["../../../../../shared/core/src/styles"]
+    }
+}

@@ -1,0 +1,49 @@
+@use 'idp-theme' as idp;
+@use 'mat-selectors' as ms;
+
+.idp-footer-toolbar {
+    display: flex;
+    margin: 0.25em 1em 0.75em;
+    padding: 4px 8px;
+    height: 2.75em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid idp.get-border-color(border);
+    border-radius: 1em;
+    box-sizing: content-box;
+
+    &.idp-collapsed-width {
+        width: min-content;
+        max-width: 3em;
+    }
+
+    #{ms.$mat-icon} {
+        flex-shrink: 0;
+    }
+
+    &__button {
+        @include idp.use-foreground(link);
+
+        cursor: pointer;
+        outline-color: idp.get-border-color(resolve-border);
+    }
+
+    &__collapse-button {
+        border: 1px solid idp.get-border-color(border);
+        border-radius: 0.5em;
+        padding: 4px;
+    }
+
+    &__select-text {
+        flex: 1;
+        text-align: center;
+        font-size: 1em;
+    }
+}
+
+.idp-relative {
+    position: relative;
+    bottom: auto;
+}

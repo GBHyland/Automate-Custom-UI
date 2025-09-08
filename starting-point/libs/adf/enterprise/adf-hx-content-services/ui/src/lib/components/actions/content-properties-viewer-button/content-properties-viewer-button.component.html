@@ -1,0 +1,12 @@
+<button
+    id="document-properties-viewer-button"
+    mat-icon-button
+    data-automation-id="document-properties-viewer-button"
+    [attr.aria-label]="'ADF_VIEWER.ACTIONS.INFO' | translate"
+    title="{{ 'ADF_VIEWER.ACTIONS.INFO' | translate }}"
+    [matTooltip]="'ADF_VIEWER.ACTIONS.INFO' | translate"
+    *ngIf="isAvailable"
+    (click)="showInfo()"
+>
+    <mat-icon>info</mat-icon>
+</button>

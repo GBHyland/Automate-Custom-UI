@@ -1,0 +1,10 @@
+.apa-cloud-scroll-container {
+    overflow: auto;
+    height: 100%;
+
+    .apa-cloud-scroll-component {
+        width: fit-content;
+        min-width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Ryhmät",
+      "MANDATORY": "Pakollinen",
+      "ERROR": {
+        "NOT_FOUND": "Nimellä {{groupName}} ei löydy ryhmää"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Tulee vastata kaavaa {{pattern}}",
+        "INVALID_MIN_LENGTH": "Vähimmäispituus {{requiredLength}} merkkiä",
+        "INVALID_MAX_LENGTH": "Liian pitkä, enimmäispituus {{requiredLength}} merkkiä",
+        "REQUIRED": "Pakollinen kenttä",
+        "NOT_FOUND": "Käyttäjänimellä {{userName}} ei löytynyt käyttäjää"
+      }
+    }
+  }
+}

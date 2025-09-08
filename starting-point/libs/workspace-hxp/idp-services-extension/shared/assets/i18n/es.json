@@ -1,0 +1,29 @@
+{
+    "IDP": {
+        "REJECT_DIALOG": {
+            "TITLE": "Rechazar documento",
+            "DESCRIPTION": "Este documento no se incluirá en el proceso de extracción del lote si se rechaza. Verifique que realmente desea rechazarlo.\n\nJustifique su rechazo.",
+            "REASON_LABEL": "Motivo del rechazo",
+            "CANCEL_BUTTON": "Cancelar",
+            "REJECT_BUTTON": "Rechazar documento",
+            "SEARCH_PLACEHOLDER": "Buscar una razón...",
+            "REJECT_NOTE": {
+                "LABEL": "Nota de rechazo",
+                "PLACEHOLDER": "Indicar una nota de rechazo...",
+                "ARIA_LABEL": "Indicar una nota de rechazo",
+                "HINT": "Máximo de {{max}} caracteres"
+            }
+        },
+        "SHORTCUT_DIALOG": {
+            "TITLE": "Atajos de teclado",
+            "SEARCH_PLACEHOLDER": "Buscar un atajo...",
+            "NO_RESULTS": "No se han encontrado resultados"
+        },
+        "DISCARD_DIALOG": {
+            "TITLE": "Discard Changes",
+            "DESCRIPTION": "You have unsaved changes. Unsaved changes will be lost if you leave this page.",
+            "CANCEL_BUTTON": "Cancel",
+            "DISCARD_BUTTON": "Discard Changes"
+        }
+    }
+}

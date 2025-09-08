@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Selezionare un file",
+    "TABS": {
+      "REPOSITORY": "Repository",
+      "LOCAL_STORAGE": "Archiviazione locale"
+    },
+    "ACTIONS": {
+      "UPLOAD": "CARICA",
+      "CANCEL": "Annulla",
+      "ATTACH": "Allega"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "La cartella {{folderName}} non esiste. Impossibile caricare il file.",
+    "FOLDER_DOES_NOT_EXIST": "La cartella in cui caricare il file non esiste. Impossibile caricare il file.",
+    "CONTENT_SERVICE_UNAVAILABLE": "Il servizio di contenuti non è al momento disponibile. Impossibile caricare il file.",
+    "FOLDER_ACCESS_DENIED": "Non si dispone delle autorizzazioni per la cartella specificata nel repository di contenuti."
+  }
+}

@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Autorisations",
+                    "ARIA-LABEL": "Gérer les autorisations de fichiers"
+                },
+                "COPY": {
+                    "TITLE": "Copier",
+                    "ARIA-LABEL": "Copier le fichier"
+                },
+                "MOVE": {
+                    "TITLE": "Déplacer",
+                    "ARIA-LABEL": "Déplacer le fichier"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Remplacer le fichier (beta)",
+                    "ARIA-LABEL": "Remplacer le fichier (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Enregistrement dans l’historique des versions (beta)",
+                    "ARIA-LABEL": "Enregistrement dans l’historique des versions (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Copier",
+        "MOVE": "Déplacer",
+        "REPLACE_FILE": "Remplacer le fichier",
+        "MANAGE_VERSIONS": "Gérer les versions"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Gérer les versions",
+            "CLOSE": "Fermer",
+            "CREATED_BY": "par"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Copier l'élément dans",
+            "COPY": "Copier",
+            "CANCEL": "Annuler",
+            "CLOSE": "Fermer",
+            "FILE_NAME_PREFIX": "Copie de",
+            "PERMISSIONS": {
+                "ERROR": "Vous n'êtes pas autorisé(e) à copier le document ici."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Rechercher"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Accueil",
+            "MOVE_ITEM": "Déplacer l'élément dans",
+            "MOVE": "Déplacer",
+            "CANCEL": "Annuler",
+            "CLOSE": "Fermer",
+            "PERMISSIONS": {
+                "ERROR": "Vous n'êtes pas autorisé(e) à déplacer le document ici."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Rechercher"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "Le fichier a bien été copié",
+            "FILE_ERROR": "Échec de la copie du fichier",
+            "FOLDER_SUCCESS": "Le dossier a bien été copié",
+            "FOLDER_ERROR": "Échec de la copie du dossier"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "Le fichier a bien été déplacé",
+            "FILE_ERROR": "Échec du déplacement du fichier",
+            "FOLDER_SUCCESS": "Le dossier a bien été déplacé",
+            "FOLDER_ERROR": "Échec du déplacement du dossier"
+        }
+    }
+}

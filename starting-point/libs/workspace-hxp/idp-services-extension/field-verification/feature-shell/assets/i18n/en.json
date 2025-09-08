@@ -1,0 +1,74 @@
+{
+    "EXTRACTION": {
+        "VERIFICATION": {
+            "TASK_HEADER": {
+                "TITLE": "Review field values extracted from the document",
+                "REMAINING_ISSUES": "issues to resolve",
+                "ALL_RESOLVED": "All resolved",
+                "BACK_LABEL": "Back to Tasks",
+                "TASK_NAME": "Task name",
+                "TASK_NAME_VALUE": "Document Verification",
+                "DOCUMENT_CLASSES": "Document classes",
+                "TOTAL_DOCUMENTS": "Total documents",
+                "TOTAL_PAGES": "Total pages",
+                "CONTENT_TYPE": "Content type"
+            },
+            "SUBMIT_BUTTON": "Submit",
+            "SUBMIT_WITH_ISSUE_BUTTON": "Submit with Issue",
+            "METADATA_PANEL": {
+                "TITLE": "Fields",
+                "REJECT_DOCUMENT_LINK": "Reject Document",
+                "CLEAR_ISSUE_LINK": "Clear issue"
+            },
+            "METADATA_TABLE": {
+                "ADD_TABLE": "Add Table",
+                "TABLE_NOT_FOUND": "Table Not Found"
+            },
+            "TABLE_ISSUES": {
+                "SHOW_ENTIRE_TABLE": "Show Entire Table"
+            },
+            "METADATA_FIELD_VALIDATOR": {
+                "REQUIRED": "Field is required",
+                "INVALID_INTEGER": "Field must be a number"
+            },
+            "EXTRACTION_RESULT": {
+                "EXTRACTION_ISSUE": "Extraction issue",
+                "EXTRACTED_SUCCESSFULLY": "Extracted successfully",
+                "VERIFIED": "Verified",
+                "NOT_VERIFIED": "Not verified"
+            },
+            "EXTRACTION_TABLE": {
+                "TABLE_NOT_EXTRACTED": "Table data unable to be successfully extracted.",
+                "INSERT_ROW_ABOVE": "Insert row above",
+                "INSERT_ROW_BELOW": "Insert row below",
+                "CLEAR_ROW": "Clear this row",
+                "DELETE_ROW": "Delete this row",
+                "CLEAR_COLUMN": "Clear this column",
+                "DELETE_TABLE": "Delete table"
+            },
+            "NOTIFICATIONS": {
+                "SCREEN_INIT_ERROR": "Failed to initialize the screen",
+                "SCREEN_INIT_ERROR_NOT_CLAIMABLE": "Task cannot be claimed",
+                "SCREEN_INIT_ERROR_ASSIGNEE": "Error occurred on getting task assignee",
+                "SCREEN_LOAD_ERROR": "Failed to load the screen data",
+                "TASK_ACTION_ERROR": "Failed to perform action",
+                "TASK_SAVE_ERROR": "Failed to Save Task",
+                "TASK_COMPLETE_ERROR": "Failed to Complete Task",
+                "TASK_CLAIM_ERROR": "Failed to Claim Task",
+                "TASK_UNCLAIM_ERROR": "Failed to Unclaim Task"
+            },
+            "TASK_ACTIONS": {
+                "SAVE": "Save",
+                "SUBMIT": "Submit",
+                "OPEN_NEXT_TASK": "Open next task automatically"
+            },
+            "SHORTCUTS": {
+                "NAVIGATE_NEXT_FIELD": "Navigate to next field",
+                "NAVIGATE_PREVIOUS_TABLE_ROW": "Navigate to previous table row",
+                "NAVIGATE_NEXT_TABLE_ROW": "Navigate to next table row",
+                "NAVIGATE_PREVIOUS_TABLE_COLUMN": "Navigate to previous table column",
+                "NAVIGATE_NEXT_TABLE_COLUMN": "Navigate to next table column"
+            }
+        }
+    }
+}

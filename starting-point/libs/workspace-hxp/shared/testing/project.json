@@ -1,0 +1,30 @@
+{
+    "name": "workspace-hxp-shared-testing",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/workspace-hxp/shared/testing/src",
+    "prefix": "hxp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/libs/workspace-hxp/shared/testing"],
+            "options": {
+                "project": "libs/workspace-hxp/shared/testing/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/workspace-hxp/shared/testing/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/workspace-hxp/shared/testing/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/shared/testing/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "lint": {}
+    },
+    "tags": ["scope:workspace-hxp-shared-testing", "category:workspace-hxp"]
+}

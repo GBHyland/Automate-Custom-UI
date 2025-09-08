@@ -1,0 +1,5 @@
+<ng-container [ngSwitch]="item?.type">
+    <ng-container *ngSwitchCase="'custom'">
+        <adf-dynamic-component [id]="item?.component || ''" />
+    </ng-container>
+</ng-container>

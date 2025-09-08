@@ -1,0 +1,23 @@
+@use 'satori-like-styles' as satori;
+
+$app-chrome-default-width: 56px;
+
+#hxp-viewer {
+    adf-toolbar-title {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+
+        hxp-document-version-selector {
+            margin-left: satori.$hy-spacing-12;
+        }
+    }
+}
+
+.app-chrome-enabled {
+    .adf-viewer-overlay-container .adf-viewer-content {
+        left: var(--sat-platform-nav-collapsed-width, $app-chrome-default-width);
+        width: calc(100% - var(--sat-platform-nav-collapsed-width, $app-chrome-default-width));
+    }
+}

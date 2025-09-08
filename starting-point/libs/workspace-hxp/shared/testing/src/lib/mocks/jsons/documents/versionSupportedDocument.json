@@ -1,0 +1,59 @@
+{
+    "sys_changeToken": "0-0",
+    "sys_contributors": [
+        {
+            "id": "444660e7-0334-4356-8c3d-484fe445b610",
+            "firstName": "test2",
+            "lastName": "user2",
+            "username": "test2user2"
+        }
+    ],
+    "sys_created": "2025-01-30T08:16:15.199Z",
+    "sys_creator": {
+        "id": "444660e7-0334-4356-8c3d-484fe445b610",
+        "firstName": "test2",
+        "lastName": "user2",
+        "username": "test2user2"
+    },
+    "sys_effectivePermissions": [
+        "CreateChild",
+        "CreateVersion",
+        "Delete",
+        "DeleteChild",
+        "ManageLock",
+        "ManageRetention",
+        "ManageSecurity",
+        "Read",
+        "ReadVersion",
+        "ReadWrite",
+        "Write",
+        "WriteVersion"
+    ],
+    "sys_id": "6fb688d6-a1a3-47f7-8759-1f48775f83cf",
+    "sys_isFolderish": false,
+    "sys_lastContributor": {
+        "id": "444660e7-0334-4356-8c3d-484fe445b610",
+        "firstName": "test2",
+        "lastName": "user2",
+        "username": "test2user2"
+    },
+    "sys_mixinTypes": [
+        "SysVersionable",
+        "SysFilish"
+    ],
+    "sys_modified": "2025-01-30T08:16:15.199Z",
+    "sys_name": "sample.pdf",
+    "sys_parentId": "0b439910-c631-4418-b155-9c2fecbae989",
+    "sys_parentPath": "/cchatterjee/Versions",
+    "sys_path": "/cchatterjee/Versions/sample.pdf",
+    "sys_pathDepth": 4,
+    "sys_primaryType": "file-version",
+    "sys_repository": "default",
+    "sys_title": "sample.pdf",
+    "sysfile_blob": {
+        "filename": "sample.pdf",
+        "mimeType": "application/pdf"
+    },
+    "sysver_isCheckedIn": true,
+    "sysver_isVersion": false
+}

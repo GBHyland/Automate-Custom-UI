@@ -1,0 +1,46 @@
+@use 'mat-selectors' as ms;
+
+.hxp-override-features-dialog #{ms.$mat-dialog-container-element} {
+    padding: 0;
+    overflow: auto;
+    position: relative;
+}
+
+.hxp-header-menu {
+    &-button {
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.039);
+        }
+
+        &:active {
+            background-color: rgba(0, 0, 0, 0.086);
+        }
+    }
+
+    &-show-more-icon {
+        font-size: var(--studio-header-show-more-icon-font-size);
+        line-height: 24px;
+        margin-left: 10px;
+    }
+
+    &-dropdown {
+        width: 200px;
+        margin-right: 10px;
+
+        &__features-button {
+            adf-feature-flags-override-indicator {
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+#{ms.$mat-button-label} {
+    display: flex;
+}
+
+#{ms.$mat-datepicker-content} {
+    #{ms.$mat-button-label} {
+        display: block;
+    }
+}

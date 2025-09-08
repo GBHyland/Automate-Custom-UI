@@ -1,0 +1,27 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "module": "esnext",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "target": "es2022",
+        "types": ["node", "jest"],
+    },
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        },
+        {
+            "path": "./tsconfig.lib.adf.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        },
+        {
+            "path": "./tsconfig.spec.adf.json"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+[
+    {
+        "sys_changeToken": "0-0",
+        "sys_hasLegalHold": false,
+        "sys_id": "test-folder-1-id",
+        "sysver_isCheckedIn": false,
+        "sys_isFolderish": true,
+        "sys_isLatestMajorVersion": false,
+        "sys_isLatestVersion": false,
+        "sys_isRecord": false,
+        "sys_isTrashed": false,
+        "sysver_isVersion": false,
+        "sys_mixinTypes": ["SysFolderish"],
+        "sys_name": "Test Folder 1",
+        "sys_parentId": "00000000-0000-0000-0000-000000000000",
+        "sys_path": "/Test Folder 1",
+        "sys_pathDepth": 2,
+        "sys_primaryType": "SysFolder",
+        "sys_repository": "default",
+        "sys_title": "Test Folder 1",
+        "sys_contributors": [{
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        }],
+        "sys_created": "2022-12-19T10:41:27.079+00:00",
+        "sys_creator": {
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        },
+        "sys_description": "Test Folder 1 description",
+        "sys_lastContributor": {
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        },
+        "sys_modified": "2022-12-19T10:41:27.079+00:00"
+    },
+    {
+        "sys_changeToken": "0-0",
+        "sys_hasLegalHold": false,
+        "sys_id": "test-folder-2-id",
+        "sysver_isCheckedIn": false,
+        "sys_isFolderish": true,
+        "sys_isLatestMajorVersion": false,
+        "sys_isLatestVersion": false,
+        "sys_isRecord": false,
+        "sys_isTrashed": false,
+        "sysver_isVersion": false,
+        "sys_mixinTypes": ["SysFolderish"],
+        "sys_name": "Test Folder 2",
+        "sys_parentId": "test-folder-1-id",
+        "sys_path": "/Folder 2/Test Folder 2",
+        "sys_pathDepth": 3,
+        "sys_primaryType": "SysFolder",
+        "sys_repository": "default",
+        "sys_title": "Test Folder 2",
+        "sys_contributors": [{
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        }],
+        "sys_created": "2022-12-19T10:42:05.517+00:00",
+        "sys_creator": {
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        },
+        "sys_description": "Test Folder 2 description",
+        "sys_lastContributor": {
+            "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+            "firstName": "test1",
+            "lastName": "user1",
+            "username": "test1user1"
+        },
+        "sys_modified": "2022-12-19T10:42:05.517+00:00"
+    }
+]

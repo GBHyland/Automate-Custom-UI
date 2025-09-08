@@ -1,0 +1,84 @@
+<div class="app-process-list-by-category-container">
+  <div class="app-search-input">
+    <mat-form-field>
+        <mat-icon matPrefix [attr.aria-label]="'SEARCH.BUTTON.ARIA-LABEL' | translate">search</mat-icon>
+        <input
+            matInput
+            cdkFocusInitial
+            name="start-process-dialog-search-input"
+            data-automation-id="start-process-dialog-search-input"
+            autocomplete="off"
+            type="text"
+            [formControl]="searchProcessText"
+            [placeholder]="'SEARCH_PROCESS.INPUT.PLACEHOLDER' | translate"
+        />
+        </mat-form-field>
+  </div>
+
+  <div
+    *ngIf="showLoadingSpinner"
+    class="app-loading-spinner"
+  >
+    <mat-progress-spinner color="primary" mode="indeterminate"/>
+  </div>
+
+  <ng-container *ngIf="!showLoadingSpinner">
+      <div
+        *ngIf="!showLoadingSpinner"
+        class="app-processes-list"
+        data-automation-id="process-by-category-list-id"
+      >
+        <span
+          *ngIf="filteredProcesses.length === 0"
+          class="app-no-processes-message"
+        >
+          {{"SHARED.PROCESSES_LIST.NO_PROCESS_DEFINITIONS" | translate}}
+        </span>
+
+        <ng-container *ngIf="!searchProcessText.value">
+          <div
+            data-automation-id="process-by-category-recent-processes-list"
+            *ngIf="recentProcesses.length > 0"
+            class="app-processes-list-items"
+          >
+            <div class="app-process-label">
+              {{ "SHARED.PROCESSES_LIST.RECENT_PROCESS_DEFINITIONS" | translate }}
+            </div>
+
+            <process-list-item
+              *ngFor="let recentProcess of recentProcesses"
+              tabindex="0"
+              [process]="recentProcess"
+              (selectProcess)="onSelectProcess(recentProcess)"/>
+          </div>
+        </ng-container>
+
+        <div
+          *ngFor="let processByCategory of filteredProcesses"
+          class="app-processes-list-items"
+        >
+            <div
+              *ngIf="processByCategory.category"
+              class="app-process-label"
+            >
+                {{processByCategory.category}}
+            </div>
+
+            <div
+              *ngIf="!processByCategory.category"
+              class="app-process-without-category-list"
+            >
+              <span *ngIf="filteredProcesses.length > 1">
+                {{ "SHARED.PROCESSES_LIST.UNCATEGORIZED" | translate }}
+              </span>
+            </div>
+
+            <process-list-item
+              *ngFor="let process of processByCategory.items"
+              tabindex="0"
+              [process]="process"
+              (selectProcess)="onSelectProcess(process)"/>
+          </div>
+      </div>
+    </ng-container>
+</div>

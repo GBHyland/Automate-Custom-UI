@@ -1,0 +1,186 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-file-type-search-filter-container {
+    height: 468px;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    padding: satori.$hy-spacing-24;
+    font: var(--theme-body-font);
+}
+
+.hxp-file-type-search-filter-list {
+    max-height: 360px;
+    overflow-y: scroll;
+    font: var(--theme-body-font);
+}
+
+.hxp-file-type-search-filter-list-option {
+    font: var(--theme-body-font);
+}
+
+.hxp-file-type-search-filter-list-option-title {
+    display: flex !important; /* because mat-list-option overrides it */
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: satori.$hy-spacing-8;
+}
+
+.hxp-file-type-search-filter-list-option-path {
+    /* we need this !important to override the mat-list-item typography style */
+    font: satori.$hy-caption-font !important;
+    color: satori.$hy-colors-text-secondary;
+}
+
+.hxp-document-category-filter-summary-list-colon {
+    padding-top: 6px;
+}
+
+.hxp-file-type-search-filter-input-back {
+    display: flex;
+    flex-direction: row;
+}
+
+.hxp-file-type-search-filter-input-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hxp-file-type-search-filter-search-button-divider {
+    height: 48px;
+}
+
+.hxp-file-type-search-filter-input-back-icon {
+    line-height: satori.$hy-icon-24 !important;
+}
+
+.hxp-file-type-search-filter-input-search-icon,
+.hxp-file-type-search-filter-input-clear-icon,
+.hxp-file-type-search-filter-input-back-icon {
+    color: satori.$hy-colors-neutral-900;
+    text-align: center;
+}
+
+.hxp-file-type-search-filter-no-results {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: satori.$hy-colors-neutral-900;
+
+    h2 {
+        font: satori.$hy-title-font;
+        margin: 0;
+    }
+
+    p {
+        font: var(--theme-body-font);
+        margin: 0;
+    }
+}
+
+.hxp-file-type-search-filter-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hxp-file-type-search-filter-tree {
+    overflow: hidden;
+}
+
+.hxp-file-type-search-filter-folder-icon {
+    display: block;
+    width: satori.$hy-icon-16;
+    height: satori.$hy-icon-16;
+    line-height: satori.$hy-icon-16;
+}
+
+.hxp-file-type-search-filter-input-clear-icon,
+.hxp-file-type-search-filter-input-search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.75);
+}
+
+.hxp-file-type-search-filter-input-clear-icon {
+    transform: scale(0.65);
+}
+
+.hxp-file-type-search-filter-summary {
+    margin-bottom: 20px;
+
+    &-list {
+        width: 100%;
+        max-height: 110px;
+        overflow-y: scroll;
+        font: satori.$hy-body-semi-bold-font;
+
+        &-prefix {
+            margin: {
+                top: 2px;
+                bottom: 2px;
+                left: 8px;
+            }
+        }
+
+        &-colon {
+            margin: {
+                top: 2px;
+                bottom: 2px;
+            }
+        }
+
+        &-item {
+            min-height: auto;
+            height: 18px;
+            background-color: var(--adf-theme-primary-50);
+            border-radius: satori.$hy-border-radius-2;
+            padding: {
+                top: 3px;
+                bottom: 3px;
+            }
+
+            button {
+                margin: 0;
+            }
+        }
+
+        &-remove-item-icon {
+            color: var(--theme-primary-color, satori.$satori-like-primary);
+            opacity: 1;
+            width: 12px !important;
+        }
+
+        /* https://github.com/angular/components/issues/26584 */
+        ::ng-deep {
+            #{ms.$mat-standard-chip ms.$mat-mdc-evolution-chip__cell--primary},
+            #{ms.$mat-standard-chip ms.$mat-mdc-evolution-chip__action--primary},
+            #{ms.$mat-standard-chip ms.$mat-chip-action-label} {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.hxp-file-type-filter-summary-list-item__label {
+    color: var(--theme-primary-color, satori.$satori-like-primary);
+    font: var(--theme-body-font);
+    font-weight: satori.$hy-font-weights-semi-bold;
+}
+
+hxp-file-type-search-filter-tree {
+    overflow-y: scroll;
+}

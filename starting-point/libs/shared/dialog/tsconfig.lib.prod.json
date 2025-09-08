@@ -1,0 +1,8 @@
+{
+    "extends": "./tsconfig.lib.json",
+    "compilerOptions": {
+        "declarationMap": false
+    },
+    "angularCompilerOptions": {},
+    "exclude": ["jest.config.ts"]
+}

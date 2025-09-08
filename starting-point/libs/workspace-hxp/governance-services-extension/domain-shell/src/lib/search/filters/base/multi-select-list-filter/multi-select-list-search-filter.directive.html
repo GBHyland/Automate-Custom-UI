@@ -1,0 +1,111 @@
+<hxp-governance-search-filter-container
+    #searchFilter
+    [name]="filterLabelKey | translate"
+    [selectedValue]="selectedValue"
+    (filterApplied)="applyFilter()"
+    (filterCleared)="clearFilter()"
+    (overlayClosed)="overlayClosed()"
+    [filterForm]="filterForm"
+>
+    <div [ngClass]="showSearchInput && showSummaryChips
+            ? 'hxp-governance-multi-selection-filter-container'
+            : 'hxp-governance-multi-selection-filter-container-no-search'"
+    >
+        @if (showSearchInput) {
+        <hxp-governance-search-filter-input
+            [inputAriaLabel]="'GOVERNANCE.SEARCH.FILTERS.PLACEHOLDER' | translate"
+            [placeholder]="'GOVERNANCE.SEARCH.FILTERS.PLACEHOLDER' | translate"
+            [clearAriaLabel]="'GOVERNANCE.SEARCH.FILTERS.ARIA-LABEL.CLEAR_INPUT' | translate"
+            (search)="onSearch($event)"
+            (clear)="clearInput()"
+        />
+        }
+
+        @if (showSummaryChips) {
+        <div class="hxp-governance-multi-selection-filter-summary">
+            <mat-chip-set tabindex="0" class="hxp-governance-multi-selection-filter-summary-list">
+                <span class="hxp-governance-multi-selection-filter-summary-list-prefix">
+                    {{ 'GOVERNANCE.SEARCH.FILTERS.SELECTED' | translate: { selected: selection.selected.length } }} @if (selection.selected.length >
+                    0) {
+                    <span class="hxp-governance-multi-selection-filter-summary-list-colon">:</span>
+                    }
+                </span>
+
+                @for (option of options; track $index) {
+                    @if (selection.isSelected(option)) {
+                    <mat-chip
+                        removable
+                        (removed)="onDeselect(option)"
+                        class="hxp-governance-multi-selection-filter-summary-list-item"
+                        [attr.aria-label]="option.label"
+                        [matTooltip]="option?.tooltip || option.label"
+                    >
+                        <span class="hxp-governance-multi-selection-filter-summary-list-item__label hxp-label-bold">{{ option.label }}</span>
+                        <mat-icon
+                            matChipRemove
+                            class="hxp-governance-multi-selection-filter-summary-list-remove-item-icon"
+                            aria-hidden="true"
+                            [attr.aria-label]="
+                                        ('GOVERNANCE.SEARCH.FILTERS.ARIA-LABEL.REMOVE'
+                                            | translate) +
+                                        ' ' +
+                                        option.label
+                                    "
+                            >close</mat-icon
+                        >
+                    </mat-chip>
+                    }
+                }
+            </mat-chip-set>
+        </div>
+        }
+
+        @if (searchTerm && filteredOptions.length) {
+        <div class="hxp-governance-multi-selection-filter-results">
+            <button mat-icon-button type="button" [attr.aria-label]="" (click)="clearSearch()">
+                <mat-icon aria-hidden="true">arrow_back</mat-icon>
+            </button>
+            <span class="hxp-governance-multi-selection-filter-results-label">
+                {{ (filteredOptions.length === 1 ? 'GOVERNANCE.SEARCH.FILTERS.RESULTS_FOUND_SINGLE' : 'GOVERNANCE.SEARCH.FILTERS.RESULTS_FOUND_PLURAL' )
+                | translate: { count: filteredOptions.length } }}
+            </span>
+        </div>
+
+        } @if (isLoading) {
+        <div class="hxp-governance-multi-selection-filter-spinner-container">
+            <mat-progress-spinner mode="indeterminate" />
+        </div>
+        } @else if (filteredOptions.length) {
+        <mat-selection-list
+            #optionsList
+            class="hxp-governance-multi-selection-filter-list"
+            (selectionChange)="onSelectionChange($event.options[0].value)"
+            [attr.aria-label]="
+                    'GOVERNANCE.SEARCH.FILTERS.ARIA-LABEL.FILTERS_LIST'
+                        | translate
+                "
+        >
+            @for (option of filteredOptions; track $index) {
+            <mat-list-option
+                [value]="option"
+                class="hxp-governance-multi-selection-filter-list-option"
+                checkboxPosition="before"
+                [selected]="selection.isSelected(option)"
+                [attr.aria-label]="option.label"
+            >
+                <div class="hxp-governance-multi-selection-filter-list-option-content" [matTooltip]="option?.tooltip">
+                    @if (option.icon) {
+                    <mat-icon aria-hidden="true" class="hxp-governance-multi-selection-filter-list-icon" [svgIcon]="option.icon" />
+                    }
+                    <span aria-hidden="true">{{ option.label }}</span>
+                </div>
+            </mat-list-option>
+            }
+        </mat-selection-list>
+        } @else {
+        <div class="hxp-governance-multi-selection-filter-no-results">
+            <p>{{ 'GOVERNANCE.SEARCH.FILTERS.NO_SEARCH_RESULTS.MESSAGE' | translate }}</p>
+        </div>
+        }
+    </div>
+</hxp-governance-search-filter-container>

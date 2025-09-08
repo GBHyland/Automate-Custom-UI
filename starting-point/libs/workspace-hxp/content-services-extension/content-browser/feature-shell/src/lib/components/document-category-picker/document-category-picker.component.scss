@@ -1,0 +1,12 @@
+@use 'satori-like-styles' as satori;
+@use 'mat-selectors' as ms;
+
+.hxp-document-category-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.hxp-document-category-picker-required::after {
+    content: ' *';
+    color: satori.$hy-colors-red-500;
+}

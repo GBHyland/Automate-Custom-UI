@@ -1,0 +1,326 @@
+{
+    "DOCUMENT_TREE": {
+        "ROOT": "Home",
+        "CONTEXT_MENU": {
+            "TRIGGER_ARIA_LABEL": "menu attached"
+        },
+        "TOGGLE_ARIA-LABEL": "Toggle"
+    },
+    "DOCUMENT_LIST": {
+        "COLUMNS": {
+            "TITLE": "Title",
+            "SIZE": "Size",
+            "CREATED": {
+                "LABEL": "Created",
+                "BY": "by"
+            },
+            "LAST_MODIFIED": {
+                "LABEL": "Last Modified",
+                "BY": "by"
+            },
+            "PERMISSION": "Permission",
+            "LOCATION": "Location",
+            "DOCUMENT_CATEGORY": "Content Type"
+        },
+        "NO_CONTENT": {
+            "TITLE": "This folder is empty",
+            "SUBTITLE": "Please create new content"
+        },
+        "PERMISSIONS": {
+            "EVERYTHING": "Everything",
+            "READ_WRITE": "Read and Write",
+            "READ": "Read"
+        },
+        "LOCATION": {
+            "HOME": "Home"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Main Properties"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Other Properties"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Properties updated successfully!",
+                "ERROR": "Something went wrong, failed to update property!",
+                "INFO": "Field value can not be blank!"
+            },
+            "SYS": {
+                "CONTRIBUTORS": "Contributors",
+                "DESCRIPTION": "Description",
+                "CREATED": "Created",
+                "CREATOR": "Creator",
+                "FILENAME": "Name",
+                "LAST_CONTRIBUTOR": "Last Contributor",
+                "MODIFIED": "Last Modified",
+                "TITLE": "Title",
+                "PATH": "Path",
+                "PRIMARY_TYPE": "Category"
+            },
+            "SYSFILE": {
+                "BLOB": {
+                    "FILENAME": "Filename",
+                    "MIME_TYPE": "Mime Type",
+                    "LENGTH": "Size"
+                }
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Close"
+            }
+        },
+        "PROPERTIES_EDIT": {
+            "EDIT": "Edit",
+            "CANCEL": "Cancel",
+            "SAVE": "Save"
+        }
+    },
+    "DOCUMENT_BREADCRUMB": {
+        "ROOT": "Home"
+    },
+    "DOCUMENT_DELETE": {
+        "APP": {
+            "DIALOGS": {
+                "DELETE": {
+                    "ITEM": {
+                        "TITLE": "Delete Document",
+                        "DESCRIPTION": "A document cannot be recovered after deletion. Delete anyway?"
+                    },
+                    "MULTIPLE_ITEMS": {
+                        "TITLE": "Delete Documents",
+                        "DESCRIPTION": "Documents cannot be recovered after deletion. Delete anyway?"
+                    },
+                    "BUTTONS": {
+                        "CANCEL": "Cancel"
+                    }
+                }
+            },
+            "TOOLBAR": {
+                "BUTTONS": {
+                    "DELETE": {
+                        "TITLE": "Delete"
+                    }
+                }
+            }
+        },
+        "SNACKBAR": {
+            "DELETE": {
+                "ITEM": {
+                    "REQUEST": "Deleting a document",
+                    "SUCCESS": "{count} Document deleted.",
+                    "ERROR": "{count} Document deletion failed."
+                },
+                "MULTIPLE_ITEMS": {
+                    "REQUEST": "Deleting documents",
+                    "SUCCESS": "{count} Documents deleted.",
+                    "ERROR": "{count} Documents deletion failed."
+                },
+                "ERROR": "Document Deletion failed"
+            }
+        }
+    },
+    "SINGLE_FILE_DOWNLOAD": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "DOWNLOAD": {
+                    "TITLE": "Download",
+                    "ARIA-LABEL": "Download file"
+                }
+            }
+        }
+    },
+    "DOCUMENT_SHARE": {
+        "DIALOGS": {
+            "SHARE": {
+                "SHARED_ITEM": "Shared Item",
+                "LINK": "Link"
+            }
+        },
+        "TOOLBAR": {
+            "BUTTONS": {
+                "SHARE": {
+                    "TITLE": "Share",
+                    "ARIA-LABEL": "Share file"
+                }
+            }
+        },
+        "SNACKBAR": {
+            "SHARE": {
+                "SUCCESS": "Link copied to clipboard"
+            }
+        }
+    },
+    "PERMISSIONS_MANAGEMENT_ACTION": {
+        "BUTTON": {
+            "LABEL": "Permissions"
+        },
+        "DIALOG": {
+            "SAVE": "Save",
+            "CANCEL": "Cancel",
+            "MANAGE_PERMISSION": "Manage access permissions",
+            "RESTORE": "Restore Permissions"
+        },
+        "DROPDOWN": {
+            "PLACEHOLDER": "Select Access",
+            "LABEL": {
+                "CLEAR": "Clear",
+                "NO_ACCESS": "No Access",
+                "READ": "Read",
+                "READ_WRITE": "Read & Write",
+                "EVERYTHING": "Everything",
+                "INHERITED": "Inherited",
+                "BLOCKED": "Blocked"
+            }
+        },
+        "ASK_TO_CANCEL_DIALOG": {
+            "TITLE": "Want to cancel?",
+            "DESCRIPTION": "You will loose all the settings you changed",
+            "REJECT": "Continue managing",
+            "CONFIRM": "Cancel"
+        },
+        "ASK_TO_SAVE_DIALOG": {
+            "TITLE": "Save Changes",
+            "DESCRIPTION": "Changes will not be effective unless saved",
+            "REJECT": "Close without saving",
+            "CONFIRM": "Save"
+        },
+        "ASK_TO_RESTORE_DIALOG": {
+            "TITLE": "Restore Permissions",
+            "DESCRIPTION": "You are about to restore all permission settings for this document to their inherited state. Which settings do you want to restore?",
+            "REJECT": "Cancel",
+            "CONFIRM": "Restore",
+            "RESTORE_OPTION": {
+                "ALL": "ALL",
+                "GROUP": "User Group",
+                "USER": "Individual User"
+            }
+        },
+        "PERMISSIONS_TABLE": {
+            "GROUPS": "User Groups",
+            "USERS": "Individual Users",
+            "ADD_USER": "Add User",
+            "ADD_GROUP": "Add User Group",
+            "SET_PERMISSION": "Set a permission",
+            "SELECT_PERMISSION": "Select Permission",
+            "SELECT_USER": "Select User",
+            "SELECT_GROUP": "Select User Group",
+            "ACCESS_LEVEL": {
+                "USER": "User access levels",
+                "GROUP": "User group access levels"
+            },
+            "SEARCH_USER": "Search Users",
+            "SEARCH_GROUP": "Search User Groups",
+            "NO_PERMISSION": {
+                "DEFAULT": "No permission found",
+                "USER": "Add individual users",
+                "GROUP": "Add user groups"
+            },
+            "INHERITED_PERMISSION": "Inherited",
+            "OVERRIDDEN_PERMISSION": "Overridden",
+            "CANNOT_BE_CHANGED": "Cannot be changed",
+            "COLUMN_HEADER": {
+                "USERS": "Users",
+                "GROUPS": "Groups",
+                "INHERITED": "Inherited",
+                "FILE_LEVEL": "File Level",
+                "FILE_ACCESS": "File Access"
+            },
+            "INHERITED": {
+                "LABEL": {
+                    "NO_ACCESS": "No Access",
+                    "READ": "Read",
+                    "READ_WRITE": "R&W",
+                    "EVERYTHING": "Everything",
+                    "BLOCKED": "Blocked"
+                }
+            }
+        },
+        "BLOCK_INHERITANCE": {
+            "TITLE": "Inheritance",
+            "TOGGLE_OPTION": {
+                "OFF": "Off",
+                "ON": "On"
+            }
+        }
+    },
+    "ADF_VIEWER": {
+        "ACTIONS": {
+            "INFO": "Info",
+            "CLOSE": "Close",
+            "FULLSCREEN": "Activate full-screen mode"
+        }
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Manage Versions",
+            "CLOSE": "Close",
+            "CREATOR": "Created By",
+            "CURRENT_VERSION": "Current Version",
+            "EXPIRES": "Expires:",
+            "NEVER_EXPIRES": "Never expires",
+            "MORE_MENU": {
+                "EDIT": "Edit Version Info",
+                "DELETE": "Remove Version"
+            }
+        },
+        "TOOLBAR": {
+            "BUTTONS": {
+                "VERSIONS": {
+                    "TITLE": "Manage Versions (beta)"
+                }
+            }
+        },
+        "EDIT_BUTTON": {
+            "TITLE": "Edit Version Info",
+            "ARIA_LABEL": "Edit Version Info"
+        },
+        "EDIT_DIALOG": {
+            "TITLE": "Edit Version Information",
+            "FIELD_TITLE": "Version Title",
+            "DESCRIPTION": "Version Description",
+            "PLACEHOLDER_DESCRIPTION": "Describe the version",
+            "BUTTONS": {
+                "SAVE": "Save",
+                "CANCEL": "Cancel"
+            },
+            "NOTIFICATION": {
+                "SUCCESS": "The version information has been updated",
+                "ERROR": "An error occured while updating version information."
+            }
+        },
+        "DELETE_BUTTON": {
+            "TITLE": "Remove Version",
+            "ARIA_LABEL": "Remove Version"
+        },
+        "DELETE_DIALOG": {
+            "TITLE": "Delete Version",
+            "DESCRIPTION": "A document version cannot be recovered after deletion. Delete anyway?",
+            "CLOSE_ARIA_LABEL": "close dialog",
+            "BUTTONS": {
+                "DELETE": "Delete Version",
+                "CANCEL": "Cancel"
+            },
+            "NOTIFICATION": {
+                "SUCCESS": "The version has been deleted",
+                "ERROR": "An error occured while deleting document version."
+            }
+        }
+    },
+    "RESTORE_VERSION": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "RESTORE": {
+                    "TITLE": "Restore"
+                }
+            }
+        }
+    }
+}

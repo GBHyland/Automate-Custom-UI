@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Skupiny",
+      "MANDATORY": "Povinné",
+      "ERROR": {
+        "NOT_FOUND": "Nebyla nalezena žádná skupina s názvem {{groupName}}"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Musí se shodovat se vzorem {{pattern}}",
+        "INVALID_MIN_LENGTH": "Musí být alespoň {{requiredLength}} znaků",
+        "INVALID_MAX_LENGTH": "Byla překročena délka, {{requiredLength}} znaků max",
+        "REQUIRED": "Toto je vyžadované pole",
+        "NOT_FOUND": "Uživatel s uživatelským jménem {{userName}} nebyl nalezen"
+      }
+    }
+  }
+}

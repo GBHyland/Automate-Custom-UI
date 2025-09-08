@@ -1,0 +1,93 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+# cspell: disable
+
+# compiled output
+/dist
+/lib/
+/tmp
+/.tmp
+**/.tmp
+/nxcache
+/out-tsc
+e2es/out-tsc
+/e2e-output
+/e2e-artefacts
+/reports
+**/e2e-output
+.angular
+
+# dependencies
+/node_modules
+**/node_modules
+
+# IDEs and editors
+/.idea
+*.iml
+*.tar
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.upgrade-artefacts
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/closest-config-finder.sh
+!.vscode/e2e-runner.js
+!.vscode/karma-file-test-launcher.js
+.history
+
+# misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+**/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+/envs/
+**/.env*
+**/.local.env
+**/versions.json
+report*
+!report-portal.config.ts
+.tempfile
+target/npmlist.json
+.nx/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Modeling community
+community.patch
+.os_repo
+
+# ACA integration
+apps/content-ce
+libs/content-ee/custom-modeled-extension/assets
+test-results/
+playwright-report/
+
+# Local HXP Opensearch data
+apps/workspace-hxp/data/
+
+# Working directory to pack publishable packages
+.publishable-packages
+
+.repo-copy*
+nx
+.nx
+.nx/cache
+.nx/
+.vs
+**/dist/
+stats.html

@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Wybierz dokument",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Zmień układ",
+                "GRID_VIEW": "Siatka (do 12 miniatur)",
+                "VERTICAL_SCROLLING": "Przewijanie w pionie",
+                "HORIZONTAL_SCROLLING": "Przewijanie w poziomie"
+            },
+            "THUMBNAIL_VIEWER": "Przeglądarka miniatur",
+            "THUMBNAIL_VIEWER_PAGES": "Strony",
+            "THUMBNAIL_ALT_TEXT": "Obraz miniatury",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Nawigacja po stronie",
+                "PREVIOUS": "Poprzedni",
+                "NEXT": "Następny"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Wybór warstwy",
+                "IMAGE": "Obraz",
+                "TEXT": "Tekst"
+            },
+            "ZOOM": {
+                "TITLE": "Powiększenie",
+                "ZOOM_IN": "Powiększ",
+                "ZOOM_OUT": "Pomniejsz"
+            },
+            "ROTATE_RIGHT": "Obróć zgodnie z ruchem wskazówek zegara",
+            "FULLSCREEN": "Pełny ekran",
+            "BEST_FIT": "Najlepsze dopasowanie"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Przełącz układ",
+                "THUMBNAIL_VIEWER": "Przełącz przeglądarkę miniatur",
+                "NAVIGATE_PREVIOUS_PAGE": "Przejdź do poprzedniej strony",
+                "NAVIGATE_NEXT_PAGE": "Przejdź do następnej strony",
+                "NAVIGATE_FIRST_PAGE": "Przejdź do pierwszej strony",
+                "NAVIGATE_LAST_PAGE": "Przejdź do ostatniej strony",
+                "NAVIGATE_UP": "Przejdź w górę",
+                "NAVIGATE_DOWN": "Przejdź w dół",
+                "NAVIGATE_LEFT": "Przejdź w lewo",
+                "NAVIGATE_RIGHT": "Przejdź w prawo",
+                "ZOOM_IN": "Powiększ",
+                "ZOOM_OUT": "Pomniejsz",
+                "BEST_FIT": "Najlepsze dopasowanie",
+                "ROTATE_RIGHT": "Obróć zgodnie z ruchem wskazówek zegara",
+                "FULL_SCREEN": "Przełącz tryb pełnoekranowy",
+                "IMAGE_LAYER": "Warstwa obrazu",
+                "TEXT_LAYER": "Warstwa tekstu",
+                "CLIPBOARD_COPY": "Kopiuj do schowka"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "Układ przeglądarki został zmieniony na pojedynczy widok pionowy, aby zapewnić lepsze wrażenia",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "Układ przeglądarki został zmieniony na widok siatki, aby zapewnić lepsze wrażenia",
+                "CLIPBOARD_COPY_SUCCESS": "Skopiowano do schowka"
+            }
+        }
+    }
+}

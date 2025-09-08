@@ -1,0 +1,12 @@
+<ng-container *ngFor="let action of actions; trackBy: trackByActionLabel">
+    <button
+        *ngIf="action.visible"
+        [disabled]="action.disabled$ | async"
+        mat-button
+        class="hxp-text-button"
+        (click)="action.click();$event.stopPropagation();"
+        [attr.data-automation-id]="'hxp-filters-container-action-' + action.label"
+    >
+        {{ action.label | translate }}
+    </button>
+</ng-container>

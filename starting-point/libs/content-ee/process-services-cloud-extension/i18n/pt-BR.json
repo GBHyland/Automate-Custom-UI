@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Sem definições de processo disponíveis",
+      "UNCATEGORIZED": "Não categorizado",
+      "RECENT_PROCESS_DEFINITIONS": "Usado recentemente"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Extensões: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Ativar Extensões do Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Gerenciamento de processos",
+      "START_PROCESS_CLOUD": "Iniciar processo",
+      "TASK_LIST_CLOUD": "Lista de tarefas",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Exibir detalhes",
+        "CLOSE-TOOLTIP": "Fechar",
+        "PRINT": "Imprimir formulário"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Iniciar processo",
+      "CREATE_PROCESS_NOT_ALLOWED": "Não é possível criar novo processo"
+    },
+    "ERROR": {
+      "NO_FORM": "A definição de processo não tem um formulário definido",
+      "CAN_NOT_ATTACH": "Não é possível anexar o conteúdo selecionado"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Processo criado '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Ocorreu um erro de rede desconhecido. Recursos relacionados ao Process Automation estão desativados."
+    },
+    "SIDE_NAV_TITLE": "Gerenciamento de processos",
+    "TASK_LIST": {
+      "TASKS": "Tarefas",
+      "ACTIONS": {
+        "TASK_DETAILS": "Exibir detalhes",
+        "PROCESS_HISTORY": "Histórico do processo"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Alterar destinatário",
+        "CLOSE": "Fechar",
+        "ASSIGN": "Atribuir",
+        "SUCCESS": "O responsável pela tarefa foi alterado com êxito",
+        "FAILED": "Encontramos um problema ao atribuir o usuário. Tente atribuir o usuário novamente."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Detalhes"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Processos",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Exibir detalhes",
+        "CANCEL_MESSAGE": "Processo foi cancelado",
+        "CANCEL_ERROR_MESSAGE": "Falha ao cancelar processo. Tente novamente",
+        "CANCEL_TOOLTIP": "Cancelar processo"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Iniciado por"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "O filtro foi salvo",
+      "FILTER_DELETED": "O filtro foi excluído"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "A tarefa foi concluída",
+      "FORM_SAVED": "O formulário foi salvo",
+      "FORM_ACTION": "Ação '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "O filtro foi salvo",
+      "FILTER_DELETED": "O filtro foi excluído"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Cancelar processo",
+        "MESSAGE": "Deseja cancelar este processo?"
+      },
+      "NEW_PROCESS": "Novo processo",
+      "CONFIRM": "Confirmar",
+      "CLOSE": "Fechar",
+      "ERROR": "Não foi possível carregar as definições do processo, verifique se você tem acesso."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "A tarefa {{taskName}} foi atribuída a {{assignee}}",
+    "TASK_COMPLETED": "A tarefa {{taskName}} foi concluída",
+    "TASK_ACTIVATED": "A tarefa {{taskName}} agora está ativa",
+    "TASK_CANCELLED": "A tarefa {{taskName}} foi cancelada",
+    "TASK_SUSPENDED": "A tarefa {{taskName}} foi suspensa",
+    "TASK_UPDATED": "Os detalhes da tarefa {{taskName}} foram atualizados"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Pesquisar"
+    }
+  }
+}

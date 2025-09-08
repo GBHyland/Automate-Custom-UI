@@ -1,0 +1,11 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "../dist/tools",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "noUnusedLocals": false
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["jest.config.ts"]
+}

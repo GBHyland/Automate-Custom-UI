@@ -1,0 +1,44 @@
+{
+    "name": "features",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/features/src",
+    "prefix": "launch-darkly-angular",
+    "tags": ["scope:features", "category:shared-unit"],
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/libs/shared/features"],
+            "options": {
+                "project": "libs/shared/features/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared/features/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared/features/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared/features/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "lint": {},
+        "test": {
+            "executor": "@nx/jest:jest",
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "passWithNoTests": false
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Seleccionar un fichero",
+    "TABS": {
+      "REPOSITORY": "Repositorio",
+      "LOCAL_STORAGE": "Almacenamiento local"
+    },
+    "ACTIONS": {
+      "UPLOAD": "CARGAR",
+      "CANCEL": "Cancelar",
+      "ATTACH": "Adjuntar"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "La carpeta {{folderName}} no existe. No se puede cargar el fichero.",
+    "FOLDER_DOES_NOT_EXIST": "La carpeta en la que se va a cargar el fichero no existe. No se puede cargar el fichero.",
+    "CONTENT_SERVICE_UNAVAILABLE": "El servicio de contenido no está disponible temporalmente. No se puede cargar el fichero.",
+    "FOLDER_ACCESS_DENIED": "No tiene permisos para la carpeta especificada en el repositorio de contenido."
+  }
+}

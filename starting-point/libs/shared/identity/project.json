@@ -1,0 +1,54 @@
+{
+    "name": "shared-identity",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/identity/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/libs/shared/identity"],
+            "options": {
+                "project": "libs/shared/identity/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared/identity/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared/identity/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared/identity/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "codeCoverage": true,
+                "main": "libs/shared/identity/src/test.ts",
+                "tsConfig": "libs/shared/identity/tsconfig.spec.json",
+                "karmaConfig": "libs/shared/identity/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/core/src/styles"]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/shared/identity/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/shared/identity/karma.conf.js",
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib"]
+                    }
+                }
+            },
+            "outputs": ["{workspaceRoot}/coverage/libs/shared/identity"]
+        },
+        "lint": {},
+        "stylelint": {}
+    },
+    "tags": ["scope:shared-identity", "category:shared-identity", "category:shared-unit"]
+}

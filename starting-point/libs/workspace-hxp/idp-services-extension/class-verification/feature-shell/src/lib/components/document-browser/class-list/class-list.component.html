@@ -1,0 +1,91 @@
+<ng-container *hylandIdpLet="{ classes: (classesData$ | async) || [], isDragging: (isDragging$ | async) || false, placeholder: dragPlaceholderMetadata$ | async, sortOption: sortOption$ | async, rejectedClass: rejectedClass$ | async } as datasource">
+    <div class="idp-classification-list-host">
+        <div>
+            <hyland-idp-class-list-header-toolbar />
+        </div>
+        <mat-card class="idp-classification-list-container">
+            <mat-card-content class="idp-classification-list-content">
+                @if (datasource.sortOption === SortOption.Classes) {
+                    <mat-list class="idp-classification-list" tabindex="0"
+                        [id]="globalDropListId"
+                        (keydown)="onContainerKeyDown(datasource.classes, $event)"
+                        cdkDropList cdkDropListOrientation="vertical"
+                        (cdkDropListDropped)="onDrop($event)" [cdkDropListConnectedTo]="allDropLists">
+                        <ng-container *ngFor="let item of datasource.classes; trackBy: classUniquenessFn; index as classIndex">
+                            <hyland-idp-list-item class="idp-list-item" [id]="item.id"
+                                (mouseenter)="onMouseEnter(item, datasource.isDragging)"
+                                (mouseleave)="onMouseLeave()"
+                                [disabled]="item.disabled && !(datasource.placeholder && datasource.placeholder.isDocumentDragging && isHoveredWithDrag(item))"
+                                [isSelected]="item.id === selectedClass?.id" [index]="classIndex"
+                                [attr.data-automation-id]="'idp-list-item-class__' + classIndex"
+                                (keydown)="onItemKeyDown(item, $event)" (click)="onItemClicked(item, $event)">
+
+                                <div class="idp-list-item-content" [ngClass]="{'idp-disabled': item.disabled && !datasource.isDragging}">
+                                    <mat-icon *ngIf="item.id === selectedClass?.id" class="material-icons-outlined">edit</mat-icon>
+                                    <mat-icon [ngStyle]="{'color': '#53bd4e'}"
+                                        *ngIf="!item.isSpecialClass && item.issuesCount <= 0 && item.id !== selectedClass?.id">check_circle_outline</mat-icon>
+                                    <mat-icon class="idp-issue" *ngIf="item.issuesCount > 0 && item.id !== selectedClass?.id">error_outline</mat-icon>
+                                    <mat-icon
+                                        *ngIf="item.isSpecialClass && item.issuesCount === 0 && item.id !== selectedClass?.id && item.name === 'Rejected'">block</mat-icon>
+                                    <mat-icon [ngStyle]="{'color': '#53bd4e'}"
+                                        *ngIf="item.isSpecialClass && item.issuesCount === 0 && item.id !== selectedClass?.id && item.name === 'Unclassified'">check_circle_outline</mat-icon>
+                                    <span class="idp-display-name" data-automation-id="idp-class-name" [matTooltip]="item.name">{{ item.name }}</span>
+                                    <span class="idp-right-align"><span [ngClass]="{ 'idp-issue': item.issuesCount > 0 }">{{ item.issuesCount }}</span>/{{ item.documentsCount }}</span>
+                                    <div>
+                                        <button mat-icon-button class="idp-list-item-toggle-button" data-automation-id="idp-class-list-dropdown"
+                                            (click)="onItemClicked(item, $event); $event.stopImmediatePropagation();">
+                                            <mat-icon *ngIf="!item.isExpanded && !item.isPreviewed">expand_more</mat-icon>
+                                            <mat-icon *ngIf="item.isExpanded || item.isPreviewed">expand_less</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </hyland-idp-list-item>
+                            <hyland-idp-class-document-list *ngIf="item.isExpanded || item.isPreviewed" [previewMode]="item.isPreviewed" class="idp-list-item" [classId]="item.id"
+                                (collapseContainer)="onDocumentCollapseRequest(item)" />
+                            <hyland-idp-floating-toolbar
+                                hylandIdpStickyBottom
+                                *ngIf="item.documentsCount > 0 && item.id === selectedClass?.id && item.isExpanded" />
+                            <mat-divider class="idp-special-item-divider" />
+                        </ng-container>
+                    </mat-list>
+                }
+                @else {
+                    <mat-list class="idp-classification-list" tabindex="0"
+                        [id]="globalDropListId"
+                        (keydown)="onContainerKeyDown(datasource.classes, $event)"
+                        cdkDropList cdkDropListOrientation="vertical"
+                        (cdkDropListDropped)="onDrop($event)" [cdkDropListConnectedTo]="allDropLists">
+                        <hyland-idp-list-item *ngIf="datasource.rejectedClass" class="idp-list-item" [id]="datasource.rejectedClass.id"
+                            (mouseenter)="onMouseEnter(datasource.rejectedClass, datasource.isDragging)"
+                            (mouseleave)="onMouseLeave()"
+                            [disabled]="datasource.rejectedClass.disabled && !(datasource.placeholder && datasource.placeholder.isDocumentDragging && isHoveredWithDrag(datasource.rejectedClass))"
+                            [isSelected]="datasource.rejectedClass.id === selectedClass?.id" [index]="0"
+                            (keydown)="onItemKeyDown(datasource.rejectedClass, $event)" (click)="onItemClicked(datasource.rejectedClass, $event)">
+
+                            <div class="idp-list-item-content" [ngClass]="{'idp-disabled': datasource.rejectedClass.disabled && !datasource.isDragging}">
+                                <mat-icon *ngIf="datasource.rejectedClass.id === selectedClass?.id" class="material-icons-outlined">edit</mat-icon>
+                                <mat-icon
+                                    *ngIf=" datasource.rejectedClass.issuesCount === 0 && datasource.rejectedClass.id !== selectedClass?.id">block</mat-icon>
+                                <span class="idp-display-name" data-automation-id="idp-class-name" [matTooltip]="datasource.rejectedClass.name">{{ datasource.rejectedClass.name }}</span>
+                                <span class="idp-right-align"><span [ngClass]="{ 'idp-issue': datasource.rejectedClass.issuesCount > 0 }">{{ datasource.rejectedClass.issuesCount }}</span>/{{ datasource.rejectedClass.documentsCount }}</span>
+                                <div>
+                                    <button mat-icon-button class="idp-list-item-toggle-button" data-automation-id="idp-class-list-dropdown"
+                                        (click)="onItemClicked(datasource.rejectedClass, $event); $event.stopImmediatePropagation();">
+                                        <mat-icon *ngIf="!datasource.rejectedClass.isExpanded && !datasource.rejectedClass.isPreviewed">expand_more</mat-icon>
+                                        <mat-icon *ngIf="datasource.rejectedClass.isExpanded || datasource.rejectedClass.isPreviewed">expand_less</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </hyland-idp-list-item>
+                        <hyland-idp-class-document-list
+                            *ngIf="datasource.rejectedClass && (datasource.rejectedClass.isExpanded || datasource.rejectedClass.isPreviewed)"
+                            [previewMode]="datasource.rejectedClass.isPreviewed" class="idp-list-item" [classId]="datasource.rejectedClass.id"
+                            (collapseContainer)="onDocumentCollapseRequest(datasource.rejectedClass)" />
+                        <mat-divider class="idp-special-item-divider" />
+                        <hyland-idp-unsorted-document-list />
+                    </mat-list>
+                }
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>

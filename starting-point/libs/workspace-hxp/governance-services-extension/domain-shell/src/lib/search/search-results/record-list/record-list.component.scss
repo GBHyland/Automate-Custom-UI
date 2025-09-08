@@ -1,0 +1,28 @@
+.hxp-record-list-row {
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--theme-selected-button-bg-color, rgba(0, 0, 0, 0.04));
+    }
+
+    &.hxp-record-selected {
+        background-color: var(--theme-selected-button-bg-color, rgba(0, 0, 0, 0.08));
+
+        &:hover {
+            background-color: var(--theme-selected-button-bg-color, rgba(0, 0, 0, 0.1));
+        }
+    }
+}
+
+.hxp-record-list-container {
+    max-height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.hxp-record-list-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+}

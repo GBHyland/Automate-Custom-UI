@@ -1,0 +1,49 @@
+<div class="hxp-dialog-fixed-size-wrapper">
+    <div mat-dialog-title class="dialog-title">
+        <h1 mat-dialog-title>{{ 'COPY.DIALOG.COPY_ITEM' | translate }}</h1>
+        <button class="hxp-copy-dialog-close-btn" [aria-label]="'COPY.DIALOG.CLOSE' | translate " mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div mat-dialog-content class="hxp-fixed-dialog-content-height">
+        <form [formGroup]="copyDocumentForm">
+            <div class="hxp-copy-dialog-field-container">
+                <mat-form-field appearance="fill" class="hxp-copy-dialog-search-hide">
+                    <input matInput
+                        md-select-on-focus
+                        placeholder="{{ 'COPY.FOLDER_SEARCH_PLACEHOLDER' | translate }}" formControlName="copied_link"
+                        type="text"  />
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+                <div class="hxp-breadcrumb-scroll-container" hxpAppScrollTracker [scrollOffset]="50" (scrolledToBottom)="onScroll()">
+                    <hxp-folder-breadcrumb
+                        [breadcrumbData]="(breadcrumbData$ | async)"
+                        (selectedFolder)="onSelectedFolder($event)"
+                    />
+                    <hxp-tree-skeleton-loader *ngIf="isLoading$ | async" [skeletonRows]="5" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div
+        mat-dialog-content
+        class="hxp-copy-dialog-no-permissions-error">
+        <ng-container *ngIf="!isAvailable">
+            {{ 'COPY.DIALOG.PERMISSIONS.ERROR' | translate }}
+        </ng-container>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-button class="hxp-copy-dialog-close-button" mat-dialog-close>
+            {{ 'COPY.DIALOG.CANCEL' | translate }}
+        </button>
+        <button mat-button class="hxp-single-file-copy-btn hxp-primary-button" [disabled]="!isAvailable || isCopying" (click)="onCopy()" color="primary">
+            <span class="hxp-single-file-copy-btn-label">
+                <mat-progress-spinner
+                    *ngIf="isCopying"
+                    mode="indeterminate"
+                    diameter="15" />
+                {{ 'COPY.DIALOG.COPY' | translate }}
+            </span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+{
+    "FILTERS": {
+        "TITLE": "Filtres",
+        "MENU": {
+            "SEARCH": "Rechercher",
+            "CLEAR_SELECTION": "Supprimer la sélection",
+            "UPDATE": "Mettre à jour",
+            "APPLY": "Appliquer"
+        },
+        "DIALOG": {
+            "SAVE": "Enregistrer",
+            "CANCEL": "Annuler",
+            "PLACEHOLDER": "Nom"
+        },
+        "ALL": "Tout",
+        "MORE_FILTERS": "Plus",
+        "RESET": "Réinitialiser",
+        "SAVE": "Enregistrer",
+        "SAVE_AS": "Enregistrer sous",
+        "DELETE": "Supprimer",
+        "STRING_FILTER": {
+            "PLACEHOLDER": "Texte"
+        },
+        "NUMBER_FILTER": {
+            "ERROR": "Plage non valide",
+            "PLACEHOLDER": "Numéro",
+            "RANGE": {
+                "FROM": "De",
+                "TO": "À",
+                "BETWEEN_AND": "Entre {{from}} et {{to}}"
+            },
+            "EQUALS": "Est égal à",
+            "NOT_EQUALS": "N’est pas égal à",
+            "GREATER_THAN": "Supérieur à",
+            "GREATER_THAN_OR_EQUALS": "Supérieur ou égal à",
+            "LESS_THAN": "Inférieur à",
+            "LESS_THAN_OR_EQUALS": "Inférieur ou égal à",
+            "BETWEEN": "Entre",
+            "AND": "et"
+        },
+        "CHECKBOX_FILTER": {
+            "SELECT_ALL": "Sélectionner tout"
+        },
+        "DATE_FILTER": {
+            "NO_DATE": "Aucune date",
+            "TODAY": "Aujourd'hui",
+            "WEEK": "Cette semaine",
+            "MONTH": "Ce mois-ci",
+            "QUARTER": "Ce trimestre",
+            "YEAR": "Cette année",
+            "RANGE": "Plage personnalisée",
+            "FROM": "De",
+            "TO": "À",
+            "FROM_DATE": "Du {{date}}",
+            "TO_DATE": "Au {{date}}"
+        },
+        "USER_FILTER": {
+            "TITLE": "Utilisateurs",
+            "PLACEHOLDER": "Utilisateur suivant"
+        },
+        "TASK_STATUS_FILTER": {
+            "CREATED": "Créé",
+            "ASSIGNED": "Assigné",
+            "SUSPENDED": "Suspendu",
+            "CANCELLED": "Annulé",
+            "COMPLETED": "Achevé"
+        },
+        "PROCESS_STATUS_FILTER": {
+            "RUNNING": "En cours",
+            "COMPLETED": "Achevé",
+            "CANCELLED": "Annulé",
+            "SUSPENDED": "Suspendu"
+        },
+        "LABELS": {
+            "TASK": {
+                "PROCESS_INSTANCE_ID": "ID de l’instance du processus",
+                "PARENT_ID": "ID parent",
+                "PROCESS_DEFINITION_NAME": "Nom de la définition du processus",
+                "ASSIGNEE": "Personne assignée",
+                "STATUS": "Statut",
+                "PRIORITY": "Priorité",
+                "DUE_DATE": "Date d’échéance",
+                "CREATED_DATE": "Date de création",
+                "COMPLETED_DATE": "Date d’achèvement",
+                "COMPLETED_BY": "Effectué par",
+                "TASK_NAME": "Nom de la tâche",
+                "ID": "ID"
+            },
+            "PROCESS": {
+                "APP_NAME": "Nom de l’application",
+                "ID": "ID",
+                "PROCESS_NAME": "Nom du processus",
+                "PARENT_ID": "ID de processus principal",
+                "PROCESS_DEFINITION_NAME": "Nom de la définition du processus",
+                "STATUS": "Statut",
+                "COMPLETED_DATE": "Date d’achèvement",
+                "STARTED_BY": "Commencé par",
+                "SUSPENDED_DATE": "Date de suspension",
+                "STARTED_DATE": "Date de début",
+                "APP_VERSION": "Version de l’application"
+            },
+            "SERVICE_TASK": {
+                "ACTIVITY_NAME": "Nom de l’activité",
+                "ID": "ID",
+                "PROCESS_INSTANCE_ID": "ID de l’instance du processus",
+                "STATUS": "Statut",
+                "COMPLETED_DATE": "Date d’achèvement",
+                "STARTED_DATE": "Date de début"
+            },
+            "AUDIT": {
+                "ENTITY_ID": "ID de l'événement",
+                "EVENT_TYPE": "Type d'événement",
+                "PROCESS_INSTANCE_ID": "ID de l'instance de processus",
+                "EVENT_TIME": "Heure de l'événement"
+            }
+        }
+    }
+}

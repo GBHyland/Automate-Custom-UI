@@ -1,0 +1,32 @@
+.apa-process-list-related {
+
+    &-subprocess {
+        background-color: lightgray;
+        padding: 0 5px;
+    }
+
+    &-parent-process {
+        background-color: #E2EEFA;
+        border-radius: 2px;
+        color: #043CAC;
+        padding: 0 5px;
+        font-weight: 600;
+    }
+
+}
+
+.adf-tooltip-card-content {
+    .apa-process-list-related {
+        &-process {
+            &-child {
+                &-name {
+                    font-weight: bold;
+                }
+
+                &-id {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+}

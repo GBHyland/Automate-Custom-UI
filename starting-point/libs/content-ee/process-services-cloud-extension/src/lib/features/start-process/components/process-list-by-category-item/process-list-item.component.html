@@ -1,0 +1,23 @@
+<div
+  class="app-processes-list-item"
+  (click)="selectProcess.emit(process)"
+>
+  <mat-icon class="app-processes-list-item-icon" color="primary">
+      assessment
+  </mat-icon>
+
+  <div class="app-processes-list-item-details" role="link">
+    <span
+      class="app-processes-list-item-name"
+      attr.data-automation-id={{process.name}}
+    >
+      {{process.name}}
+    </span>
+    <span
+      *ngIf="process.description"
+      class="app-processes-list-item-description"
+    >
+      {{process.description}}
+    </span>
+  </div>
+</div>

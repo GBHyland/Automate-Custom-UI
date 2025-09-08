@@ -1,0 +1,18 @@
+{
+  "ATTACH_FILE_DIALOG": {
+    "TITLE": "Datei auswählen",
+    "TABS": {
+      "REPOSITORY": "Repository",
+      "LOCAL_STORAGE": "Lokale Speicherung"
+    },
+    "ACTIONS": {
+      "UPLOAD": "HOCHLADEN",
+      "CANCEL": "Abbrechen",
+      "ATTACH": "Anhängen"
+    },
+    "FOLDER_NAME_DOES_NOT_EXIST": "Ordner {{folderName}} ist nicht vorhanden. Die Datei kann nicht hochgeladen werden.",
+    "FOLDER_DOES_NOT_EXIST": "Der Ordner zum Hochladen der Datei ist nicht vorhanden. Die Datei kann nicht hochgeladen werden.",
+    "CONTENT_SERVICE_UNAVAILABLE": "Der Content Service ist vorübergehend nicht verfügbar. Die Datei kann nicht hochgeladen werden.",
+    "FOLDER_ACCESS_DENIED": "Sie haben keine Berechtigungen für den angegebenen Ordner im Content Repository."
+  }
+}

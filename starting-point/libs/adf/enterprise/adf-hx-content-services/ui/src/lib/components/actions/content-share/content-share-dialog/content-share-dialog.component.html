@@ -1,0 +1,27 @@
+<div class="hxp-dialog-fixed-size-wrapper">
+    <div mat-dialog-title class="dialog-title">
+        <h1 mat-dialog-title>{{ 'DOCUMENT_SHARE.DIALOGS.SHARE.SHARED_ITEM' | translate }}</h1>
+        <button class="hxp-dialog-fixed-size-wrapper-close-btn" aria-label="{{ 'DOCUMENT_SHARE.DIALOGS.SHARE.SHARED_ITEM' | translate }}" mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div mat-dialog-content class="hxp-fixed-dialog-content-height">
+        <form [formGroup]="shareDocumentForm">
+            <mat-label>{{ 'DOCUMENT_SHARE.DIALOGS.SHARE.LINK' | translate }}</mat-label>
+            <div class="hxp-share-dialog-field-container">
+                <mat-form-field appearance="fill">
+                    <input
+                        #sharedLinkInput
+                        matInput
+                        [attr.aria-label]="'DOCUMENT_SHARE.DIALOGS.SHARE.LINK' | translate"
+                        formControlName="shared_link"
+                        type="text"
+                        readonly
+                        md-select-on-focus
+                    />
+                    <mat-icon matSuffix class="hxp-shared-link-copy-button" (click)="onCopy()">content_copy</mat-icon>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

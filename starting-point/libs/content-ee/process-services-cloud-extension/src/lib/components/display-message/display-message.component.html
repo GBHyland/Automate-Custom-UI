@@ -1,0 +1,8 @@
+<div class="apa-display-message" *ngIf="(parsedHTML$ | async) as parsedHTML">
+    <div class="apa-display-message__container" *ngIf="parsedHTML.length > 0">
+        <div
+            class="apa-display-message__content"
+            [innerHTML]="parsedHTML"
+        ></div>
+    </div>
+</div>

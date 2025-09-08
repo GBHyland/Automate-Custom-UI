@@ -1,0 +1,118 @@
+{
+  "$schema": "../../../extension.schema.json",
+  "$id": "app.core",
+  "$name": "app.core",
+  "$version": "0.0.1",
+  "$vendor": "Alfresco Software, Ltd.",
+  "$license": "LGPL-3.0",
+  "$runtime": "1.7.0",
+  "$description": "Core application extensions and features",
+  "$references": [],
+  "$ignoreReferenceList": [],
+
+  "features": {
+    "header": [
+      {
+        "id": "app.header.more",
+        "type": "menu",
+        "order": 10000,
+        "icon": "more_vert",
+        "title": "APP.ACTIONS.MORE",
+        "children": [
+          {
+              "id": "app.languages",
+              "order": 130,
+              "type": "custom",
+              "component": "app.languages"
+          },
+          {
+              "id": "app.features",
+              "order": 150,
+              "type": "custom",
+              "component": "feature-flags.menu-button",
+              "rules": {
+                  "visible": "feature-flags.isEnabled"
+              }
+          },
+          {
+            "id": "app.help",
+            "order": 170,
+            "type": "custom",
+            "component": "app.help",
+            "rules": {
+                "visible": "app.canShowHelp"
+            }
+          },
+          {
+            "id": "app.logout",
+            "order": 200,
+            "type": "custom",
+            "component": "app.logout",
+            "rules": {
+              "visible": "app.canShowLogout"
+            }
+          }
+        ]
+      }
+    ],
+    "document": [
+      {
+        "id": "app.document.more",
+        "type": "menu",
+        "order": 10000,
+        "icon": "more_vert",
+        "title": "APP.ACTIONS.MORE",
+        "children": [
+          {
+            "id": "document.move",
+            "order": 200,
+            "type": "custom",
+            "component": "document.move",
+            "rules": {
+              "visible": "app.canShowMove"
+            }
+          },
+          {
+            "id": "document.copy",
+            "order": 200,
+            "type": "custom",
+            "component": "document.copy"
+          },
+          {
+            "id": "document.permissions_management",
+            "order": 200,
+            "type": "custom",
+            "component": "document.permissions_management"
+          },
+          {
+            "id": "document.replace_file",
+            "order": 200,
+            "type": "custom",
+            "component": "document.replace_file",
+            "rules": {
+              "featureFlag": "workspace-versioning"
+            }
+          },
+          {
+            "id": "document.create_version",
+            "order": 200,
+            "type": "custom",
+            "component": "document.create_version",
+            "rules": {
+                "featureFlag": "workspace-versioning"
+            }
+          },
+          {
+            "id": "document.manage_versions",
+            "order": 200,
+            "type": "custom",
+            "component": "document.manage_versions",
+            "rules": {
+              "featureFlag": "workspace-versioning"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

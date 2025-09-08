@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Info",
+                    "ARIA-LABEL": "Informazioni file"
+                }
+            },
+            "SELECTED": "Selezionato",
+            "CLEAR_ALL": "Cancella tutto"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Proprietà principali"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Altre proprietà"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Aggiornamento proprietà completato!",
+                "ERROR": "Si è verificato un problema, impossibile aggiornare proprietà!",
+                "INFO": "Il valore del campo non può essere vuoto!"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Chiudi"
+            }
+        }
+    }
+}

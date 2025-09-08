@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Inga processdefinitioner tillgängliga",
+      "UNCATEGORIZED": "Ej kategoriserad",
+      "RECENT_PROCESS_DEFINITIONS": "Nyligen använd"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Tillägg: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Aktivera tillägg för Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Processhantering",
+      "START_PROCESS_CLOUD": "Starta process",
+      "TASK_LIST_CLOUD": "Uppgiftslista",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Visa detaljer",
+        "CLOSE-TOOLTIP": "Stäng",
+        "PRINT": "Skriv ut formulär"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Starta process",
+      "CREATE_PROCESS_NOT_ALLOWED": "Ny process kan inte skapas"
+    },
+    "ERROR": {
+      "NO_FORM": "Processdefinitionen har inte ett definierat formulär",
+      "CAN_NOT_ATTACH": "Kunde inte bifoga valt innehåll"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Process skapad '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Okänt nätverksfel inträffade. Funktioner relaterade till Process Automation har inaktiverats."
+    },
+    "SIDE_NAV_TITLE": "Processhantering",
+    "TASK_LIST": {
+      "TASKS": "Uppgifter",
+      "ACTIONS": {
+        "TASK_DETAILS": "Visa detaljer",
+        "PROCESS_HISTORY": "Processhistorik"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Ändra tilldelad användare",
+        "CLOSE": "Stäng",
+        "ASSIGN": "Tilldela",
+        "SUCCESS": "Tilldelad användare för uppgiften har nu ändrats",
+        "FAILED": "Vi stötte på ett problem med att tilldela användaren. Försök att tilldela användaren på nytt."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Detaljer"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Processer",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Visa detaljer",
+        "CANCEL_MESSAGE": "Processen har avbrutits",
+        "CANCEL_ERROR_MESSAGE": "Kunde inte avbryta processen. Försök igen",
+        "CANCEL_TOOLTIP": "Avbryt process"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Startad av"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Filtret har sparats",
+      "FILTER_DELETED": "Filtret har tagits bort"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Uppgiften har slutförts",
+      "FORM_SAVED": "Formuläret har sparats",
+      "FORM_ACTION": "Åtgärd '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Filtret har sparats",
+      "FILTER_DELETED": "Filtret har tagits bort"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Avbryt process",
+        "MESSAGE": "Är du säker på att du vill avbryta processen?"
+      },
+      "NEW_PROCESS": "Ny process",
+      "CONFIRM": "Bekräfta",
+      "CLOSE": "Stäng",
+      "ERROR": "Kunde inte läsa in processdefinitioner, kontrollera att du har åtkomst."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}} uppgiften har tilldelats till {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}} uppgiften har slutförts",
+    "TASK_ACTIVATED": "{{taskName}} uppgiften är nu aktiv",
+    "TASK_CANCELLED": "{{taskName}} uppgiften har avbrutits",
+    "TASK_SUSPENDED": "{{taskName}} uppgiften har avbrutits",
+    "TASK_UPDATED": "{{taskName}} uppgiftsdetaljer har uppdaterats"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Sök"
+    }
+  }
+}

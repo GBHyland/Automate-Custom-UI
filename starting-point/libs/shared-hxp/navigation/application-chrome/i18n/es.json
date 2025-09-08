@@ -1,0 +1,16 @@
+{
+    "APP_CHROME": {
+        "ENV_SWITCHER": {
+            "CONTROL_CENTER": "Control Center"
+        },
+        "APP_LIST": {
+            "HOME": "Inicio"
+        },
+        "USER_MENU": {
+            "SIGN_OUT": "Cerrar sesión"
+        },
+        "ERRORS": {
+            "APPS": "Something went wrong while fetching applications"
+        }
+    }
+}

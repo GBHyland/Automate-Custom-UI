@@ -1,0 +1,17 @@
+{
+  "name": "@hyland/extend",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@nx/angular": "20.4.4",
+    "@nx/devkit": "20.4.4",
+    "ts-morph": "20.0.0",
+    "tslib": "^2.3.0"
+  },
+  "generators": "./generators.json",
+  "devDependencies": {
+    "@types/node": "^22.13.14"
+  }
+}

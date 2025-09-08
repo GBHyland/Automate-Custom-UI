@@ -1,0 +1,30 @@
+{
+    "name": "workspace-hxp-idp-services-extension-shared",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/workspace-hxp/idp-services-extension/shared/src",
+    "prefix": "hxp",
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "stylePreprocessorOptions": {
+                    "includePaths": [
+                        "apps/workspace-hxp/src/styles/idp-styles",
+                        "libs/shared/satori-like-styles/src"
+                    ]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:workspace-hxp-idp-services-extension-shared", "category:workspace-hxp"]
+}

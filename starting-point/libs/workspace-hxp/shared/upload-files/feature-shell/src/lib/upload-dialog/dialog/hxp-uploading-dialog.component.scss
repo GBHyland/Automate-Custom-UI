@@ -1,0 +1,78 @@
+/* stylelint-disable no-descending-specificity */
+.adf-upload-dialog {
+    background-color: var(--theme-background-color);
+    color: var(--theme-text-color);
+    position: fixed;
+    bottom: 20px;
+    width: 40%;
+    box-shadow: 1px 5px 15px #888;
+    z-index: 999;
+
+    &--padding {
+        padding: 1em;
+    }
+
+    &--hide {
+        display: none !important;
+    }
+
+    &--minimized {
+        width: 20%;
+
+        .adf-upload-dialog__content {
+            display: none;
+        }
+    }
+
+    &__header {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        margin-left: 0.5em;
+        flex: 1 1 auto;
+    }
+
+    &__info {
+        padding: 0 1em 1em;
+    }
+
+    &__content {
+        overflow: auto;
+        max-height: 375px;
+        border-top: 1px solid var(--adf-upload-border-color);
+        border-bottom: 1px solid var(--adf-upload-border-color);
+    }
+
+    &__confirmation {
+        padding: 0 0.5em;
+    }
+
+    &__confirmation--title {
+        color: var(--theme-text-bold-color);
+    }
+
+    &__confirmation--text {
+        margin-bottom: 0;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1em;
+
+        & > button {
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* just adding a workaround here for now to display the snackbar in the right place */
+[adfUploadDialogLeft='true'] .adf-upload-dialog {
+    left: 25px;
+}
+[adfUploadDialogRight='true'] .adf-upload-dialog {
+    right: 25px;
+}

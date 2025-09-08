@@ -1,0 +1,21 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+body {
+    #{ms.$mdc-dialog__actions} {
+        padding: satori.$hy-spacing-0 satori.$hy-spacing-24 satori.$hy-spacing-24 satori.$hy-spacing-24;
+    }
+
+    #{ms.$mat-mdc-dialog-container} #{ms.$mat-dialog-title} {
+        color: var(--theme-foreground-text-bold-color);
+        padding: satori.$hy-spacing-24;
+    }
+
+    #{ms.$mat-mdc-dialog-container} {
+        box-shadow: var(--theme-ama-dialog-box-shadow);
+    }
+
+    #{ms.$mat-mdc-dialog-container} #{ms.$mat-mdc-dialog__surface} {
+        border-radius: satori.$hy-border-radius-12;
+    }
+}

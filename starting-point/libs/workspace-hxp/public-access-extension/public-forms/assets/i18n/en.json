@@ -1,0 +1,21 @@
+{
+    "APP": {
+        "PUBLIC_FORM": {
+            "SUCCESS": {
+                "LOADING_FORM": "Form loaded successfully",
+                "SUBMIT_FORM": "Form submitted successfully",
+                "SCREEN": {
+                    "TITLE": "Thank You",
+                    "SUBTITLE": "The form has been submitted successfully"
+                }
+            },
+            "ERROR": {
+                "CAPTCHA": "Captcha validation failed, please try again"
+            },
+            "ACTIONS": {
+                "START": "Start Process",
+                "CANCEL": "Cancel"
+            }
+        }
+    }
+}

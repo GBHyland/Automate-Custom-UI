@@ -1,0 +1,5 @@
+<ng-container *ngIf="identityUser$ | async as identityUser">
+    <div class="hxp-header-menu-user-initials hxp-label-regular" [matTooltip]="identityUser.username" data-automation-id="hxp-user-initials-tooltip">
+        <div [outerHTML]="identityUser | usernameInitials"></div>
+    </div>
+</ng-container>

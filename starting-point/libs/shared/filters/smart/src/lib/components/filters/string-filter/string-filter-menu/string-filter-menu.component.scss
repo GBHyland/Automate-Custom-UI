@@ -1,0 +1,39 @@
+.hxp-string-filter-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px !important;
+    background-color: var(--theme-card-background-color);
+    box-shadow: var(--adf-filter-menu-box-shadow);
+    border-radius: 8px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &__form-field {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    &__divider {
+        width: 100%;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    &__clear-selection-button {
+        border: 0;
+    }
+}

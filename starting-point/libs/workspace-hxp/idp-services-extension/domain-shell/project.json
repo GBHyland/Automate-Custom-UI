@@ -1,0 +1,16 @@
+{
+  "name": "workspace-hxp-idp-services-extension-domain-shell",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/workspace-hxp/idp-services-extension/domain-shell/src",
+  "prefix": "hxp",
+  "tags": [
+    "scope:workspace-hxp-idp-services-extension-domain-shell",
+    "category:workspace-hxp"
+  ],
+  "projectType": "library",
+  "targets": {
+    "test": {},
+    "lint": {},
+    "stylelint": {}
+  }
+}

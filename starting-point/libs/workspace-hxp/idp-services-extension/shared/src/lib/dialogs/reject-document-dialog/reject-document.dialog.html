@@ -1,0 +1,42 @@
+<ng-container *hylandIdpLet="(activeItem$ | async) || undefined as activeItem">
+    <div class="idp-screens-root-container idp-screens-dialog idp-report-issue-dialog" (keydown.enter)="handleKeyEnter($event, activeItem)" data-automation-id="idp-reject-document-dialog">
+        <div class="idp-dialog-title">{{ 'IDP.REJECT_DIALOG.TITLE' | translate }}</div>
+        <div class="idp-dialog-description">
+            <span>{{ 'IDP.REJECT_DIALOG.DESCRIPTION' | translate }}</span>
+        </div>
+        <mat-dialog-content class="idp-report-issue-dialog__content">
+            <form [formGroup]="rejectForm" class="idp-report-issue-dialog__content__form">
+                <div class="idp-report-issue-dialog__content__form__selection-list">
+                    <hyland-idp-filterable-selection-list [items]="(items$ | async) || []"
+                        [searchPlaceholderKey]="'IDP.REJECT_DIALOG.SEARCH_PLACEHOLDER'"
+                        (activeItemChanged)="onActiveItemChanged($event)" />
+                </div>
+
+                <div class="idp-report-issue-dialog__content__form__reject-note">
+                    <mat-form-field class="idp-report-issue-dialog__content__form__reject-note__field"
+                        [hintLabel]="'IDP.REJECT_DIALOG.REJECT_NOTE.HINT' | translate: { max: rejectNoteMaxLength }"
+                        appearance="outline">
+                        <mat-label>{{ 'IDP.REJECT_DIALOG.REJECT_NOTE.LABEL' | translate }}</mat-label>
+                        <textarea class="idp-report-issue-dialog__content__form__reject-note__field__text"
+                            data-automation-id="idp-reject-dialog__input__reject-note"
+                            matInput #rejectNoteInput formControlName="rejectNote"
+                            placeholder="{{ 'IDP.REJECT_DIALOG.REJECT_NOTE.PLACEHOLDER' | translate }}"
+                            [attr.aria-label]="'IDP.REJECT_DIALOG.REJECT_NOTE.ARIA_LABEL' | translate"
+                            [maxlength]="rejectNoteMaxLength"></textarea>
+                        <mat-hint align="end">{{rejectNoteInput.value.length}}/{{rejectNoteMaxLength}}</mat-hint>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-dialog-content>
+
+        <mat-dialog-actions class="idp-report-issue-dialog__footer">
+            <button data-automation-id='idp-reject-dialog__cancel-button' mat-button mat-dialog-close color="primary">
+                {{ 'IDP.REJECT_DIALOG.CANCEL_BUTTON' | translate }}
+            </button>
+            <button data-automation-id='idp-reject-dialog__save-button' mat-flat-button color="warn"
+                [disabled]="!activeItem" [mat-dialog-close]="{ rejectReason: activeItem, rejectNote: sanitizedRejectNote }">
+                {{ 'IDP.REJECT_DIALOG.REJECT_BUTTON' | translate }}
+            </button>
+        </mat-dialog-actions>
+    </div>
+</ng-container>

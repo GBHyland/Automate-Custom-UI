@@ -1,0 +1,17 @@
+<div class="hxp-delete-version-dialog mat-mdc-dialog-container">
+    <h2 mat-dialog-title>{{ 'MANAGE_VERSIONS.DELETE_DIALOG.TITLE' | translate }}</h2>
+    <mat-dialog-content>
+        <p class="hxp-delete-version-dialog-description">{{ 'MANAGE_VERSIONS.DELETE_DIALOG.DESCRIPTION' | translate }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end" class="hxp-delete-version-dialog-footer-action">
+        <button mat-button mat-dialog-close>{{ 'MANAGE_VERSIONS.DELETE_DIALOG.BUTTONS.CANCEL' | translate }}</button>
+        <button mat-flat-button data-automation-id="confirm-delete" color="warn" [disabled]="isDeleting" [ngClass]="{'hxp-loading': isDeleting}" (click)="delete()">
+            <span class="hxp-manage-version-dialog-delete-btn-label">
+                <mat-progress-spinner *ngIf="isDeleting" mode="indeterminate" diameter="15" />
+                <span class="hxp-manage-version-dialog-delete-btn-title">
+                    {{ 'MANAGE_VERSIONS.DELETE_DIALOG.BUTTONS.DELETE' | translate }}
+                </span>
+            </span>
+        </button>
+    </mat-dialog-actions>
+</div>

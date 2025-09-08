@@ -1,0 +1,15 @@
+<div class="apa-process-list-related-process-container">
+    <div adf-tooltip-card *ngIf="processInstance?.parentId; else isParentProcess"
+        [htmlContent]="subprocessTooltipHtmlContent" data-automation-id="apa-process-list-related-subprocess"
+        class="apa-process-list-related-subprocess adf-ellipsis-cell">
+        {{processInstance.name}} (id:{{processInstance.parentId}})
+    </div>
+    <ng-template #isParentProcess>
+        <div *ngIf="processInstance?.subprocesses?.length as subprocessesCount;" adf-tooltip-card
+            data-automation-id="apa-process-list-related-parent-process" [htmlContent]="processesTooltipHtmlContent"
+            class="apa-process-list-related-parent-process">
+            {{subprocessesCount}} {{ (subprocessesCount > 1 ? 'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROPERTIES.SUBPROCESSES'
+            : 'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROPERTIES.SUBPROCESS') | translate }}
+        </div>
+    </ng-template>
+</div>

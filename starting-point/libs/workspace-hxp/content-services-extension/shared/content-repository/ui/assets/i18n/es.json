@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Información",
+                    "ARIA-LABEL": "Información del fichero"
+                }
+            },
+            "SELECTED": "Seleccionado(s)",
+            "CLEAR_ALL": "Borrar todo"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Propiedades principales"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Otras propiedades"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Propiedades actualizadas correctamente.",
+                "ERROR": "Se ha producido un error. No se pudo actualizar la propiedad.",
+                "INFO": "¡El valor de campo no puede estar en blanco!"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Cerrar"
+            }
+        }
+    }
+}

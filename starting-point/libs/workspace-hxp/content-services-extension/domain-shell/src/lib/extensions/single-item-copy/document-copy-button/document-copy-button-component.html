@@ -1,0 +1,9 @@
+<button
+    *ngIf="isAvailable"
+    mat-menu-item
+    class="hxp-copy-button"
+    (click)="onCopy()"
+>
+    <mat-icon>content_copy</mat-icon>
+    <span>{{ 'DOCUMENT_MORE_ACTION.COPY' | translate }}</span>
+</button>

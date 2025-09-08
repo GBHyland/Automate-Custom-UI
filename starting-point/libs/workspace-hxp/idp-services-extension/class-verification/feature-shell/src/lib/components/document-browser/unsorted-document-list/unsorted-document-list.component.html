@@ -1,0 +1,23 @@
+<ng-container *hylandIdpLet="{ documents: (documents$ | async) || [], placeholder: dragPlaceholderMetadata$ | async, selectedDocumentsCount: selectedDocumentsCount$ | async } as datasource">
+    <hyland-idp-document-list
+        [documents]="datasource.documents"
+        [placeholder]="datasource.placeholder"
+        [selectedDocumentsCount]="datasource.selectedDocumentsCount"
+        [draggingDocuments]="draggingDocuments"
+        [dropListId]="classDropListId"
+        [showFloatingToolbar]="true"
+
+        [documentUniquenessFn]="documentUniquenessFn.bind(this)"
+        [formatDocumentName]="formatDocumentName.bind(this)"
+        [isElementContained]="isElementContained.bind(this)"
+        [onItemKeyDown]="onItemKeyDown.bind(this)"
+        [onContainerKeyDown]="onContainerKeyDown.bind(this)"
+        [onItemMouseDown]="onItemMouseDown.bind(this)"
+        [onItemMouseUp]="onItemMouseUp.bind(this)"
+        [onDoubleClick]="onDoubleClick.bind(this)"
+        [onMouseEnter]="onMouseEnter.bind(this)"
+        [onDragStarted]="onDragStarted.bind(this)"
+        [onDragStopped]="onDragStopped.bind(this)"
+        [onPageCollapseRequest]="onPageCollapseRequest.bind(this)"
+    />
+</ng-container>

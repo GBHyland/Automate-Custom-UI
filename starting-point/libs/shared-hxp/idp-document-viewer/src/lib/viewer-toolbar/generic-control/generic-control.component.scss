@@ -1,0 +1,26 @@
+.idp-top-bottom {
+    flex-direction: row;
+}
+
+.idp-left-right {
+    flex-direction: column;
+}
+
+.idp-menu-item-container {
+    display: flex;
+
+    &__label {
+        flex: 1;
+    }
+    &__icon {
+        margin-left: 3.5em;
+        margin-right: 1em;
+    }
+}
+
+.idp-toolbar-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.25em;
+    box-sizing: border-box;
+}

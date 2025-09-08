@@ -1,0 +1,11 @@
+.studio-info-dialog-title {
+    color: var(--studio-info-dialog-title-color);
+}
+
+.studio-info-dialog-content {
+    p,
+    ul,
+    li {
+        color: var(--studio-info-dialog-text-color);
+    }
+}

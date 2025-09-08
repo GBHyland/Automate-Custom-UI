@@ -1,0 +1,22 @@
+<hxp-filter-chip
+    [label]="filter?.label || ''"
+    [suffix]="labelSuffix ? labelSuffix.label : null"
+    [chipCount]="labelSuffix ? labelSuffix.count : null"
+    (chipClick)="onFilterButtonClick()"
+    (removeIconClick)="removeFilter()"
+    cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+    [attr.data-automation-id]="filter?.name + '-filter-chip'"
+/>
+
+<ng-template
+    hxpFilterMenuOverlay
+    [overlayOrigin]="trigger"
+    [overlayOpen]="isMenuOpen"
+    (detach)="isMenuOpen = false"
+>
+    <hxp-checkbox-filter-menu
+        [options]="options"
+        (update)="onUpdate($event)"
+        data-automation-id="hxp-checkbox-filter-menu"
+    />
+</ng-template>

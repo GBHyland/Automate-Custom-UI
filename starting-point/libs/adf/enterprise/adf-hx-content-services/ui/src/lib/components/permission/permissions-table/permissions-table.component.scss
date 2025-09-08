@@ -1,0 +1,113 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-permissions-management-panel-container,
+.hxp-permissions-management-dialog-container {
+    th {
+        color: satori.$hy-colors-neutral-500;
+    }
+
+    #{ms.$mat-column-permission} {
+        display: flex;
+        align-items: center;
+        height: inherit;
+        padding: 5px;
+    }
+
+    .hxp-permission-dialog-who {
+        font-style: normal;
+        font-weight: 600;
+        font-size: satori.$hy-font-sizes-20;
+        line-height: satori.$hy-line-heights-40;
+        color: var(--adf-theme-foreground-text-color);
+        margin: 24px 0 16px;
+    }
+
+    .hxp-no-permission {
+        font-style: normal;
+        font-size: satori.$hy-font-sizes-20;
+        line-height: satori.$hy-line-heights-40;
+        color: var(--adf-theme-foreground-text-color);
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+
+    .hxp-user-table {
+        height: 280px;
+        border: 1px solid var(--adf-theme-foreground-text-color-025);
+        border-radius: satori.$hy-border-radius-12;
+        padding: 0 0 10px;
+        overflow-y: auto;
+        background-color: var(--adf-info-drawer-tab-default-background);
+    }
+
+    .hxp-permission-dialog-user-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 satori.$hy-spacing-16;
+        gap: satori.$hy-spacing-8;
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #{ms.$mat-cell},
+    #{ms.$mat-header-cell} {
+        border: none;
+        vertical-align: middle;
+    }
+
+    #{ms.$mat-mdc-table__wrapper} #{ms.$mat-table} {
+        min-width: auto;
+        width: 100%;
+    }
+
+    #{ms.$mat-dialog-content} {
+        max-height: initial;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+    mat-select {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: satori.$hy-spacing-8;
+    }
+
+    #{ms.$mat-form-field-infix} {
+        width: auto;
+    }
+
+    #{ms.$mat-form-field-underline} {
+        display: none;
+    }
+
+    #{ms.$mat-row} {
+        vertical-align: initial;
+        display: flex;
+        margin: 0 0 4px;
+    }
+
+    #{ms.$mat-mdc-header-cell},
+    #{ms.$mat-cell} {
+        width: calc(100% / 3);
+        &:nth-child(1) {
+            flex-grow: 1;
+        }
+    }
+
+    .hxp-permission-row:hover {
+        background-color: var(--theme-background-hover-color, #f9f9fc);
+    }
+
+    #{ms.$mat-mdc-header-row} {
+        display: flex;
+        align-items: center;
+    }
+}

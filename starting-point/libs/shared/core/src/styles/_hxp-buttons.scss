@@ -1,0 +1,105 @@
+@use 'satori-like-styles' as satori;
+
+@mixin hxp-button {
+    height: 36px;
+    border-radius: satori.$hy-border-radius-8;
+    padding: 6px 6px 6px 8px;
+}
+
+@mixin hxp-button-variables {
+    $defaults: (
+        --hxp-text-button-not-disabled-color: satori.$hy-colors-text-primary,
+        --hxp-text-button-not-disabled-background-color: satori.$hy-colors-background-base,
+        --hxp-text-button-disabled: satori.$hy-colors-text-disabled,
+        --hxp-primary-button-not-disabled-color: satori.$hy-colors-text-default-inverse,
+        --hxp-primary-button-not-disabled-background-color: satori.$hy-colors-background-primary,
+        --hxp-primary-button-disabled-color: satori.$hy-colors-text-disabled,
+        --hxp-primary-button-disabled-background-color: satori.$hy-colors-background-disabled,
+        --hxp-secondary-button-not-disabled-color: satori.$hy-colors-text-primary,
+        --hxp-secondary-button-not-disabled-background-color: satori.$hy-colors-background-base,
+        --hxp-secondary-button-not-disabled-border: satori.$hy-colors-cool-gray-400,
+        --hxp-secondary-button-disabled-border: satori.$hy-border-disabled,
+        --hxp-secondary-button-disabled-color: satori.$hy-colors-text-disabled,
+    );
+    :root {
+        @each $name, $value in $defaults {
+            #{$name}: #{$value};
+        }
+    }
+}
+
+@include hxp-button-variables;
+
+@mixin hxp-text-button-not-disabled {
+    color: var(--hxp-text-button-not-disabled-color);
+    background-color: var(--hxp-text-button-not-disabled-background-color);
+    @include hxp-button;
+}
+
+@mixin hxp-text-button-disabled {
+    color: var(--hxp-text-button-disabled);
+    @include hxp-button;
+}
+
+@mixin hxp-primary-button-not-disabled {
+    color: var(--hxp-primary-button-not-disabled-color);
+    background-color: var(--hxp-primary-button-not-disabled-background-color);
+    border: 0;
+    @include hxp-button;
+}
+
+@mixin hxp-primary-button-disabled {
+    color: var(--hxp-primary-button-disabled-color);
+    background-color: var(--hxp-primary-button-disabled-background-color);
+    @include hxp-button;
+}
+
+@mixin hxp-secondary-button-not-disabled {
+    color: var(--hxp-secondary-button-not-disabled-color);
+    background-color: var(--hxp-secondary-button-not-disabled-background-color);
+    border: 1px solid var(--hxp-secondary-button-not-disabled-border);
+    @include hxp-button;
+}
+@mixin hxp-secondary-button-disabled {
+    border: var(--hxp-secondary-button-disabled-border);
+    color: var(--hxp-secondary-button-disabled-color);
+    @include hxp-button;
+}
+
+body {
+    .hxp-primary-warn-button:not(:disabled) {
+        color: satori.$hy-colors-text-default-inverse;
+        background-color: satori.$hy-colors-background-error;
+        @include hxp-button;
+    }
+
+    .hxp-text-button-pressed:not(:disabled) {
+        color: satori.$hy-colors-text-primary;
+        background-color: #e1ebfa;
+        @include hxp-button;
+    }
+
+    .hxp-text-button:not(:disabled) {
+        @include hxp-text-button-not-disabled;
+    }
+
+    .hxp-text-button:disabled {
+        @include hxp-text-button-disabled;
+    }
+
+    .hxp-primary-button:not(:disabled) {
+        @include hxp-primary-button-not-disabled;
+    }
+
+    .hxp-primary-button:disabled {
+        @include hxp-primary-button-disabled;
+    }
+
+    .hxp-secondary-button:not(:disabled) {
+        @include hxp-secondary-button-not-disabled;
+    }
+
+    .hxp-secondary-button:disabled {
+        @include hxp-secondary-button-disabled;
+    }
+}

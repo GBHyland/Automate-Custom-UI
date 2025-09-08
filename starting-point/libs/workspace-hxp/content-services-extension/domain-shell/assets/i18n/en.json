@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Permissions",
+                    "ARIA-LABEL": "Manage file permissions"
+                },
+                "COPY": {
+                    "TITLE": "Copy",
+                    "ARIA-LABEL": "Copy file"
+                },
+                "MOVE": {
+                    "TITLE": "Move",
+                    "ARIA-LABEL": "Move file"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Replace file (beta)",
+                    "ARIA-LABEL": "Replace file (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Save to Version History (beta)",
+                    "ARIA-LABEL": "Save to Version History (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Copy",
+        "MOVE": "Move",
+        "REPLACE_FILE": "Replace file",
+        "MANAGE_VERSIONS": "Manage Versions"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Manage Versions",
+            "CLOSE": "Close",
+            "CREATED_BY": "by"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Copy item to",
+            "COPY": "Copy",
+            "CANCEL": "Cancel",
+            "CLOSE": "Close",
+            "FILE_NAME_PREFIX": "Copy of",
+            "PERMISSIONS": {
+                "ERROR": "You don't have permissions to copy the document here."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Search"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Home",
+            "MOVE_ITEM": "Move item to",
+            "MOVE": "Move",
+            "CANCEL": "Cancel",
+            "CLOSE": "Close",
+            "PERMISSIONS": {
+                "ERROR": "You don't have permissions to move the document here."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Search"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "File has been copied",
+            "FILE_ERROR": "File copy failed",
+            "FOLDER_SUCCESS": "Folder has been copied",
+            "FOLDER_ERROR": "Folder copy failed"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "File has been moved",
+            "FILE_ERROR": "File move failed",
+            "FOLDER_SUCCESS": "Folder has been moved",
+            "FOLDER_ERROR": "Folder move failed"
+        }
+    }
+}

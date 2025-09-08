@@ -1,0 +1,15 @@
+.idp-top-bottom {
+    flex-direction: row;
+}
+
+.idp-left-right {
+    flex-direction: column;
+}
+
+.idp-layer-selection-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.25em;
+    box-sizing: border-box;
+}

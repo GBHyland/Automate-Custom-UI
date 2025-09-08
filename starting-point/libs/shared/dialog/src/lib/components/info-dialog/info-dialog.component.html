@@ -1,0 +1,35 @@
+<h2 class="studio-info-dialog-title" mat-dialog-title>{{ title | translate }}</h2>
+
+<mat-dialog-content class="studio-info-dialog-content">
+    <p *ngIf="subtitle && !isValidationErrors">{{ subtitle | translate }}</p>
+
+    <ul *ngIf="messages.length && !isValidationErrors">
+        <li *ngFor="let message of messages">{{ message | translate }}</li>
+    </ul>
+    <ng-container *ngIf="isValidationErrors">
+        <div *ngFor="let key of messageGroupsKeys">
+            <span>{{ key }}</span>
+            <ul>
+                <li *ngFor="let message of messageGroupsData[key]">
+                    {{ message.key ? (message.key | translate : message.params) : message.description }}
+                    <br>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+
+    <div *ngIf="htmlContent && !isValidationErrors" [innerHTML]="htmlContent"></div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <span class="adf-fill-remaining-space"></span>
+
+    <button mat-button
+        [attr.data-automation-id]="'dialog-close'"
+        mat-dialog-close
+        class="hxp-text-button"
+        (click)="close()">
+        {{ 'APP.DIALOGS.CLOSE' | translate }}
+    </button>
+
+</mat-dialog-actions>

@@ -1,0 +1,15 @@
+[
+    {
+        "index": 0,
+        "entityId": "newId",
+        "entityType": "user",
+        "entityLabel": "Adam",
+        "permission": "Everything",
+        "entity": "User",
+        "isNew": true,
+        "edited": false,
+        "inherited": false,
+        "overridden": false,
+        "inheritedPermission": "None"
+    }
+]

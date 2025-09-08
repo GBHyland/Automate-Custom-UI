@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Ei prosessimääritelmiä käytettävissä",
+      "UNCATEGORIZED": "Luokittelematon",
+      "RECENT_PROCESS_DEFINITIONS": "Äskettäin käytetty"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Laajennukset: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Ota Process Automation -laajennukset käyttöön"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Prosessien hallinta",
+      "START_PROCESS_CLOUD": "Käynnistä prosessi",
+      "TASK_LIST_CLOUD": "Tehtäväluettelo",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Näytä tiedot",
+        "CLOSE-TOOLTIP": "Sulje",
+        "PRINT": "Tulosta lomake"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Käynnistä prosessi",
+      "CREATE_PROCESS_NOT_ALLOWED": "Uutta prosessia ei voida luoda"
+    },
+    "ERROR": {
+      "NO_FORM": "Prosessimääritelmälle ei ole määritelty lomaketta",
+      "CAN_NOT_ATTACH": "Valitun sisällön liittäminen epäonnistui"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "'{{ processName }}'-prosessi luotu",
+      "BACKEND_SERVICE_ERROR": "Tapahtui tuntematon verkkovirhe. Process Automation -sovellukseen liittyvät ominaisuudet ovat poissa käytöstä."
+    },
+    "SIDE_NAV_TITLE": "Prosessien hallinta",
+    "TASK_LIST": {
+      "TASKS": "Tehtävät",
+      "ACTIONS": {
+        "TASK_DETAILS": "Näytä tiedot",
+        "PROCESS_HISTORY": "Prosessin historia"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Vaihda vastaanottaja",
+        "CLOSE": "Sulje",
+        "ASSIGN": "Määritä",
+        "SUCCESS": "Tehtävään valtuutettu henkilö vaihdettu",
+        "FAILED": "Käyttäjän valtuuttamisessa ilmeni ongelma. Yritä valtuuttaa käyttäjä uudelleen."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Tiedot"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Prosessit",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Näytä tiedot",
+        "CANCEL_MESSAGE": "Prosessi on peruutettu",
+        "CANCEL_ERROR_MESSAGE": "Prosessin peruuttaminen epäonnistui. Yritä uudelleen.",
+        "CANCEL_TOOLTIP": "Peruuta prosessi"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Aloittaja"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Suodatin on tallennettu",
+      "FILTER_DELETED": "Suodatin on poistettu"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Tehtävä on suoritettu",
+      "FORM_SAVED": "Lomake on tallennettu",
+      "FORM_ACTION": "Toiminto '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Suodatin on tallennettu",
+      "FILTER_DELETED": "Suodatin on poistettu"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Peruuta prosessi",
+        "MESSAGE": "Haluatko varmasti peruuttaa prosessin?"
+      },
+      "NEW_PROCESS": "Uusi prosessi",
+      "CONFIRM": "Vahvista",
+      "CLOSE": "Sulje",
+      "ERROR": "Prosessimääritelmien lataaminen ei onnistu. Tarkista, että sinulla on tarvittavat oikeudet."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "{{taskName}} -tehtävä on määritetty käyttäjälle {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}} -tehtävä on suoritettu",
+    "TASK_ACTIVATED": "{{taskName}} -tehtävä on käynnissä",
+    "TASK_CANCELLED": "{{taskName}} -tehtävä on peruutettu",
+    "TASK_SUSPENDED": "{{taskName}} -tehtävä on keskeytetty",
+    "TASK_UPDATED": "{{taskName}} -tehtävän tiedot on päivitetty"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Hae"
+    }
+  }
+}

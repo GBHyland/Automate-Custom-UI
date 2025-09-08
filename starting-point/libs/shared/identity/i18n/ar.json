@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "مجموعات",
+      "MANDATORY": "إلزامي",
+      "ERROR": {
+        "NOT_FOUND": "لم يتم العثور على مجموعة بالاسم {{groupName}}"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "يجب أن يتطابق مع النمط {{pattern}}",
+        "INVALID_MIN_LENGTH": "يجب ألا يقل عدد الأحرف عن {{requiredLength}} حرفًا",
+        "INVALID_MAX_LENGTH": "تم تجاوز الطول ، {{requiredLength}} حرفًا كحد أقصى",
+        "REQUIRED": "هذا حقل مطلوب",
+        "NOT_FOUND": "لم يتم العثور على مستخدم باسم المستخدم {{userName}}"
+      }
+    }
+  }
+}

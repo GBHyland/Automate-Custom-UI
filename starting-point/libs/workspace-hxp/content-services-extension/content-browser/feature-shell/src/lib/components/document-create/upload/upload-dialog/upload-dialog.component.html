@@ -1,0 +1,65 @@
+<div
+    *ngIf="isDialogActive"
+    class="hxp-workspace-upload-dialog-backdrop"
+>
+    <div
+        [attr.aria-label]="'HXP_FILE_UPLOAD.ARIA-LABEL.DIALOG' | translate"
+        class="hxp-workspace-upload-dialog"
+        tabindex="0"
+        role="dialog"
+    >
+        <header class="hxp-workspace-upload-dialog__header">
+            <span tabindex="0" class="hxp-workspace-upload-dialog__title">
+                {{
+                    data.length !== 1
+                        ? ('FILE_UPLOAD.DIALOG.TITLE.MULTIPLE_FILES'
+                          | translate: { numberOfFiles: data.length })
+                        : ('FILE_UPLOAD.DIALOG.TITLE.SINGLE_FILE' | translate)
+                }}
+            </span>
+        </header>
+
+        <section class="hxp-workspace-upload-dialog__content">
+            <div class="hxp-workspace-upload-dialog__files">
+                <hxp-workspace-upload-list
+                    #uploadList
+                    [data]="data"
+                    (itemsDeleted)="onUploadDelete($event)"
+                    (itemsSelected)="onUploadSelection($event)"
+                    (uploadRetry)="onUploadRetry($event)"
+                />
+            </div>
+            <div class="hxp-workspace-upload-dialog__properties">
+                <hxp-workspace-upload-properties-editor
+                    #uploadPropertiesEditor
+                    [data]="uploadRequestsToUpdate"
+                    [currentDocument]="currentDocument"
+                    (documentsUpdated)="onUploadUpdate()"
+                />
+            </div>
+        </section>
+
+        <footer class="hxp-workspace-upload-dialog__actions">
+            <button
+                id="hxp-workspace-upload-dialog-close"
+                [attr.aria-label]="'FILE_UPLOAD.BUTTON.CLOSE' | translate"
+                mat-button
+                (click)="close(true)"
+            >
+                {{ 'FILE_UPLOAD.BUTTON.CLOSE' | translate }}
+            </button>
+            <button
+                id="hxp-workspace-upload-dialog-upload"
+                [attr.aria-label]="
+                    'FILE_UPLOAD.BUTTON.DIALOG_SUBMIT' | translate
+                "
+                mat-button
+                class="hxp-primary-button"
+                (click)="uploadContent()"
+                [disabled]="!canFinishUpload"
+            >
+                {{ 'FILE_UPLOAD.BUTTON.DIALOG_SUBMIT' | translate }}
+            </button>
+        </footer>
+    </div>
+</div>

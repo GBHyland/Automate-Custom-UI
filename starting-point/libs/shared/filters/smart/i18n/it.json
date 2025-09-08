@@ -1,0 +1,118 @@
+{
+    "FILTERS": {
+        "TITLE": "Filtri",
+        "MENU": {
+            "SEARCH": "Cerca",
+            "CLEAR_SELECTION": "Cancella selezione",
+            "UPDATE": "Aggiorna",
+            "APPLY": "Applica"
+        },
+        "DIALOG": {
+            "SAVE": "Salva",
+            "CANCEL": "Annulla",
+            "PLACEHOLDER": "Nome"
+        },
+        "ALL": "Tutti",
+        "MORE_FILTERS": "Più",
+        "RESET": "Reimposta",
+        "SAVE": "Salva",
+        "SAVE_AS": "Salva con nome",
+        "DELETE": "Elimina",
+        "STRING_FILTER": {
+            "PLACEHOLDER": "Testo"
+        },
+        "NUMBER_FILTER": {
+            "ERROR": "Intervallo non valido",
+            "PLACEHOLDER": "Numero",
+            "RANGE": {
+                "FROM": "Da",
+                "TO": "A",
+                "BETWEEN_AND": "Tra {{from}} e {{to}}"
+            },
+            "EQUALS": "Uguale a",
+            "NOT_EQUALS": "Non è uguale",
+            "GREATER_THAN": "Maggiore di",
+            "GREATER_THAN_OR_EQUALS": "Maggiore di o uguale a",
+            "LESS_THAN": "Minore di",
+            "LESS_THAN_OR_EQUALS": "Minore di o uguale a",
+            "BETWEEN": "Tra",
+            "AND": "e"
+        },
+        "CHECKBOX_FILTER": {
+            "SELECT_ALL": "Seleziona tutto"
+        },
+        "DATE_FILTER": {
+            "NO_DATE": "Nessuna data",
+            "TODAY": "Oggi",
+            "WEEK": "Questa settimana",
+            "MONTH": "Questo mese",
+            "QUARTER": "Questo trimestre",
+            "YEAR": "Quest'anno",
+            "RANGE": "Intervallo personalizzato",
+            "FROM": "Da",
+            "TO": "A",
+            "FROM_DATE": "Da {{date}}",
+            "TO_DATE": "A {{date}}"
+        },
+        "USER_FILTER": {
+            "TITLE": "Utenti",
+            "PLACEHOLDER": "Utente successivo"
+        },
+        "TASK_STATUS_FILTER": {
+            "CREATED": "Creato",
+            "ASSIGNED": "Assegnato",
+            "SUSPENDED": "Sospeso",
+            "CANCELLED": "Annullato",
+            "COMPLETED": "Completato"
+        },
+        "PROCESS_STATUS_FILTER": {
+            "RUNNING": "In esecuzione",
+            "COMPLETED": "Completato",
+            "CANCELLED": "Annullato",
+            "SUSPENDED": "Sospeso"
+        },
+        "LABELS": {
+            "TASK": {
+                "PROCESS_INSTANCE_ID": "ID istanza di processo",
+                "PARENT_ID": "ID principale",
+                "PROCESS_DEFINITION_NAME": "Nome definizione processo",
+                "ASSIGNEE": "Assegnatario",
+                "STATUS": "Stato",
+                "PRIORITY": "Priorità",
+                "DUE_DATE": "Scadenza",
+                "CREATED_DATE": "Data Creato",
+                "COMPLETED_DATE": "Data completamento",
+                "COMPLETED_BY": "Completato da",
+                "TASK_NAME": "Nome compito",
+                "ID": "ID"
+            },
+            "PROCESS": {
+                "APP_NAME": "Nome",
+                "ID": "ID",
+                "PROCESS_NAME": "Nome processo",
+                "PARENT_ID": "ID processo principale",
+                "PROCESS_DEFINITION_NAME": "Nome definizione processo",
+                "STATUS": "Stato",
+                "COMPLETED_DATE": "Data completamento",
+                "STARTED_BY": "Avviato da",
+                "SUSPENDED_DATE": "Data di sospensione",
+                "STARTED_DATE": "Data di inizio",
+                "APP_VERSION": "Versione app"
+            },
+            "SERVICE_TASK": {
+                "ACTIVITY_NAME": "Nome attività",
+                "ID": "ID",
+                "PROCESS_INSTANCE_ID": "ID istanza di processo",
+                "STATUS": "Stato",
+                "COMPLETED_DATE": "Data completamento",
+                "STARTED_DATE": "Data avvio"
+            },
+            "AUDIT": {
+                "ENTITY_ID": "ID evento",
+                "EVENT_TYPE": "Tipo di evento",
+                "PROCESS_INSTANCE_ID": "ID istanza di processo",
+                "EVENT_TIME": "Ora evento"
+            }
+        }
+    }
+}

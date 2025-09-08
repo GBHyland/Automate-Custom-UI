@@ -1,0 +1,20 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-search-menu-item {
+    border-left: 6px solid transparent;
+
+    &_active {
+        background-color: var(--theme-background-hover-color);
+        border-left: 6px solid var(--theme-primary-color);
+    }
+
+    &_button {
+        justify-content: left;
+        width: 100%;
+        height: satori.$hy-line-heights-10;
+
+        &_collapsed {
+            justify-content: center;
+        }
+    }
+}

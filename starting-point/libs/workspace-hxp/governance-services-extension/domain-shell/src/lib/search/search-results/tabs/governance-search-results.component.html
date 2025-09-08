@@ -1,0 +1,134 @@
+@let showInitialState = initialState && !isLoading;
+@let showNoResults = noResults && !isLoading && !initialState;
+@let showNoMoreResults = noResults && !isLoading && initialState;
+@let showResults = !initialState && !noResults && !isLoading;
+
+<div class="hxp-governance-search-results-container">
+    <div class="hxp-governance-results-left-panel">
+        <div class="hxp-governance-search-results-header">
+            <div class="hxp-governance-search-results-header-actions">
+                <div class="hxp-governance-search-results-header-actions_filters">
+                    <hxp-governance-search-data-source-filter />
+                    <hxp-governance-search-category-filter />
+                    <hxp-governance-cutoff-search-filter />
+                    <hxp-governance-disposition-search-filter />
+                    <hxp-governance-search-status-filter />
+                    <!-- Creator filter needs to added here https://hyland.atlassian.net/browse/CICGOV-731 -->
+                    <hxp-governance-search-modifier-filter />
+                    <!-- Content ID facet to be added later https://hyland.atlassian.net/browse/CICGOV-186 -->
+                    <hxp-record-name-search-filter />
+                </div>
+                <div class="hxp-governance-search-results-header-actions_buttons">
+                    <button id="hxp-governance-search-results-reset-button" mat-button class="hxp-text-button" [attr.aria-label]="'GOVERNANCE.SEARCH_RESULTS.BUTTONS.RESET.LABEL' | translate" [disabled]="!hasPendingChanges" (click)="reset()">
+                        {{ 'GOVERNANCE.SEARCH_RESULTS.BUTTONS.RESET.LABEL' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Initial State -->
+        @if (showInitialState) {
+        <div class="hxp-governance-search-results-initial-state">
+            <img src="assets/icons/Target.svg" [alt]="'GOVERNANCE.SEARCH_RESULTS.INITIAL_STATE.ICON' | translate" class="hxp-governance-search-results-initial-state_icon" />
+            <span class="hxp-governance-search-results-initial-state_label hxp-title-large">{{ 'GOVERNANCE.SEARCH_RESULTS.INITIAL_STATE.LABEL' | translate }}</span>
+        </div>
+        } @if (showNoResults) {
+        <div class="hxp-governance-search-results-no-results">
+            <img src="assets/icons/Empty.svg" [alt]="'GOVERNANCE.SEARCH_RESULTS.NO_RESULTS.ICON' | translate" class="hxp-governance-search-results-no-results_icon" />
+            <span class="hxp-governance-search-results-no-results_label">{{ 'GOVERNANCE.SEARCH_RESULTS.NO_RESULTS.LABEL' | translate }}</span>
+        </div>
+        } @if (isLoading && !initialState && !noResults) {
+        <hxp-table-skeleton-loader /> }
+
+        <!-- Show result table when there is a result or special case when we reached next page but it doesn't contain any result -->
+        @if (showResults || showNoMoreResults) {
+        <mat-toolbar>
+            <mat-toolbar-row>
+                @if (!isAllSelected) {
+                <button class="hxp-toggle-select-all-button mat-body-2" (click)="toggleSelectAll(true)" data-testid="toggle-true">
+                    {{ 'GOVERNANCE.SEARCH_RESULTS.BUTTONS.SELECT_ALL.LABEL' | translate }}
+                </button>
+                } @else {
+                <button class="hxp-toggle-select-all-button mat-body-2" (click)="toggleSelectAll(false)" data-testid="toggle-false">
+                    {{ 'GOVERNANCE.SEARCH_RESULTS.BUTTONS.UNSELECT_ALL.LABEL'| translate }}
+                </button>
+                }
+                <mat-divider class="hxp hxp-vertical-divider" [vertical]="true" />
+                <span class="hxp-governance-search-results-selected-count mat-body-2">
+            {{
+              'GOVERNANCE.SEARCH_RESULTS.SELECTED_RESULTS_COUNT' | translate : { selected: selectedRecords.length }
+            }}
+          </span>
+                <span class="hxp-governance-search-results-spacer"></span>
+                <div class="hxp-governance-search-results-actions">
+                    <hxp-add-legal-hold-button [actionContext]="actionContext" />
+                    <hxp-record-delete-button [actionContext]="actionContext" />
+                    <hxp-record-properties-button [actionContext]="actionContext" />
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+        <div class="hxp-record-list">
+            <hxp-record-list #recordList [records]="records" [selectAllEnabled]="false" (selectionChanged)="onSelectionChanged($event)">
+                <hxp-data-column key="icon">
+                    <ng-template let-record="$implicit">
+                        @if (record.status === RecordStatus.OnHold) {
+                        <mat-icon [svgIcon]="'governance_record_onHold'"></mat-icon>
+                        } @else {
+                        <mat-icon [svgIcon]="'governance_record'"></mat-icon>
+                        }
+                    </ng-template>
+                </hxp-data-column>
+                <hxp-data-column key="fileName" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.NAME" />
+                <hxp-data-column key="categoryId" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.CATEGORY">
+                    <ng-template let-record="$implicit">
+                        {{ record.categoryId | recordCategoryLabel }}
+                    </ng-template>
+                </hxp-data-column>
+                <hxp-data-column key="environmentDataSourceId" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.DATA_SOURCE">
+                    <ng-template let-record="$implicit">
+                        <div class="hxp-record-list-data-source-column">
+                            <mat-icon svgIcon="internal_repository" />
+                            <span>{{ record.environmentDataSourceId | recordDataSourceLabel }}</span>
+                        </div>
+                    </ng-template>
+                </hxp-data-column>
+
+                <hxp-data-column key="cutOffDate" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.CUTOFF_DATE">
+                    <ng-template let-record="$implicit">
+                        {{ record.cutOffDate | date }}
+                    </ng-template>
+                </hxp-data-column>
+                <hxp-data-column key="retainUntil" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.DISPOSITION_DATE">
+                    <ng-template let-record="$implicit">
+                        {{ record.retainUntil | date }}
+                    </ng-template>
+                </hxp-data-column>
+                <hxp-data-column key="disposition" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.DISPOSITION">
+                    <ng-template let-record="$implicit">
+                        {{ record.disposition | recordDispositionLabel }}
+                    </ng-template>
+                </hxp-data-column>
+                <hxp-data-column key="status" title="GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.COLUMNS.STATUS">
+                    <ng-template let-record="$implicit">
+                        <span class="hxp-governance-record-status" [ngClass]="record.status | recordStatusClass">
+                            {{ record.status | recordStatusLabel }}
+                        </span>
+                    </ng-template>
+                </hxp-data-column>
+            </hxp-record-list>
+        </div>
+        <div class="hxp-governance-legal-hold-paginator-container">
+            <hxp-results-paginator [pageSize]="pageSize"
+                [pageSizeOptions]="[25, 50, 100]"
+                [previousDisabled]="previousKeys.length === 0"
+                [nextDisabled]="!lastEvaluatedKey || isLastPage"
+                (pageSizeChange)="onPageSizeChange($event)"
+                (nextPage)="loadNextPage()"
+                (previousPage)="loadPreviousPage()">
+            </hxp-results-paginator>
+        </div>
+        }
+  </div>
+
+</div>

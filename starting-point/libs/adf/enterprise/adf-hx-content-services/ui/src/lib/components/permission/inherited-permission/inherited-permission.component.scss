@@ -1,0 +1,8 @@
+@use 'satori-like-styles' as satori;
+
+.hxp-inherited-permission {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    color: satori.$hy-colors-neutral-500;
+}

@@ -1,0 +1,206 @@
+{
+    "SEARCH": {
+        "FILTERS": {
+            "ACTIONS": {
+                "APPLY": "Apply",
+                "CLEAR_ALL": "Clear all"
+            },
+            "CREATED_DATE": {
+                "ARIA-LABEL": {
+                    "DEFAULT_OPTIONS_LIST": "List of available date options"
+                },
+                "LABEL": "Created Date",
+                "OPTIONS": {
+                    "CUSTOM_DATE": {
+                        "LABEL": "Custom Date",
+                        "VALUES": {
+                            "AFTER": "After",
+                            "BEFORE": "Before",
+                            "SINCE_TO_DATE": "Since {{afterDate}} to {{beforeDate}}",
+                            "SINCE_TO_TODAY": "Since {{date}} to Today",
+                            "UNTIL_DATE": "Until {{date}}"
+                        }
+                    },
+                    "LAST_7_DAYS": "In the Last 7 days",
+                    "LAST_30_DAYS": "In the Last 30 days",
+                    "LAST_6_MONTHS": "In the Last 6 Months",
+                    "LAST_YEAR": "In the Last Year"
+                },
+                "BUTTON": {
+                    "CLEAR": {
+                        "ARIA_LABEL": {
+                            "AFTER": "Clear after date",
+                            "BEFORE": "Clear before date"
+                        }
+                    }
+                },
+                "ERRORS": {
+                    "BEFORE_DATE_TOO_EARLY": "Before date cannot be earlier than After date",
+                    "AFTER_DATE_TOO_LATE": "After date cannot be later than Before date",
+                    "INVALID_DATE_FORMAT": "Please enter a valid date format MM/DD/YYYY"
+                }
+            },
+            "DOCUMENT_CATEGORY": {
+                "ARIA-LABEL": {
+                    "DOCUMENT_CATEGORIES_LIST": "List of available document categories",
+                    "CLEAR_INPUT": "Clear input",
+                    "REMOVE": "Remove",
+                    "SELECTED_FILTERS": "Currently selected filters"
+                },
+                "LABEL": "Content Type",
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "No search results",
+                    "MESSAGE": "Oops, seems like no results are found for your search."
+                },
+                "PLACEHOLDER": "Search for a content type",
+                "SELECTED": "{{selected}} Selected"
+            },
+            "DOCUMENT_LOCATION": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Back to browse",
+                    "CLEAR_INPUT": "Clear input",
+                    "REMOVE": "Remove",
+                    "SELECTED_FILTERS": "Currently selected filters",
+                    "SEARCH_BUTTON": "Search Button"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "No search results",
+                    "MESSAGE": "Oops, seems like no results are found for your search."
+                },
+                "LABEL": "Search In",
+                "PLACEHOLDER": "Search",
+                "SELECTED": "{{selected}} Selected"
+            },
+            "FILE_TYPE": {
+                "ARIA-LABEL": {
+                    "BACK_TO_BROWSE": "Back to browse",
+                    "CLEAR_INPUT": "Clear input",
+                    "REMOVE": "Remove",
+                    "SELECTED_FILTERS": "Currently selected filters",
+                    "SEARCH_BUTTON": "Search Button"
+                },
+                "NO_SEARCH_RESULTS": {
+                    "TITLE": "No search results",
+                    "MESSAGE": "Oops, seems like no results are found for your search."
+                },
+                "LABEL": "File Type",
+                "PLACEHOLDER": "Search for a file type",
+                "SELECTED": "{{selected}} Selected",
+                "CATEGORIES": {
+                    "DOCUMENTS": {
+                        "LABEL": "Documents",
+                        "FORMATS": {
+                            "PORTABLE_DOCUMENT_FORMAT": "Portable Document Format",
+                            "PRESENTATION": "Presentation",
+                            "SPREADSHEET": "Spreadsheet",
+                            "TEXT_DOCUMENT": "Text Document",
+                            "TEXT_FILE": "Text File"
+                        }
+                    },
+                    "IMAGES": {
+                        "LABEL": "Images",
+                        "FORMATS": {
+                            "UNCOMPRESSED_IMAGE_FORMATS": "Uncompressed image formats",
+                            "COMPRESSED_IMAGE_FORMATS": "Compressed image formats",
+                            "VECTOR_IMAGE_FORMATS": "Vector Image Formats",
+                            "SOFTWARE_FILES": "Software files"
+                        }
+                    },
+                    "VIDEO": {
+                        "LABEL": "Video",
+                        "FORMATS": {
+                            "UNCOMPRESSED_VIDEO_FORMATS": "Uncompressed video formats",
+                            "COMPRESSED_VIDEO_FORMATS": "Compressed video formats",
+                            "SOFTWARE_FILES": "Software files"
+                        }
+                    },
+                    "AUDIO": {
+                        "LABEL": "Audio",
+                        "FORMATS": {
+                            "UNCOMPRESSED_AUDIO_FORMATS": "Uncompressed audio formats",
+                            "COMPRESSED_AUDIO_FORMATS": "Compressed audio formats"
+                        }
+                    },
+                    "OTHER": {
+                        "LABEL": "Other",
+                        "FORMATS": {
+                            "ARCHIVE_FILES": "Archive Files",
+                            "FONT_FILES": "Font Files"
+                        }
+                    }
+                }
+            }
+        },
+        "INPUT": {
+            "PLACEHOLDER": "Type your text to search",
+            "ARIA_LABEL": "Search",
+            "BASIC": "Basic",
+            "HXQL": "HXQL",
+            "HXQL_VALID": "HXQL correct",
+            "HXQL_INVALID": "HXQL incorrect",
+            "CLEAR_INPUT": "Clear input"
+        },
+        "RESULTS": {
+            "HEADER": {
+                "TITLE": "Search Results",
+                "TOTAL_SINGLE": "{{count}} Result Found",
+                "TOTAL_PLURAL": "{{count}} Results Found"
+            },
+            "DETAILS": {
+                "UPDATED": "Updated"
+            },
+            "FILTERS": {
+                "ACTIONS": {
+                    "RESET": "Reset",
+                    "SEARCH": "Search"
+                }
+            }
+        },
+        "NO_RESULTS": {
+            "TITLE": "No search results",
+            "SUBTITLE": "Oops, seems like no results are found for your search."
+        },
+        "SIDENAV": {
+            "TITLE": "Repository Search"
+        },
+        "TABS": {
+            "TEXT_SEARCH": "Text search",
+            "HXQL_SEARCH": "HxQL search"
+        },
+        "MANAGE_COLUMN": {
+            "BUTTON": {
+                "TOOLTIP": "Manage Columns"
+            },
+            "DIALOG": {
+                "TITLE": "Manage Table Columns",
+                "CLOSE": "Close",
+                "AVAILABLE_COLUMN": "Available Columns",
+                "AVAILABLE": "{{count}} available",
+                "SEARCH_COLUMN": {
+                    "INPUT": {
+                        "PLACEHOLDER": "Search",
+                        "ARIA_LABEL": "Search Input"
+                    },
+                    "CLEAR": {
+                        "ARIA_LABEL": "Clear Search"
+                    },
+                    "BUTTON": {
+                        "ARIA_LABEL": "Search Button"
+                    }
+                },
+                "ADD_COLUMN": "Add Column",
+                "REMOVE_COLUMN": "Remove Column",
+                "DRAG_COLUMN": "Drag Column",
+                "SELECTED": "selected",
+                "SELECTED_COLUMN": "{{count}} Selected Columns",
+                "COLUMN_COUNT": "({{selected}} out of {{total}} selected)",
+                "OUT_OF": "out of",
+                "BUTTON": {
+                    "RESET": "Reset to Default",
+                    "CANCEL": "Cancel",
+                    "UPDATE_TABLE": "Update Table"
+                }
+            }
+        }
+    }
+}

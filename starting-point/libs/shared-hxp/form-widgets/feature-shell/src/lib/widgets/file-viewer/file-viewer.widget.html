@@ -1,0 +1,18 @@
+<div
+    class="adf-base-viewer-widget {{field.className}}"
+    [class.adf-invalid]="!field.isValid"
+    [class.adf-readonly]="field.readOnly"
+>
+    <label class="adf-label" [attr.for]="field.id">
+        {{field.name | translate}}
+        <span class="adf-asterisk" *ngIf="isRequired()"> * </span>
+    </label>
+    <ng-container *ngIf="file$ | async as file; else placeholder">
+        <adf-viewer [fileName]="file.name" [title]="file.title" [blobFile]="file.blob" [mimeType]="file.mimeType" [allowGoBack]="false" />
+    </ng-container>
+    <error-widget [error]="field.validationSummary" />
+
+    <ng-template #placeholder>
+        <div class="adf-preview-placeholder"></div>
+    </ng-template>
+</div>

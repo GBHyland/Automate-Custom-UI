@@ -1,0 +1,427 @@
+{
+  "mixinTypes": {
+    "SysFolderish": {
+      "noPerDocumentQuery": true
+    },
+    "SysFullTextIndexable": {},
+    "SysOrderable": {},
+    "SysFilish": {},
+    "SysVersionable": {}
+  },
+  "primaryTypes": {
+    "SysContent": {},
+    "SysFile": {
+      "extends": "SysContent",
+      "mixins": [
+        "SysFilish"
+      ],
+      "schemas": [
+        "system",
+        "sysfile",
+        "sysfiles",
+        "test"
+      ]
+    },
+    "SpecialFile": {
+      "extends": "SysFile"
+    },
+    "SuperSpecialFile": {
+      "extends": "SpecialFile"
+    },
+    "SuperSpecialFolder": {
+      "extends": "SysFolder",
+      "subtypes": [
+        "SysFile",
+        "SuperSpecialFile"
+      ]
+    },
+    "SysFolder": {
+      "extends": "SysContent",
+      "mixins": [
+        "SysFolderish"
+      ],
+      "schemas": [
+        "system"
+      ],
+      "subtypes": [
+        "SysFile",
+        "SysFolder",
+        "SysOrderedFolder"
+      ]
+    },
+    "SysOrderedFolder": {
+      "extends": "SysFolder",
+      "mixins": [
+        "SysOrderable"
+      ],
+      "subtypes": [
+        "SysFile",
+        "SysFolder",
+        "SysOrderedFolder"
+      ]
+    },
+    "SysRelation": {
+      "schemas": [
+        "system",
+        "sysrelation"
+      ]
+    },
+    "SysRendition": {
+      "extends": "SysContent",
+      "schemas": [
+        "system",
+        "sysrendition"
+      ]
+    },
+    "SysRenditionsContainer": {
+      "extends": "SysFolder",
+      "subtypes": [
+        "SysRendition"
+      ]
+    },
+    "SysRoot": {
+      "extends": "SysFolder"
+    },
+    "SysVocabulary": {
+      "extends": "SysContent",
+      "mixins": [
+        "SysFolderish"
+      ],
+      "schemas": [
+        "system",
+        "sysvocab"
+      ],
+      "subtypes": [
+        "SysVocabularyEntry"
+      ]
+    },
+    "SysVocabularyEntry": {
+      "extends": "SysContent",
+      "schemas": [
+        "system",
+        "sysvocab"
+      ]
+    }
+  },
+  "schemas": {
+    "system": {
+      "fields": {
+        "sys_contributors": {
+          "type": "system#contributorList"
+        },
+        "sys_created": {
+          "type": "date"
+        },
+        "sys_creator": {
+          "extends": "string",
+          "constraints": {
+            "nullable": true,
+            "resolver": {
+              "name": "userManagerResolver",
+              "type": "user",
+              "validation": false
+            }
+          }
+        },
+        "sys_description": {
+          "type": "string"
+        },
+        "sys_lastContributor": {
+          "extends": "string",
+          "constraints": {
+            "nullable": true,
+            "resolver": {
+              "name": "userManagerResolver",
+              "type": "user",
+              "validation": false
+            }
+          }
+        },
+        "sys_modified": {
+          "type": "date"
+        },
+        "sys_title": {
+          "type": "string"
+        }
+      },
+      "prefix": "sys"
+    },
+    "sysfile": {
+      "fields": {
+        "sysfile_blob": {
+          "type": "blob"
+        }
+      },
+      "prefix": "sysfile"
+    },
+    "sysfiles": {
+      "fields": {
+        "sysfiles_blobs": {
+          "type": "sysfiles#blobs"
+        }
+      },
+      "prefix": "sysfiles"
+    },
+    "group": {
+      "fields": {
+        "group_description": {
+          "type": "string"
+        },
+        "group_grouplabel": {
+          "type": "string"
+        },
+        "group_groupname": {
+          "type": "string"
+        },
+        "group_members": {
+          "type": "group#stringList"
+        },
+        "group_parentGroups": {
+          "type": "group#stringList"
+        },
+        "group_subGroups": {
+          "type": "group#stringList"
+        },
+        "group_tenantId": {
+          "type": "string"
+        }
+      },
+      "prefix": "group"
+    },
+    "sysrelation": {
+      "fields": {
+        "sysrelation_predicate": {
+          "type": "string"
+        },
+        "sysrelation_source": {
+          "type": "string"
+        },
+        "sysrelation_target": {
+          "type": "string"
+        }
+      },
+      "prefix": "sysrelation"
+    },
+    "sysrendition": {
+      "fields": {
+        "sysrendition_blob": {
+          "type": "blob"
+        },
+        "sysrendition_id": {
+          "type": "string"
+        },
+        "sysrendition_sourceDoc": {
+          "type": "string"
+        },
+        "sysrendition_status": {
+          "type": "string"
+        }
+      },
+      "prefix": "sysrendition"
+    },
+    "special-schema": {
+      "fields": {
+        "special_title": {
+          "extends": "string",
+          "constraints": {
+            "nullable": false
+          }
+        }
+      },
+      "prefix": "special",
+      "projectId": "test-gb-90cb51be"
+    },
+    "test": {
+      "fields": {
+        "test_multiblob": {
+          "list": {
+            "type": "blob"
+          }
+        },
+        "test_multiboolean": {
+          "list": {
+            "type": "boolean"
+          }
+        },
+        "test_multidate": {
+          "list": {
+            "type": "date"
+          }
+        },
+        "test_multifloat": {
+          "list": {
+            "type": "double"
+          }
+        },
+        "test_multiint": {
+          "list": {
+            "type": "long"
+          }
+        },
+        "test_multistring": {
+          "list": {
+            "type": "string"
+          }
+        },
+        "test_blob": {
+          "type": "blob"
+        },
+        "test_boolean": {
+          "type": "boolean"
+        },
+        "test_complex": {
+          "fields": {
+            "field1": {
+              "type": "string"
+            },
+            "field2": {
+              "type": "date"
+            }
+          }
+        },
+        "test_date": {
+          "type": "date"
+        },
+        "test_float": {
+          "type": "double"
+        },
+        "test_int": {
+          "type": "long"
+        },
+        "test_": {
+          "extends": "string",
+          "constraints": {
+            "nullable": false
+          }
+        },
+        "test_string": {
+          "type": "string"
+        },
+        "test_complexRef": {
+            "type": "complexType"
+        }
+      },
+      "prefix": "test",
+      "projectId": "test-rd-schemas-90cb51be"
+    },
+    "user": {
+      "fields": {
+        "user_company": {
+          "type": "string"
+        },
+        "user_email": {
+          "extends": "string",
+          "constraints": {
+            "nullable": true,
+            "pattern": "[^@]+@[^\\.]+\\..+"
+          }
+        },
+        "user_firstName": {
+          "type": "string"
+        },
+        "user_groups": {
+          "type": "user#stringList"
+        },
+        "user_lastName": {
+          "type": "string"
+        },
+        "user_password": {
+          "type": "string"
+        },
+        "user_tenantId": {
+          "type": "string"
+        },
+        "user_userid": {
+          "type": "string"
+        },
+        "user_username": {
+          "type": "string"
+        }
+      },
+      "prefix": "user"
+    },
+    "sysvocab": {
+      "fields": {
+        "sysvocab_id": {
+          "type": "string"
+        },
+        "sysvocab_key": {
+          "type": "string"
+        },
+        "sysvocab_label": {
+          "type": "string"
+        }
+      },
+      "prefix": "sysvocab"
+    }
+  },
+  "types": {
+    "blob": {
+      "fields": {
+        "digest": {
+          "type": "string"
+        },
+        "encoding": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "key": {
+          "type": "binary"
+        },
+        "length": {
+          "type": "long"
+        },
+        "mimeType": {
+          "type": "string"
+        }
+      }
+    },
+    "system#contributorList": {
+      "list": {
+        "extends": "string",
+        "constraints": {
+          "nullable": true,
+          "resolver": {
+            "name": "userManagerResolver",
+            "type": "user",
+            "validation": false
+          }
+        }
+      }
+    },
+    "sysfiles#blobitem": {
+      "fields": {
+        "blob": {
+          "type": "blob"
+        }
+      }
+    },
+    "sysfiles#blobs": {
+      "list": {
+        "type": "sysfiles#blobitem"
+      }
+    },
+    "group#stringList": {
+      "list": {
+        "type": "string"
+      }
+    },
+    "user#stringList": {
+      "list": {
+        "type": "string"
+      }
+    },
+    "complexType": {
+        "fields": {
+            "refSubField1": {
+                "type": "double"
+            },
+            "refSubField2": {
+                "type": "date"
+            }
+        }
+    }
+  }
+}

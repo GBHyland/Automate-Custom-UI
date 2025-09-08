@@ -1,0 +1,27 @@
+<div
+    class="idp-single-page-view"
+    #singlePageView
+    [style.transform]="'scale(' + currentScaleFactor + ')'"
+    [style.transformOrigin]="transformOrigin"
+    data-automation-id="idp-single-page-view"
+>
+    <ng-container
+        *ngFor="let imageData of displayImages$ | async; trackBy: pageUniquenessFn"
+    >
+        <div
+            class="idp-single-page-view__image-container"
+            data-automation-id="idp-single-page-view-image-container"
+        >
+            <ng-container
+                *ngTemplateOutlet="
+                    imageTemplate;
+                    context: {
+                        imageData,
+                        layoutInfo
+                    }
+                "
+                data-automation-id="image-template"
+            />
+        </div>
+    </ng-container>
+</div>

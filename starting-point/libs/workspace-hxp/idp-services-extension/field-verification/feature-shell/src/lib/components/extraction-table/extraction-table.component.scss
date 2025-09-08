@@ -1,0 +1,141 @@
+@use 'idp-theme' as idp;
+
+#extraction-table-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .idp-table-container {
+        flex: 1 0 100%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    .idp-table-container-hidden {
+        overflow-y: hidden;
+        pointer-events: none;
+    }
+
+    .idp-table-row-number-header {
+        text-align: center;
+        padding-top: 5px;
+        padding-left: 15px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .idp-table-row-number-cell {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .idp-table-row-header {
+        padding: 15px 0 15px 12px;
+        cursor: pointer;
+    }
+
+    .idp-cell {
+        padding: 0;
+
+        &-edit {
+            z-index: -1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            &-input {
+                height: 100%;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                margin: 2px;
+
+                &-is-selected {
+                    @include idp.use-background(selected);
+
+                    outline: solid idp.get-border-color(resolve-border);
+                    outline-width: medium;
+                }
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        border: 2px solid idp.get-border-color(border);
+        table-layout: auto;
+
+        th,
+        td {
+            border: 1px solid idp.get-border-color(border);
+            text-align: left;
+        }
+
+        th {
+            padding-left: 5px;
+            @include idp.use-background(selected);
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        tr {
+            margin-bottom: 5px;
+            height: 20px;
+        }
+    }
+
+    .idp-table-selected {
+        outline: medium solid idp.get-border-color(base);
+        outline-offset: -3px; // Keep outline inside the row boundaries
+    }
+
+    .idp-column-header-selected {
+        border: medium solid idp.get-border-color(base);
+        border-bottom: 1px solid idp.get-border-color(border);
+    }
+
+    .idp-column-cell-selected {
+        border: 1px solid idp.get-border-color(border);
+        border-left: medium solid idp.get-border-color(base);
+        border-right: medium solid idp.get-border-color(base);
+    }
+
+    .idp-column-cell-selected-last {
+        border: 1px solid idp.get-border-color(border);
+        border-left: medium solid idp.get-border-color(base);
+        border-right: medium solid idp.get-border-color(base);
+        border-bottom: medium solid idp.get-border-color(base);
+    }
+
+    .idp-row-selected {
+        outline: medium solid idp.get-border-color(base);
+        outline-offset: -3px; // Keep outline inside the row boundaries
+    }
+
+    .idp-blank-table {
+        overflow: hidden;
+        filter: blur(2px);
+        opacity: 0.7;
+    }
+
+    .idp-no-data-overlay {
+        @include idp.use-background(white);
+
+        display: inline-block;
+        position: relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -200%);
+        text-align: center;
+        pointer-events: none;
+        border: 2px solid idp.get-border-color(border);
+        padding: 15px;
+
+        &-table-name {
+            font-weight: bold;
+        }
+    }
+}

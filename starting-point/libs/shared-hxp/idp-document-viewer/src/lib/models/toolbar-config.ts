@@ -1,0 +1,188 @@
+/*
+ * Copyright © 2005 - 2021 Alfresco Software, Ltd. All rights reserved.
+ *
+ * License rights for this program may be obtained from Alfresco Software, Ltd.
+ * pursuant to a written agreement and any use of this program without such an
+ * agreement is prohibited.
+ */
+
+import { EventTypes } from './events';
+import { ToolbarControlPosition, ToolbarItem, ToolbarItemTypes, ZoomConfig } from './toolbar';
+
+export const ToolbarConfig: Record<ToolbarItemTypes, ToolbarItem> = {
+    [ToolbarItemTypes.LayoutChange]: {
+        type: ToolbarItemTypes.LayoutChange,
+        icon: 'grid_view',
+        label: 'VIEWER.TOOLBAR.LAYOUT.LAYOUT_CHANGE',
+        enabled: false,
+        order: 1,
+        position: ToolbarControlPosition.Start,
+        displayType: 'menu',
+        eventType: EventTypes.LayoutChanged,
+        canStaySelected: false,
+        selected: false,
+        subItems: {
+            grid: {
+                id: 'Grid',
+                icon: 'grid_view',
+                label: 'VIEWER.TOOLBAR.LAYOUT.GRID_VIEW',
+                enabled: false,
+                order: 2,
+            },
+            vertical_scrolling: {
+                id: 'Single_Vertical',
+                icon: 'vertical_distribute',
+                label: 'VIEWER.TOOLBAR.LAYOUT.VERTICAL_SCROLLING',
+                enabled: false,
+                order: 3,
+            },
+            horizontal_scrolling: {
+                id: 'Single_Horizontal',
+                icon: 'horizontal_distribute',
+                label: 'VIEWER.TOOLBAR.LAYOUT.HORIZONTAL_SCROLLING',
+                enabled: false,
+                order: 4,
+            },
+        },
+    },
+    [ToolbarItemTypes.ThumbnailViewer]: {
+        type: ToolbarItemTypes.ThumbnailViewer,
+        icon: 'description',
+        label: 'VIEWER.TOOLBAR.THUMBNAIL_VIEWER',
+        enabled: false,
+        order: 2,
+        position: ToolbarControlPosition.Start,
+        displayType: 'button',
+        eventType: EventTypes.PageSelected,
+        canStaySelected: true,
+        selected: false,
+    },
+    [ToolbarItemTypes.PageNavigation]: {
+        type: ToolbarItemTypes.PageNavigation,
+        icon: '',
+        label: 'VIEWER.TOOLBAR.NAVIGATION.PAGE_NAVIGATION',
+        enabled: false,
+        order: 3,
+        position: ToolbarControlPosition.Start,
+        displayType: 'composite',
+        eventType: EventTypes.PageSelected,
+        canStaySelected: false,
+        selected: false,
+        subItems: {
+            previous: {
+                id: 'previous',
+                icon: 'expand_less',
+                label: 'VIEWER.TOOLBAR.NAVIGATION.PREVIOUS',
+                enabled: false,
+                order: 1,
+            },
+            next: {
+                id: 'next',
+                icon: 'expand_more',
+                label: 'VIEWER.TOOLBAR.NAVIGATION.NEXT',
+                enabled: false,
+                order: 2,
+            },
+        },
+    },
+    [ToolbarItemTypes.LayerSelection]: {
+        type: ToolbarItemTypes.LayerSelection,
+        icon: '',
+        label: 'VIEWER.TOOLBAR.LAYER_SELECTION.TITLE',
+        enabled: false,
+        order: 3,
+        position: ToolbarControlPosition.Start,
+        displayType: 'composite',
+        eventType: EventTypes.ViewChanged,
+        canStaySelected: false,
+        selected: false,
+        subItems: {
+            image: {
+                id: 'image',
+                icon: 'image',
+                label: 'VIEWER.TOOLBAR.LAYER_SELECTION.IMAGE',
+                enabled: false,
+                order: 1,
+            },
+            text: {
+                id: 'text',
+                icon: 'title',
+                label: 'VIEWER.TOOLBAR.LAYER_SELECTION.TEXT',
+                enabled: false,
+                order: 2,
+            },
+        },
+    },
+    [ToolbarItemTypes.Zoom]: {
+        type: ToolbarItemTypes.Zoom,
+        icon: 'zoom',
+        label: 'VIEWER.TOOLBAR.ZOOM.TITLE',
+        enabled: false,
+        order: 4,
+        position: ToolbarControlPosition.Middle,
+        displayType: 'composite',
+        eventType: EventTypes.ZoomChanged,
+        canStaySelected: false,
+        selected: false,
+        subItems: {
+            zoom_in: {
+                id: 'zoom_in',
+                icon: 'zoom_in',
+                label: 'VIEWER.TOOLBAR.ZOOM.ZOOM_IN',
+                enabled: false,
+                order: 1,
+            },
+            zoom_out: {
+                id: 'zoom_out',
+                icon: 'zoom_out',
+                label: 'VIEWER.TOOLBAR.ZOOM.ZOOM_OUT',
+                enabled: false,
+                order: 2,
+            },
+        },
+        config: {
+            min: 50,
+            max: 300,
+            step: 25,
+        } as ZoomConfig,
+    },
+    [ToolbarItemTypes.Rotate]: {
+        type: ToolbarItemTypes.Rotate,
+        icon: 'rotate_right',
+        label: 'VIEWER.TOOLBAR.ROTATE_RIGHT',
+        enabled: false,
+        order: 5,
+        position: ToolbarControlPosition.End,
+        displayType: 'button',
+        eventType: EventTypes.RotationChanged,
+        canStaySelected: false,
+        selected: false,
+        config: {
+            step: 90,
+        },
+    },
+    [ToolbarItemTypes.BestFit]: {
+        type: ToolbarItemTypes.BestFit,
+        icon: 'fit_screen',
+        label: 'VIEWER.TOOLBAR.BEST_FIT',
+        enabled: false,
+        order: 6,
+        position: ToolbarControlPosition.End,
+        displayType: 'button',
+        eventType: EventTypes.Resize,
+        canStaySelected: true,
+        selected: false,
+    },
+    [ToolbarItemTypes.FullScreen]: {
+        type: ToolbarItemTypes.FullScreen,
+        icon: 'fullscreen',
+        label: 'VIEWER.TOOLBAR.FULLSCREEN',
+        enabled: false,
+        order: 7,
+        position: ToolbarControlPosition.End,
+        displayType: 'button',
+        eventType: EventTypes.FullScreenEnter || EventTypes.FullScreenExit,
+        canStaySelected: false,
+        selected: false,
+    },
+};

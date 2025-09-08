@@ -1,0 +1,51 @@
+:host:focus {
+    border: 2px solid var(--theme-focus-color);
+    border-radius: 4px;
+}
+
+.app-processes-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    overflow: auto;
+
+    .app-process-category {
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    &-items-by-category {
+        row-gap: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-item {
+        display: flex;
+        cursor: pointer;
+        border: 1px solid var(--theme-border-color-light);
+        border-radius: 5px;
+        padding: 14px 18px;
+        column-gap: 19px;
+    }
+
+    &-item-icon {
+        font-size: 31px;
+    }
+
+    &-item-details {
+        font-size: var(--theme-title-font-size);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-item-name {
+        padding-top: 4px;
+        white-space: pre-wrap;
+    }
+
+    &-item-description {
+        font-size: var(--theme-body-1-font-size);
+        margin-top: 14px;
+    }
+}

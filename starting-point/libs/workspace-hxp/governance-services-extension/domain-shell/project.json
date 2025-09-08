@@ -1,0 +1,48 @@
+{
+    "name": "governance-services-extension",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/workspace-hxp/governance-services-extension/domain-shell/src",
+    "prefix": "hxp",
+    "projectType": "library",
+    "tags": ["scope:workspace-hxp-governance-services-extension-domain-shell", "category:workspace-hxp"],
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/workspace-hxp/governance-services-extension/domain-shell/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/workspace-hxp/governance-services-extension/domain-shell/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/workspace-hxp/governance-services-extension/domain-shell/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/governance-services-extension/domain-shell/tsconfig.lib.adf.json"
+            }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/workspace-hxp/governance-services-extension/domain-shell/jest.config.ts"
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/governance-services-extension/domain-shell/tsconfig.spec.adf.json",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib"]
+                    }
+                }
+            }
+        },
+        "lint": {},
+        "stylelint": {}
+    }
+}

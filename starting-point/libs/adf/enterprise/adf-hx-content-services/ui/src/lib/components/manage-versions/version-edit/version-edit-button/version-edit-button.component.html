@@ -1,0 +1,11 @@
+@if (isAvailable) {
+    <button
+        mat-icon-button
+        [attr.aria-label]="'MANAGE_VERSIONS.EDIT_BUTTON.ARIA_LABEL' | translate"
+        title="{{ 'MANAGE_VERSIONS.EDIT_BUTTON.TITLE' | translate }}"
+        [matTooltip]="'MANAGE_VERSIONS.EDIT_BUTTON.TITLE' | translate"
+        (click)="onEdit()"
+    >
+        <mat-icon>edit</mat-icon>
+    </button>
+}

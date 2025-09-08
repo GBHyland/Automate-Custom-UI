@@ -1,0 +1,22 @@
+{
+    "name": "monorepo-utils",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/monorepo/utils/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "node_modules/@alfresco-dbp/monorepo/utils",
+                "tsConfig": "libs/monorepo/utils/tsconfig.lib.json",
+                "packageJson": "libs/monorepo/utils/package.json",
+                "main": "libs/monorepo/utils/src/index.ts",
+                "assets": ["libs/monorepo/utils/*.md"]
+            }
+        },
+        "lint": {}
+    },
+    "tags": ["scope:monorepo-utils", "category:tooling"]
+}

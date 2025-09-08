@@ -1,0 +1,52 @@
+<div class="hxp-public-form">
+    @if (!loading) {
+        <adf-cloud-form
+            [showSaveButton]="false"
+            [showRefreshButton]="false"
+            [showValidationIcon]="false"
+            [showCompleteButton]="false"
+            [showTitle]="false"
+            [form]="form"
+            (executeOutcome)="onOutcomeClicked($event.outcome.name)">
+            @if (!captchaInProgress) {
+                <adf-cloud-form-custom-outcomes>
+                    <ng-template [ngTemplateOutlet]="formActionButtons" />
+                </adf-cloud-form-custom-outcomes>
+            }
+        </adf-cloud-form>
+        <hxp-captcha-widget
+            class="hxp-public-form-captcha"
+            (captchaSolved)="startProcess()"
+            (captchaError)="handleCaptchaError()"
+            (canceled)="handleCaptchaCanceled()"
+        />
+    } @else {
+        <div class="hxp-public-form-loading">
+            <mat-spinner [diameter]="30"/>
+        </div>
+    }
+</div>
+
+<ng-template #formActionButtons>
+    @if (showCancelButton) {
+        <button
+            mat-button
+            class="hxp-text-button"
+            (click)="cancelStartProcess()"
+            data-automation-id="hxp-public-process-cancel-button"
+        >
+            {{ cancelButtonLabel }}
+        </button>
+    }
+    @if (showStartProcessButton) {
+        <button
+            color="primary"
+            mat-raised-button
+            [disabled]="!form.isValid"
+            (click)="showSubmissionCaptcha()"
+            data-automation-id="hxp-public-process-start-button"
+        >
+                {{ startProcessButtonLabel }}
+        </button>
+    }
+</ng-template>

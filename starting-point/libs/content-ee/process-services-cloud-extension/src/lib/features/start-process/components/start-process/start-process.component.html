@@ -1,0 +1,45 @@
+<app-page-layout>
+    <app-page-layout-header>
+        <nav>
+            <div
+                class="adf-breadcrumb-item adf-active"
+                title="{{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}"
+            >
+                <div aria-current="location" class="adf-breadcrumb-item-current">
+                    <div class="adf-breadcrumb-item adf-active" role="listitem">
+                        <div class="adf-breadcrumb-item-current">
+                            {{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}
+                        </div>
+                        <mat-icon class="adf-breadcrumb-item-chevron">chevron_right</mat-icon>
+                        <div class="adf-breadcrumb-item-current">
+                            {{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.START_PROCESS_CLOUD' | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </app-page-layout-header>
+
+    <app-page-layout-content>
+        <div class="app-main-content apa-start-process-cloud-content">
+            <div class="adf-content-area">
+                <div class="adf-content-border">
+                    <adf-cloud-start-process *ngIf="appName$ | async as appName"
+                        [appName]="appName"
+                        [name]="defaultProcessName"
+                        [showTitle]="false"
+                        [showSelectProcessDropdown]="false"
+                        [displayModeConfigurations]="displayConfigurations"
+                        [processDefinitionName]="defaultProcessDefinition"
+                        [values]="formValues$ | async"
+                        (success)="onProcessCreation($event)"
+                        (cancel)="backFromProcessCreation()"
+                        (processDefinitionSelection)="onProcessDefinitionSelection($event)"
+                        (formContentClicked)="onFormContentClicked($event)"
+                        (error)="onProcessCreationError($event)"
+                    />
+                </div>
+            </div>
+        </div>
+    </app-page-layout-content>
+</app-page-layout>

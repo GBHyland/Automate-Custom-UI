@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "CreatePage",
+    "title": "",
+    "type": "object",
+    "properties": {
+      "pluginName": {
+        "type": "string",
+        "description": "Plugin in which the page is going to be created.",
+        "$default": {
+          "$source": "argv",
+          "index": 0
+        },
+        "x-prompt": "Select the plugin in which the new page will be created (plugin names start with the 'plugins' prefix)",
+        "x-dropdown": "projects"
+      },
+      "pageName": {
+        "type": "string",
+        "description": "The name of the new page.",
+        "alias": "p",
+        "$default": {
+          "$source": "argv",
+          "index": 1
+        },
+        "x-prompt": "Provide the name for the new page"
+      }
+    },
+    "required": [
+      "pluginName",
+      "pageName"
+    ]
+  }

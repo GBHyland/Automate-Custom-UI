@@ -1,0 +1,51 @@
+{
+    "name": "idp-document-viewer",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared-hxp/idp-document-viewer/src",
+    "prefix": "idp",
+    "tags": ["scope:idp-document-viewer", "category:idp-document-viewer", "category:shared-unit"],
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/shared-hxp/idp-document-viewer/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared-hxp/idp-document-viewer/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared-hxp/idp-document-viewer/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/idp-document-viewer/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "libs/shared-hxp/idp-document-viewer/src/test.ts",
+                "tsConfig": "libs/shared-hxp/idp-document-viewer/tsconfig.spec.json",
+                "karmaConfig": "libs/shared-hxp/idp-document-viewer/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/core/src/styles", "libs/shared/satori-like-styles/src"]
+                }
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/shared-hxp/idp-document-viewer/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/shared-hxp/idp-document-viewer/karma.conf.js",
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": ["libs/shared/core/src/styles", "../alfresco-ng2-components/lib/core/src/lib", "libs/shared/satori-like-styles/src"]
+                    }
+                }
+            }
+        },
+        "lint": {}
+    }
+}

@@ -1,0 +1,11 @@
+@if (isAvailable) {
+<button
+    mat-icon-button
+    [attr.aria-label]="(isPanelOpen ? 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_CLOSE' : 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_OPEN' ) | translate"
+    [matTooltip]="(isPanelOpen ? 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_CLOSE' : 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_OPEN' ) | translate"
+    (click)="togglePane()"
+    title="{{ (isPanelOpen ? 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_CLOSE' : 'GOVERNANCE.SEARCH.TOOLBAR.BUTTONS.PROPERTY_PANE_OPEN' ) | translate}}"
+>
+    <mat-icon [svgIcon]="isPanelOpen ? 'panel_open_24px' : 'panel_close_24px'" />
+</button>
+}

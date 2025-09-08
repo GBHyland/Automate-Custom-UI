@@ -1,0 +1,27 @@
+<div class="hxp-governance-table-paginator">
+  <mat-label>
+    {{ 'GOVERNANCE.SEARCH_RESULTS.RESULTS_LIST.ITEMS_PER_PAGE' | translate }}
+  </mat-label>
+
+  <mat-select [(value)]="pageSize" (selectionChange)="onPageSizeChange($event.value)">
+    <mat-option *ngFor="let size of pageSizeOptions" [value]="size">
+      {{ size }}
+    </mat-option>
+  </mat-select>
+
+  <div class="hxp-governance-table-paginator-chevrons">
+  <button mat-icon-button
+          (click)="loadPreviousPage()"
+          data-testid="prev-page-button"
+          [disabled]="previousDisabled">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <button mat-icon-button
+          data-testid="next-page-button"
+          (click)="loadNextPage()"
+          [disabled]="nextDisabled">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+  </div>
+</div>

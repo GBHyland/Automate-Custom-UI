@@ -1,0 +1,10 @@
+{
+    "extends": "../../../tsconfig.e2e.json",
+    "compilerOptions": {
+        "outDir": "../../../dist/out-tsc/shared-hxp-playwright"
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.js"
+    ]
+}

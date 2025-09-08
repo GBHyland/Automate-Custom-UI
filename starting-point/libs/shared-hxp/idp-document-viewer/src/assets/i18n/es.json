@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Seleccionar un documento",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Cambiar diseño",
+                "GRID_VIEW": "Cuadrícula (hasta 12 miniaturas)",
+                "VERTICAL_SCROLLING": "Desplazamiento vertical",
+                "HORIZONTAL_SCROLLING": "Desplazamiento horizontal"
+            },
+            "THUMBNAIL_VIEWER": "Visor de miniaturas",
+            "THUMBNAIL_VIEWER_PAGES": "Páginas",
+            "THUMBNAIL_ALT_TEXT": "Imagen en miniatura",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Navegación de páginas",
+                "PREVIOUS": "Anterior",
+                "NEXT": "Siguiente"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Selección de capa",
+                "IMAGE": "Imagen",
+                "TEXT": "Texto"
+            },
+            "ZOOM": {
+                "TITLE": "Zoom",
+                "ZOOM_IN": "Acercar",
+                "ZOOM_OUT": "Alejar"
+            },
+            "ROTATE_RIGHT": "Girar hacia la derecha",
+            "FULLSCREEN": "Pantalla completa",
+            "BEST_FIT": "Mejor ajuste"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Alternar diseño",
+                "THUMBNAIL_VIEWER": "Alternar visor de miniaturas",
+                "NAVIGATE_PREVIOUS_PAGE": "Ir a la página anterior",
+                "NAVIGATE_NEXT_PAGE": "Ir a la página siguiente",
+                "NAVIGATE_FIRST_PAGE": "Ir a la primera página",
+                "NAVIGATE_LAST_PAGE": "Ir a la última página",
+                "NAVIGATE_UP": "Ir hacia arriba",
+                "NAVIGATE_DOWN": "Ir hacia abajo",
+                "NAVIGATE_LEFT": "Ir a la izquierda",
+                "NAVIGATE_RIGHT": "Ir a la derecha",
+                "ZOOM_IN": "Acercar",
+                "ZOOM_OUT": "Alejar",
+                "BEST_FIT": "Mejor ajuste",
+                "ROTATE_RIGHT": "Girar hacia la derecha",
+                "FULL_SCREEN": "Alternar a pantalla completa",
+                "IMAGE_LAYER": "Capa de imagen",
+                "TEXT_LAYER": "Capa de texto",
+                "CLIPBOARD_COPY": "Copiar al portapapeles"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "El diseño del visor se cambia a una sola vista vertical para una mejor experiencia",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "El diseño del visor se cambia a la vista de cuadrícula para una mejor experiencia",
+                "CLIPBOARD_COPY_SUCCESS": "Se ha copiado al portapapeles"
+            }
+        }
+    }
+}

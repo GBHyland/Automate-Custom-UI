@@ -1,0 +1,8 @@
+<div #projectedContent class="idp-viewer-empty-projected-container" [style.display]="projectedContent.childElementCount === 0 ? 'none' : 'block'">
+    <ng-content />
+</div>
+<ng-container *ngIf="projectedContent.childElementCount === 0">
+    <div class="idp-viewer-empty-projected-container__empty-view">
+        <span class="idp-viewer-empty-view__text">{{ 'VIEWER.INVALID_EMPTY_VIEW_TEXT' | translate }}</span>
+    </div>
+</ng-container>

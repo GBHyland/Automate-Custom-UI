@@ -1,0 +1,55 @@
+@use 'mat-selectors' as ms;
+
+.app-process-list-by-category-container {
+    height: 100%;
+    padding: 0 42px;
+    display: flex;
+    flex-direction: column;
+
+    .app-search-input {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        #{ms.$mat-form-field-underline} {
+            display: none;
+        }
+
+        #{ms.$mat-focused} #{ms.$mat-form-field-label} {
+            color: var(--theme-text-color);
+        }
+
+        #{ms.$mat-form-field} {
+            width: 100%;
+            font-size: var(--theme-title-font-size);
+        }
+    }
+
+    .app-processes-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 36px;
+        overflow: auto;
+
+        .app-process-label {
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        &-items {
+            row-gap: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .app-process-without-category-list {
+        font-weight: bold;
+        opacity: 0.5;
+    }
+
+    .app-loading-spinner,
+    .app-no-processes-message {
+        margin: 15% auto auto;
+    }
+}

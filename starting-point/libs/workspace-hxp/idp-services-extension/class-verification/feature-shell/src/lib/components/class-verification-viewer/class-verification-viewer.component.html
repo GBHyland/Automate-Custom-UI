@@ -1,0 +1,50 @@
+<ng-container *hylandIdpLet="allValid$ | async as allValid">
+    <hyland-idp-viewer
+        [datasource]="(datasource$ | async) || undefined"
+        (viewerEvent)="onViewerEvent($event)">
+        <ng-container *hylandIdpLet="toolbarActionsItemState$ | async as toolbarActionState"
+            ngProjectAs="hyland-idp-viewer-header">
+            <ng-container *ngIf="toolbarActionState?.showToolbar">
+                <hyland-idp-viewer-header>
+                    <div class="idp-viewer-custom-header">
+                        <div class="idp-viewer-custom-header__toolbar">
+                            <div class="idp-viewer-custom-header__toolbar__action-buttons">
+                                <button mat-flat-button class="idp-resolve-button"
+                                    *ngIf="toolbarActionState?.resolveAction?.disabled === false"
+                                    (click)="toolbarActionState?.resolveAction?.onClick$?.next()">{{ 'IDP_CLASS_VERIFICATION.VIEWER.TOOLBAR.RESOLVE_LABEL' | translate }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </hyland-idp-viewer-header>
+            </ng-container>
+        </ng-container>
+
+        <hyland-idp-viewer-empty>
+            <div class="idp-viewer-empty-view">
+                <ng-container *ngIf="allValid; else invalidEmptyView">
+                    <span class="idp-viewer-empty-view__text">{{ 'IDP_CLASS_VERIFICATION.VIEWER.EMPTY_VIEW.DONE_TITLE' | translate }}</span>
+                    <span class="idp-viewer-empty-view__sub-text">{{ 'IDP_CLASS_VERIFICATION.VIEWER.EMPTY_VIEW.DONE_DESCRIPTION' | translate }}</span>
+                    <img class="idp-viewer-empty-view__image" src="assets/idp-services-extension-class-verification/images/document_viewer__done.svg"
+                        [alt]="'IDP_CLASS_VERIFICATION.VIEWER.EMPTY_VIEW.DONE_DESCRIPTION' | translate" />
+                </ng-container>
+                <ng-template #invalidEmptyView>
+                    <span class="idp-viewer-empty-view__text">{{ 'IDP_CLASS_VERIFICATION.VIEWER.EMPTY_VIEW.SELECT_DOCUMENT' | translate }}</span>
+                    <img class="idp-viewer-empty-view__image" src="assets/idp-services-extension-class-verification/images/document_viewer__no_selected.svg"
+                        [alt]="'IDP_CLASS_VERIFICATION.VIEWER.EMPTY_VIEW.SELECT_DOCUMENT' | translate" />
+                </ng-template>
+            </div>
+        </hyland-idp-viewer-empty>
+
+        <ng-container ngProjectAs="hyland-idp-viewer-sticky-action">
+            <hyland-idp-viewer-sticky-action class="idp-viewer-sticky-action" [align]="'right'">
+              <button class="idp-viewer-sticky-action__shortcuts_button"
+                    data-automation-id="idp-shortcut-sticky-button"
+                    [attr.aria-label]="'IDP_CLASS_VERIFICATION.VIEWER.STICKY_ACTION.OPEN_SHORTCUT_BROWSER_BUTTON_TOOLTIP' | translate"
+                    [matTooltip]="'IDP_CLASS_VERIFICATION.VIEWER.STICKY_ACTION.OPEN_SHORTCUT_BROWSER_BUTTON_TOOLTIP' | translate"
+                    (click)="onShortcutBrowserClick()" (keydown.enter)="onShortcutBrowserClick()">
+                <mat-icon class="material-icons-outlined">keyboard_alt</mat-icon>
+              </button>
+            </hyland-idp-viewer-sticky-action>
+        </ng-container>
+    </hyland-idp-viewer>
+</ng-container>

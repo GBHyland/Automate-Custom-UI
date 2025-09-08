@@ -1,0 +1,22 @@
+{
+    "SHARED_IDENTITY": {
+        "GROUPS": {
+            "SEARCH-GROUP": "Groups",
+            "MANDATORY": "Mandatory",
+            "ERROR": {
+                "NOT_FOUND": "No group found with the name {{groupName}}"
+            }
+        },
+        "PEOPLE": {
+            "MANDATORY": "This user can not be deleted because it was added during project creation.",
+            "ERROR": {
+                "INVALID_PATTERN": "Must match the pattern {{pattern}}",
+                "INVALID_MIN_LENGTH": "Must be at least {{requiredLength}} characters",
+                "INVALID_MAX_LENGTH": "Length exceeded, {{requiredLength}} characters max",
+                "REQUIRED": "This is a required field",
+                "NOT_FOUND": "No user found with the username {{userName}}",
+                "INVALID_PRESELECTED_USER": "User with the username {{userName}} is no longer valid. Please add a valid user in modeling app."
+            }
+        }
+    }
+}

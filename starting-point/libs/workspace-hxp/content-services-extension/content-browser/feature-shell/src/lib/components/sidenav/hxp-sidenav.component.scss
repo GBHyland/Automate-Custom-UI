@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+
+$tree-container-offset: 180px; /* Include Header + Search icon space in Sidebar */
+
+.hxp-sidenav-content-services-container {
+    .hxp-panel {
+        &-dropdown {
+            border-radius: 0;
+            background-color: var(--theme-background-color);
+        }
+
+        &-header {
+            padding: 0 16px;
+        }
+    }
+}
+
+.hxp-sidenav-collapsed {
+    margin-inline-start: var(--adf-theme-spacing);
+}
+
+.hxp-content-browser-label {
+    display: inline-block;
+    margin-left: 10px;
+}

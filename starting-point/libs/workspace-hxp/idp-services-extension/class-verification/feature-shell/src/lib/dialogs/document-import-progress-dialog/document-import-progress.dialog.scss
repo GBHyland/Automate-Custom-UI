@@ -1,0 +1,51 @@
+.idp-document-upload-progress-dialog {
+    display: flex;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        &__progress {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            &__details {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+
+                &__percentage {
+                    color: #000000de;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0;
+                }
+
+                &__name {
+                    color: #000000de;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 23px;
+                    letter-spacing: 0;
+                }
+
+                &__icon {
+                    display: flex;
+                    margin-left: auto;
+
+                    &__cancel {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &__message {
+                font-size: 10px;
+                line-height: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+{
+    "HXP_FILE_UPLOAD": {
+        "BUTTON": {
+            "MINIMIZE": "Minimieren",
+            "MAXIMIZE": "Maximieren",
+            "CLOSE": "Schließen",
+            "STOP_ALL": "Uploads stoppen",
+            "STOP_FILE": "Upload stoppen",
+            "UPLOAD_SUCCESSFUL": "Upload erfolgreich abgeschlossen"
+        },
+        "STATUS": {
+            "FILE_CANCELED_STATUS": "Abgebrochen",
+            "FILE_DONE_STATUS": "Hochgeladen"
+        },
+        "CONFIRMATION": {
+            "BUTTON": {
+                "CANCEL": "Ja",
+                "CONTINUE": "Nein"
+            },
+            "MESSAGE": {
+                "TITLE": "Upload stoppen",
+                "TEXT": "Alle laufenden und anstehenden Uploads stoppen und abbrechen."
+            }
+        },
+        "ARIA-LABEL": {
+            "VERSION": "Dateiversion {{ version }}",
+            "DIALOG": "Upload-Liste",
+            "DIALOG_MAXIMIZE": "Upload-Dialog maximieren",
+            "DIALOG_MINIMIZE": "Upload-Dialog minimieren",
+            "DIALOG_CLOSE": "Upload-Dialog schließen",
+            "STOP_ALL": "Uploads stoppen",
+            "UPLOAD_SUCCESSFUL": "Datei {{ file }} erfolgreich hochgeladen",
+            "STOP_FILE": "Datei {{ file }} stoppen",
+            "STOP_FILE_UPLOAD": "Datei-Upload {{ file }} stoppen",
+            "UPLOAD_FILE_ERROR": "Upload-Fehler {{ error }}",
+            "CONFIRMATION": {
+                "CANCEL": "Abbrechen bestätigen",
+                "CONTINUE": "Upload fortsetzen"
+            }
+        }
+    },
+    "FILE_UPLOAD": {
+        "BUTTON": {
+            "UPLOAD_FILE": "Datei hochladen",
+            "UPLOAD_FOLDER": "Ordner hochladen",
+            "PERMISSION_CHECK_ERROR": "Fehler beim Überprüfen der Berechtigung."
+        },
+        "VERSION": {
+            "MESSAGES": {
+                "NO_ACCEPTED_FILE_TYPES": "Bitte beachten Sie, dass die Einstellung 'acceptedFilesType' keine Auswirkungen auf Uploads neuer Versionen hat. Der Dateityp entspricht dem der Originaldatei.",
+                "INCOMPATIBLE_VERSION": "Nur Dateien desselben Typs können als neue Version hochgeladen werden."
+            }
+        },
+        "MESSAGES": {
+            "UPLOAD_CANCELED": "Hochladen abgebrochen",
+            "UPLOAD_PROGRESS": "Hochgeladen {{ completed }} / {{ total }}",
+            "UPLOAD_ERROR": "{{ total }} Upload fehlgeschlagen",
+            "UPLOAD_ERRORS": "{{ total }} Uploads fehlgeschlagen",
+            "PROGRESS": "Upload wird ausgeführt...",
+            "FOLDER_ALREADY_EXIST": "Der Ordner {0} ist bereits vorhanden",
+            "FOLDER_NOT_SUPPORTED": "Das Hochladen von Ordnern wird von Ihrem Browser nicht unterstützt. Versuchen Sie es mit einem anderen Browser",
+            "REMOVE_FILE_ERROR": "{{ fileName }} konnte nicht entfernt werden. Versuchen Sie es erneut, oder wenden Sie sich an Ihr IT-Team.",
+            "REMOVE_FILES_ERROR": "{{ total }} Dateien konnten nicht entfernt werden. Versuchen Sie es erneut, oder wenden Sie sich an Ihr IT-Team.",
+            "EXCEED_MAX_FILE_SIZE": "Datei {{ fileName }} ist größer als die zulässige Dateigröße"
+        },
+        "ACTION": {
+            "UNDO": "Rückgängig machen"
+        },
+        "ERRORS": {
+            "GENERIC": "Upload fehlgeschlagen. Wenden Sie sich an die IT, wenn das Problem weiterhin besteht",
+            "500": "Interner Serverfehler, versuchen Sie es erneut oder wenden Sie sich an Ihren Administrator [500]",
+            "504": "Zeitüberschreitung beim Server. Versuchen Sie es erneut, oder wenden Sie sich an den IT-Support [504]",
+            "403": "Unzureichende Berechtigungen zum Hochladen an diesem Speicherort [403]",
+            "404": "Upload-Speicherort existiert nicht mehr [404]",
+            "409": "Eine Datei mit diesem Namen ist bereits vorhanden [409]"
+        },
+        "ARIA-LABEL": {
+            "ERROR": "Upload-Fehler"
+        }
+    },
+    "PROCESS_CLOUD_EXTENSION": {
+        "SETTINGS": {
+            "PSC_AVAILABILITY_HEADER": "Erweiterungen: Process Automation",
+            "PSC_AVAILABILITY_TITLE": "Erweiterungen für Process Automation aktivieren"
+        },
+        "BREADCRUMB": {
+            "ROOT": "Prozessmanagement",
+            "START_PROCESS_CLOUD": "Prozess starten",
+            "TASK_LIST_CLOUD": "Aufgabenliste",
+            "ACTIONS": {
+                "INFO-TOOLTIP": "Details anzeigen",
+                "CLOSE-TOOLTIP": "Schließen",
+                "PRINT": "Druckform"
+            }
+        },
+        "MENU": {
+            "CREATE_NEW_PROCESS": "Prozess starten",
+            "CREATE_PROCESS_NOT_ALLOWED": "Neuer Prozess kann nicht erstellt werden"
+        },
+        "ERROR": {
+            "NO_FORM": "Kein Formular für Prozessdefinition definiert",
+            "CAN_NOT_ATTACH": "Anhängen des ausgewählten Inhalts nicht möglich"
+        },
+        "SNACKBAR": {
+            "PROCESS-CREATED": "Prozess erstellt: '{{ processName }}'",
+            "BACKEND_SERVICE_ERROR": "Unbekannter Netzwerkfehler. Funktionen für Process Automation wurden deaktiviert."
+        },
+        "SIDE_NAV_TITLE": "Prozessmanagement",
+        "TASK_LIST": {
+            "TASKS": "Aufgaben",
+            "ACTIONS": {
+                "TASK_DETAILS": "Details anzeigen",
+                "PROCESS_HISTORY": "Prozessverlauf"
+            }
+        },
+        "TASK_DETAILS": {
+            "ASSIGNEE": {
+                "TITLE": "Zugewiesenen Benutzer ändern",
+                "CLOSE": "Schließen",
+                "ASSIGN": "Zuweisen",
+                "SUCCESS": "Zugewiesener Benutzer der Aufgabe erfolgreich geändert",
+                "FAILED": "Beim Zuweisen des Benutzers ist ein Problem aufgetreten. Versuchen Sie, den Benutzer erneut zuzuweisen."
+            },
+            "INFO_DRAWER_TAB_DETAILS_TITLE": "Details"
+        },
+        "PROCESS_LIST": {
+            "PROCESSES": "Prozesse",
+            "ACTIONS": {
+                "PROCESS_DETAILS": "Details anzeigen",
+                "CANCEL_MESSAGE": "Prozess wurde abgebrochen",
+                "CANCEL_ERROR_MESSAGE": "Abbruch des Prozesses fehlgeschlagen. Versuchen Sie es erneut",
+                "CANCEL_TOOLTIP": "Prozess abbrechen"
+            },
+            "PROPERTIES": {
+                "STARTED_BY": "Gestartet von"
+            }
+        },
+        "PROCESS_FILTER": {
+            "FILTER_SAVED": "Der Filter wurde gespeichert",
+            "FILTER_DELETED": "Der Filter wurde gelöscht"
+        },
+        "TASK_FORM": {
+            "FORM_COMPLETED": "Diese Aufgabe wurde abgeschlossen",
+            "FORM_SAVED": "Das Formular wurde gespeichert",
+            "FORM_ACTION": "Aktion '{{ outcome }}'"
+        },
+        "TASK_FILTER": {
+            "FILTER_SAVED": "Der Filter wurde gespeichert",
+            "FILTER_DELETED": "Der Filter wurde gelöscht"
+        },
+        "DIALOG": {
+            "PROCESS": {
+                "TITLE": "Prozess abbrechen",
+                "MESSAGE": "Möchten Sie diesen Prozess wirklich abbrechen?"
+            },
+            "NEW_PROCESS": "Neuer Prozess",
+            "CONFIRM": "Bestätigen",
+            "CLOSE": "Schließen",
+            "ERROR": "Prozessdefinitionen konnten nicht geladen werden. Überprüfen Sie, ob Sie über die nötigen Zugriffsrechte verfügen."
+        }
+    }
+}

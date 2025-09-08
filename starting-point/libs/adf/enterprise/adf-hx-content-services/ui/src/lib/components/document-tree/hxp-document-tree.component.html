@@ -1,0 +1,123 @@
+<div class="hxp-tree-container" #treeContainer>
+    <mat-tree
+        [dataSource]="dataSource"
+        [treeControl]="treeControl"
+        class="hxp-fill"
+        *ngIf="!isInitialTreeLoad"
+    >
+        <mat-tree-node
+            *matTreeNodeDef="let node"
+            matTreeNodePadding
+            [ngClass]="{
+                'hxp-selected': !multiSelection && selection.isSelected(node.document)
+            }"
+            (click)="onDocumentSelected(node.document, $event)"
+        >
+        <ng-container *ngIf="!node.isSkeleton; else skeletonTemplate">
+            <ng-container *ngIf="node.isLoading; else showFolderIcon">
+                <mat-progress-spinner mode="indeterminate" diameter="30" />
+            </ng-container>
+
+            <ng-template #showFolderIcon>
+                <hxp-folder-icon
+                    *ngIf="isDocumentExpandable(node.document)"
+                    [isExpanded]="treeControl.isExpanded(node)"
+                />
+            </ng-template>
+            <span
+                (click)="onDocumentSelected(node.document, $event)"
+                class="hxp-node-label"
+            >
+                {{ node.document | breadcrumbLabel: 'DOCUMENT_TREE.ROOT' }}
+            </span>
+        </ng-container>
+
+        <ng-template #skeletonTemplate>
+            <hxp-tree-skeleton-loader [skeletonRows]="1" />
+        </ng-template>
+        </mat-tree-node>
+
+        <mat-tree-node
+            *matTreeNodeDef="let node; when: hasChild"
+            matTreeNodePadding
+            [ngClass]="{
+                'hxp-selected': !multiSelection && selection.isSelected(node.document),
+                'hxp-node-context-opened': menuTrigger?.menuOpen || hiddenTrigger?.menuOpen
+            }"
+        >
+            <button
+                mat-icon-button
+                [attr.aria-label]="('DOCUMENT_TREE.TOGGLE_ARIA-LABEL ' | translate) + node.name"
+                matTreeNodeToggle
+                (click)="onNodeExpand($event)"
+            >
+                <mat-icon class="mat-icon-rtl-mirror">
+                    {{
+                        treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'
+                    }}
+                </mat-icon>
+            </button>
+
+            <mat-checkbox
+                *ngIf="multiSelection && node.isSelectable"
+                class="hxp-node-selection-checkbox"
+                (change)="onDocumentSelected(node.document)"
+                [checked]="selection.isSelected(node.document)"
+            />
+
+            <ng-container>
+                <div
+                    class="hxp-node-container"
+                    (click)="onDocumentSelected(node.document, $event)"
+                    (contextmenu)="onContextMenu($event, node.document)"
+                >
+                    <ng-container *ngIf="node.isLoading; else showFolderIcon">
+                        <mat-progress-spinner mode="indeterminate" diameter="30" />
+                    </ng-container>
+
+                    <ng-template #showFolderIcon>
+                        <hxp-folder-icon
+                            *ngIf="isDocumentExpandable(node.document)"
+                            [isExpanded]="treeControl.isExpanded(node)"
+                        />
+                    </ng-template>
+
+                    <span class="hxp-node-label" title="{{ node.document | breadcrumbLabel: 'DOCUMENT_TREE.ROOT' }}">
+                        {{ node.document | breadcrumbLabel: 'DOCUMENT_TREE.ROOT' }}
+                    </span>
+                </div>
+
+                <div class="hxp-context-btn" *ngIf="!multiSelection && contextActionMenuTemplateRef">
+                    <button
+                        mat-icon-button
+                        #trigger="matMenuTrigger"
+                        role="button"
+                        *ngIf="hasVisibleActions(node.document)"
+                        [attr.aria-label]="'DOCUMENT_TREE.CONTEXT_MENU.TRIGGER_ARIA_LABEL' | translate"
+                        [matMenuTriggerFor]="contextMenu"
+                        [matMenuTriggerData]="{ actions: contextActions }"
+                        [ngClass]="{ 'hxp-menu-opened': trigger.menuOpen || hiddenTrigger.menuOpen }"
+                        (click)="openContextMenu($event, node.document)"
+                    >
+                        <mat-icon aria-hidden="true">more_vert</mat-icon>
+                    </button>
+                </div>
+
+                <div
+                    #hiddenTrigger="matMenuTrigger"
+                    class="hxp-menu-trigger"
+                    [style.left]="contextMenuPosition.x"
+                    [style.top]="contextMenuPosition.y"
+                    [matMenuTriggerFor]="contextMenu"
+                    [matMenuTriggerData]="{ actions: contextActions }"
+                ></div>
+            </ng-container>
+        </mat-tree-node>
+    </mat-tree>
+
+    <hxp-tree-skeleton-loader *ngIf="isInitialTreeLoad" [skeletonRows]="DEFAULT_ITEMS_PER_PAGE" />
+</div>
+<mat-menu #contextMenu="matMenu" class="hxp-context-menu">
+    <ng-container
+        *ngTemplateOutlet="contextActionMenuTemplateRef; context: { $implicit: contextActions }" />
+</mat-menu>

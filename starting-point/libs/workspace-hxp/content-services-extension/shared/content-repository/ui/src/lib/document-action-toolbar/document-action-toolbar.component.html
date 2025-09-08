@@ -1,0 +1,13 @@
+<adf-toolbar>
+    <hxp-selected-item-count [selectedItems]="selection" />
+    <div class="adf-toolbar--spacer"></div>
+    <hxp-content-properties-viewer-button [actionContext]="actionContext" />
+    <hxp-content-delete [actionContext]="actionContext" />
+    <hxp-single-item-download [actionContext]="actionContext" />
+    <hxp-single-file-share [actionContext]="actionContext" />
+    <hxp-manage-column-button [actionContext]="actionContext" />
+    <hxp-document-more-action
+        [actionContext]="actionContext"
+        [menuItems]="moreMenu$ | async"
+    />
+</adf-toolbar>

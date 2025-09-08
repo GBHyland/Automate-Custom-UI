@@ -1,0 +1,16 @@
+{
+  "APP": {
+    "HEADER": {
+      "SIGN_OUT": "Abmelden",
+      "HELP": "Hilfe",
+      "LANGUAGE": "Sprache"
+    },
+    "TOOLBAR": {
+      "SELECTED": "Ausgewählt",
+      "CLEAR_ALL": "Alles löschen"
+    }
+  },
+  "PAGINATION": {
+    "PAGE_SIZE": "Elemente pro Seite"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "extends": "../../../tsconfig.adf.json",
+    "compilerOptions": {
+        "outDir": "../../../out-tsc/content-ee/process-services-cloud-extension-spec",
+        "types": ["jasmine", "node"],
+        "target": "es2020"
+    },
+    "files": ["src/test.ts"],
+    "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

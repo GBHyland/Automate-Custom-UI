@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Группы",
+      "MANDATORY": "Обязательно",
+      "ERROR": {
+        "NOT_FOUND": "Групп с названием \"{{groupName}}\" не найдено"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Требуется соответствие шаблону \"{{pattern}}\"",
+        "INVALID_MIN_LENGTH": "Должно быть не менее {{requiredLength}} символов",
+        "INVALID_MAX_LENGTH": "Превышена длина. Она должна быть не более {{requiredLength}} символов",
+        "REQUIRED": "Это поле обязательно для заполнения",
+        "NOT_FOUND": "Пользователей с именем {{userName}} не найдено"
+      }
+    }
+  }
+}

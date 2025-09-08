@@ -1,0 +1,22 @@
+.hxp-filter-save-as-dialog {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    &__content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+    }
+
+    &__actions {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+}

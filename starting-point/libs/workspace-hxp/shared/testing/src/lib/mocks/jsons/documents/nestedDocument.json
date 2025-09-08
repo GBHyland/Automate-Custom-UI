@@ -1,0 +1,41 @@
+{
+    "sys_changeToken": "0-0",
+    "sys_hasLegalHold": false,
+    "sys_id": "1a191015-5ea2-45a9-85ef-5b6dec180774",
+    "sysver_isCheckedIn": false,
+    "sys_isFolderish": true,
+    "sys_isLatestMajorVersion": false,
+    "sys_isLatestVersion": false,
+    "sys_isRecord": false,
+    "sys_isTrashed": false,
+    "sysver_isVersion": false,
+    "sys_mixinTypes": ["SysFolderish"],
+    "sys_name": "Nested Folder 1",
+    "sys_parentId": "e43b6a72-f7a7-4f5a-8cd1-a3b84cc6af84",
+    "sys_path": "/Folder 1/Nested Folder 1",
+    "sys_pathDepth": 3,
+    "sys_primaryType": "SysFolder",
+    "sys_repository": "default",
+    "sys_title": "Nested Folder 1",
+    "sys_contributors": [{
+        "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+        "firstName": "test1",
+        "lastName": "user1",
+        "username": "test1user1"
+    }],
+    "sys_created": "2022-12-19T10:42:05.517+00:00",
+    "sys_creator": {
+        "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+        "firstName": "test1",
+        "lastName": "user1",
+        "username": "test1user1"
+    },
+    "sys_description": "Nested Folder 1 description",
+    "sys_lastContributor": {
+        "id": "c5fee88f-102f-42c3-923d-3ee2dfcb52a2",
+        "firstName": "test1",
+        "lastName": "user1",
+        "username": "test1user1"
+    },
+    "sys_modified": "2022-12-19T10:42:05.517+00:00"
+}

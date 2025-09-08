@@ -1,0 +1,81 @@
+@use 'mat-selectors' as ms;
+@use 'satori-like-styles' as satori;
+
+.hxp-permissions-management-panel-container,
+.hxp-permissions-management-dialog-container {
+    .hxp-cancel-button,
+    .hxp-restore-button {
+        color: var(--theme-primary-color, satori.$satori-like-primary);
+        border: 0;
+    }
+
+    .hxp-restore-button[disabled] {
+        color: satori.$hy-colors-cool-gray-400;
+    }
+
+    .hxp-permission-tabs {
+        font-weight: 600;
+        font-size: satori.$hy-font-sizes-20;
+        line-height: 16px;
+    }
+
+    .hxp-permissions-actions {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        .hxp-left-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .hxp-right-actions {
+            display: flex;
+            gap: satori.$hy-spacing-8;
+            align-items: center;
+        }
+    }
+
+    .hxp-permission-container {
+        width: 100%;
+    }
+
+    .hxp-entity-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        .hxp-group-details-label {
+            display: flex;
+            align-items: center;
+            gap: satori.$hy-spacing-8;
+            mat-icon {
+                font-size: satori.$hy-font-sizes-30;
+            }
+        }
+    }
+
+    .hxp-users-icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: satori.$hy-spacing-8;
+        font-size: var(--theme-caption-font-size, 12px);
+        color: var(--theme-primary-color, satori.$satori-like-primary);
+    }
+
+    .hxp-disabled-entity {
+        color: satori.$hy-colors-neutral-500;
+    }
+
+    .hxp-cannot-be-changed {
+        color: satori.$hy-colors-neutral-500;
+        font-weight: satori.$hy-font-weights-bold;
+        font-size: satori.$hy-font-sizes-10;
+        white-space: nowrap;
+    }
+
+    #{ms.$mat-tab-group} > #{ms.$mat-tab-header} > #{ms.$mat-tab-label-container} > #{ms.$mat-tab-list} > #{ms.$mat-tab-labels} {
+        max-width: 388px; /* equals const DIALOG_MIN_WIDTH - 2 * horizontal margin */
+    }
+}

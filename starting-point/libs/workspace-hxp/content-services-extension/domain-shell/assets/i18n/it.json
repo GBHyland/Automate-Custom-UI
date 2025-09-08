@@ -1,0 +1,81 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "PERMISSIONS_MANAGEMENT": {
+                    "TITLE": "Autorizzazioni",
+                    "ARIA-LABEL": "Gestisci autorizzazioni file"
+                },
+                "COPY": {
+                    "TITLE": "Copia",
+                    "ARIA-LABEL": "Copia file"
+                },
+                "MOVE": {
+                    "TITLE": "Sposta",
+                    "ARIA-LABEL": "Sposta file"
+                },
+                "REPLACE_FILE": {
+                    "TITLE": "Sostituisci file (beta)",
+                    "ARIA-LABEL": "Sostituisci file (beta)"
+                },
+                "DOCUMENT_VERSION": {
+                    "TITLE": "Salvataggio nella cronologia delle versioni (beta)",
+                    "ARIA-LABEL": "Salvataggio nella cronologia delle versioni (beta)"
+                }
+            }
+        }
+    },
+    "DOCUMENT_MORE_ACTION": {
+        "COPY": "Copia",
+        "MOVE": "Sposta",
+        "REPLACE_FILE": "Sostituisci file",
+        "MANAGE_VERSIONS": "Gestione versioni"
+    },
+    "MANAGE_VERSIONS": {
+        "DIALOG": {
+            "TITLE": "Gestione versioni",
+            "CLOSE": "Chiudi",
+            "CREATED_BY": "da"
+        }
+    },
+    "COPY": {
+        "DIALOG": {
+            "COPY_ITEM": "Copia elemento in",
+            "COPY": "Copia",
+            "CANCEL": "Annulla",
+            "CLOSE": "Chiudi",
+            "FILE_NAME_PREFIX": "Copia di",
+            "PERMISSIONS": {
+                "ERROR": "Non si dispone delle autorizzazioni per copiare il documento qui."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Cerca"
+    },
+    "MOVE": {
+        "DIALOG": {
+            "ROOT_FOLDER_NAME": "Home",
+            "MOVE_ITEM": "Sposta elemento in",
+            "MOVE": "Sposta",
+            "CANCEL": "Annulla",
+            "CLOSE": "Chiudi",
+            "PERMISSIONS": {
+                "ERROR": "Non si dispone delle autorizzazioni per spostare il documento qui."
+            }
+        },
+        "FOLDER_SEARCH_PLACEHOLDER": "Cerca"
+    },
+    "SNACKBAR": {
+        "COPY": {
+            "FILE_SUCCESS": "Il file è stato copiato",
+            "FILE_ERROR": "Copia del file non riuscita",
+            "FOLDER_SUCCESS": "La cartella è stata copiata",
+            "FOLDER_ERROR": "Copia della cartella non riuscita"
+        },
+        "MOVE": {
+            "FILE_SUCCESS": "Il file è stato spostato",
+            "FILE_ERROR": "Spostamento file non riuscito",
+            "FOLDER_SUCCESS": "La cartella è stata spostata",
+            "FOLDER_ERROR": "Spostamento cartella non riuscito"
+        }
+    }
+}

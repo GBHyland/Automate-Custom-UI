@@ -1,0 +1,74 @@
+<mat-form-field
+    class="hxp-search-filter-input hxp-input"
+    appearance="outline"
+>
+    <div
+        *ngIf="prefixIcon"
+        matPrefix
+        class="hxp-search-filter-input-prefix"
+    >
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="prefixAriaLabel"
+            (click)="onPrefixClick()"
+        >
+            <mat-icon
+                aria-hidden="true"
+                [svgIcon]="prefixIcon"
+            />
+        </button>
+        <mat-divider
+            vertical
+            class="hxp-search-filter-input-divider"
+        />
+    </div>
+    <input
+        matInput
+        type="text"
+        [attr.aria-label]="inputAriaLabel"
+        [placeholder]="placeholder ?? ''"
+        [(ngModel)]="searchTerm"
+        (keyup)="applyFilter($event)"
+    >
+    <div matSuffix class="hxp-search-filter-input-suffix">
+        <button
+            *ngIf="searchTerm"
+            mat-icon-button
+            class="hxp-search-filter-input-clear"
+            [attr.aria-label]="clearAriaLabel"
+            (click)="clearInput()"
+        >
+            <mat-icon class="hxp-search-filter-input-clear-icon">
+                close
+            </mat-icon>
+        </button>
+        <mat-divider
+            vertical
+            class="hxp-search-filter-input-divider"
+        />
+        <div class="hxp-search-filter-input-search">
+            <div
+                *ngIf="applyOnEnter"
+                class="hxp-search-filter-search-button"
+            >
+                <button
+                    mat-icon-button
+                    type="button"
+                    [attr.aria-label]="'SEARCH.FILTERS.SEARCH'"
+                    (click)="emitSearch()"
+                    >
+                        <mat-icon
+                            class="hxp-search-filter-input-search-icon"
+                            svgIcon="search_glass"
+                        />
+                </button>
+            </div>
+            <mat-icon
+                *ngIf="!applyOnEnter"
+                class="hxp-search-filter-input-search-icon"
+                svgIcon="search_glass"
+            />
+        </div>
+    </div>
+</mat-form-field>

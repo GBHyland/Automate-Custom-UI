@@ -1,0 +1,12 @@
+@use '../colors' as colors;
+
+$hy-primary: colors.$hy-primary;
+
+$hy-neutral: colors.$hy-neutral;
+
+$hy-warn: colors.$hy-warn;
+
+$hy-shortcut-browser: (
+    100: #bdbdbd99,
+    200: #000000de,
+);

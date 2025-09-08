@@ -1,0 +1,11 @@
+{
+    "HEADER": {
+        "LOGO": "Logo",
+        "SETTINGS": "SETTINGS",
+        "ACTIONS": {
+            "LANGUAGE": "Language",
+            "FEATURE_FLAGS": "Feature Flags",
+            "HELP": "Help"
+        }
+    }
+}

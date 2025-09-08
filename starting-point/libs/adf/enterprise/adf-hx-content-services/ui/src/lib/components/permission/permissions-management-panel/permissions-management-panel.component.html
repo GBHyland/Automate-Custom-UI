@@ -1,0 +1,14 @@
+<div class="hxp-permissions-management-panel-container">
+    <div class="hxp-permission-container">
+        <hxp-permission-management-container
+            [document]="document"
+            [parentDocument]="parentDocument"
+            (cancelEvent)="cancel($event)"
+            (closeEvent)="close()"
+            (restoreEvent)="restore()">
+            <ng-template #title let-title>
+                <hxp-permissions-document-title [title]="title || ''" />
+            </ng-template>
+        </hxp-permission-management-container>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<form
+    class="hxp-search-input"
+    role="search"
+    [formGroup]="filterForm"
+    (submit)="onSearch()"
+>
+    <div class="hxp-search-text">
+        <mat-form-field
+            appearance="outline"
+            subscriptSizing="dynamic"
+            class="hxp-new-search-input"
+        >
+            <textarea
+                matInput
+                #searchInput
+                type="search"
+                formControlName="query"
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="3"
+                placeholder="{{ 'SEARCH.INPUT.PLACEHOLDER' | translate }}"
+                [attr.aria-label]="'SEARCH.INPUT.ARIA_LABEL' | translate"
+                [errorStateMatcher]="errorStateMatcher"
+                (input)="onInput()"
+                (keydown.enter)="onSearch($event)"
+            ></textarea>
+            <div
+                matSuffix
+                class="hxp-search-text-suffix-container"
+                *ngIf="searchInput?.value?.length"
+            >
+                <ng-container *ngTemplateOutlet="clearButton" />
+            </div>
+        </mat-form-field>
+    </div>
+</form>
+
+<ng-template #clearButton>
+    <button
+        *ngIf="filterForm.get('query')?.value"
+        class="hxp-clear"
+        type="button"
+        [attr.aria-label]="'SEARCH.INPUT.CLEAR_INPUT' | translate"
+        (click)="onClear()"
+    >
+        <hxp-search-action-icon
+            [actionIcon]="clearIcon"
+        />
+    </button>
+</ng-template>

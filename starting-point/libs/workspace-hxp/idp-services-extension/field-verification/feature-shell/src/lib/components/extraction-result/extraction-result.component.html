@@ -1,0 +1,8 @@
+<div class="idp-extraction-result">
+    <mat-icon class="idp-extraction-result-icon material-symbols-outlined"
+        [ngClass]="!hasIssue ? 'idp-no-issue': 'idp-has-issue'"
+        [attr.data-automation-id]="'idp-field-extraction-result-icon-' + (hasIssue ? 'has-issue' : 'no-issue')">
+        circle
+    </mat-icon>
+    <span class="idp-extraction-result-text mat-caption" [attr.data-automation-id]="'idp-field-extraction-result-text-' + status">{{ status | translate }}</span>
+</div>

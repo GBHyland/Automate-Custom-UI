@@ -1,0 +1,9 @@
+{
+    "extends": "../../../tsconfig.e2e.json",
+    "compilerOptions": {
+        "outDir": "../../../out-tsc/search-e2e",
+        "baseUrl": "../../../"
+    },
+    "files": [],
+    "include": ["**/*.ts", "**/*.js"]
+}

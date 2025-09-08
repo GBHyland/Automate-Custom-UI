@@ -1,0 +1,77 @@
+@use 'mat-selectors' as ms;
+
+.apa-content-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.apa-content-border {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+    vertical-align: unset;
+    text-align: unset;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.apa-details-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+    width: 75%;
+
+    adf-cloud-task-list {
+        min-height: 0;
+        height: 100%;
+        background-color: #fff;
+    }
+}
+
+adf-cloud-process-header {
+    margin-left: 10px;
+    width: 25%;
+}
+
+.apa-cancel-process-button {
+    & > #{ms.$mat-icon-element} {
+        cursor: pointer;
+    }
+
+    &:hover {
+        color: var(--theme-primary-color) !important;
+    }
+}
+
+apa-process-details {
+    .app-page-layout .app-page-layout-header {
+        display: initial !important;
+        padding: 0 !important;
+        .adf-toolbar #{ms.$mat-toolbar} {
+            border: none !important;
+        }
+    }
+}
+
+.apa-details-area,
+.apa-process-task-list-ext {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.apa-process-details-cloud-main-content {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+}

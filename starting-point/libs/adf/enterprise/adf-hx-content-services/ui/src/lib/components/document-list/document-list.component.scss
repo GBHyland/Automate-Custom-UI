@@ -1,0 +1,53 @@
+@use 'mat-selectors' as ms;
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hxp-document-list-container {
+    flex: 1;
+    height: calc(100% - 65px);
+}
+
+#{ms.$mat-paginator} {
+    display: flex;
+    flex: 1;
+}
+
+::ng-deep #{ms.$mat-mdc-paginator-outer-container},
+::ng-deep #{ms.$mat-mdc-paginator-container},
+::ng-deep #{ms.$mat-paginator-page-size} {
+    flex: 1;
+}
+
+::ng-deep #{ms.$mat-tab-body-wrapper} {
+    height: 100%;
+}
+
+::ng-deep {
+    .adf-ellipsis-cell {
+        .adf-cell-value {
+            display: block !important;
+            min-height: auto !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            .adf-datatable-content-cell {
+                position: relative !important;
+            }
+        }
+    }
+
+    .adf-datatable-list {
+        .adf-datatable-cell--text {
+            max-width: 320px !important;
+        }
+    }
+
+    .adf-datatable-checkbox {
+        label {
+            display: none;
+        }
+    }
+}

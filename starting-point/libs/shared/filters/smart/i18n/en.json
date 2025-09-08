@@ -1,0 +1,118 @@
+{
+    "FILTERS": {
+        "TITLE": "Filters",
+        "MENU": {
+            "SEARCH": "Search",
+            "CLEAR_SELECTION": "Clear selection",
+            "UPDATE": "Update",
+            "APPLY": "Apply"
+        },
+        "DIALOG": {
+            "SAVE": "Save",
+            "CANCEL": "Cancel",
+            "PLACEHOLDER": "Name"
+        },
+        "ALL": "All",
+        "MORE_FILTERS": "More",
+        "RESET": "Reset",
+        "SAVE": "Save",
+        "SAVE_AS": "Save as",
+        "DELETE": "Delete",
+        "STRING_FILTER": {
+            "PLACEHOLDER": "Text"
+        },
+        "NUMBER_FILTER": {
+            "ERROR": "Invalid range",
+            "PLACEHOLDER": "Number",
+            "RANGE": {
+                "FROM": "From",
+                "TO": "To",
+                "BETWEEN_AND": "Between {{from}} and {{to}}"
+            },
+            "EQUALS": "Equals",
+            "NOT_EQUALS": "Does not equal",
+            "GREATER_THAN": "Greater than",
+            "GREATER_THAN_OR_EQUALS": "Greater than or equals",
+            "LESS_THAN": "Less than",
+            "LESS_THAN_OR_EQUALS": "Less than or equals",
+            "BETWEEN": "Between",
+            "AND": "and"
+        },
+        "CHECKBOX_FILTER": {
+            "SELECT_ALL": "Select all"
+        },
+        "DATE_FILTER": {
+            "NO_DATE": "No date",
+            "TODAY": "Today",
+            "WEEK": "This week",
+            "MONTH": "This month",
+            "QUARTER": "This quarter",
+            "YEAR": "This year",
+            "RANGE": "Custom range",
+            "FROM": "From",
+            "TO": "To",
+            "FROM_DATE": "From {{date}}",
+            "TO_DATE": "To {{date}}"
+        },
+        "USER_FILTER": {
+            "TITLE": "Users",
+            "PLACEHOLDER": "Next user"
+        },
+        "TASK_STATUS_FILTER": {
+            "CREATED": "Created",
+            "ASSIGNED": "Assigned",
+            "SUSPENDED": "Suspended",
+            "CANCELLED": "Cancelled",
+            "COMPLETED": "Completed"
+        },
+        "PROCESS_STATUS_FILTER": {
+            "RUNNING": "Running",
+            "COMPLETED": "Completed",
+            "CANCELLED": "Cancelled",
+            "SUSPENDED": "Suspended"
+        },
+        "LABELS": {
+            "TASK": {
+                "PROCESS_INSTANCE_ID": "Process Instance Id",
+                "PARENT_ID": "Parent ID",
+                "PROCESS_DEFINITION_NAME": "Process Definition Name",
+                "ASSIGNEE": "Assignee",
+                "STATUS": "Status",
+                "PRIORITY": "Priority",
+                "DUE_DATE": "Due Date",
+                "CREATED_DATE": "Created Date",
+                "COMPLETED_DATE": "Completed Date",
+                "COMPLETED_BY": "Completed By",
+                "TASK_NAME": "Task Name",
+                "ID": "Id"
+            },
+            "PROCESS": {
+                "APP_NAME": "Application name",
+                "ID": "Id",
+                "PROCESS_NAME": "Process Name",
+                "PARENT_ID": "Main process id",
+                "PROCESS_DEFINITION_NAME": "Process Definition Name",
+                "STATUS": "Status",
+                "COMPLETED_DATE": "Completed Date",
+                "STARTED_BY": "Started By",
+                "SUSPENDED_DATE": "Suspended Date",
+                "STARTED_DATE": "Start Date",
+                "APP_VERSION": "App version"
+            },
+            "SERVICE_TASK": {
+                "ACTIVITY_NAME": "Activity name",
+                "ID": "Id",
+                "PROCESS_INSTANCE_ID": "Process instance id",
+                "STATUS": "Status",
+                "COMPLETED_DATE": "Completed date",
+                "STARTED_DATE": "Started date"
+            },
+            "AUDIT": {
+                "ENTITY_ID": "Event ID",
+                "EVENT_TYPE": "Event Type",
+                "PROCESS_INSTANCE_ID": "Process Instance ID",
+                "EVENT_TIME": "Event Time"
+            }
+        }
+    }
+}

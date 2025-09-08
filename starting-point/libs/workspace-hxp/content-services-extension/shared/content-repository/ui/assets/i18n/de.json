@@ -1,0 +1,38 @@
+{
+    "APP": {
+        "TOOLBAR": {
+            "BUTTONS": {
+                "INFO": {
+                    "TITLE": "Info",
+                    "ARIA-LABEL": "Dateiinformationen"
+                }
+            },
+            "SELECTED": "Ausgewählt",
+            "CLEAR_ALL": "Alle löschen"
+        }
+    },
+    "DOCUMENT": {
+        "PROPERTIES": {
+            "VIEWER": {
+                "MAIN": {
+                    "CONTAINER": {
+                        "HEADER": "Haupteigenschaften"
+                    }
+                },
+                "OTHER": {
+                    "CONTAINER": {
+                        "HEADER": "Sonstige Eigenschaften"
+                    }
+                }
+            },
+            "EDIT": {
+                "SUCCESS": "Eigenschaften erfolgreich aktualisiert!",
+                "ERROR": "Es ist ein Fehler aufgetreten, die Eigenschaft konnte nicht aktualisiert werden!",
+                "INFO": "Feldwert darf nicht leer sein!"
+            },
+            "RIGHT_SIDEBAR": {
+                "CLOSE": "Schließen"
+            }
+        }
+    }
+}

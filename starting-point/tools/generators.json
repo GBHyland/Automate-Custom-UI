@@ -1,0 +1,19 @@
+{
+    "generators": {
+        "hxp-library": {
+            "factory": "./generators/hxp-library/hxp-library",
+            "schema": "./generators/hxp-library/schema.json",
+            "description": "hxp-library generator"
+        },
+        "alfresco-library": {
+            "factory": "./generators/alfresco-library/alfresco-library",
+            "schema": "./generators/alfresco-library/schema.json",
+            "description": "alfresco-library generator"
+        },
+        "alfresco-playwright": {
+            "factory": "./generators/alfresco-playwright/alfresco-playwright",
+            "schema": "./generators/alfresco-playwright/schema.json",
+            "description": "alfresco-playwright generator"
+        }
+    }
+}

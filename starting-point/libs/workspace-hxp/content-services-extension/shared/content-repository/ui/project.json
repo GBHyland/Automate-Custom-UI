@@ -1,0 +1,78 @@
+{
+    "name": "workspace-hxp-content-services-extension-shared-content-repository-ui",
+    "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/src",
+    "prefix": "hxp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": [
+                "{workspaceRoot}/dist/libs/workspace-hxp/content-services-extension/shared/content-repository/ui"
+            ],
+            "options": {
+                "project": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/ng-package.json",
+                "updateBuildableProjectDepsInPackageJson": true
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/src/test.ts",
+                "tsConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/tsconfig.spec.json",
+                "karmaConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/karma.conf.js",
+                "stylePreprocessorOptions": {
+                    "includePaths": [
+                        "node_modules",
+                        "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+                        "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/src/lib/properties-sidebar",
+                        "apps/workspace-hxp/src",
+                        "libs/shared/core/src/styles",
+                        "node_modules/@alfresco/adf-core/lib",
+                        "libs/shared/satori-like-styles/src"
+                    ]
+                },
+                "styles": [
+                    "node_modules/@hyland/icons/index.css",
+                    "apps/workspace-hxp/src/styles.scss",
+                    "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons.css",
+                    "apps/workspace-hxp/src/assets/fonts/material-icons/material-icons-outlined.css"
+                ]
+            },
+            "configurations": {
+                "adf": {
+                    "tsConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/tsconfig.spec.adf.json",
+                    "karmaConfig": "libs/workspace-hxp/content-services-extension/shared/content-repository/ui/karma.conf.js",
+                    "progress": false,
+                    "codeCoverage": false,
+                    "stylePreprocessorOptions": {
+                        "includePaths": [
+                            "libs/shared-hxp/idp-document-viewer/src/lib/theming",
+                            "libs/shared/core/src/styles",
+                            "../alfresco-ng2-components/lib/core/src/lib",
+                            "libs/shared/satori-like-styles/src"
+                        ]
+                    }
+                }
+            }
+        },
+        "lint": {},
+        "stylelint": {}
+    },
+    "tags": [
+        "scope:workspace-hxp-content-services-extension-shared-content-repository-ui",
+        "category:workspace-hxp"
+    ]
+}

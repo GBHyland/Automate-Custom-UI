@@ -1,0 +1,61 @@
+{
+    "VIEWER": {
+        "INVALID_EMPTY_VIEW_TEXT": "Sélectionner un document",
+        "TOOLBAR": {
+            "LAYOUT": {
+                "CHANGE_LAYOUT": "Changer la disposition",
+                "GRID_VIEW": "Grille (jusqu’à 12 miniatures)",
+                "VERTICAL_SCROLLING": "Défilement vertical",
+                "HORIZONTAL_SCROLLING": "Défilement horizontal"
+            },
+            "THUMBNAIL_VIEWER": "Visionneuse de miniatures",
+            "THUMBNAIL_VIEWER_PAGES": "Pages",
+            "THUMBNAIL_ALT_TEXT": "Image miniature",
+            "NAVIGATION": {
+                "PAGE_NAVIGATION": "Navigation de page",
+                "PREVIOUS": "Précédent",
+                "NEXT": "Suivant"
+            },
+            "LAYER_SELECTION": {
+                "TITLE": "Sélection d’une couche",
+                "IMAGE": "Image",
+                "TEXT": "Texte"
+            },
+            "ZOOM": {
+                "TITLE": "Zoom",
+                "ZOOM_IN": "Zoom avant",
+                "ZOOM_OUT": "Zoom arrière"
+            },
+            "ROTATE_RIGHT": "Faire pivoter dans le sens des aiguilles d’une montre",
+            "FULLSCREEN": "Plein écran",
+            "BEST_FIT": "Ajustement optimal"
+        },
+        "SERVICES": {
+            "SHORTCUT": {
+                "LAYOUT_CHANGE": "Disposition avec basculement",
+                "THUMBNAIL_VIEWER": "Basculement de la visionneuse de miniatures",
+                "NAVIGATE_PREVIOUS_PAGE": "Accéder à la page précédente",
+                "NAVIGATE_NEXT_PAGE": "Accéder à la page suivante",
+                "NAVIGATE_FIRST_PAGE": "Accéder à la première page",
+                "NAVIGATE_LAST_PAGE": "Accéder à la dernière page",
+                "NAVIGATE_UP": "Naviguer vers le haut",
+                "NAVIGATE_DOWN": "Naviguer vers le bas",
+                "NAVIGATE_LEFT": "Navigation gauche",
+                "NAVIGATE_RIGHT": "Navigation droite",
+                "ZOOM_IN": "Zoom avant",
+                "ZOOM_OUT": "Zoom arrière",
+                "BEST_FIT": "Ajustement optimal",
+                "ROTATE_RIGHT": "Faire pivoter dans le sens des aiguilles d’une montre",
+                "FULL_SCREEN": "Basculer en plein écran",
+                "IMAGE_LAYER": "Couche de l’image",
+                "TEXT_LAYER": "Couche du texte",
+                "CLIPBOARD_COPY": "Copier dans le presse-papiers"
+            },
+            "VIEWER": {
+                "GRID_TO_SINGLE_VERTICAL_VIEW": "La disposition de la visionneuse est remplacée par une vue verticale unique pour une meilleure expérience",
+                "SINGLE_VERTICAL_VIEW_TO_GRID": "La disposition de la visionneuse est remplacée par une vue en mode grille pour une meilleure expérience",
+                "CLIPBOARD_COPY_SUCCESS": "Copié dans le presse-papiers"
+            }
+        }
+    }
+}

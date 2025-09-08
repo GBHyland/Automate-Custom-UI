@@ -1,0 +1,84 @@
+<ng-container *ngIf="currentFilter">
+    <apa-scroll-container>
+        <adf-cloud-task-list #taskCloud
+            class="app-cloud-layout-overflow apa-task-list-cloud-ext-list-container"
+            searchApiMethod="POST"
+            [appName]="currentFilter?.appName"
+            [standalone]="currentFilter?.standalone"
+            [names]="currentFilter?.taskNames"
+            [processDefinitionNames]="currentFilter?.processDefinitionNames"
+            [ids]="currentFilter?.taskIds"
+            [parentIds]="currentFilter?.parentTaskIds"
+            [processNames]="currentFilter?.processNames"
+            [processInstanceIds]="currentFilter?.processInstanceIds"
+            [priorities]="currentFilter?.priorities"
+            [statuses]="currentFilter?.statuses"
+            [completedByUsers]="currentFilter?.completedByUsers"
+            [assignees]="currentFilter?.assignees"
+            [createdFrom]="currentFilter?.createdFrom"
+            [createdTo]="currentFilter?.createdTo"
+            [lastModifiedFrom]="currentFilter?.lastModifiedFrom"
+            [lastModifiedTo]="currentFilter?.lastModifiedTo"
+            [dueDateFrom]="currentFilter?.dueDateFrom"
+            [dueDateTo]="currentFilter?.dueDateTo"
+            [completedFrom]="currentFilter?.completedFrom"
+            [completedTo]="currentFilter?.completedTo"
+            [processVariableFilters]="currentFilter?.processVariableFilters"
+            [stickyHeader]="true"
+            [showContextMenu]="true"
+            [sorting]="sortArray"
+            [showMainDatatableActions]="true"
+            [isResizingEnabled]="isResizingEnabled"
+            (showRowContextMenu)="onShowRowContextMenu($event)"
+            (rowClick)="navigateToTaskDetails($event)">
+                <data-columns>
+                    <ng-container *ngFor="let column of columns$ | async">
+                        <ng-container *ngIf="column?.template">
+                            <data-column
+                                [id]="column.id"
+                                [key]="column.key"
+                                [title]="column.title"
+                                [subtitle]="column.subtitle"
+                                [type]="column.type"
+                                [format]="column.format"
+                                [class]="column.class"
+                                [customData]="column.customData"
+                                [isHidden]="column.isHidden"
+                                [sortable]="column.sortable"
+                                [draggable]="column.draggable"
+                                [dateConfig]="column.dateConfig"
+                            >
+                                <ng-template let-context>
+                                    <adf-dynamic-column [id]="column.template" [context]="context" />
+                                </ng-template>
+                            </data-column>
+                        </ng-container>
+                        <ng-container *ngIf="!column?.template">
+                            <data-column
+                                [id]="column.id"
+                                [key]="column.key"
+                                [title]="column.title"
+                                [subtitle]="column.subtitle"
+                                [type]="column.type"
+                                [format]="column.format"
+                                [class]="column.class"
+                                [customData]="column.customData"
+                                [sortable]="column.sortable"
+                                [isHidden]="column.isHidden"
+                                [draggable]="column.draggable"
+                                [dateConfig]="column.dateConfig"
+                            />
+                        </ng-container>
+                    </ng-container>
+                </data-columns>
+        </adf-cloud-task-list>
+    </apa-scroll-container>
+
+    <adf-pagination
+        *ngIf="taskCloud"
+        [pagination]="defaultPagination"
+        [target]="taskCloud"
+        [supportedPageSizes]="supportedPageSizes$ | async"
+        (changePageSize)="onChangePageSize($event)"
+    />
+</ng-container>

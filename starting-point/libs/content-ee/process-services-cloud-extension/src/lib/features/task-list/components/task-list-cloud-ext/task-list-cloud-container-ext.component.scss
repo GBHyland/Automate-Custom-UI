@@ -1,0 +1,109 @@
+@use 'mat-selectors' as ms;
+
+.app-process-cloud-task-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adf-content-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.adf-content-border {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+    vertical-align: unset;
+    text-align: unset;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.apa-task-list-cloud-container,
+.apa-task-list-cloud-ext {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+adf-cloud-edit-task-filter {
+    margin-bottom: 5px;
+
+    .adf-edit-task-filter-form {
+        align-items: flex-start;
+
+        adf-cloud-people {
+            max-width: 25%;
+
+            #{ms.$mat-mdc-evolution-chip-set--chips} {
+                align-items: center;
+            }
+
+            #{ms.$mat-chip},
+            #{ms.$mat-chip}:focus,
+            #{ms.$mat-chip}:hover,
+            #{ms.$mat-chip}:active {
+                #{ms.$mat-mdc-chip-ripple} {
+                    margin: initial;
+                }
+
+                #{ms.$mat-mdc-chip-focus-overlay} {
+                    display: none;
+                }
+            }
+
+            #{ms.$mdc-text-field--disabled} #{ms.$mat-form-field-underline}:before {
+                border-bottom-color: rgba(0, 0, 0, 0.42);
+            }
+        }
+
+        #{ms.$mat-form-field} {
+            width: 100%;
+            max-width: none;
+        }
+
+        #{ms.$mat-input-element} {
+            height: 24px;
+        }
+
+        #{ms.$mat-select-value} {
+            overflow: visible;
+        }
+
+        adf-cloud-date-range-filter {
+            .adf-cloud-date-range-picker {
+                margin-left: 0;
+            }
+        }
+
+        adf-cloud-people.adf-edit-task-filter-completedBy {
+            .adf-people-cloud .adf-cloud-input {
+                height: 24px;
+                flex-basis: 0;
+            }
+        }
+    }
+}
+
+.apa-task-list-cloud-container-ext-main-content{
+    flex: 1 1 auto;
+    box-sizing: border-box;
+}
+
+.apa-task-list-cloud-refresh-button-container {
+    display: flex;
+    flex: 1;
+    flex-flow: row;
+    justify-content: flex-end;
+    margin-right:15px;
+}

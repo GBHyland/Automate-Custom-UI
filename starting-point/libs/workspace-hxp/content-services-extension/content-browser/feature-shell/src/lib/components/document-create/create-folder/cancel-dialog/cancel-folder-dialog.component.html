@@ -1,0 +1,18 @@
+<div class="hxp-cancel-dialog">
+    <div class="hxp-cancel-dialog dialog-title" mat-dialog-title>
+        <h1 mat-dialog-title>
+            {{ 'CREATE_FOLDER.CANCEL.TITLE' | translate }}
+        </h1>
+    </div>
+    <div mat-dialog-content>
+        <p> {{ 'CREATE_FOLDER.CANCEL.DESCRIPTION' | translate }} </p>
+    </div>
+    <mat-dialog-actions>
+        <button mat-button class="hxp-dialog-reject-button" (click)="reject()">
+            {{ 'CREATE_FOLDER.CANCEL.REJECT' | translate }}
+        </button>
+        <button mat-button class="hxp-dialog-confirm-button" (click)="confirm()">
+            {{ 'CREATE_FOLDER.CANCEL.CONFIRM' | translate }}
+        </button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,23 @@
+<div id="table-issues-container" class="idp-table-issues" *ngIf="table$ | async as table">
+    <div *ngIf="field$ | async as field">
+        <div class="idp-issues-header">
+            <div class="idp-issues-header-left">
+                <div>
+                    <img class="idp-icon-table" src="assets/idp-services-extension-field-verification/images/table_type_field.svg" />
+                    <mat-label class="idp-table-name hxp-label-large-bold" [ngClass]="{ 'idp-has-issue': field.hasIssue }">{{ table.name }}</mat-label>
+                </div>
+                <div class="idp-issues-body">
+                    <mat-label *ngIf="!(table.rows && table.rows.length)" class="idp-table-not-found hxp-label-small-bold">{{ 'EXTRACTION.VERIFICATION.METADATA_TABLE.TABLE_NOT_FOUND' | translate }}</mat-label>
+                </div>
+            </div>
+            <div class="idp-issues-header-right" *ngIf="!(table.rows && table.rows.length)" matTooltip="Add Table">
+                <button mat-flat-button class="idp-add-table-button" (click)="addTable(table.id)" data-automation-id="idp-add-table-button">
+                    <span class="idp-reject-document-text">
+                        {{ 'EXTRACTION.VERIFICATION.METADATA_TABLE.ADD_TABLE' | translate }}
+                    </span>
+                </button>
+            </div>
+        </div>
+        <hyland-idp-extraction-result class="idp-extraction-result" [field]="field" />
+    </div>
+</div>

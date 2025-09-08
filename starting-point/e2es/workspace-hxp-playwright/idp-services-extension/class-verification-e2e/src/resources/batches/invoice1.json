@@ -1,0 +1,33 @@
+{
+  "documents": [
+    {
+      "id": "a74b95fe-eec2-4a33-b6de-ef2fda05b98b",
+      "pages": [
+        {
+          "rotation": 0,
+          "sourcePageIndex": 0,
+          "contentFileReferenceIndex": 0
+        }
+      ],
+      "fields": [],
+      "tables": [],
+      "classId": "Invoice0k1cw4",
+      "className": "Invoice",
+      "markAsRejected": false,
+      "classificationConfidence": 0.875,
+      "classificationReviewStatus": "ReviewNotRequired"
+    }
+  ],
+  "extractionStatus": "Awaiting",
+  "separationStatus": "Awaiting",
+  "classificationStatus": "Classified",
+  "hasRejectedDocuments": false,
+  "contentFileReferences": [
+    {
+      "sys_id": "5c6c4954-339a-49b9-8d33-c5b79ac7789a",
+      "sysfile_blob": {
+        "mimeType": "application/pdf"
+      }
+    }
+  ]
+}

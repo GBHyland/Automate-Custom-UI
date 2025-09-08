@@ -1,0 +1,69 @@
+<ng-container
+    *hylandIdpLet="{
+        isTopBottom: configuration?.toolbarPosition === toolbarPosition.Top || configuration?.toolbarPosition === toolbarPosition.Bottom,
+        isLeftRight: configuration?.toolbarPosition === toolbarPosition.Left || configuration?.toolbarPosition === toolbarPosition.Right,
+        fullscreenMode: fullscreenMode$ | async
+    } as ds"
+>
+    <div
+        class="idp-viewer"
+        data-automation-id="idp-viewer"
+        [ngClass]="{
+            'idp-top-bottom': ds.isTopBottom,
+            'idp-left-right': ds.isLeftRight
+        }"
+        [class.idp-viewer__fullscreen]="ds.fullscreenMode"
+        (keydown.escape)="ds.fullscreenMode && onExitFullscreen()"
+    >
+        <hyland-idp-viewer-toolbar
+            *ngIf="
+                configuration?.toolbarPosition &&
+                (configuration?.toolbarPosition === toolbarPosition.Left || configuration?.toolbarPosition === toolbarPosition.Top)
+            "
+        >
+            <ng-content select="[hyland-idp-viewer-toolbar-button]" />
+        </hyland-idp-viewer-toolbar>
+        <hyland-idp-thumbnail-viewer
+            *ngIf="
+                configuration?.defaultLayoutType?.type === layoutType.SinglePage &&
+                (configuration?.toolbarPosition === toolbarPosition.Left || configuration?.toolbarPosition === toolbarPosition.Top)
+            "
+        />
+        <div class="idp-viewer__container">
+            <ng-container *ngTemplateOutlet="viewerHeaderComponent" />
+            <div class="idp-viewer__viewport">
+                <hyland-idp-viewer-image-layer *ngIf="hasContent; else noProjectedComponent" [projectedEmptyComponent]="viewerEmptyComponent" />
+                <ng-template #noProjectedComponent>
+                    <hyland-idp-viewer-image-layer />
+                </ng-template>
+            </div>
+            <ng-container *ngTemplateOutlet="viewerStickyActionComponent" />
+        </div>
+        <hyland-idp-thumbnail-viewer
+            *ngIf="
+                configuration?.defaultLayoutType?.type === layoutType.SinglePage &&
+                (configuration?.toolbarPosition === toolbarPosition.Right || configuration?.toolbarPosition === toolbarPosition.Bottom)
+            "
+        />
+        <hyland-idp-viewer-toolbar
+            *ngIf="
+                configuration?.toolbarPosition &&
+                (configuration?.toolbarPosition === toolbarPosition.Right || configuration?.toolbarPosition === toolbarPosition.Bottom)
+            "
+        >
+            <ng-content select="[hyland-idp-viewer-toolbar-button]" />
+        </hyland-idp-viewer-toolbar>
+    </div>
+</ng-container>
+
+<ng-template #viewerEmptyComponent>
+    <ng-content select="hyland-idp-viewer-empty" />
+</ng-template>
+
+<ng-template #viewerHeaderComponent>
+    <ng-content select="hyland-idp-viewer-header" />
+</ng-template>
+
+<ng-template #viewerStickyActionComponent>
+    <ng-content select="hyland-idp-viewer-sticky-action" />
+</ng-template>

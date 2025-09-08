@@ -1,0 +1,17 @@
+{
+  "name": "@alfresco-dbp/tools",
+  "version": "0.0.7",
+  "dependencies": {
+    "@nx/devkit": "16.10.0",
+    "tslib": "^2.3.0"
+  },
+  "bin": {
+    "run-tool": "./bin/run-tool.js"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "license": "See license in LICENSE file.",
+  "typings": "./src/index.d.ts",
+  "generators": "./generators.json",
+  "executors": "./executors.json"
+}

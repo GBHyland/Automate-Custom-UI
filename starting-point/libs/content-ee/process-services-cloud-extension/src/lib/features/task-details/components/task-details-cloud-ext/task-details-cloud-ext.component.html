@@ -1,0 +1,128 @@
+<app-page-layout>
+    <app-page-layout-header>
+        <nav class="apa-task-details-navbar">
+            <div
+                class="adf-breadcrumb-item adf-active"
+                title="{{ 'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT' | translate }}"
+            >
+                <div
+                    aria-current="location"
+                    class="adf-breadcrumb-item-current"
+                >
+                    <div data-automation-id="breadcrumb-list" class="adf-breadcrumb-item adf-active" role="listitem">
+                        <div class="adf-breadcrumb-item-current">
+                            {{
+                                'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ROOT'
+                                    | translate
+                            }}
+                        </div>
+                        <mat-icon class="adf-breadcrumb-item-chevron">
+                            chevron_right
+                        </mat-icon>
+                        <div class="adf-breadcrumb-item-current">
+                            {{
+                                (processName && 'PROCESS_CLOUD_EXTENSION.PROCESS_LIST.PROCESSES') ||
+                                'PROCESS_CLOUD_EXTENSION.BREADCRUMB.TASK_LIST_CLOUD'
+                                    | translate
+                            }}
+                        </div>
+                        <ng-container *ngIf="currentFilter">
+                            <mat-icon class="adf-breadcrumb-item-chevron">
+                                chevron_right
+                            </mat-icon>
+                            <div class="adf-breadcrumb-item-current">
+                                <span class='apa-task-filter-item' (click)="onFilterClick()" >{{ currentFilter.name | translate }}</span>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="processName">
+                            <mat-icon class="adf-breadcrumb-item-chevron">
+                                chevron_right
+                            </mat-icon>
+                            <div  class="adf-breadcrumb-item-current">{{ processName }}</div>
+                        </ng-container>
+                        <mat-icon class="adf-breadcrumb-item-chevron">
+                            chevron_right
+                        </mat-icon>
+                        <div class="adf-breadcrumb-item-current">{{ taskDetails?.name }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apa-task-details-toolbar-actions">
+                <adf-toolbar-divider />
+                <button mat-icon-button *ngIf="taskDetails"
+                    [attr.data-automation-id]="'toggle-full-screen-icon'"
+                    (click)="onFullScreen()"
+                    matTooltip="{{'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ACTIONS.FULL_SCREEN' | translate}}">
+                    <mat-icon>fullscreen</mat-icon>
+                </button>
+
+                <button mat-icon-button *ngIf="taskDetails"
+                    apaPrint
+                    [printTitle]="taskDetails.name"
+                    printSectionSelector="#adf-form-renderer"
+                    matTooltip="{{'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ACTIONS.PRINT' | translate}}">
+                    <mat-icon>print_outline</mat-icon>
+                </button>
+
+                <button mat-icon-button
+                    [attr.data-automation-id]="'toggle-info-drawer-icon'"
+                    [class.apa-selected-action]="showMetadata"
+                    (click)="showMetadata = !showMetadata"
+                    matTooltip="{{'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ACTIONS.INFO-TOOLTIP' | translate}}">
+                    <mat-icon>info_outline</mat-icon>
+                </button>
+                <button mat-icon-button
+                    [attr.data-automation-id]="'toggle-close-drawer-icon'"
+                    (click)="onCancelForm()"
+                    matTooltip="{{'PROCESS_CLOUD_EXTENSION.BREADCRUMB.ACTIONS.CLOSE-TOOLTIP' | translate}}">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </nav>
+    </app-page-layout-header>
+
+    <app-page-layout-content class="apa-task-details-page-layout-content">
+        <div class="apa-task-details-content">
+            <div class="apa-task-details-content-form">
+                <div class="app-main-content">
+                    <div class="adf-content-area">
+                        <div class="adf-content-border">
+                            <adf-cloud-user-task
+                                [appName]="appName"
+                                [displayModeConfigurations]="displayConfigurations"
+                                [showTitle]="false"
+                                [showValidationIcon]="false"
+                                [taskId]="taskId"
+                                [isNextTaskCheckboxChecked]="isNextTaskCheckboxChecked"
+                                [showNextTaskCheckbox]="showNextTaskCheckbox"
+                                [showCancelButton]="showCancelButton$ | async"
+                                [showSaveButton]="showSaveButton$ | async"
+                                [customCancelButtonText]="customCancelButtonText$ | async"
+                                [customCompleteButtonText]="customCompleteButtonText$ | async"
+                                [customSaveButtonText]="customSaveButtonText$ | async"
+                                (formLoaded)="formModel$.next($event)"
+                                (cancelClick)="onCancelForm()"
+                                (error)="onError($event)"
+                                (executeOutcome)="onExecuteOutcome($event)"
+                                (formContentClicked)="onFormContentClicked($event)"
+                                (formSaved)="onFormSaved()"
+                                (taskCompleted)="onCompleteTaskForm($event)"
+                                (taskUnclaimed)="navigateToSelectedFilter(currentFilter.id)"
+                                (onTaskLoaded)="onTaskDetailsLoaded($event)"
+                                (nextTaskCheckboxCheckedChanged)="onNextTaskCheckboxCheckedChanged($event)"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-container>
+                <apa-task-details-cloud-metadata
+                    *ngIf="showMetadata && !!taskDetails"
+                    [appName]="appName"
+                    [taskId]="taskDetails.id" />
+            </ng-container>
+        </div>
+
+    </app-page-layout-content>
+</app-page-layout>

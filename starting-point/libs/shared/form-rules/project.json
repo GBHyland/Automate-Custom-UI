@@ -1,0 +1,44 @@
+{
+    "name": "shared-form-rules",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/form-rules/src",
+    "prefix": "alfresco-dbp",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/libs/shared-form-rules"],
+            "options": {
+                "project": "libs/shared/form-rules/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/shared/form-rules/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/shared/form-rules/tsconfig.lib.json"
+                },
+                "adf": {
+                    "tsConfig": "libs/shared/form-rules/tsconfig.lib.adf.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "lint": {},
+        "test": {
+            "executor": "@nx/jest:jest",
+            "options": {
+                "jestConfig": "{projectRoot}/jest.config.ts",
+                "passWithNoTests": false
+            },
+            "configurations": {
+                "adf": {
+                    "jestConfig": "{projectRoot}/jest.adf.config.ts",
+                    "codeCoverage": false,
+                    "silent": true
+                }
+            }
+        }
+    },
+    "tags": ["scope:shared-form-rules", "category:shared-form-rules", "category:shared-unit"]
+}

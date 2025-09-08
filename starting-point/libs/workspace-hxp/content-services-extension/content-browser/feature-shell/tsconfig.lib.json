@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../../../dist/out-tsc",
+        "declaration": true,
+        "declarationMap": true,
+        "inlineSources": true,
+        "types": []
+    },
+    "exclude": ["src/test.ts", "**/*.spec.ts", "**/*.test.ts"],
+    "include": ["**/*.ts", "../../shared/upload/feature-shell/src/lib/services/upload-dialog.service.ts", "../../shared/upload/feature-shell/src/lib/services/upload-manager.service.spec.ts", "../../shared/upload/feature-shell/src/lib/services/upload-manager.service.ts", "../../shared/upload/feature-shell/src/lib/services/upload-snackbar.service.ts"]
+}

@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Определения процесса недоступны",
+      "UNCATEGORIZED": "Без категории",
+      "RECENT_PROCESS_DEFINITIONS": "Недавно использованные"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Расширения: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Включить расширения Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Управление процессами",
+      "START_PROCESS_CLOUD": "Запустить процесс",
+      "TASK_LIST_CLOUD": "Список задач",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Просмотреть сведения",
+        "CLOSE-TOOLTIP": "Закрыть",
+        "PRINT": "Распечатать форму"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Запустить процесс",
+      "CREATE_PROCESS_NOT_ALLOWED": "Нельзя создать новый процесс"
+    },
+    "ERROR": {
+      "NO_FORM": "Определение процесса не имеет определенной формы",
+      "CAN_NOT_ATTACH": "Не удалось прикрепить выбранное содержимое"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Процесс создан '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Произошла неизвестная ошибка сети. Функции, связанные с Process Automation, отключены."
+    },
+    "SIDE_NAV_TITLE": "Управление процессами",
+    "TASK_LIST": {
+      "TASKS": "Задачи",
+      "ACTIONS": {
+        "TASK_DETAILS": "Просмотреть сведения",
+        "PROCESS_HISTORY": "История процессов"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Сменить получателя назначения",
+        "CLOSE": "Закрыть",
+        "ASSIGN": "Назначить",
+        "SUCCESS": "Получатель назначения задачи успешно сменен",
+        "FAILED": "Мы столкнулись с проблемой при назначении пользователя. Повторите попытку назначения пользователя."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Сведения"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Процессы",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Просмотреть сведения",
+        "CANCEL_MESSAGE": "Процесс был отменен",
+        "CANCEL_ERROR_MESSAGE": "Не удалось отменить процесс. Повторите попытку",
+        "CANCEL_TOOLTIP": "Отменить процесс"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Запущено пользователем"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Фильтр сохранен",
+      "FILTER_DELETED": "Фильтр удален"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Задача выполнена",
+      "FORM_SAVED": "Форма сохранена",
+      "FORM_ACTION": "Действие '{{ outcome }}'"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Фильтр сохранен",
+      "FILTER_DELETED": "Фильтр удален"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Отменить процесс",
+        "MESSAGE": "Вы уверены, что хотите отменить этот процесс?"
+      },
+      "NEW_PROCESS": "Новый процесс",
+      "CONFIRM": "Подтвердить",
+      "CLOSE": "Закрыть",
+      "ERROR": "Не удалось загрузить определения процесса, проверьте, есть ли у вас доступ."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "Задача {{taskName}} была назначена {{assignee}}",
+    "TASK_COMPLETED": "{{taskName}} задача завершена",
+    "TASK_ACTIVATED": "Задача {{taskName}} теперь активна",
+    "TASK_CANCELLED": "Задача {{taskName}} отменена",
+    "TASK_SUSPENDED": "Задача {{taskName}} приостановлена",
+    "TASK_UPDATED": "Сведения о задаче {{taskName}} обновлены"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Поиск"
+    }
+  }
+}

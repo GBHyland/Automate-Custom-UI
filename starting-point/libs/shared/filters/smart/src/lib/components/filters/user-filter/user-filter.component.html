@@ -1,0 +1,23 @@
+<hxp-filter-chip
+    [label]="filter?.label || ''"
+    [suffix]="labelSuffix ? labelSuffix.label : null"
+    [chipCount]="labelSuffix ? labelSuffix.count : null"
+    cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+    (chipClick)="isMenuOpen = !isMenuOpen"
+    (removeIconClick)="removeFilter()"
+    [attr.data-automation-id]="filter?.name + '-filter-chip'"
+/>
+
+<ng-template
+    hxpFilterMenuOverlay
+    [overlayOrigin]="trigger"
+    [overlayOpen]="isMenuOpen"
+    (detach)="isMenuOpen = false"
+>
+    <hxp-user-filter-menu
+        [selectedUsers]="filter?.value || []"
+        [appName]="filter?.appName || ''"
+        (update)="onUpdate($event)"
+        data-automation-id="hxp-user-filter-menu"
+    />
+</ng-template>

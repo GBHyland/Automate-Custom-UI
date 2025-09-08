@@ -1,0 +1,124 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "Brak definicji procesu",
+      "UNCATEGORIZED": "Bez kategorii",
+      "RECENT_PROCESS_DEFINITIONS": "Ostatnio użyte"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Rozszerzenia: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Uruchom rozszerzenia Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Zarządzanie procesami",
+      "START_PROCESS_CLOUD": "Rozpocznij proces",
+      "TASK_LIST_CLOUD": "Lista zadań",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Wyświetl szczegóły",
+        "CLOSE-TOOLTIP": "Zamknij",
+        "PRINT": "Wydrukuj formularz",
+        "FULL_SCREEN": "Włącz tryb pełnoekranowy"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Rozpocznij proces",
+      "CREATE_PROCESS_NOT_ALLOWED": "Nie można utworzyć nowego procesu",
+      "REFRESH": "Odśwież"
+    },
+    "ERROR": {
+      "NO_FORM": "Definicja procesu nie zawiera zdefiniowanego formularza",
+      "CAN_NOT_ATTACH": "Nie można dołączyć wybranego dokumentu",
+      "START_PROCESS_ERROR": "Nie można uruchomić procesu – sprawdź jego konfigurację",
+      "TASK_CANNOT_BE_CLAIMED": "Nie można przyjąć zadania",
+      "UNEXPECTED_ERROR": "Wystąpił nieoczekiwany błąd"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Utworzono proces „{{ processName }}”",
+      "BACKEND_SERVICE_ERROR": "Wystąpił nieznany błąd sieci. Funkcje związane z aplikacją Process Automation są wyłączone.",
+      "NO_NEXT_TASK_AVAILABLE": "Brak następnego zadania do wykonania"
+    },
+    "SIDE_NAV_TITLE": "Zarządzanie procesami",
+    "TASK_LIST": {
+      "TASKS": "Zadania",
+      "ACTIONS": {
+        "TASK_DETAILS": "Wyświetl szczegóły",
+        "PROCESS_HISTORY": "Historia procesu"
+      },
+      "LIST_REFRESHED": "Strona została odświeżona",
+      "LIST_UPTO_DATE": "Strona jest aktualna"
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Zmień osobę przypisaną",
+        "CLOSE": "Zamknij",
+        "ASSIGN": "Przypisz",
+        "SUCCESS": "Osoba przypisana do zadania została zmieniona pomyślnie",
+        "FAILED": "Wystąpił problem podczas przypisywania użytkownika. Spróbuj przypisać użytkownika ponownie."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Szczegóły",
+      "WAITING_SCREEN": {
+        "MESSAGE": "Oczekiwanie na następne zadanie użytkownika...",
+        "CLOSE": "Zamknij"
+      }
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Procesy",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Wyświetl szczegóły",
+        "CANCEL_MESSAGE": "Proces został anulowany",
+        "CANCEL_ERROR_MESSAGE": "Nie udało się anulować procesu. Spróbuj ponownie",
+        "CANCEL_TOOLTIP": "Anuluj proces"
+      },
+      "TOOLTIP": {
+        "HEADER": "Procesy podrzędne"
+      },
+      "PROPERTIES": {
+        "RELATED_PROCESS": "Powiązany proces",
+        "SUBPROCESSES": "podprocesy",
+        "SUBPROCESS": "podproces",
+        "STARTED_BY": "Uruchomione przez"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Filtr został zapisany",
+      "FILTER_DELETED": "Filtr został usunięty"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Zadanie zostało ukończone",
+      "FORM_SAVED": "Formularz został zapisany",
+      "FORM_ACTION": "Czynność '{{ outcome }}'",
+      "DUPLICATE_CORRELATION_KEY": "Wykryto zduplikowany klucz korelacji. Skontaktuj się z administratorem systemu",
+      "UNAUTHORIZED": "Zadanie zostało już przypisane do innego użytkownika lub przejęte przez innego użytkownika"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Filtr został zapisany",
+      "FILTER_DELETED": "Filtr został usunięty"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Anuluj proces",
+        "MESSAGE": "Czy na pewno chcesz anulować ten proces?"
+      },
+      "NEW_PROCESS": "Nowy proces",
+      "CONFIRM": "Potwierdź",
+      "CLOSE": "Zamknij",
+      "ERROR": "Nie można wczytać definicji procesu. Sprawdź, czy masz dostęp."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "Zadanie {{taskName}} zostało przydzielone do {{assignee}}",
+    "TASK_COMPLETED": "Zadanie {{taskName}} zostało ukończone",
+    "TASK_ACTIVATED": "Zadanie {{taskName}} jest teraz aktywne",
+    "TASK_CANCELLED": "Zadanie {{taskName}} zostało anulowane",
+    "TASK_SUSPENDED": "Zadanie {{taskName}} zostało zawieszone",
+    "TASK_UPDATED": "Szczegóły zadania {{taskName}} zostały zaktualizowane",
+    "TASK_CLAIMED": "Zadanie {{taskName}} zostało przyjęte"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Szukaj"
+    }
+  }
+}

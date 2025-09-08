@@ -1,0 +1,24 @@
+<div class="hxp-skeleton-table-wrapper">
+    <table class="hxp-skeleton-table">
+        <thead>
+            <tr>
+                <th class="hxp-skeleton-checkbox-cell"><div class="hxp-skeleton-box hxp-skeleton-checkbox"></div></th>
+                <th class="hxp-skeleton-icon-cell"><div class="hxp-skeleton-box hxp-skeleton-icon"></div></th>
+                <th><div class="hxp-skeleton-box hxp-skeleton-header-70"></div></th>
+                <th><div class="hxp-skeleton-box hxp-skeleton-header-70"></div></th>
+                <th><div class="hxp-skeleton-box hxp-skeleton-header-100"></div></th>
+                <th><div class="hxp-skeleton-box hxp-skeleton-header-80"></div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of skeletonRowArray; trackBy: skeletonRowTrackBy">
+                <td class="hxp-skeleton-checkbox-cell"><div class="hxp-skeleton-box hxp-skeleton-checkbox"><input type="checkbox" disabled></div></td>
+                <td class="hxp-skeleton-icon-cell"><div class="hxp-skeleton-box hxp-skeleton-icon"></div></td>
+                <td><div class="hxp-skeleton-box hxp-skeleton-text-100"></div></td>
+                <td><div class="hxp-skeleton-box hxp-skeleton-text-100"></div></td>
+                <td><div class="hxp-skeleton-box hxp-skeleton-text-50"></div></td>
+                <td><div class="hxp-skeleton-box hxp-skeleton-small"></div></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

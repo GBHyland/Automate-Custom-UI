@@ -1,0 +1,216 @@
+<hxp-search-filter-container
+    #searchFilter
+    [name]="'SEARCH.FILTERS.CREATED_DATE.LABEL' | translate"
+    [filterForm]="filterForm"
+    [selectedValue]="selectedValue"
+    (filterApplied)="applyFilter()"
+    (filterCleared)="clearFilter()"
+    (overlayClosed)="overlayClosed()"
+>
+    <div class="hxp-created-date-filter-container">
+        <mat-selection-list
+            id="hxp-created-data-filter-default-options-list"
+            multiple="false"
+            hideSingleSelectionIndicator
+            [attr.aria-label]="
+                'SEARCH.FILTERS.CREATED_DATE.ARIA-LABEL.DEFAULT_OPTIONS_LIST'
+                    | translate
+            "
+        >
+            <mat-list-option
+                *ngFor="let option of defaultCreatedDateOptions"
+                id="{{ option.date }}"
+                [class.hxp-created-date-filter-option_active]="this.filterForm.value.defaultOption?.values[0].date === option.date"
+                class="hxp-created-date-filter-option"
+                (click)="createdDateValueChanged(option)"
+                [value]="option.label"
+                [attr.aria-label]="option.label | translate"
+            >
+                <span>
+                    {{ option.label | translate }}
+                </span>
+            </mat-list-option>
+        </mat-selection-list>
+
+        <mat-divider />
+
+        <button
+            class="hxp-created-date-filter-custom-date-button"
+            *ngIf="!filterForm.value.isCustomDate; else customDateRange"
+            mat-menu-item
+            (click)="enableCustomDate($event)"
+        >
+            <mat-icon aria-hidden="true">add</mat-icon>
+            <span class="mat-body-1">
+                {{
+                    'SEARCH.FILTERS.CREATED_DATE.OPTIONS.CUSTOM_DATE.LABEL'
+                    | translate
+                }}
+            </span>
+        </button>
+
+        <ng-template #customDateRange>
+            <div class="hxp-custom-created-date">
+                <label
+                    id="hxp-after-created-date-picker-label"
+                    for="hxp-after-created-date-picker-input"
+                >
+                    {{
+                        'SEARCH.FILTERS.CREATED_DATE.OPTIONS.CUSTOM_DATE.VALUES.AFTER'
+                            | translate
+                    }}
+                </label>
+                <mat-form-field
+                    appearance="outline"
+                    [class.hxp-custom-created-date_active]="afterPicker.opened"
+                >
+                    <input
+                        #afterDateInput
+                        id="hxp-after-created-date-picker-input"
+                        aria-labelledby="hxp-after-created-date-picker-label"
+                        placeholder="MM/DD/YYYY"
+                        matInput
+                        [(ngModel)]="filterForm.value.afterDate"
+                        (click)="afterPicker.open()"
+                        [matDatepicker]="afterPicker"
+                        [matDatepickerFilter]="afterDateFilter"
+                        (dateChange)="afterDateChanged($event)"
+                        (keypress)="validateInput($event)"
+                        (input)="afterDateInputSubject.next()"
+                    />
+                    <mat-error
+                        *ngIf="
+                            filterForm.get('afterDate')?.errors?.['afterDateTooLate']
+                        "
+                        class="hxp-custom-created-date-error mat-caption"
+                    >
+                        {{
+                            'SEARCH.FILTERS.CREATED_DATE.ERRORS.AFTER_DATE_TOO_LATE'
+                                | translate
+                        }}
+                    </mat-error>
+                    <mat-error
+                        *ngIf="
+                            filterForm.get('afterDate')?.errors
+                                ?.['invalidDateFormat']
+                        "
+                        class="hxp-custom-created-date-error"
+                    >
+                        {{
+                            'SEARCH.FILTERS.CREATED_DATE.ERRORS.INVALID_DATE_FORMAT'
+                                | translate
+                        }}
+                    </mat-error>
+
+                    <div class="hxp-created-date-picker-suffix" matSuffix>
+                        <button
+                            *ngIf="afterDateInput.value"
+                            mat-icon-button
+                            [attr.aria-label]="
+                                'SEARCH.FILTERS.CREATED_DATE.BUTTON.CLEAR.ARIA_LABEL.AFTER'
+                                    | translate
+                            "
+                            (click)="clearAfterDate($event)"
+                        >
+                            <mat-icon> close </mat-icon>
+                        </button>
+
+                        <mat-datepicker-toggle
+                            [for]="afterPicker"
+                            data-automation-id="hxp-after-created-date-toggle"
+                        >
+                            <mat-icon
+                                class="hxp-custom-data-calendar-icon"
+                                matDatepickerToggleIcon
+                                svgIcon="search_calendar"
+                            />
+                        </mat-datepicker-toggle>
+                    </div>
+                    <mat-datepicker #afterPicker />
+                </mat-form-field>
+            </div>
+
+            <div class="hxp-custom-created-date">
+                <label
+                    id="hxp-before-created-date-picker-label"
+                    for="hxp-before-created-date-picker-input"
+                >
+                    {{
+                        'SEARCH.FILTERS.CREATED_DATE.OPTIONS.CUSTOM_DATE.VALUES.BEFORE'
+                            | translate
+                    }}
+                </label>
+
+                <mat-form-field
+                    appearance="outline"
+                    [class.hxp-custom-created-date_active]="beforePicker.opened"
+                >
+                    <input
+                        #beforeDateInput
+                        id="hxp-before-created-date-picker-input"
+                        aria-labelledby="hxp-before-created-date-picker-label"
+                        placeholder="MM/DD/YYYY"
+                        matInput
+                        [(ngModel)]="filterForm.value.beforeDate"
+                        (click)="beforePicker.open()"
+                        [matDatepicker]="beforePicker"
+                        [matDatepickerFilter]="beforeDateFilter"
+                        (dateChange)="beforeDateChanged($event)"
+                        (keypress)="validateInput($event)"
+                        (input)="beforeDateInputSubject.next()"
+                    />
+                    <mat-error
+                        *ngIf="
+                            filterForm.get('beforeDate')?.errors
+                                ?.['beforeDateTooEarly']
+                        "
+                        class="hxp-custom-created-date-error"
+                    >
+                        {{
+                            'SEARCH.FILTERS.CREATED_DATE.ERRORS.BEFORE_DATE_TOO_EARLY'
+                                | translate
+                        }}
+                    </mat-error>
+                    <mat-error
+                        *ngIf="
+                            filterForm.get('beforeDate')?.errors
+                                ?.['invalidDateFormat']
+                        "
+                        class="hxp-custom-created-date-error"
+                    >
+                        {{
+                            'SEARCH.FILTERS.CREATED_DATE.ERRORS.INVALID_DATE_FORMAT'
+                                | translate
+                        }}
+                    </mat-error>
+
+                    <div class="hxp-created-date-picker-suffix" matSuffix>
+                        <button
+                            *ngIf="beforeDateInput.value"
+                            mat-icon-button
+                            [attr.aria-label]="
+                                'SEARCH.FILTERS.CREATED_DATE.BUTTON.CLEAR.ARIA_LABEL.BEFORE'
+                                    | translate
+                            "
+                            (click)="clearBeforeDate($event)"
+                        >
+                            <mat-icon>close</mat-icon>
+                        </button>
+
+                        <mat-datepicker-toggle
+                            [for]="beforePicker"
+                            data-automation-id="hxp-before-created-date-toggle"
+                        >
+                            <mat-icon
+                                class="hxp-custom-data-calendar-icon"
+                                matDatepickerToggleIcon
+                                svgIcon="search_calendar"
+                            />
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #beforePicker />
+                    </div>
+                </mat-form-field>
+            </div>
+        </ng-template>
+    </div>
+</hxp-search-filter-container>

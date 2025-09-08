@@ -1,0 +1,20 @@
+{
+  "SHARED_IDENTITY": {
+    "GROUPS": {
+      "SEARCH-GROUP": "Grupper",
+      "MANDATORY": "Obligatoriskt",
+      "ERROR": {
+        "NOT_FOUND": "Ingen grupp hittades med namnet {{groupName}}"
+      }
+    },
+    "PEOPLE": {
+      "ERROR": {
+        "INVALID_PATTERN": "Måste matcha mönstret {{pattern}}",
+        "INVALID_MIN_LENGTH": "Måste vara minst {{requiredLength}} tecken",
+        "INVALID_MAX_LENGTH": "Längd överskriden, högst {{requiredLength}} tecken",
+        "REQUIRED": "Detta är ett obligatoriskt fält",
+        "NOT_FOUND": "Ingen användare hittades med användarnamnet {{userName}}"
+      }
+    }
+  }
+}

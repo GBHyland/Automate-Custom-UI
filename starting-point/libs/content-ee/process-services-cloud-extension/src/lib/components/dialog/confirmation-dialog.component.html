@@ -1,0 +1,20 @@
+<div mat-dialog-title>{{ data?.title | translate}}</div>
+<mat-dialog-content>{{ data?.message | translate }}</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button
+        mat-button
+        class="hxp-text-button"
+        [mat-dialog-close]="false"
+        data-automation-id="apa-dialog-confirmation-no"
+    >
+        {{ 'PROCESS_CLOUD_EXTENSION.DIALOG.CLOSE' | translate }}
+    </button>
+    <button
+        mat-button
+        class="hxp-primary-button"
+        data-automation-id="apa-dialog-confirmation-yes"
+        [mat-dialog-close]="true"
+    >
+        {{ data?.action | translate }}
+    </button>
+</mat-dialog-actions>

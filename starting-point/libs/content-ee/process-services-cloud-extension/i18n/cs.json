@@ -1,0 +1,103 @@
+{
+  "SHARED": {
+    "PROCESSES_LIST": {
+      "NO_PROCESS_DEFINITIONS": "K dispozici nejsou žádné definice procesů",
+      "UNCATEGORIZED": "Nekategorizováno",
+      "RECENT_PROCESS_DEFINITIONS": "Nedávno použité"
+    }
+  },
+  "PROCESS_CLOUD_EXTENSION": {
+    "SETTINGS": {
+      "PSC_AVAILABILITY_HEADER": "Rozšíření: Process Automation",
+      "PSC_AVAILABILITY_TITLE": "Povolit rozšíření aplikace Process Automation"
+    },
+    "BREADCRUMB": {
+      "ROOT": "Správa procesů",
+      "START_PROCESS_CLOUD": "Zahájit proces",
+      "TASK_LIST_CLOUD": "Seznam úkolů",
+      "ACTIONS": {
+        "INFO-TOOLTIP": "Zobrazit podrobnosti",
+        "CLOSE-TOOLTIP": "Zavřít",
+        "PRINT": "Tisknout formulář"
+      }
+    },
+    "MENU": {
+      "CREATE_NEW_PROCESS": "Zahájit proces",
+      "CREATE_PROCESS_NOT_ALLOWED": "Nelze vytvořit nový proces"
+    },
+    "ERROR": {
+      "NO_FORM": "Definice procesu nemá definovaný formulář",
+      "CAN_NOT_ATTACH": "Nelze připojit vybraný obsah"
+    },
+    "SNACKBAR": {
+      "PROCESS-CREATED": "Vytvořený proces '{{ processName }}'",
+      "BACKEND_SERVICE_ERROR": "Došlo k neznámé chybě sítě. Funkce související s aplikací Process Automation jsou zakázány."
+    },
+    "SIDE_NAV_TITLE": "Správa procesů",
+    "TASK_LIST": {
+      "TASKS": "Úkoly",
+      "ACTIONS": {
+        "TASK_DETAILS": "Zobrazit podrobnosti",
+        "PROCESS_HISTORY": "Historie procesu"
+      }
+    },
+    "TASK_DETAILS": {
+      "ASSIGNEE": {
+        "TITLE": "Změnit pověřenou osobu",
+        "CLOSE": "Zavřít",
+        "ASSIGN": "Přiřadit",
+        "SUCCESS": "Osoba pověřená úkolem byla úspěšně změněna.",
+        "FAILED": "Vyskytl se problém při přiřazování uživatele. Zkuste uživatele přiřadit znovu."
+      },
+      "INFO_DRAWER_TAB_DETAILS_TITLE": "Podrobnosti"
+    },
+    "PROCESS_LIST": {
+      "PROCESSES": "Procesy",
+      "ACTIONS": {
+        "PROCESS_DETAILS": "Zobrazit podrobnosti",
+        "CANCEL_MESSAGE": "Proces byl zrušen.",
+        "CANCEL_ERROR_MESSAGE": "Zrušení procesu se nezdařilo. Zkuste to znovu.",
+        "CANCEL_TOOLTIP": "Zrušit proces"
+      },
+      "PROPERTIES": {
+        "STARTED_BY": "Zahájil(a)"
+      }
+    },
+    "PROCESS_FILTER": {
+      "FILTER_SAVED": "Filtr byl uložen",
+      "FILTER_DELETED": "Filtr byl odstraněn"
+    },
+    "TASK_FORM": {
+      "FORM_COMPLETED": "Úkol byl dokončen",
+      "FORM_SAVED": "Formulář byl uložen",
+      "FORM_ACTION": "Akce „{{ outcome }}“"
+    },
+    "TASK_FILTER": {
+      "FILTER_SAVED": "Filtr byl uložen",
+      "FILTER_DELETED": "Filtr byl odstraněn"
+    },
+    "DIALOG": {
+      "PROCESS": {
+        "TITLE": "Zrušit proces",
+        "MESSAGE": "Opravdu chcete tento proces zrušit?"
+      },
+      "NEW_PROCESS": "Nový proces",
+      "CONFIRM": "Potvrdit",
+      "CLOSE": "Zavřít",
+      "ERROR": "Definice procesu se nepodařilo načíst. Zkontrolujte svá přístupová oprávnění."
+    }
+  },
+  "NOTIFICATIONS": {
+    "TASK_ASSIGNED": "Úkol {{taskName}} byl přiřazen uživateli {{assignee}}",
+    "TASK_COMPLETED": "Úkol {{taskName}} byl dokončen",
+    "TASK_ACTIVATED": "Úkol {{taskName}} je nyní aktivní",
+    "TASK_CANCELLED": "Úkol {{taskName}} byl zrušen",
+    "TASK_SUSPENDED": "Úkol {{taskName}} byl pozastaven",
+    "TASK_UPDATED": "Podrobnosti úkolu {{taskName}} byly aktualizovány"
+  },
+  "SEARCH_PROCESS": {
+    "INPUT": {
+      "PLACEHOLDER": "Hledat"
+    }
+  }
+}

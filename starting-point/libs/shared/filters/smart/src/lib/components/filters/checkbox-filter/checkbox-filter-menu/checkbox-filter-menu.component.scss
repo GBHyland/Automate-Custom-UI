@@ -1,0 +1,64 @@
+.hxp-checkbox-filter-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px !important;
+    background-color: var(--theme-card-background-color);
+    box-shadow: var(--adf-filter-menu-box-shadow);
+    border-radius: 8px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-height: 258px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 0 8px 8px;
+    }
+
+    &__list-item {
+        display: flex;
+        flex-direction: row;
+        margin-left: 8px;
+    }
+
+
+    &__select-all {
+        box-sizing: border-box;
+        padding: 8px 8px 0;
+    }
+
+    &__divider {
+        width: 100%;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    &__clear-selection-button {
+        border: 0;
+    }
+}

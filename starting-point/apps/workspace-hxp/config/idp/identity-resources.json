@@ -1,0 +1,249 @@
+{
+    "Apps": {
+        "hxprApp": {
+            "AppKey": "hxprApp",
+            "Subscriptions": {
+                "subscription1": {
+                    "SubscriptionId": "5714d708-b092-7430-3f8d-583f4bdca111",
+                    "EnvironmentId": "5714d708-b092-7430-3f8d-583f4bdca222",
+                    "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247"
+                }
+            }
+        }
+    },
+    "Clients": [
+        {
+            "ClientId": "nuxeo-client",
+            "ClientName": "Nuxeo Repository",
+            "AllowedScopes": [
+                "profile",
+                "test-api",
+                "openid",
+                "email",
+                "memberOf",
+                "offline_access",
+                "hxp",
+                "hxpr",
+                "environment_authorization"
+            ],
+            "AllowedGrantTypes": [
+                "refresh_token",
+                "password",
+                "client_credentials",
+                "implicit",
+                "subscription_token_exchange_v2"
+            ],
+            "ClientSecrets": [
+                {
+                    "Value": "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=",
+                    "Type": "SharedSecret"
+                }
+            ],
+            "RedirectUris": [
+                "http://127.0.0.1:8080/nuxeo/ui/?provider=HxPIDP&forceAnonymousLogin=true",
+                "http://localhost:8081",
+                "http://localhost:5000/#!/",
+                "http://localhost:4200/",
+                "http://localhost:4200/view/authentication-confirmation",
+                "http://localhost:4200/view/auth-confirmation",
+                "http://localhost:4200/#/view/authentication-confirmation/?"
+            ],
+            "PostLogoutRedirectUris": [
+                "http://localhost:4200/view/unauthenticated"
+            ],
+            "AllowedCorsOrigins": [
+                "http://localhost:8081",
+                "http://localhost:5000",
+                "http://localhost:4200"
+            ],
+            "AllowOfflineAccess": true,
+            "AllowAccessTokensViaBrowser": true,
+            "RequireClientSecret": false,
+            "RequireConsent": false,
+            "AlwaysSendClientClaims": true
+        }
+    ],
+    "Users": [
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "UserName": "repoadmin",
+            "PasswordHash": "AQAAAAEAACcQAAAAEK64mxvfBWFt0QUDqowMnwJ3mSDNALbj61nII6QBtvbIBDaYPQBpLDlVrPR7N3wNuQ==",
+            "Email": "repoadmin@example.com",
+            "Claims": [
+                {
+                    "Type": "name",
+                    "Value": "repoadmin"
+                },
+                {
+                    "Type": "given_name",
+                    "Value": "repoadmin"
+                },
+                {
+                    "Type": "family_name",
+                    "Value": "repoadmin"
+                },
+                {
+                    "Type": "email",
+                    "Value": "repoadmin@example.com"
+                },
+                {
+                    "Type": "hxp_account",
+                    "Value": "5714d708-b092-7430-3f8d-583f4bdca247"
+                },
+                {
+                    "Type": "hxp_subscription",
+                    "Value": "5714d708efcafb48aa21bc94e7eebb2b"
+                }
+            ]
+        },
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "UserName": "hruser",
+            "PasswordHash": "AQAAAAEAACcQAAAAEK64mxvfBWFt0QUDqowMnwJ3mSDNALbj61nII6QBtvbIBDaYPQBpLDlVrPR7N3wNuQ==",
+            "Email": "hruser@example.com",
+            "Claims": [
+                {
+                    "Type": "name",
+                    "Value": "hr"
+                },
+                {
+                    "Type": "given_name",
+                    "Value": "hr"
+                },
+                {
+                    "Type": "family_name",
+                    "Value": "hr"
+                },
+                {
+                    "Type": "email",
+                    "Value": "hruser@example.com"
+                },
+                {
+                    "Type": "hxp_account",
+                    "Value": "5714d708-b092-7430-3f8d-583f4bdca247"
+                },
+                {
+                    "Type": "hxp_subscription",
+                    "Value": "5714d708efcafb48aa21bc94e7eebb2b"
+                }
+            ]
+        },
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "UserName": "salesuser",
+            "PasswordHash": "AQAAAAEAACcQAAAAEK64mxvfBWFt0QUDqowMnwJ3mSDNALbj61nII6QBtvbIBDaYPQBpLDlVrPR7N3wNuQ==",
+            "Email": "salesuser@example.com",
+            "Claims": [
+                {
+                    "Type": "name",
+                    "Value": "salesuser"
+                },
+                {
+                    "Type": "given_name",
+                    "Value": "salesuser"
+                },
+                {
+                    "Type": "family_name",
+                    "Value": "salesuser"
+                },
+                {
+                    "Type": "email",
+                    "Value": "salesuser@example.com"
+                },
+                {
+                    "Type": "hxp_account",
+                    "Value": "5714d708-b092-7430-3f8d-583f4bdca247"
+                },
+                {
+                    "Type": "hxp_subscription",
+                    "Value": "5714d708efcafb48aa21bc94e7eebb2b"
+                }
+            ]
+        }
+    ],
+    "UserGroups": [
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "Name": "sales",
+            "Users": ["salesuser"]
+        },
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "Name": "hr",
+            "Users": ["hruser"]
+        },
+        {
+            "AccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+            "Name": "Repository Admin",
+            "Users": ["repoadmin"]
+        }
+    ],
+    "ApiResources": [
+        {
+            "Name": "hxpr",
+            "Scopes": [
+                { "Name": "hxpr" },
+                { "Name": "environment_authorization" }
+            ],
+            "UserClaims": [
+                "hxp_subscription",
+                "hxp_environment",
+                "role",
+                "permission"
+            ]
+        }
+    ],
+    "Permissions": [
+        {
+            "ApiResourceName": "hxpr",
+            "Key": "hxpr.manage.everything",
+            "Name": "HxPR Manage Everything Permission",
+            "ContextType": "Environment"
+        }
+    ],
+    "Roles": [
+        {
+            "AppKey": "hxprApp",
+            "Name": "HxPR Administrator",
+            "Key": "hxpr.administrator",
+            "RolePermissions": ["hxpr.manage.everything"],
+            "AppliedRoleUserGroups": [
+                {
+                    "AppKey": "hxprApp",
+                    "GroupAccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+                    "GroupName": "Repository Admin",
+                    "AppliedAuthorizationContext": {
+                        "ContextType": "Environment",
+                        "ContextId": "5714d708-b092-7430-3f8d-583f4bdca222"
+                    }
+                }
+            ]
+        },
+        {
+            "AppKey": "hxprApp",
+            "Name": "HxPR Member",
+            "Key": "hxpr.member",
+            "RolePermissions": [],
+            "AppliedRoleUserGroups": [
+                {
+                    "AppKey": "hxprApp",
+                    "GroupAccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+                    "GroupName": "hr",
+                    "AppliedAuthorizationContext": {
+                        "ContextType": "Account",
+                        "ContextId": "5714d708-b092-7430-3f8d-583f4bdca222"
+                    }
+                },
+                {
+                    "AppKey": "hxprApp",
+                    "GroupAccountId": "5714d708-b092-7430-3f8d-583f4bdca247",
+                    "GroupName": "sales",
+                    "AppliedAuthorizationContext": {
+                        "ContextType": "Account",
+                        "ContextId": "5714d708-b092-7430-3f8d-583f4bdca222"
+                    }
+                }
+            ]
+        }
+    ]
+}

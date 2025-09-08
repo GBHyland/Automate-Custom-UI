@@ -1,0 +1,14 @@
+{
+  "name": "@alfresco/adf-hx-content-services/icons",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=16.2.0",
+    "@angular/core": ">=16.2.0",
+    "@alfresco/adf-core": ">=7.0.0-alpha.2-0",
+    "@angular/material": ">=16.2.9",
+    "@angular/platform-browser": ">=16.2.9",
+    "@ngx-translate/core": ">=16.0.0"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}

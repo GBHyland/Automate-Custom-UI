@@ -1,0 +1,42 @@
+.idp-viewer-toolbar {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    &.idp-top-bottom {
+        flex-direction: row;
+    }
+
+    &.idp-left-right {
+        flex-direction: column;
+        overflow: hidden auto;
+    }
+    &__container {
+        display: flex;
+        flex-direction: inherit;
+        align-items: center;
+        width: 3.5em;
+        gap: 1em;
+        box-sizing: border-box;
+        flex: 1 1 auto;
+
+        &-start {
+            flex-direction: inherit;
+            justify-content: flex-start;
+            flex-basis: 45%;
+        }
+
+        &-middle {
+            flex-direction: inherit;
+            justify-content: center;
+            flex-basis: 30%;
+        }
+
+        &-end {
+            flex-direction: inherit;
+            justify-content: flex-end;
+            flex-basis: 25%;
+        }
+    }
+}

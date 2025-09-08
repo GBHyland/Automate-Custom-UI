@@ -1,0 +1,162 @@
+{
+    "HXP_FILE_UPLOAD": {
+        "BUTTON": {
+            "MINIMIZE": "Minimize",
+            "MAXIMIZE": "Maximize",
+            "CLOSE": "Close",
+            "STOP_ALL": "Stop uploads",
+            "STOP_FILE": "Stop upload",
+            "UPLOAD_SUCCESSFUL": "Upload successful"
+        },
+        "STATUS": {
+            "FILE_CANCELED_STATUS": "Canceled",
+            "FILE_DONE_STATUS": "Uploaded"
+        },
+        "CONFIRMATION": {
+            "BUTTON": {
+                "CANCEL": "Yes",
+                "CONTINUE": "No"
+            },
+            "MESSAGE": {
+                "TITLE": "Stop Upload",
+                "TEXT": "Stop and cancel all in-progress and pending uploads."
+            }
+        },
+        "ARIA-LABEL": {
+            "VERSION": "File version {{ version }}",
+            "DIALOG": "Upload list",
+            "DIALOG_MAXIMIZE": "Maximize upload dialog",
+            "DIALOG_MINIMIZE": "Minimize upload dialog",
+            "DIALOG_CLOSE": "Close upload dialog",
+            "STOP_ALL": "Stop uploads",
+            "UPLOAD_SUCCESSFUL": "Uploaded successfully file {{ file }}",
+            "STOP_FILE": "Stop file {{ file }}",
+            "STOP_FILE_UPLOAD": "Stop file upload {{ file }}",
+            "UPLOAD_FILE_ERROR": "Upload error {{ error }}",
+            "CONFIRMATION": {
+                "CANCEL": "Confirm cancel",
+                "CONTINUE": "Continue upload"
+            }
+        }
+    },
+    "FILE_UPLOAD": {
+        "BUTTON": {
+            "UPLOAD_FILE": "Upload file",
+            "UPLOAD_FOLDER": "Upload folder",
+            "PERMISSION_CHECK_ERROR": "Error checking permission."
+        },
+        "VERSION": {
+            "MESSAGES": {
+                "NO_ACCEPTED_FILE_TYPES": "Please note that the setting of \"acceptedFilesType\" has no effect for new version uploads. The file type will be the same as the original file's.",
+                "INCOMPATIBLE_VERSION": "Only a file of the same type may be uploaded as a new version."
+            }
+        },
+        "MESSAGES": {
+            "UPLOAD_CANCELED": "Upload canceled",
+            "UPLOAD_PROGRESS": "Uploaded {{ completed }} / {{ total }}",
+            "UPLOAD_ERROR": "{{ total }} upload unsuccessful",
+            "UPLOAD_ERRORS": "{{ total }} uploads unsuccessful",
+            "PROGRESS": "Upload in progress...",
+            "FOLDER_ALREADY_EXIST": "The folder {0} already exists",
+            "FOLDER_NOT_SUPPORTED": "Folder upload isn't supported by your browser, try a different browser",
+            "REMOVE_FILE_ERROR": "{{ fileName }} couldn't be removed, try again or check with your IT Team.",
+            "REMOVE_FILES_ERROR": "{{ total }} files couldn't be removed, try again or check with your IT Team.",
+            "EXCEED_MAX_FILE_SIZE": "File {{ fileName }} is larger than the allowed file size"
+        },
+        "ACTION": {
+            "UNDO": "Undo"
+        },
+        "ERRORS": {
+            "GENERIC": "Upload unsuccessful. Contact IT if this problem persists",
+            "500": "Internal server error, try again or contact IT support [500]",
+            "504": "The server timed out, try again or contact IT support [504]",
+            "403": "Insufficient permissions to upload in this location [403]",
+            "404": "Upload location no longer exists [404]",
+            "409": "A file with the same name already exists [409]"
+        },
+        "ARIA-LABEL": {
+            "ERROR": "Upload error"
+        }
+    },
+    "PROCESS_CLOUD_EXTENSION": {
+        "SETTINGS": {
+            "PSC_AVAILABILITY_HEADER": "Extensions: Process Automation",
+            "PSC_AVAILABILITY_TITLE": "Enable Process Automation Extensions"
+        },
+        "BREADCRUMB": {
+            "ROOT": "Process Management",
+            "START_PROCESS_CLOUD": "Start Process",
+            "TASK_LIST_CLOUD": "Task List",
+            "ACTIONS": {
+                "INFO-TOOLTIP": "View Details",
+                "CLOSE-TOOLTIP": "Close",
+                "PRINT": "Print Form"
+            }
+        },
+        "MENU": {
+            "CREATE_NEW_PROCESS": "Start Process",
+            "CREATE_PROCESS_NOT_ALLOWED": "New process can not be created"
+        },
+        "ERROR": {
+            "NO_FORM": "Process definition does not have a form defined",
+            "CAN_NOT_ATTACH": "Not able to attach the selected content"
+        },
+        "SNACKBAR": {
+            "PROCESS-CREATED": "Process created '{{ processName }}'",
+            "BACKEND_SERVICE_ERROR": "Unknown network error happened. Process Automation related features are disabled."
+        },
+        "SIDE_NAV_TITLE": "Process Management",
+        "TASK_LIST": {
+            "TASKS": "Tasks",
+            "ACTIONS": {
+                "TASK_DETAILS": "View Details",
+                "PROCESS_HISTORY": "Process History"
+            }
+        },
+        "TASK_DETAILS": {
+            "ASSIGNEE": {
+                "TITLE": "Change Assignee",
+                "CLOSE": "Close",
+                "ASSIGN": "Assign",
+                "SUCCESS": "Task assignee changed successfully",
+                "FAILED": "We hit a problem assigning the user. Try assigning the user again."
+            },
+            "INFO_DRAWER_TAB_DETAILS_TITLE": "Details"
+        },
+        "PROCESS_LIST": {
+            "PROCESSES": "Processes",
+            "ACTIONS": {
+                "PROCESS_DETAILS": "View Details",
+                "CANCEL_MESSAGE": "Process has been cancelled",
+                "CANCEL_ERROR_MESSAGE": "Failed to cancel process. Please try again",
+                "CANCEL_TOOLTIP": "Cancel process"
+            },
+            "PROPERTIES": {
+                "STARTED_BY": "Started By"
+            }
+        },
+        "PROCESS_FILTER": {
+            "FILTER_SAVED": "The filter has been saved",
+            "FILTER_DELETED": "The filter has been deleted"
+        },
+        "TASK_FORM": {
+            "FORM_COMPLETED": "The task has been completed",
+            "FORM_SAVED": "The form has been saved",
+            "FORM_ACTION": "Action '{{ outcome }}'"
+        },
+        "TASK_FILTER": {
+            "FILTER_SAVED": "The filter has been saved",
+            "FILTER_DELETED": "The filter has been deleted"
+        },
+        "DIALOG": {
+            "PROCESS": {
+                "TITLE": "Cancel process",
+                "MESSAGE": "Are you sure you want to cancel this process?"
+            },
+            "NEW_PROCESS": "New Process",
+            "CONFIRM": "Confirm",
+            "CLOSE": "Close",
+            "ERROR": "Couldn't load process definitions, check you have access."
+        }
+    }
+}

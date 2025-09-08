@@ -1,0 +1,26 @@
+{
+    "name": "workspace-hxp-playwright-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "e2es/workspace-hxp-playwright",
+    "projectType": "library",
+    "tags": ["scope:workspace-hxp-playwright-e2e", "type:e2e-wrapper", "category:workspace-hxp-e2e", "cloud-content"],
+    "implicitDependencies": [
+        "workspace-hxp-playwright-app-shell-e2e",
+        "workspace-hxp-playwright-navigation-e2e",
+        "workspace-hxp-playwright-document-details-e2e",
+        "workspace-hxp-playwright-governance-e2e",
+        "workspace-hxp-playwright-search-e2e",
+        "workspace-hxp-playwright-file-management-e2e",
+        "workspace-hxp-playwright-file-actions-e2e",
+        "workspace-hxp-playwright-file-upload-e2e",
+        "workspace-hxp-playwright-permissions-management-e2e",
+        "workspace-hxp-playwright-custom-theme-e2e",
+        "workspace-hxp-playwright-idp-services-extension-class-verification-e2e",
+        "workspace-hxp-playwright-idp-services-extension-field-verification-e2e",
+        "workspace-hxp-playwright-process-services-cloud-extension-form-widgets-e2e",
+        "workspace-hxp-playwright-process-services-cloud-extension-forms-e2e",
+        "workspace-hxp-playwright-process-services-cloud-extension-process-automation-e2e",
+        "workspace-hxp-playwright-process-services-cloud-extension-processes-e2e",
+        "workspace-hxp-playwright-process-services-cloud-extension-tasks-e2e"
+    ]
+}
