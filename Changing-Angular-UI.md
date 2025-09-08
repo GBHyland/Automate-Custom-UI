@@ -1,7 +1,7 @@
 ## Changing the Angular UI
 
 ### Change the Home Page to a Custom Page
-1. Open the file _experience-workspace-app-shell.routes.ts_ found the in the following directory: _workspace-hxp/app-shell/src/lib/_
+1. Open the file _experience-workspace-app-shell.routes.ts_ found the in the following directory: _libs/workspace-hxp/app-shell/src/lib/_
 2. Change the following line: 
 **FROM**:
 ```

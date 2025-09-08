@@ -100,18 +100,18 @@ npm start workspace-hxp
 ```
    - Verify your page in the UI: A button should now appear at the bottom of the left navigation panel indicating your page name. Selecting the button will load the page into the main content window with a message that page is working. 
 4. If your page is working, navigate back to terminal and stop the instance using CTRL+C.
-5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
-   - You should see a few files here: ```yourpagename-menu-item.components.ts```, ```yourpagename-compnents.ts```, and ```yourpagename-module.ts```.
-6. In order to create a custom page you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a these new files and save them in the directory mentioned above. **NOTE:** Over the next few steps, replace all instances of the text "yourpagename" with the actual page name you used in Step 2. To start creating the files, follow these steps in VS Code:
-   - Create a new file titled ```yourpagename-menu-item.component.scss``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. Leave the contents of this file empty and close it. 
-   - Create a new file titled ```yourpagename-menu-item.component.html``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```.
-   - Open the file in that same directory that is titled: ```yourpagename-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
+5. The plugin generator created new files for this plugin, which can be found at the following directory. Open finder/explorer and navigate to this directory: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```.
+   - You should see a few files here: ```nine-si-menu-item.components.ts```, ```nine-si-compnents.ts```, and ```nine-si-module.ts```.
+6. In order to create a custom page you'll need to create a few new files in this directory and paste some html code into those files. I found it easiest to use Visual Studio to create a these new files and save them in the directory mentioned above. To start creating the files, follow these steps in VS Code:
+   - Create a new file titled ```nine-si-menu-item.component.scss``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```. Leave the contents of this file empty and close it. 
+   - Create a new file titled ```nine-si-menu-item.component.html``` and save it in the directory you have opened from step 5: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```.
+   - Open the file in that same directory that is titled: ```nine-si-menu-item.component.ts``` in Visual Studio. In this file, you'll notice a string of HTML code that is surrounded by a single quote (literal string) which is the value of the "template" object. Copy the code between the single quotes, **do not copy the quotes**, and paste the code into the newly created .html file from the step above. (See this screenshot as an example of what to copy).
 ![alt text](images/copy-html-code.jpeg "Copy selected code.")
-     - Inside of the ```yourpagename-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
+     - Inside of the ```nine-si-menu-item.component.ts``` file, you will replace the template object with the following 2 lines of code, ensuring that you use **your page names** in these lines. Refer to the before and after images below:
 code:
 ```
-    templateUrl: './yourpagename-menu-item.component.html',
-    styleUrls: ['./yourpagename-menu-item.component.scss'],
+    templateUrl: './nine-si-menu-item.component.html',
+    styleUrls: ['./nine-si-menu-item.component.scss'],
 ```
 
 * This is the code you will replace:<br>
@@ -120,32 +120,32 @@ code:
 * This what it should look like afterward (but using your page names in place of "nine-si" in this image if you used custom names):
 ![alt text](images/replace-template-2.jpeg "Your code should look like this.")
 
-   - Create a new file titled ```yourpagename-component.scss``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. Leave the contents of this file blank and close it.
-   - Create a new file titled ```yourpagename-component.html``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
-   - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```yourpagename.component.ts```.
+   - Create a new file titled ```nine-si-component.scss``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```. Leave the contents of this file blank and close it.
+   - Create a new file titled ```nine-si-component.html``` and save it in the directory you have opened from **step 5**: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```. 
+   - Next, we will edit the component file that will reference the html & css files we created as well as add the functionality to launch a page and start a process. Open the file in this same directory titled: ```nine-si.component.ts```.
      - In this file, you will replace the **template** and **selector** properties from the @Component with two properties for **templateUrl** and **styleUrls** with relative paths to the html and style sheet files that you just created using the following code. 
 ```
-    templateUrl: './yourpagename-component.html',
-    styleUrls: ['./yourpagename-component.scss'],
+    templateUrl: './nine-si-component.html',
+    styleUrls: ['./nine-si-component.scss'],
 ```
    - Next, at the top of the file, add the following import: 
 ```
 import { Router } from '@angular/router';
 ```
-   - Finally, within the **export class** constructor (inside of the brackets "{}"), replacing the text "yourpagename" with your page name (do not remove the "./"):
+   - Finally, within the **export class** constructor (inside of the brackets "{}") **Note: do not remove the "./"**:
 ```
     constructor(
         private router: Router,
     ) {}
 
     navigateToPage(): void {
-        void this.router.navigate(['/yourpagename']);
+        void this.router.navigate(['/nine-si']);
     }
 ```
    - Refer to the screenshot below as to what your file should look like (remembering to replace my page name with yours):
 ![alt text](images/replace-componentts.jpeg "Your code should look like this.")
 
-7. Open the file you created earlier titled ```yourpagename-component.html``` and add the following code:  
+7. Open the file you created earlier titled ```nine-si-component.html``` and add the following code:  
 ```
 <p>This is working!</p>
 ```
@@ -161,65 +161,294 @@ npm start workspace-hxp
 
 ### Customizing Your Page
 1. If your UI is running, stop the UI by pressing CTRL+C in the Terminal window. Next, you'll add custom HTML code to create custom page design:
-   - In the ```yourpagename-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. (If you want to use your own html code then feel free to use that instead)
+   - In the ```nine-si-component.html``` replace the contents of this file with the following code. **NOTE:** You MUST replace the ```yourprocessname``` in the "a href" URL in the code below with the name of the process in your application. (If you want to use your own html code then feel free to use that instead)
 ```
-<!-- GB HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 Second Insurance - Home Claims</title>
 <style>
-    .chewy-regular {
-        font-family: "Chewy", system-ui;
+    /* General styles */    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e6f0ff;
+        color: #333;
     }
-      
+
+    header {
+        background-color: #004080;
+        color: white;
+        padding: 20px 40px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+
+    header p {
+        margin: 5px 0 0 0;
+        font-size: 1.2em;
+    }
+
+    nav {
+        background-color: #0073e6;
+        padding: 10px 40px;
+    }
+
+    nav a {
+        color: white;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Banner */
+    #banner {
+        position: relative;
+        width: 100%;
+        height: 800px;
+        background: url('images/fam-home-2.jpg') center/cover no-repeat;
+    }
+
+    #banner .overlay {
+        position: absolute;
+        top:0; left:0;
+        width: 100%; height:100%;
+        background-color: rgba(0,0,0,0.4);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        text-align:center;
+    }
+
+    #banner h2 {
+        font-size: 3em;
+        margin:0;
+    }
+
+    #banner p {
+        font-size: 1.5em;
+        margin-top:10px;
+    }
+
+    main {
+        padding: 40px;
+        max-width: 800px;
+        margin: auto;
+        background-color: #f2f9ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        margin-top: -50px;
+        position: relative;
+        z-index: 1;
+    }
+
+    #processForm {
+        display: none;
+        margin-top: 20px;
+    }
+
+    label {
+        display:block;
+        margin-top:15px;
+    }
+
+    input, select, textarea, button {
+        margin-top:5px;
+        padding:10px;
+        width:100%;
+        box-sizing:border-box;
+        border-radius:5px;
+        border:1px solid #ccc;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        background-color:#004080;
+        color:white;
+        font-weight:bold;
+        cursor:pointer;
+        margin-top:20px;
+    }
+
+    button:hover {
+        background-color:#0073e6;
+    }
+
+    #successMessage {
+        display:none;
+        text-align:center;
+        margin-top:30px;
+        position: relative;
+        height: 220px;
+    }
+
+    #runningCharacter {
+        position: absolute;
+        bottom: 0;
+        left: -200px;
+        width: 150px;
+        height: auto;
+    }
+
+    /* --- brand/logo layout --- */
+    header { display: flex; align-items: center; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .logo { width: 44px; height: 44px; flex: 0 0 44px; }
+    @media (max-width: 480px){
+        .brand .logo { width: 36px; height: 36px; }
+        header h1 { font-size: 1.6em; }
+    }
+
+    
+    /* --- footer styling --- */
+    footer {
+        background-color: #004080;       /* matches header */
+        color: #ffffff;
+        border-top: 3px solid #0073e6;   /* matches nav accent */
+        text-align: center;
+        padding: 16px 40px;
+        font-size: 0.9em;
+    }
+
+    /* Banner CTA button */
+    #banner .cta-btn {
+        display: inline-block;
+        background-color: #0073e6;  /* matches nav accent */
+        color: #ffffff;
+        border: 2px solid #ffffff;  /* pops on dark overlay */
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.1em;
+        text-decoration: none;
+        margin-top: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        transition: background-color .15s ease, transform .05s ease;
+    }
+    #banner .cta-btn:hover,
+    #banner .cta-btn:focus {
+        background-color: #0059b3;  /* darker hover */
+        outline: 3px solid rgba(230,240,255,0.35);
+    }
+    #banner .cta-btn:active {
+        transform: translateY(1px);
+    }
+
 </style>
-<div style="width:100%; background-color:azure;">
-    <div id="header" style="height: 85px; background-color:steelblue;">
-        <div style="float: left;">
-            <img style="height: 60px; padding: 10px 0px 0px 40px;" src="assets/images/9si-logo.png">
-        </div>
-        <div id="header-text" style="padding: 22px 0px 0px 20px;">
-            <div class="chewy-regular" style="font-size: 34px; font-weight: bold; color:#FFF;">9-SECOND INSURANCE</div>
-        </div>
-        
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <!-- Inline SVG logo: 9SI -->
+    <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="9SI logo"
+         xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Accent gradient that matches #0073e6 family -->
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#0073e6"/>
+          <stop offset="1" stop-color="#0059b3"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Rounded square badge with a thin white keyline to pop on #004080 -->
+      <rect x="1.5" y="1.5" width="61" height="61" rx="12"
+            fill="url(#g)" stroke="#ffffff" stroke-width="3"/>
+
+      <!-- “Speed” accent bars (subtle) -->
+      <g opacity="0.85" fill="#ffffff">
+        <rect x="7.5" y="18" width="14" height="3" rx="1.5"/>
+        <rect x="7.5" y="25" width="18" height="3" rx="1.5"/>
+        <rect x="7.5" y="32" width="12" height="3" rx="1.5"/>
+      </g>
+
+      <!-- 9SI letters -->
+      <text x="50%" y="52%" text-anchor="middle"
+            font-family="Arial, Helvetica, sans-serif"
+            font-weight="800" font-size="28" fill="#ffffff" dy="9">9SI</text>
+    </svg>
+
+    <h1 style="margin:0; padding: 6px 0 0;">9 Second Insurance</h1>
+  </div>
+</header>
+
+<!--
+<nav>
+    <a href="#link1">Get Insured Now!</a>
+    <a href="#link2">About Us</a>
+    <a href="#link3">Claim Status</a>
+</nav>
+-->
+
+<section id="banner">
+    <div class="overlay">
+        <h2>Welcome to 9 Second Insurance</h2>
+        <a class="cta-btn" href="http://localhost:4200/#/start-process-cloud?process=custom-ui-claim" aria-label="Start a Claim">Start a Claim</a>
     </div>
-    <div id="banner" style="height: 800px; text-align: center; background-image: url('assets/images/background.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <div style="height: 420px;">&nbsp;</div>
-        <div style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px; font-weight: bold; color: #FFF; ">CLAIMS PORTAL</div>
-        <div style="height: 10px;">&nbsp;</div>
-        
-        <div style="padding: 20px 14px 20px 14px;">
-            <button
+</section>
+
+
+<script>
+  // Make the "Submit a Claim" button navigate to your ADF start-process URL
+  document.getElementById("showFormBtn").addEventListener("click", function () {
+    window.location.href = "http://localhost:4200/#/start-process-cloud?process=custom-ui-claim";
+  });
+</script>
+
+<footer>
+  &copy;2025 Hyland Software, Inc. and its affiliates. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+```
+2. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
+3. Change the name of the button that launches your page: 
+   - Open the file titled ```nine-si-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/nine-si```. 
+   - Paste the following code over the entire content of this file:
+```
+<button
             mat-button
             (click)="navigateToPage()"
             style="
-                    width: 200px;
-                    height: 60px;
-                    background-color:#555;
-                    border-radius: 10px;
-                    border: thin solid #444;
-                    text-align: center;
+                    width: 100%;
+                    font-family: 'Noto Sans';
+                    font-size: 16px;
+                    font-weight: normal;
+                    padding: 5px 20px;
+                    background-color: #004080;       /* dark blue */
+                    color: #ffffff;                  /* white text */
+                    font-weight: 700;                /* bold */
+                    border: 4px solid #66b3ff;       /* thick light-blue border */
+                    border-radius: 12px;             /* rounded corners */
+                    display: inline-block;
+                    text-decoration: none;
                 "
-            >
-            <a href="http://localhost:4200/#/start-process-cloud?process=yourprocessname" target="_self" style="color:aliceblue;">
-                <span
-                style="
-                    text-align: center;
-                    color: #FFF;
-                    font-family: 'Open sans';
-                    font-size: 20px;
-                    font-weight: bold;
-                    color:aliceblue;
-                ">START A CLAIM</span>
-            </a>
-            </button>
-        </div>
-        
-    </div>
-</div>
-```
-2. Since this HTML code loads a few images, we need to add them to the proper directory so they will exist at run-time. In finder/explorer, navigate to the folder at the following path: ```apps/workspace-hxp/src/assets/images```. Download the two image files in this github found [here](./images-for-ui/) and place them in that folder. 
-3. **Optional:** Change the name of the button that launches your page. 
-   - Open the file titled ```yourpagename-menu-item.component.html``` found at the directory: ```libs/plugins/yourpluginname/src/lib/pages/yourpagename```. 
-   - Using the screenshot below as a guide (notice the hilighted text), replace the value surronded by the ```<span>``` tags with the title you want on the button.  <br>
-![alt text](images/button-name.jpeg "Button Name to Replace.").  <br>
+        >
+        <span
+            style="
+                display: block;
+                width: 100%;
+                text-align: left;
+            ">Claims Portal</span>
+    </button>
+```  
 Your edited file should look like this (assuming you use the title I used "Claim Portal"):  
 ![alt text](images/new-button-name.jpeg "New Button Name.").  <br>
 4. Ensuring all edited files are saved, return to Terminal and launch the application once again using the command:
@@ -228,7 +457,34 @@ Your edited file should look like this (assuming you use the title I used "Claim
  ```  
 - Once the page loads, selecting your page button should now load your html page within the content pane showing the 9 Second Insurance claims portal site (or whatever HTML code you used)
 
----
+--- 
+
+### Change the Home Page to a Custom Page
+1. Open the file _experience-workspace-app-shell.routes.ts_ found the in the following directory: _libs/workspace-hxp/app-shell/src/lib/_
+2. Change the following line: 
+**FROM**:
+```
+import { HomeComponent } from './home/home.component';
+```
+**TO:**
+```
+import { NineSiComponent } from '../../../../plugins/ninesi/src/lib/pages/nine-si/nine-si.component';
+```
+3. Change the following line:
+**FROM**
+```
+component: HomeComponent,
+```
+**TO:**
+```
+component: NineSiComponent,
+```
+4. If your Custom UI is not already running, start it using the following command in Terminal and ensure that the opening page is the new Custom Page you created.
+```
+npm start workspace-hxp
+```
+
+--- 
 
 ### Building and Uploading your Custom UI to Automate
 **Summary:** 
@@ -245,3 +501,8 @@ npm run pack-build workspace-hxp
 4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
 ![alt text](images/upload-ui.jpeg "Upload Custom UI.")
 5. Save the process, release, then navigate to **Studio Admin** and Upgrade the project. Test all is working by launching the custom UI name instead of the Workspace UI when Upgrade is complete.
+
+--- 
+
+
+
