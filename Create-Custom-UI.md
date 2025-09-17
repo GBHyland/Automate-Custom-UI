@@ -13,7 +13,7 @@ I built this custom UI with the idea in mind that the target audience wuld be an
 ### Import Project
 First, we'll import a project into CIC to use as a starting point.
 1. Download the [sample project here](./required-docs/custom-ui-insurance.zip).
-2. Sign into CIC and navigate to the **Hyland Experience Studio Modelling** application.
+2. Sign into CIC and navigate to the **Studio Modeler** application.
 3. Select the **Upload Project** button at the top of the page (right side).
 4. In the file I/O browser, navigate to and select the .zip file you downloaded on step one.
 5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. If this popup does not appear, skip this step.
@@ -39,19 +39,6 @@ This portion will show you how to create a custom UI within your application, do
 ![alt text](images/view-config.jpeg "Select the View Configuration menu item.")
 8. Use the **Copy as JSON** hyperlink on the popup window to copy the config as JSON to your clipboard and save it to a notepad / document locally on your machine. You'll use this code later in your local dev environment. 
 9. If you have not already, unzip the source code archive you downloaded in step 4. Navigate to and open the file named: **contexts.json5** located at the following directory: ```config\contexts.json5```. Paste the copied JSON from Step 8 over the entire contents of this file. SAVE IT! You may close the file once this is done, as you will not edit it any more.
-<!--
-10. **As of this writing, a bug was introduced to Automate that added support for governance but did not propogate to custom UIs causing an error with the next step**. This step is a workaround hot fix for this bug and will be removed once the product has been permanently solutioned. 
-    - In your local UI files, find and open the file titled ```project.variables.json5``` found at this path: ```apps/workspace-hxp/```.
-    - You need to delete the following two lines of code in this file. (Once deleted remember to **save the file**. You may also close the file once you've deleted these lines as you won't edit it any more):
-```
-...
-APP_CONFIG_GOVERNANCE_HOST: '{context.governanceHost}',
-...
-NUCLEUS_API_HOST: '{context.nucleusApiHost}',
-```
-   - Refer to this screenshot of what lines to delete (Remember to save the file after deleting these lines!):
-![alt text](images/delete-vars.jpg "Delete the hilighted lines of code.")
--->
 10. Next, you'll need to open a Terminal window at the root directory of the downloaded source code. If this is new to you, here are the ways you can easily do this:
     - **Using Visual Studio Code:** In VSCode, use the **File** drop down selection at the top of the window and select _Open Folder_. Navigate to and select the folder of the downloaded source code. Once opened, you'll notice that the file heirarchy will be on the left side panel, which will give you access to open and edit files within the UI structure for later. To open a terminal window, select the **Terminal** drop-down at the top of the window and select _New Terminal_. A terminal panel will open at the bottom of VS code placing you in the directory of the folder you opened in this step. You're now ready to proceed to the next step of running the terminal commands.
     - **MAC OS: Using Terminal outside of VS Code:** Using your file explorer (Finder), navigate to the folder of your downloaded source code. RIGHT-CLICK on the folder and select _services_ from the right-click menu. Select _New Terminal at Folder_ from the menu. A terminal window should open at the file location. You're now ready to proceed to the next step of running the terminal commands.
