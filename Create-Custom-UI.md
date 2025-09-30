@@ -18,7 +18,7 @@ The idea is to create a custom UI experience for the Claims Team at **9 Second I
 ### Import Project
 First, we'll import a project into CIC to use as a starting point.
 1. Download the [sample project here](./required-docs/gb-customui-class.zip).
-2. Sign into CIC and navigate to the **Studio Modeler** application.
+2. Sign into the [Content Innovation Cloud](https://www.experience.hyland.com/) and navigate to the **Studio Modeler** application.
 3. Select the **Upload Project** button at the top of the page (right side).
 4. In the file I/O browser, navigate to and select the .zip file you downloaded on step one.
 5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. _(If this popup does not appear, skip this step)_
