@@ -21,11 +21,11 @@ First, we'll import a project into CIC to use as a starting point.
 2. Sign into CIC and navigate to the **Studio Modeler** application.
 3. Select the **Upload Project** button at the top of the page (right side).
 4. In the file I/O browser, navigate to and select the .zip file you downloaded on step one.
-5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. If this popup does not appear, skip this step.
+5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. _(If this popup does not appear, skip this step)_
 ```
 custom-ui-training-insurance
 ```
-6. You should be navigated to the process model application. Continue to the next sectioin below.
+6. You should be navigated to the process model application. Continue to the next section below.
 
 ---
 
@@ -34,7 +34,7 @@ custom-ui-training-insurance
 This portion will show you how to create a custom UI within your application, download the source code, and configure a local development environment.
 1. Within Automate Studio Modelling, select the **Create Custom UI** option from the UI drop-down header in the left menu.
 ![alt text](images/custom-ui-select.jpeg "Select Create Custom UI")
-2. In the pop-up box, give it a name and optional description.
+2. In the pop-up box, give it a name and optional description. ```claims-portal```
 3. On the Custom UI Configuration page (should automatically navigate to this), select the **“Generate from template <>”** button. The page will generate a template and display a **download source code** button below the configuration details.
 4. Select the **download source code** button. A zip file containing the source code for the UI will be downloaded. Place the file on your local machine where you want it and unzip the file. You now have the UI downloaded.
 ![alt text](images/download-source-code.jpeg "Select Download Source Code button")
