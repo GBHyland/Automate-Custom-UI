@@ -6,7 +6,12 @@
 
 
 **Scenario:** 
-I built this custom UI with the idea in mind that the target audience wuld be an internal Insurance Claim team that uses their own UI portal to start claims on behalf of customers. The idea is that the custom UI is relevant in that it can be tweaked to remove assets from the default UI that you would not want the claims team members to have access to, i.e.: you only want them to process claims, not access any other processes or repositories. Please feel free to customize this to your own scenario, or follow the guide as is.
+The idea is to create a custom UI experience for the Claims Team at **9 Second Insurance** that that delivers the following:
+- Promotes the 9 Second Insurance theme and branding
+- Provides access to engage processes that only the Claims Team needs (Start a Claim)
+- Allows developers to create a portal for future content changes for this group (Future Development)
+  - Metrics and Access to Knowledge Base
+  - Engagement with Content Innovation: Knowledge Discovery / Knowledge Enrichment
 
 ---
 
