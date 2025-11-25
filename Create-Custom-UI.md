@@ -450,7 +450,7 @@ npm start workspace-hxp
 
 --- 
 
-### Change the Home Page to a Custom Page
+### Change the Home Page to a Custom Page & Update the Process URL
 1. Open the file _experience-workspace-app-shell.routes.ts_ found the in the following directory: _libs/workspace-hxp/app-shell/src/lib/_
 2. Change the following line: 
 **FROM**:
@@ -473,6 +473,15 @@ component: NineSiComponent,
 4. If your Custom UI is not already running, start it using the following command in Terminal and ensure that the opening page is the new Custom Page you created.
 ```
 npm start workspace-hxp
+```
+5. Open the ```nine-si-component.html``` file and change the following code in **BOTH** places found within the file:
+From:
+```
+http://localhost:4200/#/start-process-cloud?process=custom-ui-claim
+```
+To:
+```
+./#/start-process-cloud?process=custom-ui-claim
 ```
 
 --- 
