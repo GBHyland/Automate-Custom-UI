@@ -450,31 +450,8 @@ npm start workspace-hxp
 
 --- 
 
-### Change the Home Page to a Custom Page & Update the Process URL
-1. Open the file _experience-workspace-app-shell.routes.ts_ found the in the following directory: _libs/workspace-hxp/app-shell/src/lib/_
-2. Change the following line: 
-**FROM**:
-```
-import { HomeComponent } from './home/home.component';
-```
-**TO:**
-```
-import { NineSiComponent } from '../../../../plugins/ninesi/src/lib/pages/nine-si/nine-si.component';
-```
-3. Change the following line:
-**FROM**
-```
-component: HomeComponent,
-```
-**TO:**
-```
-component: NineSiComponent,
-```
-4. If your Custom UI is not already running, start it using the following command in Terminal and ensure that the opening page is the new Custom Page you created.
-```
-npm start workspace-hxp
-```
-5. Open the ```nine-si-component.html``` file and change the following code in **BOTH** places found within the file:
+### Update the Process URL
+1. Open the ```nine-si-component.html``` file and change the following code in **BOTH** places found within the file:
 From:
 ```
 http://localhost:4200/#/start-process-cloud?process=custom-ui-claim
@@ -489,16 +466,29 @@ To:
 ### Building and Uploading your Custom UI to Automate
 **Summary:** 
 Now that you have a local developed custom UI, you'll need to build it into a package and upload it to your Custom-UI configuration within your process in Automate in order for your intended audience to see it.
+
+**Update the Pack-Build Command**
+1. Open the file titled _project.json_ in the following directory: ```apps\workspace-hxp```.  
+2. On line 353, add the text "node" after the "&&" in this command:  
+**Before**
+```
+"nx run workspace-hxp:buid:production && tools/..."
+```
+**After**
+```
+"nx run workspace-hxp:buid:production && node tools/..."
+```
+3. Save and close this file.
+
+**Package the UI**
 1. In Terminal, navigate to the root level of your local custom UI.
 2. Use the following command to build and package your UI: 
 ```
 npm run pack-build workspace-hxp
 ```
-**NOTE:** At the time of this writing, running the build command produces errors in the reply, however as long as you see the green "Successfully ran target build for project workspace-hxp..." (as depicted in the below screenshot) then you may disregard the errors and proceed to thenext step.  
-![alt text](images/build-reply.png "Build Command Reply.")
-3. Once this command is complete, files for this UI will be placed within the following directory: ```dist/workspace-hxp/```. Select all of the files within this folder (**Not the Folder itself**) and create a .zip archive. 
+3. Once this command is complete, a .zip file for this UI will be placed within the following directory: ```dist/```.
    - **NOTE:** The maximum UI file size allowed to be uploaded is 10MB, so if your .zip file exceeds this then you'll receive an error on the next step. The likely issue causing the file size to be too large might be that the images you used for your HTML page are too large. If this is the case, use an application that has a save-for-web feature (like Photoshop) or try and reduce the file size of the image(s). 
-4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive you created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
+4. In Automate, go into **Studio Modelling** and open the process that you created this Custom UI from. On the left hand panel, toggle down the **UI** header and select your custom UI to open it's configuration. Use the blue **Upload** button to upload the .zip archive created in Step 3, confirming replacement when prompted to do so. (Use the following screenshot as a guide):
 ![alt text](images/upload-ui.jpeg "Upload Custom UI.")
 5. Save the process, release, then navigate to **Studio Admin** and Upgrade the project. Test all is working by launching the custom UI name instead of the Workspace UI when Upgrade is complete.
 
