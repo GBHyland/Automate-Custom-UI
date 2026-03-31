@@ -52,7 +52,7 @@ This portion will show you how to create a custom UI within your application, do
         ```
         npm i
         ```
-    - At the time of this writing, this command will print a long string of information which may include some warnings and deprication messages. As long a there are no erorrs you should be good to proceed to the next step.
+    - This command will install the necessary dependencies that are stipulated in your _package.json_ file. Go [HERE](supporting-information/dependencies.md) for an explanation on **dependencies in an ADF application**.
     - Set up the environment variables by running the following command in Terminal: 
         ```
         npm run setenv
