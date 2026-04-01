@@ -47,13 +47,14 @@ This portion will show you how to create a custom UI within your application, do
 10. Next, you'll need to open a Terminal window at the root directory of the downloaded source code. If this is new to you, here are the ways you can easily do this:
     - **Using Visual Studio Code:** In VSCode, use the **File** drop down selection at the top of the window and select _Open Folder_. Navigate to and select the folder of the downloaded source code. Once opened, you'll notice that the file heirarchy will be on the left side panel, which will give you access to open and edit files within the UI structure for later. To open a terminal window, select the **Terminal** drop-down at the top of the window and select _New Terminal_. A terminal panel will open at the bottom of VS code placing you in the directory of the folder you opened in this step. You're now ready to proceed to the next step of running the terminal commands.
     - **MAC OS: Using Terminal outside of VS Code:** Using your file explorer (Finder), navigate to the folder of your downloaded source code. RIGHT-CLICK on the folder and select _services_ from the right-click menu. Select _New Terminal at Folder_ from the menu. A terminal window should open at the file location. You're now ready to proceed to the next step of running the terminal commands.
+> Go <a href="supporting-information/angular-file-structure.md" target="_blank">HERE</a> for an explanation on the **Angular Application File Structure**.
 11. **Running Terminal commands:** You're almost done!
     - Install all the necessary dependencies by running the following command in Terminal:
         ```
         npm i
         ```
     - This command will install the necessary dependencies that are stipulated in your _package.json_ file. 
-    > Go <a href="supporting-information/dependencies.md" target="_blank">HERE</a> for an explanation on **Dependencies in an ADF application**.
+> Go <a href="supporting-information/dependencies.md" target="_blank">HERE</a> for an explanation on **Dependencies in an ADF application**.
     - Set up the environment variables by running the following command in Terminal: 
         ```
         npm run setenv
