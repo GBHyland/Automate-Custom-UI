@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # 📦 ADF App Dependencies — Overview
 
 ## 🧠 What Are Dependencies?

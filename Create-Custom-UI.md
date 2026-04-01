@@ -52,7 +52,7 @@ This portion will show you how to create a custom UI within your application, do
         ```
         npm i
         ```
-    - This command will install the necessary dependencies that are stipulated in your _package.json_ file. Go [HERE](supporting-information/dependencies.md) for an explanation on **dependencies in an ADF application**.
+    - This command will install the necessary dependencies that are stipulated in your _package.json_ file. Go <a href="supporting-information/dependencies.md" target="_blank">HERE</a> for an explanation on **Dependencies in an ADF application**.
     - Set up the environment variables by running the following command in Terminal: 
         ```
         npm run setenv
@@ -86,6 +86,7 @@ npx nx generate @hyland/extend:plugin --name ninesi --author "Greg Bousley" --ad
 npx nx generate @hyland/extend:page --pluginName ninesi --pageName nine-si
 ```
    - You should receive a logged response that files were created and updated.
+   > Go <a href="supporting-information/plugin-page.md" target="_blank">HERE</a> for an explanation for Pugins and Pages in this context.
 3. Run the build command in order to test that your plugin page is working. You should see a new button at the bottom of the left hand navigation pane with the name of the page you specified. Click the button and you'll see a generic message in the main content pane that the plugin is working.
 ```
 npm start workspace-hxp
