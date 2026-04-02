@@ -393,7 +393,7 @@ npm start workspace-hxp
 <section id="banner">
     <div class="overlay">
         <h2>Welcome to 9 Second Insurance</h2>
-        <a class="cta-btn" href="http://localhost:4200/#/start-process-cloud?process=custom-ui-claim" aria-label="Start a Claim">Start a Claim</a>
+        <a class="cta-btn" href="http://localhost:4200/#/start-process-cloud?process=claim-process" aria-label="Start a Claim">Start a Claim</a>
     </div>
 </section>
 
@@ -401,7 +401,7 @@ npm start workspace-hxp
 <script>
   // Make the "Submit a Claim" button navigate to your ADF start-process URL
   document.getElementById("showFormBtn").addEventListener("click", function () {
-    window.location.href = "http://localhost:4200/#/start-process-cloud?process=custom-ui-claim";
+    window.location.href = "http://localhost:4200/#/start-process-cloud?process=claim-process";
   });
 </script>
 
@@ -457,7 +457,7 @@ npm start workspace-hxp
 1. Open the ```nine-si-component.html``` file and change the following code in **BOTH** places found within the file:
 From:
 ```
-http://localhost:4200/#/start-process-cloud?process=custom-ui-claim
+http://localhost:4200/#/start-process-cloud?process=claim-process
 ```
 To:
 ```
