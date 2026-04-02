@@ -112,6 +112,7 @@ import { AuthGuard } from '@alfresco/adf-core';
 import { FeatureFlagsWrapperComponent, IsFlagsOverrideOn } from '@alfresco/adf-core/feature-flags';
 import { AppLayoutContainerComponent } from './layout-container/app-layout-container.component';
 import { NineSiComponent } from 'libs/plugins/ninesi/src/lib/pages/nine-si/nine-si.component';
+import { customDashComponent } from '../../../../dashboard/customDashComponent';
 
 export const APP_ROUTES: Routes = [
     {
@@ -143,7 +144,13 @@ export const APP_ROUTES: Routes = [
         path: 'portal',
         component: NineSiComponent
         
+    },
+    {
+        path: 'dashboard',
+        component: customDashComponent
+        
     }
 ];
+
 
 ```
