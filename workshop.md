@@ -17,7 +17,7 @@ import { HeaderComponent } from '@hxp/shared-hxp/navigation/header';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { RouterLink } from '@angular/router';
-import { IdentityUserService } from '@alfresco/adf-core';
+import { IdentityUserService } from '@alfresco/adf-process-services-cloud';
 
 interface HxpHeaderConfig {
     headerColor: string;
@@ -76,10 +76,14 @@ export class HxpWorkspaceHeaderComponent {
 
         // load the page based on identity of user
         console.log("This is the user: "+this.identityUserService.getCurrentUserInfo().firstName+"  "+this.identityUserService.getCurrentUserInfo().lastName);
-        
+        this.identityUserService.search(
+            this.identityUserService.getCurrentUserInfo().username, 
+            {groups: ['Claims Admin']}).subscribe(users => {console.log(users);
+                (users.length > 0) ?
+                this.landingpageURL = '/dashboard': this.landingpageURL = '/portal'
+            })
     }
 }
-
 
 ```
 
