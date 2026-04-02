@@ -17,6 +17,7 @@ import { HeaderComponent } from '@hxp/shared-hxp/navigation/header';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { RouterLink } from '@angular/router';
+import { IdentityUserService } from '@alfresco/adf-core';
 
 interface HxpHeaderConfig {
     headerColor: string;
@@ -54,7 +55,7 @@ export class HxpWorkspaceHeaderComponent {
 
     landingpageURL = 'portal';
 
-    constructor() {
+    constructor(private identityUserService: IdentityUserService) {
         effect(() => {
             const config = this.config();
             if (config) {
@@ -72,8 +73,13 @@ export class HxpWorkspaceHeaderComponent {
                 }
             }
         });
+
+        // load the page based on identity of user
+        console.log("This is the user: "+this.identityUserService.getCurrentUserInfo().firstName+"  "+this.identityUserService.getCurrentUserInfo().lastName);
+        
     }
 }
+
 
 ```
 
