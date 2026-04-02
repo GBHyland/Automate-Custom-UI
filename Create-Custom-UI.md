@@ -23,8 +23,9 @@ First, we'll import a project into CIC to use as a starting point.
 4. In the file I/O browser, navigate to and select the .zip file you downloaded on step one.
 5. If a prompt appears to name the project, give it a custom name then press the **Create Project** button. _(If this popup does not appear, skip this step)_
 ```
-custom-ui-training-insurance
+[your initials]-cui-class
 ```
+> Ex: _GB-cui-class_
 6. You should be navigated to the process model application. Continue to the next section below.
 
 ---
