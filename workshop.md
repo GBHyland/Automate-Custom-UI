@@ -1,4 +1,4 @@
-### header-component.ts
+### header.component.ts
 ```
 /*
  * Copyright © 2005 - 2021 Alfresco Software, Ltd. All rights reserved.
