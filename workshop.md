@@ -154,3 +154,39 @@ export const APP_ROUTES: Routes = [
 
 
 ```
+
+---
+
+## Create these 2 files at: _libs/_
+
+### customDashComponent.ts:
+```
+import { Component } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { HeaderComponent } from '@hxp/shared-hxp/navigation/header';
+import { RouterLink } from '@angular/router';
+
+
+
+@Component({
+    selector: 'hxp-dashboard',
+    templateUrl: './customDashComponent.html',
+    imports: [MatDividerModule, HeaderComponent, RouterLink],
+})
+export class customDashComponent {
+    constructor(){
+    }
+    ngOnInit(){
+
+    }
+}
+```
+
+
+### customDashComponent.html:
+```
+<html>
+    <h4>Hello World!</h4>
+    <p>I love Angular!</p>
+</html>
+```
