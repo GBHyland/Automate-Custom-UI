@@ -103,7 +103,7 @@ class="px-5"
 >DASHBOARD</h4>
 ```
 
-**Optional Hrader: **
+**Optional Header:**
 ```
 <!DOCTYPE html>
 <html lang="en">
