@@ -88,8 +88,7 @@ export class HxpWorkspaceHeaderComponent {
 ```
 
 
-### 
-header.component.html
+### header.component.html
 ```
 <!--<hxp-header
     [logoPath]="logoPath()"
@@ -102,6 +101,89 @@ role="link"
 class="px-5"
 [routerLink]="landingpageURL"
 >DASHBOARD</h4>
+```
+
+**Optional Hrader: **
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 Second Insurance - Claims Portal</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .header {
+    background-color: #0B3D91; /* Dark blue */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0B3D91;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .admin-btn {
+    background-color: #ffffff;
+    color: #0B3D91;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .admin-btn:hover {
+    background-color: #e6eaf2;
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <!-- Replace this with an <img src="your-logo.png"> if you have a real logo -->
+    <div class="logo">INS</div>
+    <div class="title">9 Second Insurance - Claims Portal</div>
+  </div>
+
+  <button class="admin-btn" role="link" [routerLink]="landingpageURL">Admin Portal</button>
+</header>
+
+</body>
+</html>
 ```
 
 
