@@ -50,19 +50,18 @@ This portion will show you how to create a custom UI within your application, do
     - **MAC OS: Using Terminal outside of VS Code:** Using your file explorer (Finder), navigate to the folder of your downloaded source code. RIGHT-CLICK on the folder and select _services_ from the right-click menu. Select _New Terminal at Folder_ from the menu. A terminal window should open at the file location. You're now ready to proceed to the next step of running the terminal commands.
 > Go <a href="supporting-information/angular-file-structure.md" target="_blank">HERE</a> for an explanation on the **Angular Application File Structure**.
 11. **Running Terminal commands:** You're almost done!
-    - Install all the necessary dependencies by running the following command in Terminal:
+    1. Install all the necessary dependencies by running the following command in Terminal:
         ```
         npm i
         ```
     - This command will install the necessary dependencies that are stipulated in your _package.json_ file. 
 > Go <a href="supporting-information/dependencies.md" target="_blank">HERE</a> for an explanation on **Dependencies in an ADF application**.
-    - Set up the environment variables by running the following command in Terminal:  
+    1. Set up the environment variables by running the following command in Terminal:  
         ```
         npm run setenv
         ```
-    - You should get a response similar to the one in the screenshot below. If so, you are good to go!
-    ![alt text](images/set-env-confirm.jpeg "Environment variables confirmed.")  
-    - Run the application by running the following command: 
+    - You should get a response that says: ```App specific variables written into: apps/workspace-hxp/.env```  
+    2. Run the application by running the following command: 
         ```
         npm start workspace-hxp
         ```
