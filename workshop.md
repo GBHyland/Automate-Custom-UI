@@ -53,7 +53,7 @@ export class HxpWorkspaceHeaderComponent {
         { initialValue: null }
     );
 
-    landingpageURL = 'portal';
+    landingPageUrl = 'portal';
 
     constructor(private identityUserService: IdentityUserService) {
         effect(() => {
