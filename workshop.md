@@ -277,8 +277,415 @@ export class customDashComponent {
 
 ### customDashComponent.html:
 ```
-<html>
-    <h4>Hello World!</h4>
-    <p>I love Angular!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9SecondInsurance | Insurance Case Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1f2937;
+    }
+
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #111827, #1e3a8a);
+      color: white;
+      padding: 28px 22px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 34px;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    .nav a {
+      display: block;
+      color: #dbeafe;
+      text-decoration: none;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .topbar h1 {
+      font-size: 30px;
+      color: #111827;
+    }
+
+    .search {
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 14px;
+      width: 320px;
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .card .label {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .card .value {
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .card.blue { border-left: 6px solid #2563eb; }
+    .card.green { border-left: 6px solid #16a34a; }
+    .card.orange { border-left: 6px solid #f97316; }
+    .card.red { border-left: 6px solid #dc2626; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .panel h2 {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      color: #6b7280;
+      font-size: 13px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+      padding: 16px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 14px;
+    }
+
+    .claim-id {
+      font-weight: 800;
+      color: #1d4ed8;
+    }
+
+    .status {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-block;
+    }
+
+    .open { background: #dbeafe; color: #1d4ed8; }
+    .review { background: #ffedd5; color: #c2410c; }
+    .approved { background: #dcfce7; color: #15803d; }
+    .urgent { background: #fee2e2; color: #b91c1c; }
+
+    .claim-detail {
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .claim-detail h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .claim-detail p {
+      color: #4b5563;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .progress {
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress div {
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+    }
+
+    .activity {
+      list-style: none;
+    }
+
+    .activity li {
+      padding: 15px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .activity strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .activity span {
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    @media (max-width: 1000px) {
+      .cards,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .topbar {
+        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">Claim<span>Guard</span></div>
+
+      <nav class="nav">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Claims</a>
+        <a href="#">Policy Holders</a>
+        <a href="#">Documents</a>
+        <a href="#">Investigations</a>
+        <a href="#">Payments</a>
+        <a href="#">Reports</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Insurance Claims Dashboard</h1>
+          <p>Case management overview for active claim processing</p>
+        </div>
+        <input class="search" type="text" placeholder="Search claim number, policy, claimant..." />
+      </div>
+
+      <section class="cards">
+        <div class="card blue">
+          <div class="label">Open Claims</div>
+          <div class="value">128</div>
+        </div>
+
+        <div class="card green">
+          <div class="label">Approved Today</div>
+          <div class="value">34</div>
+        </div>
+
+        <div class="card orange">
+          <div class="label">Under Review</div>
+          <div class="value">57</div>
+        </div>
+
+        <div class="card red">
+          <div class="label">High Priority</div>
+          <div class="value">12</div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel">
+          <h2>Recent Claim Cases</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Claim</th>
+                <th>Claimant</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="claim-id">#CLM-10482</td>
+                <td>Maria Thompson</td>
+                <td>Auto Collision</td>
+                <td>$8,420</td>
+                <td><span class="status review">Review</span></td>
+              </tr>
+
+              <tr>
+                <td class="claim-id">#CLM-10481</td>
+                <td>David Chen</td>
+                <td>Water Damage</td>
+                <td>$14,760</td>
+                <td><span class="status open">Open</span></td>
+              </tr>
+
+              <tr>
+                <td class="claim-id">#CLM-10480</td>
+                <td>Angela Brooks</td>
+                <td>Theft</td>
+                <td>$3,250</td>
+                <td><span class="status approved">Approved</span></td>
+              </tr>
+
+              <tr>
+                <td class="claim-id">#CLM-10479</td>
+                <td>Robert Ellis</td>
+                <td>Fire Damage</td>
+                <td>$42,900</td>
+                <td><span class="status urgent">Urgent</span></td>
+              </tr>
+
+              <tr>
+                <td class="claim-id">#CLM-10478</td>
+                <td>Sophia Martinez</td>
+                <td>Medical</td>
+                <td>$6,180</td>
+                <td><span class="status open">Open</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="panel">
+          <h2>Featured Case</h2>
+
+          <div class="claim-detail">
+            <h3>#CLM-10479</h3>
+            <p>
+              Fire damage claim for residential property. Awaiting inspection report,
+              contractor estimate, and fraud review clearance.
+            </p>
+
+            <strong>Completion</strong>
+            <div class="progress">
+              <div></div>
+            </div>
+
+            <button class="button">Open Case</button>
+          </div>
+
+          <h2>Recent Activity</h2>
+
+          <ul class="activity">
+            <li>
+              <strong>Document uploaded</strong>
+              <span>Inspection photo added to #CLM-10482</span>
+            </li>
+
+            <li>
+              <strong>Payment authorized</strong>
+              <span>$3,250 approved for #CLM-10480</span>
+            </li>
+
+            <li>
+              <strong>Adjuster assigned</strong>
+              <span>New adjuster assigned to #CLM-10479</span>
+            </li>
+
+            <li>
+              <strong>Policy verified</strong>
+              <span>Coverage confirmed for #CLM-10481</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+  </div>
+</body>
 </html>
 ```
