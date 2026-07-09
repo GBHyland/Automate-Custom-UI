@@ -478,7 +478,25 @@ To:
 ./#/start-process-cloud?process=custom-ui-claim
 ```
 
---- 
+---  
+
+### Add a Route to our Claims Portal
+1. Open the file called: ```experience-workspace-app-shell.routes.ts``` at the directory: _libs/workspace-hxp/app-shell/src/lib_
+2. Add the following route to the ```APP_ROUTES``` array:
+```
+{
+    path: 'portal',
+    component: NineSiComponent
+},
+```   
+3. Save the file.
+4. Run the application:
+```
+npm start workspace-hxp
+```
+5. In your UI navigate to the url: ```http://localhost:4200/#/portal```
+
+---  
 
 ### Building and Uploading your Custom UI to Automate
 **Summary:** 
