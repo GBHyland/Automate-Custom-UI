@@ -475,7 +475,7 @@ http://localhost:4200/#/start-process-cloud?process=claim-process
 ```
 To:
 ```
-./#/start-process-cloud?process=custom-ui-claim
+./#/start-process-cloud?process=claim-process
 ```
 
 ---  
