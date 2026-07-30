@@ -53,7 +53,7 @@ export class HxpWorkspaceHeaderComponent {
         { initialValue: null }
     );
 
-    landingPageUrl = 'portal';
+    landingPageURL = 'portal';
 
     constructor(private identityUserService: IdentityUserService) {
         effect(() => {
@@ -179,7 +179,7 @@ class="px-5"
     <div class="title">9 Second Insurance - Claims Portal</div>
   </div>
 
-  <button class="admin-btn" role="link" [routerLink]="landingPageUrl">Admin Portal</button>
+  <button class="admin-btn" role="link" [routerLink]="landingPageURL">Admin Portal</button>
 </header>
 
 </body>
