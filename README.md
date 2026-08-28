@@ -6,6 +6,6 @@
 
 #Automate Day 2
 
-[Pre-configuration](/Automate-Custom-UI)
+[Pre-configuration](/Automate-Custom-UI.md)
 
 [Day 2: Create Custom UI](/Day2-Create-Custom-UI.md)
