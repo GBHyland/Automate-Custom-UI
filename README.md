@@ -63,5 +63,5 @@ npm --v
 **This should be all that is necessary to create a Custom UI. Continue to the Generate a Custom UI Guide at the bottom of the page.**
 
 
-## Continue on to Generate a Custom UI
-[Create a Custom UI](/Create-Custom-UI.md)
+## Continue on to Day 1: Scripting in Automate
+[Day 1: Scripting in Automate](/Day)
