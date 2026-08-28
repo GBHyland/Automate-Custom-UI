@@ -1,10 +1,10 @@
-## Welcome to the CIC-Developer Course
+# Welcome to the CIC-Developer Course
 
-#Automate Day 1
+## Automate Day 1
 
 [Day 1: Scripting in Automate](/Day1-Scripting-in-Automate.md)
 
-#Automate Day 2
+## Automate Day 2
 
 [Pre-configuration](/Automate-Custom-UI.md)
 
