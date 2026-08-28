@@ -64,4 +64,4 @@ npm --v
 
 
 ## Continue on to Day 1: Scripting in Automate
-[Day 1: Scripting in Automate](/Day)
+[Day 1: Scripting in Automate](/Day 1: Scripting in Automate.md)
