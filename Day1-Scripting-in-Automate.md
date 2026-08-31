@@ -47,20 +47,24 @@ create-policy-num
 
 1. Select the `create-policy-num` Script Task.
 2. Open the script configuration.
-3. Choose **Add Script from Source**.
-4. Paste the provided helper script into the script editor.
-5. Locate the `if` statement identified by the instructor.
-6. Type the required logic into the `if` statement.
-
-> [!IMPORTANT]
-> Do not copy and paste the `if` statement when instructed to type it manually. Type the statement directly into the script editor.
+3. Type the required logic into the script editor.  
 
 ### Configure Variable Mapping
+
+1. Select **Edit Script Variables**.
+2. Add a new script variable using the **+ Create Script Variable** button.
+3. Add _var_policyNumber_ as a variable, configuration:
+   - **Variable Category:** ```Input/Output```
+   - **Type:** ```string```
+4. Save.
 
 Configure the Script Task to use **variable mapping** for the required process variables.
 
 > [!TIP]
 > Verify that the variables required by the script are available to the Script Task before continuing.
+
+1. Select the Script task and set the **Mapping Type** to ```Map Variables```.
+2. Set the **input** and **output** to _var_policyNumber_.
 
 ### Checkpoint
 
@@ -69,7 +73,7 @@ Before continuing, verify that:
 - [ ] The Script Task is named `create-policy-num`.
 - [ ] It appears immediately after the Start Event.
 - [ ] The provided source script has been added.
-- [ ] The required `if` logic has been entered.
+- [ ] The required logic has been entered.
 - [ ] Variable mapping has been configured.
 
 ---
@@ -84,13 +88,68 @@ Next, add the logic that updates the policy number used by the process.
 
    `update-policy-num`
 
+4. Create a new Script with the same title.
+5. Apply the script to the script task.
+   
+
 ### Configure the Script
 
-1. Select `update-policy-num`.
-2. Choose **Add Script from Source**.
-3. Paste the provided helper script.
-4. Locate the `if` statement identified by the instructor.
-5. Type the required logic directly into the `if` statement.
+1. Select `update-policy-num` script.
+2. Paste the provided helper function.  
+```
+// =================================================
+// INSTRUCTOR HANDS-ON TYPING: 
+// Use the Helper function to determine if the webhook JSON contains data
+// If it does, append add "W" to the Policy Number, else add "F"
+// ===========| START CODE HERE |===================
+
+
+// ============| END CODE HERE |====================
+// PROVIDED Helper: Determine if JSON contains data
+// =================================================
+function hasJsonData(jsonObject) {
+    try {
+        // ============================================
+        // Null / undefined
+        // ============================================
+        if (jsonObject === null || jsonObject === undefined) {
+            return false;
+        }
+
+        // ============================================
+        // Automate / Java Map-style JSON object
+        // ============================================
+        if (typeof jsonObject.get === "function") {
+
+            // Preferred check
+            if (typeof jsonObject.isEmpty === "function") {
+                return !jsonObject.isEmpty();
+            }
+
+            // Fallback check
+            if (typeof jsonObject.size === "function") {
+                return jsonObject.size() > 0;
+            }
+
+            return false;
+        }
+
+        // ============================================
+        // Standard JavaScript JSON object
+        // ============================================
+        if (typeof jsonObject === "object") {
+            return Object.keys(jsonObject).length > 0;
+        }
+
+        return false;
+
+    } catch (error) {
+        return false;
+    }
+}
+```
+4. Above the helper function, write the conditional logic script to call the function.
+5. Save.
 
 > [!IMPORTANT]
 > Use the supplied source script as the starting point and type the requested `if` logic manually.
