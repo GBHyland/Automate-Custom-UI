@@ -19,11 +19,12 @@ The starting process already contains the foundation of the workflow. Your job i
 
 ---
 
-# Part 1: Verify Process Origin and File Naming
+# LAB 1: Verify Process Origin and File Naming
 
 In this section, you will add logic that determines how the process was started and establishes the policy number used throughout the process.
 
-## Step 1: Add the `create-policy-num` Script Task
+## Step 1: Process and Script Task Variables 
+In this step we'll add the `create-policy-num` Script Task and edit process variable(s).
 
 1. Open the imported process in **Automate**.
 2. Locate the **Start Event**.
@@ -78,7 +79,8 @@ Before continuing, verify that:
 
 ---
 
-## Step 2: Add the `update-policy-num` Script Task
+## LAB 2: Conditional Logic
+Add the `update-policy-num` Script Task that uses conditional logic to made decisions.
 
 Next, add the logic that updates the policy number used by the process.
 
@@ -165,106 +167,29 @@ Verify that:
 
 ---
 
-# Part 2: Add Error Handling
+## LAB 3: Process changes & Error Handling
+The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
 
-The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure.
-
-You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
-
-## Step 1: Add an Error Boundary Event
-
-Locate the existing **Create Folder** task.
-
-1. Select the Create Folder task.
-2. Add an **Error Boundary Event** to the task.
-3. Configure the event to catch:
+1. Create a process variable called: ```customErrorMessage```
+2. Select the Create Folder task.
+3. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
+4. Add an **Error Boundary Event** to the task.
+5. Configure the event to catch:
 
    `ANY ERROR`
-
-The Error Event should be attached directly to the boundary of the Create Folder task.
-
-Conceptually:
-
-```text
-                       +------------------+
-                       |  Create Folder   |
-                       +------------------+
-                                |
-                          Normal Process
-                                |
-                                v
-
-                         [ANY ERROR]
-                              |
-                              v
-                         Human Task
-```
 
 > [!IMPORTANT]
 > The Error Event must be attached to the **Create Folder** task as a boundary event.
 
----
+6. Create a new **Script Task** and a **New Script**, title them: ```custom-folder-error```
+7. In the script entry, set the _customErrorMessage_ process variable to the string: ```The base Claim folder '/uidev_claims' could not be found. Ensure this directory exists and try again!```
+8. Set the mapping on the script task to _Map all inputs/outputs variables_.
+9. Create a Human task stemming from the _custom-folder-error_ script titled: ```folder-error-notify```
+10. Create a form with the same name, ```folder-error-notify``` and attach it to the human task.
+11. Open the form and add a **Display Text** Field with id: ```errorMessage```.
+12. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
+13. Add an **End Event** after the Human task.
 
-## Step 2: Add an Error Notification Human Task
-
-Create a **Human Task** connected to the Error Boundary Event.
-
-The error path should now resemble:
-
-```text
-Create Folder
-     |
- [ANY ERROR]
-     |
-     v
- Human Task
-```
-
-This task will notify the user that the expected base claim folder could not be found.
-
----
-
-## Step 3: Add an End Event
-
-Add an **End Event** after the Human Task.
-
-Connect the Human Task to the End Event.
-
-The completed error path should resemble:
-
-```text
-Create Folder
-     |
- [ANY ERROR]
-     |
-     v
- Human Task
-     |
-     v
-    End
-```
-
-This prevents the process from continuing down the normal claim-processing path after the folder creation failure.
-
----
-
-## Step 4: Create the Error Notification Form
-
-Create a new form for the Human Task.
-
-Name the form:
-
-`folder-inop-notify`
-
-### Add the Notification Message
-
-Add a **Display Text** field to the form.
-
-Configure the Display Text field to show the following message:
-
-> The base Claim folder '/uidev_claims' could not be found. Mike from accounting might have deleted it again. Ensure this directory exists and try again!
-
-This form is informational. Its purpose is to explain why the process cannot continue.
 
 ### Checkpoint
 
@@ -273,21 +198,18 @@ Verify that:
 - [ ] An Error Boundary Event is attached to Create Folder.
 - [ ] The boundary event catches `ANY ERROR`.
 - [ ] The Error Event flows to a Human Task.
-- [ ] The Human Task uses the `folder-inop-notify` form.
+- [ ] The Human Task uses the `folder-error-notify` form.
 - [ ] The form contains the required Display Text message.
 - [ ] The Human Task flows to an End Event.
 
 ---
 
-# Part 3: Support Multiple File Uploads
-
-The current process supports only a single uploaded file.
-
-You will modify the process so that users can attach multiple files to a claim and the process can handle each uploaded file individually.
+## LAB 4: Support Multiple File Uploads
+The current process supports only a single uploaded file. You will modify the process so that users can attach multiple files to a claim and the process can handle each uploaded file individually.
 
 ---
 
-## Step 1: Create the Required Process Variables
+### Step 1: Create the Required Process Variables
 
 Create the following process variables:
 
@@ -303,13 +225,11 @@ Create the following process variables:
 
 ---
 
-## Step 2: Modify the `create-claim` Form
+### Step 2: Modify the `create-claim` Form
 
-Open the existing `create-claim` form.
-
-Locate the current **File Upload** component.
-
-Change the component from:
+1. Open the existing `create-claim` form.
+2. Locate the current **File Upload** component.
+3. Change the component from:
 
 ```text
 Single File Upload
@@ -321,15 +241,14 @@ to:
 Multiple File Upload
 ```
 
-The form must now allow the user to select and upload multiple files.
+The form will now allow the user to select and upload multiple files.
 
 ---
 
-## Step 3: Update the `create-claim` Human Task
+### Step 3: Update the `create-claim` Human Task
 
-Return to the process model and select the existing `create-claim` Human Task.
-
-Update the task's file-related input and output mappings to use:
+1. Return to the process model and select the existing `create-claim` Human Task.
+2. Update the task's file-related input and output mappings to use:
 
 `var_attachedFile`
 
@@ -345,35 +264,33 @@ Verify that:
 
 ---
 
-# Part 4: Determine Whether Files Need Processing
-
+### Step 4: Determine Whether Files Need Processing
 The process now needs to determine whether any files were uploaded.
+- If files exist, the process will begin processing them.
+- If no files exist, the process will skip file processing.
 
-If files exist, the process will begin processing them.
+**Add a File Check Script Task**. 
+Create a new **Script Task** after the _create-claim-doc_ task and before the _move-file_ task; title it: ```check-for-files```.
+   - This Script Task will determine whether files were attached.
 
-If no files exist, the process will skip file processing.
-
-## Step 1: Add a File Check Script Task
-
-Create a new **Script Task** after the appropriate point in the claim creation process.
-
-This Script Task will determine whether files were attached.
-
-### Configure Variable Mapping
-
-Configure the Script Task to use:
-
+**Configure Variable Mapping**
+Configure the Script Task to use:  
 **All Input / Output**
+- This allows the script to work with the process variables required for the file-processing logic.
 
-This allows the script to work with the process variables required for the file-processing logic.
-
-### Add the Script
-
+**Add the Script**
 1. Open the Script Task configuration.
-2. Choose **Add Script from Source**.
-3. Paste the provided file-checking script.
+2. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
+```
+// 1. create a local variable that gets a reference to the var_attachedFile process variable
 
-The script will determine whether files exist and prepare the variables used by the upcoming gateway.
+
+// 2. set process variable var_processFiles to True or False; false if process var attachedFiles has no files
+
+
+// 3. conditional statement that sets the process var doc_fileToMove to the file in attachedFiles at the current index
+
+```
 
 ### Checkpoint
 
@@ -381,19 +298,15 @@ Verify that:
 
 - [ ] The Script Task has been added.
 - [ ] Mapping is configured for **All Input / Output**.
-- [ ] The supplied source script has been added.
-- [ ] The task can access `var_attachedFile`.
-- [ ] The task can update the variables used by the file-processing loop.
+- [ ] The supplied source script has been written / added.
 
 ---
 
-# Part 5: Create the File Processing Gateway
+### Step 5: Create the File Processing Gateway
+Next, we'll create the routing logic that determines whether another file needs to be processed.
 
-Next, create the routing logic that determines whether another file needs to be processed.
-
-## Step 1: Add an Exclusive Gateway
-
-Add an **Exclusive Gateway** immediately after the file-checking Script Task.
+**Add an Exclusive Gateway**
+1. Add an **Exclusive Gateway** immediately after the file-checking Script Task and before the _move-file_ task.
 
 The gateway will have two possible paths:
 
@@ -417,50 +330,30 @@ Conceptually:
               Move Content            End
 ```
 
----
 
-## Step 2: Configure the Move Path
-
-Create a sequence flow from the Exclusive Gateway to the existing **Move Content** task.
-
-Configure the condition for this flow as:
-
-```javascript
-var_processFiles == true
-```
+**Configure the Move Path**
+1. Create a sequence flow from the Exclusive Gateway to the existing **Move Content** task (if not already there).
+2. Configure the condition for this flow as: `var_processFiles` == **true**
 
 When `var_processFiles` is `true`, the process should continue to Move Content.
 
----
 
-## Step 3: Update the Move Content Task
-
-Select the existing **Move Content** task.
-
-Locate the `sourceContent` configuration.
-
-Change its value to:
-
-`doc_fileToMove`
-
-The Move Content task should therefore move the **current individual file**, rather than attempting to move the entire uploaded file collection.
-
+**Update the Move Content Task**
+1. Select the existing **Move Content** task.
+2. Locate the `sourceContent` configuration.
+3. Change its value to: `doc_fileToMove`
+ 
 > [!NOTE]
 > `var_attachedFile` contains all uploaded files. `doc_fileToMove` contains the single file currently being processed.
+> The Move Content task should now move the **current individual file** in the var_attachedFile array, rather than moving the single file.
 
 ---
 
-# Part 6: Add the File Loop
-
+**Add the File Looping Logic Script**
 After a file has been moved, the process needs to determine whether another uploaded file remains.
 
-## Step 1: Create the `looping-logic` Script Task
-
-Add a new Script Task after the **Move Content** task.
-
-Name it:
-
-`looping-logic`
+1. Add a new Script Task after the **Move Content** task. Name it: `looping-logic`
+2. Configure its variable mapping to: _Map all inputs/outputs variables_.
 
 The flow should now resemble:
 
@@ -475,36 +368,35 @@ Exclusive Gateway
  looping-logic
 ```
 
----
-
-## Step 2: Configure Variable Mapping
-
-Select the `looping-logic` Script Task.
-
-Configure its variable mapping to:
-
-**All Input / Output**
 
 ---
 
-## Step 3: Add the Looping Script
+**Add the Looping Script**
+1. Create a new **Script Task** and **Script element**, both titled ```loop-logic```.
+2. Set the script task mapping to: ```Map all inputs/outputs variables```.
+3. Paste the following script template and write in the necessary Javascript to complete the tasks. This script will update the variables required to determine whether another uploaded file needs to be processed.
+```
+// create a local variable called attachedFiles with a reference to the var_attachedFile process variable
 
-1. Open the Script Task.
-2. Choose **Add Script from Source**.
-3. Paste the provided looping script.
 
-This script will update the variables required to determine whether another uploaded file needs to be processed.
+// create a local variable called currentIndex with a reference to the var_currentIndex process variable
 
----
 
-## Step 4: Loop Back to the Gateway
+// Increment currentIndex
 
-Create a sequence flow from:
 
-`looping-logic`
+// Save updated currentIndex back to the process variable var_currentIndex
 
-back to the **Exclusive Gateway**.
 
+// Conditional statement: Have we exceeded the number of indexes within the attachedFiles array?
+// if so, set process variable var_processFiles = false
+// else set the process variable doc_fileToMove value to the next index of the attachedFiles array
+
+```
+
+
+**Loop Back to the Gateway**
+1. Create a sequence flow from the _looping-logic_ script task back to the _Exclusive Gateway_.
 The resulting loop should resemble:
 
 ```text
@@ -527,15 +419,9 @@ Each time the process returns to the gateway, `var_processFiles` is evaluated ag
 
 ---
 
-# Part 7: Configure the End Path
-
-Add an **End Event** to the second output path of the Exclusive Gateway.
-
-Configure this sequence flow as the:
-
-**Default Flow**
-
-Do not add an expression to the default path.
+**Configure the End Path**
+1. Add an **End Event** to the second output path of the Exclusive Gateway.
+2. Configure this sequence flow as the: **Default Flow**
 
 The gateway should behave as follows:
 
@@ -549,7 +435,7 @@ The gateway should behave as follows:
 
 ---
 
-# Final Process Logic
+## Final Process Logic
 
 When complete, the file-processing portion of the process should operate conceptually like this:
 
@@ -589,6 +475,10 @@ The overall behavior is:
 10. File processing ends.
 
 ---
+
+## LAB 6: Additional Error Handling
+Next we'll add additional error handling where it makes sense.
+
 
 # Final Lab Validation
 
