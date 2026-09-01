@@ -302,14 +302,14 @@ Verify that:
 // ============================================
 // INSTRUCTOR HANDS-ON TYPING: 
 // Use the Helper function to determine if the webhook JSON contains data
-// If it does, set v_originForm to false, true if the webhook payload variable contains data
+// If it does, set process variable v_originForm to false, else true
 // ============================================
 
-// set a reference to our process variables
+// create a local variable called inbound with a reference to the process variable var_inboundRequest
 
 
-// Conditional logic: if inbound has data set process variable v_originForm to false
-// else set it to true
+// Conditional statement that leverages the hasJsonData helper function to determine if the inbound var has value
+// if the inbound var has value, set process var v_originForm to false, else true
 
 
 
