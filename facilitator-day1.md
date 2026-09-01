@@ -2,8 +2,8 @@
 
 Complete code for the **create-policy-num** script task:
 ```
-// assign the Unix timestamp as the policy number for the var_policyNumber process variable
-variables.var_policyNumber = Math.floor(Date.now() / 1000);
+// assign the Unix timestamp as the claim number for the var_claimNumber process variable
+variables.var_claimNumber = Math.floor(Date.now() / 1000);
 ```
 
 ---  
@@ -15,12 +15,14 @@ Complete code for the **update-policy-num** script task:
 // ============================================
 // INSTRUCTOR HANDS-ON TYPING: 
 // Use the Helper function to determine if the webhook JSON contains data
-// If it does, append add "W" to the Policy Number, else add "F"
+// If it does, append add "W" to the Claim Number, else add "F"
 // ============================================
 
-// set a reference to our process variables
-const policyNum = variables.var_policyNumber;
-variables.updatedPolicyNum = policyNum;
+// set a local variable called claimNum as a reference to our var_claimNumber process variable
+const claimNum = variables.var_policyNumber;
+
+// make process variable updatedPolicyNum the value of the claimNum
+variables.updatedClaimNum = claimNum;
 
 // if webhook prepend "W", form prepend "F"
 const inbound = variables.var_inboundRequest;
@@ -32,7 +34,7 @@ if (hasJsonData(inbound)) {
 }
 
 // add the id to the policy number
-variables.updatedPolicyNum = id + policyNum;
+variables.updatedClaimNum = id + claimNum;
 
 
 
@@ -79,41 +81,6 @@ function hasJsonData(jsonObject) {
         return false;
     }
 }
-
-/*
-function hasJsonData(jsonObject) {
-    try {
-        // Null / undefined
-        if (jsonObject === null || jsonObject === undefined) {
-            return false;
-        }
-
-        // Automate / Java Map-style JSON object
-        if (typeof jsonObject.get === "function") {
-            if (typeof jsonObject.isEmpty === "function") {
-                return !jsonObject.isEmpty();
-            }
-
-            if (typeof jsonObject.size === "function") {
-                return jsonObject.size() > 0;
-            }
-
-            return false;
-        }
-
-        // Standard JavaScript JSON object
-        if (typeof jsonObject === "object") {
-            return Object.keys(jsonObject).length > 0;
-        }
-
-        return false;
-
-    } catch (error) {
-        // Treat anything unexpected as no usable data
-        return false;
-    }
-}
-*/
 ```
 
 ---  
