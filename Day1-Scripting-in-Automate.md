@@ -337,8 +337,6 @@ function hasJsonData(jsonObject) {
 ## 🧪 LAB 6: Establish the Looping Mechanism to move the uploaded files
 > [!NOTE]
 > **Lab Objective:** We'll create the looping mechanism to grab each file uploaded in the manual form process. This will need two script tasks: _check-for-files_ and _looping-logic_. 
-
-> [!NOTE]
 > The process now needs to determine whether any files were uploaded.
 > - If files exist, the process will begin processing them.
 > - If no files exist, the process will skip file processing.
