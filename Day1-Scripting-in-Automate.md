@@ -19,11 +19,15 @@ The starting process already contains the foundation of the workflow. Your job i
 
 ---
 
-# LAB 1: Verify Process Origin and File Naming
+## 🧪 LAB 1 — Verify Process Origin & File Naming
 
-In this section, you will add logic that determines how the process was started and establishes the policy number used throughout the process.
+> [!NOTE]
+> **Lab Objective:** Configure the process logic used to establish and update the policy number.
 
-## Step 1: Process and Script Task Variables 
+In this lab, you will add the Script Tasks required to determine the process origin and establish the policy number used throughout the process.
+
+
+### Step 1: Process and Script Task Variables 
 In this step we'll add the `create-policy-num` Script Task and edit process variable(s).
 
 1. Open the imported process in **Automate**.
@@ -79,7 +83,7 @@ Before continuing, verify that:
 
 ---
 
-## LAB 2: Conditional Logic
+## 🧪 LAB 2 — Conditional Logic
 Add the `update-policy-num` Script Task that uses conditional logic to made decisions.
 
 Next, add the logic that updates the policy number used by the process.
@@ -157,7 +161,7 @@ Verify that:
 
 ---
 
-## LAB 3: Process changes & Error Handling
+## 🧪 LAB 3 — Process changes & Error Handling
 The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
 
 1. Create a process variable called: ```customErrorMessage```
