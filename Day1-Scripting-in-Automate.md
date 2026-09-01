@@ -577,6 +577,45 @@ The overall behavior is:
 9. When no additional files need to be processed, the gateway follows its Default Flow.
 10. File processing ends.
 
+---  
+
+---
+
+## 🧪 LAB 7: Mapping JSON Values to Process Variables
+> [!NOTE]
+> **Lab Objective:**
+> When a claim is submitted via the website it sends data to the process via a JSON payload.
+> We need to access the JSON object to map values from the payload to our process variables.
+> We should also include error handling to catch the possibility of missing data values.
+
+**Mapping JSON Values in the _update-vars_ script**
+> [!NOTE]
+> This script is partially written. It already:
+> - Checks to ensure the _var_inboundRequest_ process variable is not null and contains data.
+> - Checks if any images / documents were uploaded from the website and sets a true / false variable.
+
+1. Select and open the _update-vars_ script attached to the script task with the same name.
+2. Notice the section ```EXERCISE: Map inbound data to process variables``` is blank. This is where we want to map values.
+   - Use the example of JSON structure below with dot-syntax Javascript to assign each value to the correct process variable.
+
+``` JSON Structure
+{
+   "FirstName=value,
+   "LastName=value,
+   "StreetAddress"=value,
+   "City=value,
+   "State"=value,
+   "Zip"=value,
+   "var_email"=value,
+   "var_claimNumber"=value,
+   "DamageDate"=value,
+   "DamageDescription"=value,
+   "DamageType"=value
+}
+```
+
+
+
 ---
 
 ## 🧪 LAB 8: Additional Error Handling
