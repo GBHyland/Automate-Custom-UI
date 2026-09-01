@@ -170,10 +170,20 @@ Verify that:
 **Created Folder Name Enhancement**
 1. Select the Create Folder task.
 2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```.
+> [!TIP]
+> **Expressions and Interpolation**
+> Using a variable with dollar-bracket syntax, such as `${updatedPolicyNum}`, is called an **expression**. An expression allows you to reference the current value of a process variable.
+>
+> When you combine text with an expression, this is called **string interpolation**.
+>
+> For example:
+>
+> `claim-${updatedPolicyNum}`
+>
+> If `updatedPolicyNum` contains `12345`, the resulting value will be:
+>
+> `claim-12345`
 
-> [!HINT]
-> Using a variable in the dollar-bracket syntax (${}) is called an **expression**, and allows you to invoke the value of a variable.
-> Combining string text with an expression is called **Interpolation**, i.e.: ```claim-${updatedPolicyNum}``` outputs to: ```claim-12345```.
 
 **Error Boundary Event for the Create Folder Task**
 1. Add an **Intermediate Throw Event** to the _create-folder_ task and use the wrench icon to select an ERROR event.
@@ -183,7 +193,7 @@ Verify that:
 
 **Process Variable We'll Need.**
 1. Create a process variable called: ```customErrorMessage```
-> [!HINT]
+> [!TIP]
 > Creating a variable to store a custom error message allows us to display in a Human Task or send to the error log. 
 
 **Script Task to Set our Custom Error**
