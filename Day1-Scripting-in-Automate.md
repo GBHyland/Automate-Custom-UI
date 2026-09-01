@@ -579,7 +579,7 @@ The overall behavior is:
 
 ---
 
-## 🧪 LAB 7: Additional Error Handling
+## 🧪 LAB 8: Additional Error Handling
 > [!NOTE]
 > **Lab Objective:** Next we'll add additional error handling where it makes sense.
 
