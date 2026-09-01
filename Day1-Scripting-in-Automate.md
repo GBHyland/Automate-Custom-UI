@@ -165,30 +165,35 @@ Verify that:
 > [!NOTE]
 > **Lab Objectives:**
 > 1. The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
-> 2. The Generated Claim Document **name** is too simple and can use some level of customization.
+> 2. The Custom Folder and Generated Claim Document **names** are too simple and can use some level of customization.
 
-**Process Variable We'll Need.**
-1. Create a process variable called: ```customErrorMessage```
-Using this variable to store a custom error message that can be displayed in
+**Created Folder Name Enhancement**
+1. Select the Create Folder task.
+2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
+> [!HINT]
+> Using a variable in the dollar-bracket syntax (${}) is called an **expression**, and allows you to invoke the value of a variable.
+> Combining string text with an expression is called **Interpolation**, i.e.: ```claim-${updatedPolicyNum}``` outputs to: ```claim-12345```.
 
-3. Select the Create Folder task.
-4. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
-5. Add an **Error Boundary Event** to the task.
-6. Configure the event to catch:
-
-   `ANY ERROR`
-
+**Error Boundary Event for the Create Folder Task**
+1. Add an **Intermediate Throw Event** to the _create-folder_ task and use the wrench icon to select an ERROR event.
+2. Configure the event to catch: `ANY ERROR`
 > [!IMPORTANT]
 > The Error Event must be attached to the **Create Folder** task as a boundary event.
 
-6. Create a new **Script Task** and a **New Script**, title them: ```custom-folder-error```
-7. In the script entry, set the _customErrorMessage_ process variable to the string: ```The base Claim folder '/uidev_claims' could not be found. Ensure this directory exists and try again!```
-8. Set the mapping on the script task to _Map all inputs/outputs variables_.
-9. Create a Human task stemming from the _custom-folder-error_ script titled: ```folder-error-notify```
-10. Create a form with the same name, ```folder-error-notify``` and attach it to the human task.
-11. Open the form and add a **Display Text** Field with id: ```errorMessage```.
-12. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
-13. Add an **End Event** after the Human task.
+**Process Variable We'll Need.**
+1. Create a process variable called: ```customErrorMessage```
+> [!HINT]
+> Creating a variable to store a custom error message allows us to display in a Human Task or send to the error log. 
+
+**Script Task to Set our Custom Error**
+1. Create a new **Script Task** and a **New Script**, title them: ```custom-folder-error```
+2. In the script entry, set the _customErrorMessage_ process variable to the string: ```The base Claim folder '/uidev_claims' could not be found. Ensure this directory exists and try again!```
+3. Set the mapping on the script task to _Map all inputs/outputs variables_.
+4. Create a Human task stemming from the _custom-folder-error_ script titled: ```folder-error-notify```
+5. Create a form with the same name, ```folder-error-notify``` and attach it to the human task.
+6. Open the form and add a **Display Text** Field with id: ```errorMessage```.
+7. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
+8. Add an **End Event** after the Human task.
 
 
 ### Checkpoint
