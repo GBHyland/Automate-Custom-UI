@@ -102,7 +102,7 @@ Next, add the logic that updates the claim number used by the process.
 // set a local variable called claimNum as a reference to our var_claimNumber process variable
 
 
-// make process variable updatedPolicyNum the value of the claimNum
+// make process variable var_updatedClaimNum the value of the claimNum
 
 
 // if webhook prepend "W", form prepend "F"
