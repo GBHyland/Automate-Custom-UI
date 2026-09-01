@@ -99,6 +99,20 @@ Next, add the logic that updates the claim number used by the process.
 // If it does, append add "W" to the claim Number, else add "F"
 // ===========| START CODE HERE |===================
 
+// set a local variable called claimNum as a reference to our var_claimNumber process variable
+
+
+// make process variable updatedPolicyNum the value of the claimNum
+
+
+// if webhook prepend "W", form prepend "F"
+
+
+// conditional logid to set the id
+
+
+// add the id to the policy number
+
 
 // ============| END CODE HERE |====================
 // PROVIDED Helper: Determine if JSON contains data
