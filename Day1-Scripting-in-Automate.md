@@ -14,12 +14,11 @@ The starting process already contains the foundation of the workflow. Your job i
 - Looping through uploaded files
 - Moving each uploaded file into the appropriate claim folder
 
-> [!NOTE]
-> This lab begins with an existing imported process. You are **not** creating the entire process from scratch.
+This hands-on lab begins with an existing imported process. You are **not** creating the entire process from scratch.
 
 ---
 
-## 🧪 LAB 1 — Verify Process Origin & File Naming
+## 🧪 LAB 1: Verify Process Origin & File Naming
 
 > [!NOTE]
 > **Lab Objective:** Configure the process logic used to establish and update the policy number.
@@ -83,7 +82,7 @@ Before continuing, verify that:
 
 ---
 
-## 🧪 LAB 2 — Conditional Logic
+## 🧪 LAB 2: Conditional Logic
 Add the `update-policy-num` Script Task that uses conditional logic to made decisions.
 
 Next, add the logic that updates the policy number used by the process.
@@ -161,7 +160,7 @@ Verify that:
 
 ---
 
-## 🧪 LAB 3 — Process changes & Error Handling
+## 🧪 LAB 3: Process changes & Error Handling
 The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
 
 1. Create a process variable called: ```customErrorMessage```
@@ -198,7 +197,7 @@ Verify that:
 
 ---
 
-## LAB 4: Support Multiple File Uploads
+## 🧪 LAB 4: Support Multiple File Uploads
 The current process supports only a single uploaded file. You will modify the process so that users can attach multiple files to a claim and the process can handle each uploaded file individually.
 
 ---
@@ -258,7 +257,7 @@ Verify that:
 
 ---
 
-## LAB 5: Determine Origination of the Process (Webhook or Manual Form Entry)
+## 🧪 LAB 5: Determine Origination of the Process (Webhook or Manual Form Entry)
 This process can be started from a webhook HTTP call from the **9 Second Insurance Website** or **Manually**. We need a method, at runtime, to determine how the process was started since the file handling is different for each origination.
 
 **Add the _validate-origin_ Script Task**
@@ -331,7 +330,7 @@ function hasJsonData(jsonObject) {
 
 ---  
 
-### LAB 6: Establish the Looping Mechanism to move the uploaded files
+## 🧪 LAB 6: Establish the Looping Mechanism to move the uploaded files
 We'll create the looping mechanism to grab each file uploaded in the manual form process. This will need two script tasks: _check-for-files_ and _looping-logic_. 
 
 > [!NOTE]
@@ -538,7 +537,7 @@ The overall behavior is:
 
 ---
 
-## LAB 7: Additional Error Handling
+## 🧪 LAB 7: Additional Error Handling
 Next we'll add additional error handling where it makes sense.
 
 **Add error handling (failure protection) to the _update-vars_ script (webhook path)**
