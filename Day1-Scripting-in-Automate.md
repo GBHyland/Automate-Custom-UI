@@ -588,6 +588,13 @@ The overall behavior is:
 > We need to access the JSON object to map values from the payload to our process variables.
 > We should also include error handling to catch the possibility of missing data values.
 
+**Test the Process**
+1. Test the process at least one time from the [https://edstrain.com/cic-9si/home.php](9 Second Insurance Website).
+   - **Password:** ```cic-demo```
+2. The process will arrive at the _display-json_ Human Task.
+3. This Human task is here to review the JSON structure of the HTML form submitted payload.
+4. Use this as a reference going forward.
+
 **Mapping JSON Values in the _update-vars_ script**
 > [!NOTE]
 > This script is partially written. It already:
@@ -596,9 +603,10 @@ The overall behavior is:
 
 1. Select and open the _update-vars_ script attached to the script task with the same name.
 2. Notice the section ```EXERCISE: Map inbound data to process variables``` is blank. This is where we want to map values.
-   - Use the example of JSON structure below with dot-syntax Javascript to assign each value to the correct process variable.
+   - Use the example of JSON structure and list of applicable process variables below with dot-syntax Javascript to assign each value to the correct process variable.
 
-``` JSON Structure
+JSON Structure
+``` 
 {
    "FirstName"=value,
    "LastName"=value,
@@ -614,7 +622,23 @@ The overall behavior is:
 }
 ```
 
+Process Variables
+```
+var_firstName
+var_lastName
+var_streetAddress
+var_city
+var_state
+var_zip
+var_email
+var_claimNumber
+var_perilType
+var_perilDate
+var_perilDescription
+```
 
+> [!NOTE]
+> When complete this script task will properly map the website form data to the proper process variables, ensuring they are populated for the _create-doc_ task.
 
 ---
 
