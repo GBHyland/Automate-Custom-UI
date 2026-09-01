@@ -600,10 +600,10 @@ The overall behavior is:
 
 ``` JSON Structure
 {
-   "FirstName=value,
-   "LastName=value,
+   "FirstName"=value,
+   "LastName"=value,
    "StreetAddress"=value,
-   "City=value,
+   "City"=value,
    "State"=value,
    "Zip"=value,
    "var_email"=value,
