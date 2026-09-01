@@ -371,11 +371,8 @@ function hasJsonData(jsonObject) {
 > - If no files exist, the process will skip file processing.
 
 **Add a File Check Script Task**. 
-1. Create a new **Script Task** after the _create-claim-doc_ task and before the _move-file_ task; title it: ```check-for-files```.
-2. Create a new **Script** with the same name.
-3. Configure the Script Task to use: **All Input / Output**
-4. Open the Script Task configuration.
-5. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
+1. Edit the _check-for-files_ **Script Task**.
+2. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
 ```
 // 1. create a local variable that gets a reference to the var_attachedFile process variable
 
@@ -391,7 +388,6 @@ function hasJsonData(jsonObject) {
 
 Verify that:
 
-- [ ] The Script Task has been added.
 - [ ] Mapping is configured for **All Input / Output**.
 - [ ] The supplied source script has been written / added.
 
