@@ -81,6 +81,41 @@ function hasJsonData(jsonObject) {
         return false;
     }
 }
+
+/*
+function hasJsonData(jsonObject) {
+    try {
+        // Null / undefined
+        if (jsonObject === null || jsonObject === undefined) {
+            return false;
+        }
+
+        // Automate / Java Map-style JSON object
+        if (typeof jsonObject.get === "function") {
+            if (typeof jsonObject.isEmpty === "function") {
+                return !jsonObject.isEmpty();
+            }
+
+            if (typeof jsonObject.size === "function") {
+                return jsonObject.size() > 0;
+            }
+
+            return false;
+        }
+
+        // Standard JavaScript JSON object
+        if (typeof jsonObject === "object") {
+            return Object.keys(jsonObject).length > 0;
+        }
+
+        return false;
+
+    } catch (error) {
+        // Treat anything unexpected as no usable data
+        return false;
+    }
+}
+*/
 ```
 
 ---  
@@ -100,14 +135,14 @@ Complete code for the **validate-origin** script task:
 // ============================================
 // INSTRUCTOR HANDS-ON TYPING: 
 // Use the Helper function to determine if the webhook JSON contains data
-// If it does, set v_originForm to false, true if the webhook payload variable contains data
+// If it does, set process variable v_originForm to false, else true
 // ============================================
 
-// set a reference to our process variables
+// create a local variable called inbound with a reference to the process variable var_inboundRequest
 const inbound = variables.var_inboundRequest;
 
-// Conditional logic: if inbound has data set process variable v_originForm to false
-// else set it to true
+// Conditional statement that leverages the hasJsonData helper function to determine if the inbound var has value
+// if the inbound var has value, set process var v_originForm to false, else true
 if (hasJsonData(inbound)) {
     // Inbound data exists = originated externally
     variables.v_originForm = false;
