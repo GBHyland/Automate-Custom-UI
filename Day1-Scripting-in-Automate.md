@@ -84,20 +84,10 @@ Add the `update-policy-num` Script Task that uses conditional logic to made deci
 
 Next, add the logic that updates the policy number used by the process.
 
-1. Locate the appropriate point in the existing process where the policy number needs to be updated.
-2. Add another **Script Task**.
-3. Name the task:
-
-   `update-policy-num`
-
-4. Create a new Script with the same title.
-5. Apply the script to the script task.
-   
-
-### Configure the Script
-
-1. Select `update-policy-num` script.
-2. Paste the provided helper function.  
+1. Add another **Script Task** after the _create-policy-num_ Script Task and before the _create-folder_ Task.
+2. Name the task: `update-policy-num`
+3. Create a new Script with the same title.
+4. Paste the provided helper function:  
 ```
 // =================================================
 // INSTRUCTOR HANDS-ON TYPING: 
@@ -150,7 +140,7 @@ function hasJsonData(jsonObject) {
     }
 }
 ```
-4. Above the helper function, write the conditional logic script to call the function.
+4. Above the helper function, write the conditional logic Javascript to call the function.
 5. Save.
 
 > [!IMPORTANT]
@@ -264,7 +254,80 @@ Verify that:
 
 ---
 
-### Step 4: Determine Whether Files Need Processing
+## LAB 5: Determine Origination of the Process (Webhook or Manual Form Entry)
+This process can be started from a webhook HTTP call from the **9 Second Insurance Website** or **Manually**. We need a method, at runtime, to determine how the process was started since the file handling is different for each origination.
+
+**Add the _validate-origin_ Script Task**
+1. Create a new **Script Task** and **Script Object** titled: `validate-origin`.
+2. Place the script task after the _create-folder_ task and before the _gateway_.
+3. Configure the mapping to: **Map all inputs/outputs variables**
+4. Add the following script template and fill in the rest of the Javascript necessary.
+```
+// ============================================
+// INSTRUCTOR HANDS-ON TYPING: 
+// Use the Helper function to determine if the webhook JSON contains data
+// If it does, set v_originForm to false, true if the webhook payload variable contains data
+// ============================================
+
+// set a reference to our process variables
+
+
+// Conditional logic: if inbound has data set process variable v_originForm to false
+// else set it to true
+
+
+
+// ============================================
+// Helper: Determine if JSON contains data
+// ============================================
+function hasJsonData(jsonObject) {
+    try {
+        // ============================================
+        // Null / undefined
+        // ============================================
+        if (jsonObject === null || jsonObject === undefined) {
+            return false;
+        }
+
+        // ============================================
+        // Automate / Java Map-style JSON object
+        // ============================================
+        if (typeof jsonObject.get === "function") {
+
+            // Preferred check
+            if (typeof jsonObject.isEmpty === "function") {
+                return !jsonObject.isEmpty();
+            }
+
+            // Fallback check
+            if (typeof jsonObject.size === "function") {
+                return jsonObject.size() > 0;
+            }
+
+            return false;
+        }
+
+        // ============================================
+        // Standard JavaScript JSON object
+        // ============================================
+        if (typeof jsonObject === "object") {
+            return Object.keys(jsonObject).length > 0;
+        }
+
+        return false;
+
+    } catch (error) {
+        return false;
+    }
+}
+```
+
+> [!IMPORTANT]
+> The following Gateway and sequence flow lines are already configured to refer to the process variable _v_originForm_ to flow in the correct direction based on the setting of the script.
+
+---  
+
+### LAB 6: Determine Whether Files Need Processing
 The process now needs to determine whether any files were uploaded.
 - If files exist, the process will begin processing them.
 - If no files exist, the process will skip file processing.
@@ -476,9 +539,18 @@ The overall behavior is:
 
 ---
 
-## LAB 6: Additional Error Handling
+## LAB 7: Additional Error Handling
 Next we'll add additional error handling where it makes sense.
 
+**Add error handling (failure protection) to the _update-vars_ script (webhook path)**
+If this script fails then the process should not continue. However, we've created a folder for this claim, so if the process is closed at this point, we should remove the folder.
+
+1. Add a **Intermediate throwing event** to the _update-vars_ task.
+2. Use the wrench icon to configure it as an **Error Event**.
+3. In the **Error** drop-down, elect: `Any error`.
+4. Add a **Delete Content Task** after the script task, but ensure a sequence flow line flows from the boundary error event to the _Delete Content Task_.
+5. Assign **doc_folder** process variable to the _Content_ attribute.
+6. Add an **End Event** flowing from the _Delete Content Task_.
 
 # Final Lab Validation
 
