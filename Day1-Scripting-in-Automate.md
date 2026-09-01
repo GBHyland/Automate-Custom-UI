@@ -167,6 +167,8 @@ Verify that:
 > 1. The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
 > 2. The Custom Folder and Generated Claim Document **names** are too simple and can use some level of customization.
 
+---  
+
 **Created Folder Name Enhancement**
 1. Select the Create Folder task.
 2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```.
@@ -184,6 +186,7 @@ Verify that:
 >
 > `claim-12345`
 
+---  
 
 **Error Boundary Event for the Create Folder Task**
 1. Add an **Intermediate Throw Event** to the _create-folder_ task and use the wrench icon to select an ERROR event.
@@ -191,10 +194,14 @@ Verify that:
 > [!IMPORTANT]
 > The Error Event must be attached to the **Create Folder** task as a boundary event.
 
+---  
+
 **Process Variable We'll Need.**
 1. Create a process variable called: ```customErrorMessage```
 > [!TIP]
-> Creating a variable to store a custom error message allows us to display in a Human Task or send to the error log. 
+> Creating a variable to store a custom error message allows us to display in a Human Task or send to the error log.
+
+---  
 
 **Script Task to Set our Custom Error**
 1. Create a new **Script Task** and a **New Script**, title them: ```custom-folder-error```
@@ -206,6 +213,7 @@ Verify that:
 7. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
 8. Add an **End Event** after the Human task.
 
+---  
 
 ### Checkpoint
 
