@@ -554,20 +554,19 @@ If this script fails then the process should not continue. However, we've create
 5. Assign **doc_folder** process variable to the _Content_ attribute.
 6. Add an **End Event** flowing from the _Delete Content Task_.
 
-# Final Lab Validation
+---  
 
+## Final Lab Validations
 Before completing the lab, verify each of the following.
 
-## Process Origin and Policy Number
-
+### Process Origin and Policy Number
 - [ ] `create-policy-num` exists after the Start Event.
 - [ ] The supplied source script has been added.
 - [ ] Required variable mappings are configured.
 - [ ] `update-policy-num` has been added.
 - [ ] The supplied update script has been added.
 
-## Error Handling
-
+### Error Handling
 - [ ] Create Folder has an Error Boundary Event.
 - [ ] The Error Event catches `ANY ERROR`.
 - [ ] The Error Event routes to a Human Task.
@@ -575,8 +574,7 @@ Before completing the lab, verify each of the following.
 - [ ] The notification form contains the required message.
 - [ ] The error path terminates at an End Event.
 
-## File Upload
-
+### File Upload
 - [ ] `var_attachedFile` exists as `contentArray`.
 - [ ] `doc_fileToMove` exists as `content`.
 - [ ] `var_processFiles` exists as `Boolean`.
@@ -584,8 +582,7 @@ Before completing the lab, verify each of the following.
 - [ ] The `create-claim` form supports multiple file uploads.
 - [ ] The Human Task uses `var_attachedFile`.
 
-## File Processing
-
+### File Processing
 - [ ] The file-checking Script Task has been added.
 - [ ] The Script Task uses **All Input / Output** mapping.
 - [ ] An Exclusive Gateway follows the file-checking logic.
@@ -599,54 +596,65 @@ Before completing the lab, verify each of the following.
 
 ---
 
-# Test the Completed Process
-
+## Test the Completed Process
 After completing the configuration, save and validate the process.
 
 Test at least the following scenarios:
 
-### Test 1: Claim With No Files
+> [!NOTE]
+>
+> ### 🧪 Test 1: Claim With No Files
+>
+> Start the process and submit the claim **without attaching a file**.
+>
+> **✅ Expected Result:**
+> The process should bypass the **Move Content** loop and follow the gateway's **Default Flow**.
 
-Start the process and submit the claim without attaching a file.
 
-**Expected Result:**  
-The process should bypass the Move Content loop and follow the gateway's Default Flow.
+---  
 
-### Test 2: Claim With One File
 
-Start the process and attach one file.
+> [!NOTE]
+>
+> ### 🧪 Test 2: Claim With One File
+>
+> Start the process and attach one file.
+>
+> **✅ Expected Result:**
+> The file should be processed by Move Content and the file-processing loop should complete.
 
-**Expected Result:**  
-The file should be processed by Move Content and the file-processing loop should complete.
 
-### Test 3: Claim With Multiple Files
+---  
 
-Start the process and attach multiple files.
 
-**Expected Result:**  
-Each file should be processed individually through the Move Content task until all uploaded files have been handled.
+> [!NOTE]
+>
+> ### 🧪 Test 3: Claim With Multiple Files
+>
+> Start the process and attach multiple files.
+>
+> **✅ Expected Result:**
+> Each file should be processed individually through the Move Content task until all uploaded files have been handled.
 
-### Test 4: Missing Base Claim Folder
 
-Temporarily test the process under conditions where the `/uidev_claims` folder cannot be located.
+---  
 
-**Expected Result:**  
-The Create Folder task should trigger its Error Boundary Event and display the `folder-inop-notify` Human Task.
+> [!NOTE]
+>
+> ### 🧪 Test 4: Missing Base Claim Folder
+>
+> Temporarily test the process under conditions where the `/uidev_claims` folder cannot be located.
+>
+> **✅ Expected Result:**
+> The Create Folder task should trigger its Error Boundary Event and display the `folder-inop-notify` Human Task.
 
-The user should see:
-
-> The base Claim folder '/uidev_claims' could not be found. Mike from accounting might have deleted it again. Ensure this directory exists and try again!
-
-After the notification is completed, the error path should terminate.
 
 ---
 
-## Lab Complete
-
+## Hands-on Lab Complete
 You have completed the imported Automate process.
 
 The process can now:
-
 - Determine and update the policy number.
 - Handle a failure when creating the claim folder.
 - Accept multiple uploaded files.
