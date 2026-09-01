@@ -18,7 +18,7 @@ This hands-on lab begins with an existing imported process. You are **not** crea
 
 ---
 
-## 🧪 LAB 1: Verify Process Origin & File Naming
+## 🧪 LAB 1: Variable Manipulation & Saving to Process
 
 > [!NOTE]
 > **Lab Objective:** Configure the process logic used to establish and update the policy number.
