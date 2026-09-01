@@ -327,23 +327,20 @@ function hasJsonData(jsonObject) {
 
 ---  
 
-### LAB 6: Determine Whether Files Need Processing
-The process now needs to determine whether any files were uploaded.
-- If files exist, the process will begin processing them.
-- If no files exist, the process will skip file processing.
+### LAB 6: Establish the Looping Mechanism to move the uploaded files
+We'll create the looping mechanism to grab each file uploaded in the manual form process. This will need two script tasks: _check-for-files_ and _looping-logic_. 
+
+> [!NOTE]
+> The process now needs to determine whether any files were uploaded.
+> - If files exist, the process will begin processing them.
+> - If no files exist, the process will skip file processing.
 
 **Add a File Check Script Task**. 
-Create a new **Script Task** after the _create-claim-doc_ task and before the _move-file_ task; title it: ```check-for-files```.
-   - This Script Task will determine whether files were attached.
-
-**Configure Variable Mapping**
-Configure the Script Task to use:  
-**All Input / Output**
-- This allows the script to work with the process variables required for the file-processing logic.
-
-**Add the Script**
-1. Open the Script Task configuration.
-2. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
+1. Create a new **Script Task** after the _create-claim-doc_ task and before the _move-file_ task; title it: ```check-for-files```.
+2. Create a new **Script** with the same name.
+3. Configure the Script Task to use: **All Input / Output**
+4. Open the Script Task configuration.
+5. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
 ```
 // 1. create a local variable that gets a reference to the var_attachedFile process variable
 
@@ -365,16 +362,14 @@ Verify that:
 
 ---
 
-### Step 5: Create the File Processing Gateway
+**Create the File Processing Gateway**
 Next, we'll create the routing logic that determines whether another file needs to be processed.
 
-**Add an Exclusive Gateway**
 1. Add an **Exclusive Gateway** immediately after the file-checking Script Task and before the _move-file_ task.
 
 The gateway will have two possible paths:
-
-1. Process a file.
-2. End file processing.
+- Process a file.
+- End file processing.
 
 Conceptually:
 
