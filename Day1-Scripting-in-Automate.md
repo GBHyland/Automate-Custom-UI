@@ -7,7 +7,7 @@ In this hands-on lab, you will complete the configuration of an imported **Autom
 The starting process already contains the foundation of the workflow. Your job is to finish the process by adding logic for:
 
 - Determining how the process was started
-- Creating and updating the policy number
+- Creating and updating the claim number
 - Handling errors when the claim folder cannot be created
 - Supporting multiple file uploads
 - Determining whether uploaded files need to be processed
@@ -21,22 +21,22 @@ This hands-on lab begins with an existing imported process. You are **not** crea
 ## 🧪 LAB 1: Variable Manipulation & Saving to Process
 
 > [!NOTE]
-> **Lab Objective:** Configure the process logic used to establish and update the policy number.
+> **Lab Objective:** Configure the process logic used to establish and update the claim number.
 
-In this lab, you will add the Script Tasks required to determine the process origin and establish the policy number used throughout the process.
+In this lab, you will add the Script Tasks required to determine the process origin and establish the claim number used throughout the process.
 
 
 ### Step 1: Process and Script Task Variables 
-In this step we'll add the `create-policy-num` Script Task and edit process variable(s).
+In this step we'll add the `create-claim-num` Script Task and edit process variable(s).
 
 1. Open the imported process in **Automate**.
 2. Locate the **Start Event**.
 3. Add a **Script Task** immediately after the Start Event.
 4. Name the Script Task:
 
-   `create-policy-num`
+   `create-claim-num`
 
-5. Connect the Start Event to `create-policy-num`.
+5. Connect the Start Event to `create-claim-num`.
 
 Your process should begin with a flow similar to:
 
@@ -44,12 +44,12 @@ Your process should begin with a flow similar to:
 Start
   |
   v
-create-policy-num
+create-claim-num
 ```
 
 ### Configure the Script
 
-1. Select the `create-policy-num` Script Task.
+1. Select the `create-claim-num` Script Task.
 2. Open the script configuration.
 3. Type the required logic into the script editor.  
 
@@ -57,7 +57,7 @@ create-policy-num
 
 1. Select **Edit Script Variables**.
 2. Add a new script variable using the **+ Create Script Variable** button.
-3. Add _var_policyNumber_ as a variable, configuration:
+3. Add _var_claimNumber_ as a variable, configuration:
    - **Variable Category:** ```Input/Output```
    - **Type:** ```string```
 4. Save.
@@ -68,13 +68,13 @@ Configure the Script Task to use **variable mapping** for the required process v
 > Verify that the variables required by the script are available to the Script Task before continuing.
 
 1. Select the Script task and set the **Mapping Type** to ```Map Variables```.
-2. Set the **input** and **output** to _var_policyNumber_.
+2. Set the **input** and **output** to _var_claimNumber_.
 
 ### Checkpoint
 
 Before continuing, verify that:
 
-- [ ] The Script Task is named `create-policy-num`.
+- [ ] The Script Task is named `create-claim-num`.
 - [ ] It appears immediately after the Start Event.
 - [ ] The provided source script has been added.
 - [ ] The required logic has been entered.
@@ -84,19 +84,19 @@ Before continuing, verify that:
 
 ## 🧪 LAB 2: Conditional Logic to Customize Claims
 > [!NOTE]
-> **Lab Objective:** Add a Script Task that uses conditional logic to customize our policy number.
+> **Lab Objective:** Add a Script Task that uses conditional logic to customize our claim number.
 
-Next, add the logic that updates the policy number used by the process.
+Next, add the logic that updates the claim number used by the process.
 
-1. Add another **Script Task** after the _create-policy-num_ Script Task and before the _create-folder_ Task.
-2. Name the task: `update-policy-num`
+1. Add another **Script Task** after the _create-claim-num_ Script Task and before the _create-folder_ Task.
+2. Name the task: `update-claim-num`
 3. Create a new Script with the same title.
 4. Paste the provided helper function:  
 ```
 // =================================================
 // INSTRUCTOR HANDS-ON TYPING: 
 // Use the Helper function to determine if the webhook JSON contains data
-// If it does, append add "W" to the Policy Number, else add "F"
+// If it does, append add "W" to the claim Number, else add "F"
 // ===========| START CODE HERE |===================
 
 
@@ -154,7 +154,7 @@ function hasJsonData(jsonObject) {
 
 Verify that:
 
-- [ ] The Script Task is named `update-policy-num`.
+- [ ] The Script Task is named `update-claim-num`.
 - [ ] The supplied script has been added.
 - [ ] The required `if` statement has been entered.
 - [ ] The task is connected correctly within the existing process flow.
@@ -171,18 +171,18 @@ Verify that:
 
 **Created Folder Name Enhancement**
 1. Select the Create Folder task.
-2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```.
+2. Change the value of the **Name** attribute to: ```claim-${var_updatedClaimNum}```.
 > [!TIP]
 > **Expressions and Interpolation**
-> Using a variable with dollar-bracket syntax, such as `${updatedPolicyNum}`, is called an **expression**. An expression allows you to reference the current value of a process variable.
+> Using a variable with dollar-bracket syntax, such as `${var_updatedClaimNum}`, is called an **expression**. An expression allows you to reference the current value of a process variable.
 >
 > When you combine text with an expression, this is called **string interpolation**.
 >
 > For example:
 >
-> `claim-${updatedPolicyNum}`
+> `claim-${var_updatedClaimNum}`
 >
-> If `updatedPolicyNum` contains `12345`, the resulting value will be:
+> If `var_updatedClaimNum` contains `12345`, the resulting value will be:
 >
 > `claim-12345`
 
@@ -588,11 +588,11 @@ If this script fails then the process should not continue. However, we've create
 ## Final Lab Validations
 Before completing the lab, verify each of the following.
 
-### Process Origin and Policy Number
-- [ ] `create-policy-num` exists after the Start Event.
+### Process Origin and Claim Number
+- [ ] `create-claim-num` exists after the Start Event.
 - [ ] The supplied source script has been added.
 - [ ] Required variable mappings are configured.
-- [ ] `update-policy-num` has been added.
+- [ ] `update-claim-num` has been added.
 - [ ] The supplied update script has been added.
 
 ### Error Handling
@@ -684,7 +684,7 @@ Test at least the following scenarios:
 You have completed the imported Automate process.
 
 The process can now:
-- Determine and update the policy number.
+- Determine and update the claim number.
 - Handle a failure when creating the claim folder.
 - Accept multiple uploaded files.
 - Determine whether files need to be processed.
