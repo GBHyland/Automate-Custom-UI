@@ -163,13 +163,18 @@ Verify that:
 
 ## 🧪 LAB 3: Process changes & Error Handling
 > [!NOTE]
-> **Lab Objective:** The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
+> **Lab Objectives:**
+> 1. The process currently attempts to create a claim folder. If the expected base claims directory does not exist, the process needs a controlled way to handle the failure. You will add an error path that informs the user of the problem instead of allowing the process to fail without explanation.
+> 2. The Generated Claim Document **name** is too simple and can use some level of customization.
 
+**Process Variable We'll Need.**
 1. Create a process variable called: ```customErrorMessage```
-2. Select the Create Folder task.
-3. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
-4. Add an **Error Boundary Event** to the task.
-5. Configure the event to catch:
+Using this variable to store a custom error message that can be displayed in
+
+3. Select the Create Folder task.
+4. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
+5. Add an **Error Boundary Event** to the task.
+6. Configure the event to catch:
 
    `ANY ERROR`
 
