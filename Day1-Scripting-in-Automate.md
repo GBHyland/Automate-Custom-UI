@@ -169,7 +169,8 @@ Verify that:
 
 **Created Folder Name Enhancement**
 1. Select the Create Folder task.
-2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```
+2. Change the value of the **Name** attribute to: ```claim-${updatedPolicyNum}```.
+
 > [!HINT]
 > Using a variable in the dollar-bracket syntax (${}) is called an **expression**, and allows you to invoke the value of a variable.
 > Combining string text with an expression is called **Interpolation**, i.e.: ```claim-${updatedPolicyNum}``` outputs to: ```claim-12345```.
