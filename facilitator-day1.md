@@ -21,8 +21,8 @@ Complete code for the **update-policy-num** script task:
 // set a local variable called claimNum as a reference to our var_claimNumber process variable
 const claimNum = variables.var_policyNumber;
 
-// make process variable updatedPolicyNum the value of the claimNum
-variables.updatedClaimNum = claimNum;
+// make process variable var_updatedClaimNum the value of the claimNum
+variables.var_updatedClaimNum = claimNum;
 
 // if webhook prepend "W", form prepend "F"
 const inbound = variables.var_inboundRequest;
@@ -33,8 +33,8 @@ if (hasJsonData(inbound)) {
     id = "W";
 }
 
-// add the id to the policy number
-variables.updatedClaimNum = id + claimNum;
+// add the id to the Claim number
+variables.var_updatedClaimNum = id + claimNum;
 
 
 
