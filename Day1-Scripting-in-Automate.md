@@ -82,7 +82,7 @@ Before continuing, verify that:
 
 ---
 
-## 🧪 LAB 2: Conditional Logic
+## 🧪 LAB 2: Conditional Logic to Customize Claims
 > [!NOTE]
 > **Lab Objective:** Add a Script Task that uses conditional logic to customize our policy number.
 
