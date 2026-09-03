@@ -16,6 +16,9 @@ The starting process already contains the foundation of the workflow. Your job i
 
 This hands-on lab begins with an existing imported process. You are **not** creating the entire process from scratch.
 
+Download the starting project before beginning this lab:
+
+📦 [Download gb-cui-claim-classStart.zip](starting-point/gb-cui-claim-classStart.zip)
 ---
 
 ## 🧪 LAB 1: Variable Manipulation & Saving to Process
