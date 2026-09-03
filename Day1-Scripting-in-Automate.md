@@ -112,13 +112,12 @@ Next, add the logic that updates the claim number used by the process.
 // make process variable var_updatedClaimNum the value of the claimNum
 
 
-// if webhook prepend "W", form prepend "F"
+// create a local variable called inbound that references the webhook payload process variable: var_inboundRequest
 
 
-// conditional logid to set the id
-
-
-// add the id to the policy number
+// 1. Write a conditional logic "if" statement using helper function: 
+//    if webhook: prepend "W", form prepend "F"
+// 2. Create a local id variable assigned as either "W" or "F"
 
 
 // ============| END CODE HERE |====================
