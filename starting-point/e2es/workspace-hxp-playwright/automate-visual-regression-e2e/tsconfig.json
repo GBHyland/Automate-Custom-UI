@@ -1,7 +1,0 @@
-{
-    "extends": "../../../tsconfig.e2e.json",
-    "compilerOptions": {
-        "outDir": "../../../out-tsc/workspace-hxp-playwright-automate-visual-regression-e2e"
-    },
-    "include": ["**/*.ts", "**/*.js"]
-}

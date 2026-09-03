@@ -1,8 +1,0 @@
-{
-    "count": 0,
-    "documents": [],
-    "limit": 25,
-    "offset": 0,
-    "query": "SELECT * FROM SysContent WHERE sys_id = ''",
-    "totalCount": 0
-}

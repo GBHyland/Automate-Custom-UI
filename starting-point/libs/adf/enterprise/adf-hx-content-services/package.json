@@ -1,9 +1,0 @@
-{
-  "name": "@alfresco/adf-hx-content-services",
-  "version": "0.0.8",
-  "peerDependencies": {
-    "@angular/core": ">=15.2.10"
-  },
-  "dependencies": {},
-  "sideEffects": false
-}

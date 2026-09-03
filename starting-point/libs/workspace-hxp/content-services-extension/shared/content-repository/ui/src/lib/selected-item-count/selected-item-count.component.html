@@ -1,9 +1,0 @@
-<div class="hxp-document-list-count" *ngIf="selectedItems.length > 0">
-    <div class="hxp-selected-item-count">
-        <span>{{selectedItems.length}}</span> {{ 'APP.TOOLBAR.SELECTED' | translate }}
-    </div>
-    <div class="hxp-item-count-separator"></div>
-    <div class="hxp-clear-selection">
-        <button [attr.aria-label]="'APP.TOOLBAR.CLEAR_ALL' | translate" (click)="clearSelection()">{{ 'APP.TOOLBAR.CLEAR_ALL' | translate }}</button>
-    </div>
-</div>

@@ -1,8 +1,0 @@
-{
-    "extends": "<%= offsetFromRoot %>tsconfig.adf.json",
-    "compilerOptions": {
-        "outDir": "<%= offsetFromRoot %>dist/out-tsc"
-    },
-    "files": ["src/test.ts"],
-    "include": [ "**/*.spec.ts", "**/*.d.ts" ]
-}

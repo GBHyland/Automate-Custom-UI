@@ -1,8 +1,0 @@
-{
-  "extends": "../../../tsconfig.e2e.json",
-  "compilerOptions": {
-    "outDir": "../../../out-tsc/libs/playwright-shared"
-  },
-  "include": ["**/*.ts"],
-  "exclude": ["../../../scripts/utils/**/*.ts"]
-}

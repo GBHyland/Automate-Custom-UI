@@ -1,9 +1,0 @@
-@if(featuresService.isOn$(enableLocalisationFeatureFlag) | async) {
-    <button mat-menu-item [matMenuTriggerFor]="menu" class="hxp-header-action-language" data-automation-id="hxp-user-language-menu">
-        <mat-icon svgIcon="globe_24px" />
-        <span>{{ 'HEADER.ACTIONS.LANGUAGE' | translate }}</span>
-    </button>
-    <mat-menu #menu="matMenu">
-        <adf-language-menu />
-    </mat-menu>
-}

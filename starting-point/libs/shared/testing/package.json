@@ -1,8 +1,0 @@
-{
-  "name": "alfresco-dbp-shared-testing",
-  "description": "MONO_MERGE_REMOVE, remove this file after ADW has been merged into monorepo",
-  "dependencies": {
-    "tslib": "^2.0.0"
-  },
-  "version": "7.1.0-M13"
-}

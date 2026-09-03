@@ -1,4 +1,0 @@
-@let isApplicationChromeFeatureFlagOn = featuresService.isOn$(applicationChromeFeatureFlag) | async;
-<hxp-application-chrome [featureFlagOn]="isApplicationChromeFeatureFlagOn ?? false" data-test-id="app-chrome">
-    <app-shell [attr.data-automation-id]="isApplicationChromeFeatureFlagOn ? '' : 'adf-shell'"/>
-</hxp-application-chrome>

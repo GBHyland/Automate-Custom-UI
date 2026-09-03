@@ -1,7 +1,0 @@
-@if(flagsOverride) {
-    <button mat-menu-item class="hxp-header-action-feature-flags" data-automation-id="features" (click)="featuresDialogService.openDialog()">
-        <mat-icon svgIcon="flag_24px" />
-        {{ 'HEADER.ACTIONS.FEATURE_FLAGS' | translate }}
-        <adf-feature-flags-override-indicator size="small" />
-    </button>
-}

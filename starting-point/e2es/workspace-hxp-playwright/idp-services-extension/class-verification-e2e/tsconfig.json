@@ -1,9 +1,0 @@
-{
-    "extends": "../../../../tsconfig.e2e.json",
-    "compilerOptions": {
-        "outDir": "../../../../out-tsc/idp-services-extension-class-verification-e2e",
-        "baseUrl": "../../../../"
-    },
-    "files": [],
-    "include": ["**/*.ts", "**/*.js"]
-  }
