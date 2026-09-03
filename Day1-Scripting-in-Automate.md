@@ -120,6 +120,9 @@ Next, add the logic that updates the claim number used by the process.
 // 2. Create a local id variable assigned as either "W" or "F"
 
 
+// prepend the id to the updated claim number process variable: var_updatedClaimNum
+
+
 // ============| END CODE HERE |====================
 // PROVIDED Helper: Determine if JSON contains data
 // =================================================
