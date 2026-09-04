@@ -472,7 +472,7 @@ Verify that:
 
 ---
 
-**Add the File Looping Logic Script**
+**Add the File Looping Logic Script**  
 After a file has been moved, the process needs to determine whether another uploaded file remains.
 
 1. Add a new Script Task after the **Move Content** task. Name it: `looping-logic`
