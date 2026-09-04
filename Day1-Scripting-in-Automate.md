@@ -621,7 +621,6 @@ JSON Structure
    "State"=value,
    "Zip"=value,
    "var_email"=value,
-   "var_claimNumber"=value,
    "DamageDate"=value,
    "DamageDescription"=value,
    "DamageType"=value
@@ -637,7 +636,6 @@ var_city
 var_state
 var_zip
 var_email
-var_claimNumber
 var_perilType
 var_perilDate
 var_perilDescription
