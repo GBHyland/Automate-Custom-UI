@@ -19,7 +19,21 @@ This hands-on lab begins with an existing imported process. You are **not** crea
 Download the starting project before beginning this lab:
 
 📦 [Download gb-cui-claim-classStart.zip](starting-point/gb-cui-claim-classStart.zip)
----
+
+---  
+
+## Before You Start
+Before we begin editing the process, release and deploy the process in **Studio Admin**. Once deployed, test the process and get a feel for what it does.
+
+**Testing Checklist**
+Verify that:
+
+- [ ] Once the process starts a **User Task** is assigned to you with a claim form to be filled out.
+- [ ] Fill out the form, and attach a document to the form.
+- [ ] The process completes without error once the Human Task is completed.
+- [ ] Visit the _uidev_claims_ folder in the local repository to ensure a new folder was created for your claim. Inside should be a generated document and the document you attached.
+
+---  
 
 ## 🧪 LAB 1: Variable Manipulation & Saving to Process
 
