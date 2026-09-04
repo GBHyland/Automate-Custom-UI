@@ -430,17 +430,25 @@ function hasJsonData(jsonObject) {
 > - If files exist, the process will begin processing them.
 > - If no files exist, the process will skip file processing.
 
-**Add a File Check Script Task**. 
-1. Edit the _check-for-files_ **Script Task**.
+**Create the File Check Script Task**. 
+1. Create a new **Script Task** and **Script Object** both named: ```check-for-files```.
 2. Add the following script template and write the Javascript to perform these actions. The script will determine whether files exist and prepare the variables used by the upcoming gateway.
 ```
-// 1. create a local variable that gets a reference to the var_attachedFile process variable
+// create a local variable called attachedFiles that gets a reference to the var_attachedFile process variable
 
 
-// 2. set process variable var_processFiles to True or False; false if process var attachedFiles has no files
+// set process variable var_processFiles to True or False
+// false if process var attachedFiles has no files 
+// (hint: use.length to ensure there's > 0 objects in array)
 
 
-// 3. conditional statement that sets the process var doc_fileToMove to the file in attachedFiles at the current index
+// set process variable var_currentIndex tp 0 
+// (to start the looping index at the 1st position in the array)
+
+
+// write a conditional statement that checks if attachedFiles has > 0 data
+// action: sets the process var doc_fileToMove to the variables.var_currentIndex of the attachedFiles array
+
 
 ```
 
