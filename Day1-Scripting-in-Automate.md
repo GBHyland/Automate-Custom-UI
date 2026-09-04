@@ -211,7 +211,7 @@ Verify that:
 
 **Created Folder Name Enhancement**
 1. Select the Create Folder task.
-2. Change the value of the **Name** attribute to: ```claim-${var_updatedClaimNum}```.
+2. Change the value of the **Name** attribute to: ```claim-[your initials]-${var_updatedClaimNum}```.
 > [!TIP]
 > **Expressions and Interpolation**
 > Using a variable with dollar-bracket syntax, such as `${var_updatedClaimNum}`, is called an **expression**. An expression allows you to reference the current value of a process variable.
@@ -220,11 +220,11 @@ Verify that:
 >
 > For example:
 >
-> `claim-${var_updatedClaimNum}`
+> `claim-jd-${var_updatedClaimNum}`
 >
 > If `var_updatedClaimNum` contains `12345`, the resulting value will be:
 >
-> `claim-12345`
+> `claim-jd-12345`
 
 ---  
 
