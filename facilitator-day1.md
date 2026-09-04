@@ -256,7 +256,7 @@ try {
     // ============================================
     // EXERCISE: Map inbound data to process variables
     // ============================================
-    variables.var_claimNumber = inbound.var_policyNumber;
+    variables.var_claimNumber = inbound.var_claimNumber;
     variables.var_firstName = inbound.FirstName;
     variables.var_lastName = inbound.LastName;
     variables.var_streetAddress = inbound.StreetAddress;
