@@ -459,41 +459,7 @@ Verify that:
 - [ ] Mapping is configured for **All Input / Output**.
 - [ ] The supplied source script has been written / added.
 
----
-
-**Create the File Processing Gateway**
-Next, we'll create the routing logic that determines whether another file needs to be processed.
-
-1. Add an **Exclusive Gateway** immediately after the file-checking Script Task and before the _move-file_ task.
-
-The gateway will have two possible paths:
-- Process a file.
-- End file processing.
-
-Conceptually:
-
-```text
-                    +--------------------+
-                    | Check Attachments  |
-                    +--------------------+
-                              |
-                              v
-                       < File Gateway >
-                         /          \
-                        /            \
-              Process File          Default
-                    |                  |
-                    v                  v
-              Move Content            End
-```
-
-
-**Configure the Move Path**
-1. Create a sequence flow from the Exclusive Gateway to the existing **Move Content** task (if not already there).
-2. Configure the condition for this flow as: `var_processFiles` == **true**
-
-When `var_processFiles` is `true`, the process should continue to Move Content.
-
+---  
 
 **Update the Move Content Task**
 1. Select the existing **Move Content** task.
