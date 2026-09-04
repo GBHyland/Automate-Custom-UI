@@ -167,24 +167,22 @@ function hasJsonData(jsonObject) {
 ## LAB 6: Determine Whether Files Need Processing
 Complete code for the **check-for-files** script task:
 ```
-t// create a local variable that gets a reference to the var_attachedFile process variable
-let attachedFiles = variables.var_attachedFile || [];
+// create a local variable called attachedFiles that gets a reference to the var_attachedFile process variable
+let attachedFiles = variables.var_attachedFile;
 
-if (!Array.isArray(attachedFiles)) {
-    attachedFiles = [];
-}
-
-// set process variable var_processFiles to True or False; false if process var attachedFiles has no files
+// set process variable var_processFiles to True or False
+// false if process var attachedFiles has no files 
+// (hint: use.length to ensure there's > 0 objects in array)
 variables.var_processFiles = attachedFiles.length > 0;
 
-// set process variable var_currentIndex tp 0 (to start the looping index at the 1st position in the array)
+// set process variable var_currentIndex tp 0 
+// (to start the looping index at the 1st position in the array)
 variables.var_currentIndex = 0;
 
-// conditional statement that sets the process var doc_fileToMove to the file in attachedFiles at the current index
+// write a conditional statement that checks if attachedFiles has > 0 data
+// action: sets the process var doc_fileToMove to the variables.var_currentIndex of the attachedFiles array
 if (attachedFiles.length > 0) {
-    variables.doc_fileToMove = attachedFiles[0];
-} else {
-    variables.doc_fileToMove = null;
+    variables.doc_fileToMove = attachedFiles[variables.var_currentIndex];
 }
 ```
 
