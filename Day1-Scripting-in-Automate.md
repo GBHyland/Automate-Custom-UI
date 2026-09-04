@@ -528,7 +528,7 @@ Each time the process returns to the gateway, `var_processFiles` is evaluated ag
 ---
 
 **Configure the End Path**
-1. Add an **End Event** to the second output path of the Exclusive Gateway.
+1. Add an **End Event** to the second output path of the Exclusive Gateway, **if not already there**.
 2. Configure this sequence flow as the: **Default Flow**
 
 The gateway should behave as follows:
