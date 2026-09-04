@@ -475,25 +475,6 @@ Verify that:
 **Add the File Looping Logic Script**  
 After a file has been moved, the process needs to determine whether another uploaded file remains.
 
-1. Add a new Script Task after the **Move Content** task. Name it: `looping-logic`
-2. Configure its variable mapping to: _Map all inputs/outputs variables_.
-
-The flow should now resemble:
-
-```text
-Exclusive Gateway
-       |
-       | var_processFiles == true
-       v
- Move Content
-       |
-       v
- looping-logic
-```
-
-
----
-
 **Add the Looping Script**
 1. Create a new **Script Task** and **Script element**, both titled ```loop-logic```.
 2. Set the script task mapping to: ```Map all inputs/outputs variables```.
@@ -505,15 +486,19 @@ Exclusive Gateway
 // create a local variable called currentIndex with a reference to the var_currentIndex process variable
 
 
-// Increment currentIndex
+// Increment currentIndex by 1
 
 
 // Save updated currentIndex back to the process variable var_currentIndex
 
 
-// Conditional statement: Have we exceeded the number of indexes within the attachedFiles array?
-// if so, set process variable var_processFiles = false
-// else set the process variable doc_fileToMove value to the next index of the attachedFiles array
+// Write the following Conditional Statement: 
+// Has currentIndex exceeded the number of indexes within the attachedFiles array?
+// if exceeded, set process variable var_processFiles = false
+// else 
+//.  (1)set the process variable var_processFiles = true and
+//.  (2)doc_fileToMove value to the next index of the attachedFiles array
+
 
 ```
 
