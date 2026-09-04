@@ -594,8 +594,9 @@ The overall behavior is:
 > We should also include error handling to catch the possibility of missing data values.
 
 **Test the Process**
-1. Test the process at least one time from the [https://edstrain.com/cic-9si](9 Second Insurance Website).
+1. Test the process at least one time from the [9 Second Insurance Website](https://edstrain.com/cic-9si).
    - **Password:** ```cic-demo```
+2. Fill out the new claim form on the website.
 2. The process will arrive at the _display-json_ Human Task.
 3. This Human task is here to review the JSON structure of the HTML form submitted payload.
 4. Use this as a reference going forward.
