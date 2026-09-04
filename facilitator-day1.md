@@ -195,7 +195,7 @@ Complete code for the **loop-logic** script task:
 let attachedFiles = variables.var_attachedFile;
 
 // create a local variable called currentIndex with a reference to the var_currentIndex process variable
-let currentIndex = Number(variables.var_currentIndex);
+let currentIndex = variables.var_currentIndex;
 
 // Increment currentIndex by 1
 currentIndex = currentIndex + 1;
