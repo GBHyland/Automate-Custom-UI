@@ -644,6 +644,22 @@ var_perilDescription
 > [!NOTE]
 > When complete this script task will properly map the website form data to the proper process variables, ensuring they are populated for the _create-doc_ task.
 
+**Remove the _display-JSON_ Task.**
+1. Delete the _display-JSON_ Human Task.
+
+---  
+
+## ✅ Lab 7 Test
+Release your project and upgrade from the application from the **Studio Admin** page. 
+
+### 🔍 Testing Checklist
+Test and Verify that:
+
+- [ ] Test from the [9 Second Insurance Website](https://edstrain.com/cic-9si/).
+- [ ] Fill out and submit the claim form, attaching at least one document to the form.
+- [ ] The process completes without error.
+- [ ] Visit the _uidev_claims_ folder in the local repository to ensure a new folder was created for your claim. Inside should be a generated document and the document(s) you attached.
+
 ---
 
 ## 🧪 LAB 8: Additional Error Handling
