@@ -217,7 +217,110 @@ if (currentIndex >= attachedFiles.length) {
 }
 ```
 
+---  
 
+## LAB 7: JSON inbound to process variable mapping
+Complete code for the **update-vars** script task:
+```
+try {
+    // ============================================
+    // Validate inbound request
+    // ============================================
+    const inbound = variables.var_inboundRequest;
+
+    if (inbound == null) {
+        throw new Error(
+            "var_inboundRequest is null or undefined. No inbound request data was received."
+        );
+    }
+
+    // Check whether inbound contains any data.
+    // Handles normal JavaScript objects.
+    if (
+        typeof inbound === "object" &&
+        typeof inbound.get !== "function" &&
+        Object.keys(inbound).length === 0
+    ) {
+        throw new Error(
+            "var_inboundRequest exists but contains no data."
+        );
+    }
+
+
+    // ============================================
+    // Initialize image variables
+    // ============================================
+    let uploadedImages = [];
+
+
+    // ============================================
+    // EXERCISE: Map inbound data to process variables
+    // ============================================
+    variables.var_claimNumber = inbound.var_policyNumber;
+    variables.var_firstName = inbound.FirstName;
+    variables.var_lastName = inbound.LastName;
+    variables.var_streetAddress = inbound.StreetAddress;
+    variables.var_city = inbound.City;
+    variables.var_state = inbound.State;
+    variables.var_zip = inbound.Zip;
+    variables.var_email = inbound.var_email;
+
+    variables.var_perilType = inbound.DamageType;
+    variables.var_perilDate = inbound.DamageDate;
+    variables.var_perilDescription = inbound.DamageDescription;
+
+
+    // ============================================
+    // Get uploaded images
+    // ============================================
+    if (typeof inbound.get === "function") {
+        uploadedImages = inbound.get("var_uploadedImages") || [];
+    } else {
+        uploadedImages = inbound.var_uploadedImages || [];
+    }
+
+
+    // ============================================
+    // Make sure uploadedImages is an array
+    // ============================================
+    if (!Array.isArray(uploadedImages)) {
+        uploadedImages = [];
+    }
+
+
+    // ============================================
+    // Determine whether images were uploaded
+    // ============================================
+    const hasImages = uploadedImages.length > 0;
+
+    if (hasImages) {
+        variables.var_uploadedFileUrl = uploadedImages[0];
+    } else {
+        variables.var_uploadedFileUrl = null;
+    }
+
+
+    // ============================================
+    // Set image processing flag
+    // ============================================
+    variables.var_processImage = hasImages;
+
+
+} catch (error) {
+
+    // ============================================
+    // Store useful error information
+    // ============================================
+    variables.var_scriptError = true;
+    variables.var_scriptErrorMessage =
+        error && error.message
+            ? error.message
+            : String(error);
+
+    // Re-throw so Automate marks the Script Task as failed
+    throw error;
+}
+```
 
 
 
