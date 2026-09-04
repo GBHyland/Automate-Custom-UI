@@ -25,7 +25,7 @@ Download the starting project before beginning this lab:
 ## Before You Start
 Before we begin editing the process, release and deploy the process in **Studio Admin**. Once deployed, test the process and get a feel for what it does.
 
-**Testing Checklist**
+### ✅ Testing Checklist
 Verify that:
 
 - [ ] Once the process starts a **User Task** is assigned to you with a claim form to be filled out.
