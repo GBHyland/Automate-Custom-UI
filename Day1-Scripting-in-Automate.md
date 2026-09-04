@@ -220,7 +220,7 @@ Verify that:
 ---  
 
 **Process Variable We'll Need.**
-1. Create a process variable called: ```customErrorMessage```
+1. Create a process variable called: ```customErrorMessage``` as a _String_ variable.
 > [!TIP]
 > Creating a variable to store a custom error message allows us to display in a Human Task or send to the error log.
 
@@ -228,13 +228,20 @@ Verify that:
 
 **Script Task to Set our Custom Error**
 1. Create a new **Script Task** and a **New Script**, title them: ```custom-folder-error```
-2. In the script entry, set the _customErrorMessage_ process variable to the string: ```The base Claim folder '/uidev_claims' could not be found. Ensure this directory exists and try again!```
-3. Set the mapping on the script task to _Map all inputs/outputs variables_.
-4. Create a Human task stemming from the _custom-folder-error_ script titled: ```folder-error-notify```
-5. Create a form with the same name, ```folder-error-notify``` and attach it to the human task.
-6. Open the form and add a **Display Text** Field with id: ```errorMessage```.
-7. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
-8. Add an **End Event** after the Human task.
+2. Open the script, and paste in the following template. :
+```
+// assign a custom message string for the process variable: customErrorMessage
+// Use a string similar to: "The base Claim folder '/uidev_claims' could not be found. Ensure this directory exists and try again!"
+
+
+```
+ 
+4. Set the mapping on the script task to _Map all inputs/outputs variables_.
+5. Create a Human task stemming from the _custom-folder-error_ script titled: ```folder-error-notify```
+6. Create a form with the same name, ```folder-error-notify``` and attach it to the human task.
+7. Open the form and add a **Display Text** Field with id: ```errorMessage```.
+8. Go back to process and select the Human task. Assign the _Display Text_ the process variable: ```customErrorMessage```.
+9. Add an **End Event** after the Human task.
 
 ---  
 
