@@ -20,7 +20,7 @@ This hands-on lab begins with an existing imported process. You are **not** crea
 
 **Download the starting project and example files before beginning this lab:**
 
-📦 [Download gb-cui-claim-classStart.zip](starting-point/gb-cui-claim-classStart.zip)
+📦 [Download gb-cui-claim-classStart.zip](starting-point/gb-cui-claim-classStart.zip)  
 📦 [Download cic-dev-upload-examples.zip](claim-upload-docs/cic-dev-upload-examples.zip)
 
 ---  
