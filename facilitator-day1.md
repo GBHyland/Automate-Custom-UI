@@ -192,20 +192,23 @@ if (attachedFiles.length > 0) {
 Complete code for the **loop-logic** script task:
 ```
 // create a local variable called attachedFiles with a reference to the var_attachedFile process variable
-let attachedFiles = variables.var_attachedFile || [];
+let attachedFiles = variables.var_attachedFile;
 
 // create a local variable called currentIndex with a reference to the var_currentIndex process variable
-let currentIndex = Number(variables.var_currentIndex || 0);
+let currentIndex = Number(variables.var_currentIndex);
 
-// Increment currentIndex
+// Increment currentIndex by 1
 currentIndex = currentIndex + 1;
 
 // Save updated currentIndex back to the process variable var_currentIndex
 variables.var_currentIndex = currentIndex;
 
-// Conditional statement: Have we exceeded the number of indexes within the attachedFiles array?
-// if so, set process variable var_processFiles = false
-// else set the process variable doc_fileToMove value to the next index of the attachedFiles array
+// Write the following Conditional Statement: 
+// Has currentIndex exceeded the number of indexes within the attachedFiles array?
+// if exceeded, set process variable var_processFiles = false
+// else 
+//.  (1)set the process variable var_processFiles = true and
+//.  (2)doc_fileToMove value to the next index of the attachedFiles array
 if (currentIndex >= attachedFiles.length) {
     variables.var_processFiles = false;
 } else {
